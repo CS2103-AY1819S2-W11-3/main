@@ -18,11 +18,12 @@ Role: Project Advisor
 
 '''
 
-=== Niven Ang Jia Hao
-image::nivenang.png[width="150", align="left"]
-{empty}[http://github.com/nivenang[github]] [<<johndoe#, portfolio>>]
+=== John Roe
+image::lejolly.jpg[width="150", align="left"]
+{empty}[http://github.com/lejolly[github]] [<<johndoe#, portfolio>>]
 
-Role: Developer
+Role: Team Lead +
+Responsibilities: UI
 
 '''
 
