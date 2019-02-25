@@ -5,31 +5,30 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
  * Represents a Person's phone number in the address book.
- * Guarantees: immutable; is valid as declared in {@link #isValidPhone(String)}
+ * Guarantees: immutable; is valid as declared in {@link #isValidRating(String)}
  */
-public class Phone {
-
+public class Rating {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Phone numbers should only contain numbers, and it should be at least 3 digits long";
-    public static final String VALIDATION_REGEX = "\\d{3,}";
+            "Ratings should only contain numbers 1 to 5.";
+    public static final String VALIDATION_REGEX = "[1-5]";
     public final String value;
 
     /**
      * Constructs a {@code Phone}.
      *
-     * @param phone A valid phone number.
+     * @param rating A valid rating.
      */
-    public Phone(String phone) {
-        requireNonNull(phone);
-        checkArgument(isValidPhone(phone), MESSAGE_CONSTRAINTS);
-        value = phone;
+    public Rating(String rating) {
+        requireNonNull(rating);
+        checkArgument(isValidRating(rating), MESSAGE_CONSTRAINTS);
+        value = rating;
     }
 
     /**
      * Returns true if a given string is a valid phone number.
      */
-    public static boolean isValidPhone(String test) {
+    public static boolean isValidRating(String test) {
         return test.matches(VALIDATION_REGEX);
     }
 
@@ -41,8 +40,8 @@ public class Phone {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof Phone // instanceof handles nulls
-                && value.equals(((Phone) other).value)); // state check
+                || (other instanceof Rating // instanceof handles nulls
+                && value.equals(((Rating) other).value)); // state check
     }
 
     @Override
