@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.DESC_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
@@ -44,7 +44,7 @@ public class EditPersonDescriptorTest {
         assertFalse(DESC_AMY.equals(editedAmy));
 
         // different email -> returns false
-        editedAmy = new EditPersonDescriptorBuilder(DESC_AMY).withEmail(VALID_EMAIL_BOB).build();
+        editedAmy = new EditPersonDescriptorBuilder(DESC_AMY).withEmail(VALID_DESC_BOB).build();
         assertFalse(DESC_AMY.equals(editedAmy));
 
         // different address -> returns false

@@ -4,13 +4,13 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
- * Represents a Person's email in the address book.
- * Guarantees: immutable; is valid as declared in {@link #isValidEmail(String)}
+ * Represents a Person's description in the address book.
+ * Guarantees: immutable; is valid as declared in {@link #isValidDescription(String)}
  */
-public class Email {
+public class Description {
 
     private static final String SPECIAL_CHARACTERS = "!#$%&'*+/=?`{|}~^.-";
-    public static final String MESSAGE_CONSTRAINTS = "Emails should be of the format local-part@domain "
+    public static final String MESSAGE_CONSTRAINTS = "Descriptions should be of the format local-part@domain "
             + "and adhere to the following constraints:\n"
             + "1. The local-part should only contain alphanumeric characters and these special characters, excluding "
             + "the parentheses, (" + SPECIAL_CHARACTERS + ") .\n"
@@ -30,20 +30,20 @@ public class Email {
     public final String value;
 
     /**
-     * Constructs an {@code Email}.
+     * Constructs an {@code Description}.
      *
-     * @param email A valid email address.
+     * @param description A valid description.
      */
-    public Email(String email) {
-        requireNonNull(email);
-        checkArgument(isValidEmail(email), MESSAGE_CONSTRAINTS);
-        value = email;
+    public Description(String description) {
+        requireNonNull(description);
+        checkArgument(isValidDescription(description), MESSAGE_CONSTRAINTS);
+        value = description;
     }
 
     /**
-     * Returns if a given string is a valid email.
+     * Returns if a given string is a valid description.
      */
-    public static boolean isValidEmail(String test) {
+    public static boolean isValidDescription(String test) {
         return test.matches(VALIDATION_REGEX);
     }
 
@@ -55,8 +55,8 @@ public class Email {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof Email // instanceof handles nulls
-                && value.equals(((Email) other).value)); // state check
+                || (other instanceof Description // instanceof handles nulls
+                && value.equals(((Description) other).value)); // state check
     }
 
     @Override

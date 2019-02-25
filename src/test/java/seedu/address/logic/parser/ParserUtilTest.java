@@ -17,7 +17,7 @@ import org.junit.rules.ExpectedException;
 
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Address;
-import seedu.address.model.person.Email;
+import seedu.address.model.person.Description;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
@@ -27,7 +27,7 @@ public class ParserUtilTest {
     private static final String INVALID_NAME = "R@chel";
     private static final String INVALID_PHONE = "+651234";
     private static final String INVALID_ADDRESS = " ";
-    private static final String INVALID_EMAIL = "example.com";
+    private static final String INVALID_DESCRIPTION = "example.com";
     private static final String INVALID_TAG = "#friend";
 
     private static final String VALID_NAME = "Rachel Walker";
@@ -135,25 +135,25 @@ public class ParserUtilTest {
 
     @Test
     public void parseEmail_null_throwsNullPointerException() {
-        Assert.assertThrows(NullPointerException.class, () -> ParserUtil.parseEmail((String) null));
+        Assert.assertThrows(NullPointerException.class, () -> ParserUtil.parseDescription((String) null));
     }
 
     @Test
     public void parseEmail_invalidValue_throwsParseException() {
-        Assert.assertThrows(ParseException.class, () -> ParserUtil.parseEmail(INVALID_EMAIL));
+        Assert.assertThrows(ParseException.class, () -> ParserUtil.parseDescription(INVALID_DESCRIPTION));
     }
 
     @Test
     public void parseEmail_validValueWithoutWhitespace_returnsEmail() throws Exception {
-        Email expectedEmail = new Email(VALID_EMAIL);
-        assertEquals(expectedEmail, ParserUtil.parseEmail(VALID_EMAIL));
+        Description expectedDescription = new Description(VALID_EMAIL);
+        assertEquals(expectedDescription, ParserUtil.parseDescription(VALID_EMAIL));
     }
 
     @Test
     public void parseEmail_validValueWithWhitespace_returnsTrimmedEmail() throws Exception {
         String emailWithWhitespace = WHITESPACE + VALID_EMAIL + WHITESPACE;
-        Email expectedEmail = new Email(VALID_EMAIL);
-        assertEquals(expectedEmail, ParserUtil.parseEmail(emailWithWhitespace));
+        Description expectedDescription = new Description(VALID_EMAIL);
+        assertEquals(expectedDescription, ParserUtil.parseDescription(emailWithWhitespace));
     }
 
     @Test
