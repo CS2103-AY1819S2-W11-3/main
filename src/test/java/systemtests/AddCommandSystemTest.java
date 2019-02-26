@@ -79,13 +79,6 @@ public class AddCommandSystemTest extends AddressBookSystemTest {
                 + TAG_DESC_FRIEND;
         assertCommandSuccess(command, toAdd);
 
-        /* Case: add a person with all fields same as another person in the address book except phone and email
-         * -> added
-         */
-        toAdd = new PersonBuilder(AMY).withPhone(VALID_PHONE_BOB).withEmail(VALID_DESC_BOB).build();
-        command = PersonUtil.getAddCommand(toAdd);
-        assertCommandSuccess(command, toAdd);
-
         /* Case: add to empty address book -> added */
         deleteAllPersons();
         assertCommandSuccess(ALICE);
@@ -122,8 +115,8 @@ public class AddCommandSystemTest extends AddressBookSystemTest {
         command = PersonUtil.getAddCommand(toAdd);
         assertCommandFailure(command, AddCommand.MESSAGE_DUPLICATE_PERSON);
 
-        /* Case: add a duplicate person except with different email -> rejected */
-        toAdd = new PersonBuilder(HOON).withEmail(VALID_DESC_BOB).build();
+        /* Case: add a duplicate person except with different description -> rejected */
+        toAdd = new PersonBuilder(HOON).withDescription(VALID_DESC_BOB).build();
         command = PersonUtil.getAddCommand(toAdd);
         assertCommandFailure(command, AddCommand.MESSAGE_DUPLICATE_PERSON);
 
@@ -144,10 +137,6 @@ public class AddCommandSystemTest extends AddressBookSystemTest {
         command = AddCommand.COMMAND_WORD + NAME_DESC_AMY + DESCRIPTION_AMY + ADDRESS_DESC_AMY;
         assertCommandFailure(command, String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
 
-        /* Case: missing email -> rejected */
-        command = AddCommand.COMMAND_WORD + NAME_DESC_AMY + PHONE_DESC_AMY + ADDRESS_DESC_AMY;
-        assertCommandFailure(command, String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
-
         /* Case: missing address -> rejected */
         command = AddCommand.COMMAND_WORD + NAME_DESC_AMY + PHONE_DESC_AMY + DESCRIPTION_AMY;
         assertCommandFailure(command, String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
@@ -164,7 +153,7 @@ public class AddCommandSystemTest extends AddressBookSystemTest {
         command = AddCommand.COMMAND_WORD + NAME_DESC_AMY + INVALID_PHONE_DESC + DESCRIPTION_AMY + ADDRESS_DESC_AMY;
         assertCommandFailure(command, Phone.MESSAGE_CONSTRAINTS);
 
-        /* Case: invalid email -> rejected */
+        /* Case: invalid description -> rejected */
         command = AddCommand.COMMAND_WORD + NAME_DESC_AMY + PHONE_DESC_AMY + INVALID_DESC + ADDRESS_DESC_AMY;
         assertCommandFailure(command, Description.MESSAGE_CONSTRAINTS);
 

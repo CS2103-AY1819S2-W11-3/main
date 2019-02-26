@@ -58,8 +58,8 @@ public class EditPersonDescriptorBuilder {
     /**
      * Sets the {@code Description} of the {@code EditPersonDescriptor} that we are building.
      */
-    public EditPersonDescriptorBuilder withEmail(String email) {
-        descriptor.setDescription(new Description(email));
+    public EditPersonDescriptorBuilder withDescription(String description) {
+        descriptor.setDescription(new Description(description));
         return this;
     }
 

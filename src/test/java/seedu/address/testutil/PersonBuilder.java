@@ -16,9 +16,9 @@ import seedu.address.model.util.SampleDataUtil;
  */
 public class PersonBuilder {
 
-    public static final String DEFAULT_NAME = "Alice Pauline";
+    public static final String DEFAULT_NAME = "Alice James";
     public static final String DEFAULT_PHONE = "85355255";
-    public static final String DEFAULT_EMAIL = "alice@gmail.com";
+    public static final String DEFAULT_DESCRIPTION = "No description added.";
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
 
     private Name name;
@@ -30,7 +30,7 @@ public class PersonBuilder {
     public PersonBuilder() {
         name = new Name(DEFAULT_NAME);
         phone = new Phone(DEFAULT_PHONE);
-        description = new Description(DEFAULT_EMAIL);
+        description = new Description(DEFAULT_DESCRIPTION);
         address = new Address(DEFAULT_ADDRESS);
         tags = new HashSet<>();
     }
@@ -81,8 +81,8 @@ public class PersonBuilder {
     /**
      * Sets the {@code Description} of the {@code Person} that we are building.
      */
-    public PersonBuilder withEmail(String email) {
-        this.description = new Description(email);
+    public PersonBuilder withDescription(String description) {
+        this.description = new Description(description);
         return this;
     }
 

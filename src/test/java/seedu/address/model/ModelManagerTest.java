@@ -124,7 +124,7 @@ public class ModelManagerTest {
     public void setPerson_personIsSelected_selectedPersonUpdated() {
         modelManager.addPerson(ALICE);
         modelManager.setSelectedPerson(ALICE);
-        Person updatedAlice = new PersonBuilder(ALICE).withEmail(VALID_DESC_BOB).build();
+        Person updatedAlice = new PersonBuilder(ALICE).withDescription(VALID_DESC_BOB).build();
         modelManager.setPerson(ALICE, updatedAlice);
         assertEquals(updatedAlice, modelManager.getSelectedPerson());
     }

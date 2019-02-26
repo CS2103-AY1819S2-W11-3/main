@@ -2,7 +2,7 @@
   "persons": [ {
     "name": "Hans Muster",
     "phone": "9482424",
-    "description": "invalid@email!3e",
+    "description": "@ Invalid description",
     "address": "4th street"
   } ]
 }

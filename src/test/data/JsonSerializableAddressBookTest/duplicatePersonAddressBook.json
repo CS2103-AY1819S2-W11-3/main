@@ -2,13 +2,13 @@
   "persons": [ {
     "name": "Alice Pauline",
     "phone": "94351253",
-    "description": "alice@example.com",
+    "description": "No descriptions added.",
     "address": "123, Jurong West Ave 6, #08-111",
     "tagged": [ "friends" ]
   }, {
     "name": "Alice Pauline",
     "phone": "94351253",
-    "description": "pauline@example.com",
+    "description": "No descriptions added.",
     "address": "4th street"
   } ]
 }

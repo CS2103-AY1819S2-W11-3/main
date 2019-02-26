@@ -30,8 +30,8 @@ public class CommandTestUtil {
     public static final String VALID_NAME_BOB = "Bob Choo";
     public static final String VALID_PHONE_AMY = "11111111";
     public static final String VALID_PHONE_BOB = "22222222";
-    public static final String VALID_DESC_AMY = "amy@example.com";
-    public static final String VALID_DESC_BOB = "bob@example.com";
+    public static final String VALID_DESC_AMY = "I love this place.";
+    public static final String VALID_DESC_BOB = "No description added.";
     public static final String VALID_ADDRESS_AMY = "Block 312, Amy Street 1";
     public static final String VALID_ADDRESS_BOB = "Block 123, Bobby Street 3";
     public static final String VALID_TAG_HUSBAND = "husband";
@@ -50,7 +50,7 @@ public class CommandTestUtil {
 
     public static final String INVALID_NAME_DESC = " " + PREFIX_NAME + "James&"; // '&' not allowed in names
     public static final String INVALID_PHONE_DESC = " " + PREFIX_PHONE + "911a"; // 'a' not allowed in phones
-    public static final String INVALID_DESC = " " + PREFIX_DESCRIPTION + "bob!yahoo"; // missing '@' symbol
+    public static final String INVALID_DESC = " " + PREFIX_DESCRIPTION + "@wesome"; // begin with alphabets only
     public static final String INVALID_ADDRESS_DESC = " " + PREFIX_ADDRESS; // empty string not allowed for addresses
     public static final String INVALID_TAG_DESC = " " + PREFIX_TAG + "hubby*"; // '*' not allowed in tags
 
@@ -62,10 +62,10 @@ public class CommandTestUtil {
 
     static {
         DESC_AMY = new EditPersonDescriptorBuilder().withName(VALID_NAME_AMY)
-                .withPhone(VALID_PHONE_AMY).withEmail(VALID_DESC_AMY).withAddress(VALID_ADDRESS_AMY)
+                .withPhone(VALID_PHONE_AMY).withDescription(VALID_DESC_AMY).withAddress(VALID_ADDRESS_AMY)
                 .withTags(VALID_TAG_FRIEND).build();
         DESC_BOB = new EditPersonDescriptorBuilder().withName(VALID_NAME_BOB)
-                .withPhone(VALID_PHONE_BOB).withEmail(VALID_DESC_BOB).withAddress(VALID_ADDRESS_BOB)
+                .withPhone(VALID_PHONE_BOB).withDescription(VALID_DESC_BOB).withAddress(VALID_ADDRESS_BOB)
                 .withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND).build();
     }
 

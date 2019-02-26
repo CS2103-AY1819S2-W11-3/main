@@ -2,12 +2,12 @@
   "persons": [ {
     "name": "Valid Person",
     "phone": "9482424",
-    "description": "hans@example.com",
+    "description": "No descriptions added.",
     "address": "4th street"
   }, {
     "name": "Person With Invalid Phone Field",
     "phone": "948asdf2424",
-    "description": "hans@example.com",
+    "description": "No descriptions added.",
     "address": "4th street"
   } ]
 }
