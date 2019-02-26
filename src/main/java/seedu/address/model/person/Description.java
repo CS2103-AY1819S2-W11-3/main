@@ -1,5 +1,6 @@
 package seedu.address.model.person;
 
+import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
@@ -8,11 +9,12 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class Description {
 
-    public static final String MESSAGE_CONSTRAINTS = "Descriptions should be written in one paragraph "
-            + "that starts with either a lowercase or uppercase alphabet character. After that, any "
-            + "character except the line break is acceptable. Descriptions can be left empty.";
+    public static final String MESSAGE_CONSTRAINTS = "Descriptions cannot be left empty. "
+            + "Type 'No description' if there is no description.\n"
+            + "Descriptions should be written in one paragraph that starts with either a "
+            + "lowercase or uppercase alphabet character.\n"
+            + "After that, any character except the line break is acceptable. ";
     public static final String VALIDATION_REGEX = "^[a-zA-Z]+.*";
-    private static final String DEFAULT_DESCRIPTION = "No description added.";
     public final String value;
 
     /**
@@ -21,9 +23,7 @@ public class Description {
      * @param description A valid description.
      */
     public Description(String description) {
-        if (description == null) {
-            description = DEFAULT_DESCRIPTION;
-        }
+        requireNonNull(description);
         checkArgument(isValidDescription(description), MESSAGE_CONSTRAINTS);
         value = description;
     }

@@ -36,7 +36,12 @@ public class PersonTest {
         assertFalse(ALICE.isSamePerson(null));
 
         // different phone -> returns true
-        Person editedAlice = new PersonBuilder(ALICE).withPhone(VALID_PHONE_BOB).withDescription(VALID_DESC_BOB)
+        Person editedAlice = new PersonBuilder(ALICE).withPhone(VALID_PHONE_BOB)
+                .build();
+        assertTrue(ALICE.isSamePerson(editedAlice));
+
+        // different description -> returns true
+        editedAlice = new PersonBuilder(ALICE).withDescription(VALID_DESC_BOB)
                 .build();
         assertTrue(ALICE.isSamePerson(editedAlice));
 
