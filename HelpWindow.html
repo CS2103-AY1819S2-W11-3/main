@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>TravelBuddy - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>CS2103T W11-3 Team</code>      Since: <code>Feb 2019</code>      Licence: <code>MIT</code></p>
+<p>By: <code>CS2103T W11-3 Team</code>      Since: <code>Mar 2019</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -30,12 +30,12 @@
 <li><a href="#clearing-all-entries-code-clear-code">3.15. Clearing all entries : <code>clear</code></a></li>
 <li><a href="#exiting-the-program-code-exit-code">3.16. Exiting the program : <code>exit</code></a></li>
 <li><a href="#saving-the-data">3.17. Saving the data</a></li>
-<li><a href="#generating-graphs-code-coming-in-v1-2-code">3.18. Generating graphs <code>[coming in v1.2]</code></a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.19. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#generating-graphs-code-coming-in-v2-0-code">3.18. Generating graphs <code>[coming in v2.0]</code></a></li>
+<li><a href="#adding-photos-to-places-code-coming-in-v2-0-code">3.19. Adding Photos to Places <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
-<li><a href="#command-summary">5. Command Summary</a></li>
+<li><a href="#shortcuts-cheatsheet">5. Shortcuts Cheatsheet</a></li>
 </ul>
 </div>
 </div>
@@ -43,9 +43,20 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>TravelBuddy</strong> is for those who <strong>prefer to use a desktop app for managing their travel log</strong>. More importantly,
-TravelBuddy is optimized for those who prefer to work with a <strong>Command Line Interface</strong> (CLI) while still having the
-benefits of a Graphical User Interface (GUI). Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+<p><strong>TravelBuddy</strong> is a desktop journal app for all your travel memories! Add all the places you&#8217;ve been,
+attach photos (coming in Version 2.0), keep a diary, create custom tags and tag different places, and search through all of your places!</p>
+</div>
+<div class="paragraph">
+<p>Its 2019, and we understand your desire for transparency, so <strong>TravelBuddy</strong> will also
+provide clear data visualisation and analytics in upcoming versions. <strong>TravelBuddy</strong> also solemnly pledges to not
+collect or sell your data in any shape or form.</p>
+</div>
+<div class="paragraph">
+<p><strong>TravelBuddy</strong> is also optimized for those who prefer to work with a <strong>Command Line Interface</strong> (CLI) while still having the
+benefits of a Graphical User Interface (GUI).</p>
+</div>
+<div class="paragraph">
+<p>Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
 </div>
 </div>
 </div>
@@ -64,7 +75,7 @@ benefits of a Graphical User Interface (GUI). Interested? Jump to the <a href="#
 <p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/cs2103-ay1819s2-w11-3/main/releases">here</a>.</p>
 </li>
 <li>
-<p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
+<p>Copy the file to the folder you want to use as the home folder for your TravelBuddy.</p>
 </li>
 <li>
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
@@ -87,7 +98,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </li>
 <li>
 <p><strong><code>add</code></strong><code>n/NUS Computing r/5 d/No Description a/NUS School of Computing, COM1, 13 Computing Drive, 117417</code> : adds
-a place named <code>NUS Computing</code> to the Address Book.</p>
+a place named <code>NUS Computing</code> to TravelBuddy.</p>
 </li>
 <li>
 <p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd place shown in the current list</p>
@@ -112,7 +123,7 @@ a place named <code>NUS Computing</code> to the Address Book.</p>
 <div class="content">
 <div class="paragraph">
 <p><strong>Command Format</strong>
-* Some commands may have an alias, which you can also use to execute the command e.g. for <code>add</code>, its alias is <code>a</code>, so
+* Some commands may have an Shortcut, which you can also use to execute the command e.g. for <code>add</code>, its Shortcut is <code>a</code>, so
  you can either type <code>add n/NUS Computing</code> or <code>a n/NUS Computing</code>.
 * Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter
 which can be used as <code>add n/NUS Computing</code>.
@@ -134,8 +145,8 @@ also acceptable.</p>
 <div class="sect2">
 <h3 id="adding-a-place-code-add-code"><a class="link" href="#adding-a-place-code-add-code">3.2. Adding a place: <code>add</code></a></h3>
 <div class="paragraph">
-<p>Adds a place to the address book<br>
-Alias: 'a'<br>
+<p>Adds a place to TravelBuddy<br>
+Shortcut: 'a'<br>
 Format: <code>add n/NAME r/RATING d/DESCRIPTION a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
@@ -167,16 +178,16 @@ A place can have any number of tags (including 0)
 <div class="sect2">
 <h3 id="listing-all-places-code-list-code"><a class="link" href="#listing-all-places-code-list-code">3.3. Listing all places : <code>list</code></a></h3>
 <div class="paragraph">
-<p>Shows a list of all places in the address book.<br>
-Alias: 'l'<br>
+<p>Shows a list of all places in TravelBuddy.<br>
+Shortcut: 'l'<br>
 Format: <code>list</code></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="editing-a-place-code-edit-code"><a class="link" href="#editing-a-place-code-edit-code">3.4. Editing a place : <code>edit</code></a></h3>
 <div class="paragraph">
-<p>Edits an existing place in the address book.<br>
-Alias: 'e'<br>
+<p>Edits an existing place in TravelBuddy.<br>
+Shortcut: 'e'<br>
 Format: <code>edit INDEX [n/NAME] [r/RATING] [d/DESCRIPTION] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
@@ -387,8 +398,8 @@ Returns a list of places with ratings of <code>4</code> or <code>5</code></p>
 <div class="sect2">
 <h3 id="deleting-a-place-code-delete-code"><a class="link" href="#deleting-a-place-code-delete-code">3.9. Deleting a place : <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes the specified place from the address book.<br>
-Alias: 'd'<br>
+<p>Deletes the specified place from TravelBuddy.<br>
+Shortcut: 'd'<br>
 Format: <code>delete INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -399,7 +410,7 @@ Format: <code>delete INDEX</code></p>
 <p>Deletes the place at the specified <code>INDEX</code>.</p>
 </li>
 <li>
-<p>The index refers to the index number shown in the displayed place list.</p>
+<p>The index refers to the index number shown in the currently displayed list, on the left.</p>
 </li>
 <li>
 <p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
@@ -416,7 +427,7 @@ Format: <code>delete INDEX</code></p>
 <li>
 <p><code>list</code><br>
 <code>delete 2</code><br>
-Deletes the 2nd place in the address book.</p>
+Deletes the 2nd place in TravelBuddy.</p>
 </li>
 <li>
 <p><code>find Raffles</code><br>
@@ -429,18 +440,24 @@ Deletes the 1st place in the results of the <code>find</code> command.</p>
 <div class="sect2">
 <h3 id="deleting-multiple-places-code-deletem-code"><a class="link" href="#deleting-multiple-places-code-deletem-code">3.10. Deleting multiple places : <code>deletem</code></a></h3>
 <div class="paragraph">
-<p>Deletes multiple places from the address book.<br>
+<p>Deletes multiple places from TravelBuddy&#8217;s currently displayed list on the left.<br>
 Format: <code>deletem START_INDEX END_INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>&lt; screenshot of UI needed&gt;</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes multiple places from a specified range from <code>START_INDEX</code> to <code>END_INDEX</code>.</p>
+<p>Deletes multiple places from a specified range from <code>START_INDEX</code> to <code>END_INDEX</code></p>
 </li>
 <li>
-<p>The index refers to the index number shown in the displayed place list.</p>
+<p>Inclusive of both places specified by <code>START_INDEX</code> and <code>END_INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number to the left of each place name, ie. "4. Jalan Kayu"</p>
 </li>
 <li>
 <p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
@@ -456,13 +473,13 @@ Format: <code>deletem START_INDEX END_INDEX</code></p>
 <ul>
 <li>
 <p><code>list</code><br>
-<code>deletem 1 5</code><br>
-Deletes the 1st, 2nd, 3rd, 4th and 5th place in the address book.</p>
+<code>deletem 1 4</code><br>
+Deletes the 1st, 2nd, 3rd and 4th place in the currently displayed list on the left.</p>
 </li>
 <li>
-<p><code>find Raffles</code><br>
+<p><code>search Singapore</code><br>
 <code>deletem 1 3</code><br>
-Deletes the 1st, 2nd and 3rd place in the results of the <code>find</code> command.</p>
+Deletes the 1st, 2nd and 3rd place in the results of the <code>search Singapore</code> command.</p>
 </li>
 </ul>
 </div>
@@ -470,8 +487,9 @@ Deletes the 1st, 2nd and 3rd place in the results of the <code>find</code> comma
 <div class="sect2">
 <h3 id="selecting-a-place-code-select-code"><a class="link" href="#selecting-a-place-code-select-code">3.11. Selecting a place : <code>select</code></a></h3>
 <div class="paragraph">
-<p>Selects the place identified by the index number used in the displayed place list.<br>
-Alias: 's'<br>
+<p>Selects the place identified by the index number used in the currently displayed list on the left,
+which loads expanded details of the selected place on the right of the displayed list.
+Shortcut: 's'<br>
 Format: <code>select INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -479,10 +497,7 @@ Format: <code>select INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Selects the place and loads the Google search page the place at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed place list.</p>
+<p>The index refers to the index number to the left of each place name, ie. "4. Jalan Kayu"</p>
 </li>
 <li>
 <p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
@@ -499,7 +514,7 @@ Format: <code>select INDEX</code></p>
 <li>
 <p><code>list</code><br>
 <code>select 2</code><br>
-Selects the 2nd place in the address book.</p>
+Selects the 2nd place in TravelBuddy.</p>
 </li>
 <li>
 <p><code>find Raffles</code><br>
@@ -513,7 +528,7 @@ Selects the 1st place in the results of the <code>find</code> command.</p>
 <h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.12. Listing entered commands : <code>history</code></a></h3>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
-Alias: 'h'<br>
+Shortcut: 'h'<br>
 Format: <code>history</code></p>
 </div>
 <div class="admonitionblock note">
@@ -534,8 +549,8 @@ Format: <code>history</code></p>
 <div class="sect2">
 <h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.13. Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
-<p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br>
-Alias: 'u'<br>
+<p>Restores TravelBuddy to the state before the previous <em>undoable</em> command was executed.<br>
+Shortcut: 'u'<br>
 Format: <code>undo</code></p>
 </div>
 <div class="admonitionblock note">
@@ -546,22 +561,20 @@ Format: <code>undo</code></p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Undoable commands: those commands that modify the address book&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
+<p>Undoable commands: those commands that modify TravelBuddy&#8217;s data (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Examples:<br>
+* <code>delete 1</code><br>
+<code>list</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
 </div>
 <div class="ulist">
 <ul>
-<li>
-<p><code>delete 1</code><br>
-<code>list</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
-</li>
 <li>
 <p><code>select 1</code><br>
 <code>list</code><br>
@@ -581,19 +594,17 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 <h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.14. Redoing the previously undone command : <code>redo</code></a></h3>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
-Alias: 'r'<br>
+Shortcut: 'r'<br>
 Format: <code>redo</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Examples:
+* <code>delete 1</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
 </div>
 <div class="ulist">
 <ul>
-<li>
-<p><code>delete 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
-</li>
 <li>
 <p><code>delete 1</code><br>
 <code>redo</code><br>
@@ -613,8 +624,8 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 <div class="sect2">
 <h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.15. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
-<p>Clears all entries from the address book.<br>
-Alias: 'c'<br>
+<p>Clears all place entries from TravelBuddy.<br>
+Shortcut: 'c'<br>
 Format: <code>clear</code></p>
 </div>
 </div>
@@ -628,21 +639,22 @@ Format: <code>exit</code></p>
 <div class="sect2">
 <h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.17. Saving the data</a></h3>
 <div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
+<p>TravelBuddy data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="generating-graphs-code-coming-in-v1-2-code"><a class="link" href="#generating-graphs-code-coming-in-v1-2-code">3.18. Generating graphs <code>[coming in v1.2]</code></a></h3>
+<h3 id="generating-graphs-code-coming-in-v2-0-code"><a class="link" href="#generating-graphs-code-coming-in-v2-0-code">3.18. Generating graphs <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
-<p>Generate graphs based on input data.<br>
+<p>Provides useful data analytics and visualization via graphs and charts, based on your data in TravelBuddy.<br>
 Format: <code>generate</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.19. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="adding-photos-to-places-code-coming-in-v2-0-code"><a class="link" href="#adding-photos-to-places-code-coming-in-v2-0-code">3.19. Adding Photos to Places <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
+<p>Add photo files to places in TravelBuddy.<br>
+Format: <code>generate</code></p>
 </div>
 </div>
 </div>
@@ -652,64 +664,65 @@ Format: <code>generate</code></p>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous TravelBuddy folder.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
+<h2 id="shortcuts-cheatsheet"><a class="link" href="#shortcuts-cheatsheet">5. Shortcuts Cheatsheet</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Below is a summarized list of all the acceptable commands that TravelBuddy supports:</p>
+<p>Below is a summarized list of all the shortcuts for commands that TravelBuddy supports:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add n/NAME r/RATING d/DESCRIPTION a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/NUS Computing r/5 d/No description a/NUS School of Computing, COM1, 13 Computing Drive, 117417 t/school</code></p>
+<p><strong>Add</strong> - shortcut <code>a</code> - <code>a n/NAME r/RATING d/DESCRIPTION a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>a n/NUS Computing r/5 d/No description a/NUS School of Computing, COM1, 13 Computing Drive, 117417 t/school</code></p>
 </li>
 <li>
-<p><strong>Clear</strong> : <code>clear</code></p>
+<p><strong>Clear</strong> : shortcut <code>c</code></p>
 </li>
 <li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
+<p><strong>Delete</strong> : shortcut <code>d INDEX</code><br>
+e.g. <code>d 3</code></p>
 </li>
 <li>
 <p><strong>Delete Multiple</strong> : <code>deletem START_INDEX END_INDEX</code><br>
-e.g. <code>deletem 2 5</code></p>
+e.g. <code>deletem 2 5</code>
+&lt;currently does not have a shortcut&gt;</p>
 </li>
 <li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [r/RATING] [d/DESCRIPTION] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/Starbucks d/I like the coffee here</code></p>
+<p><strong>Edit</strong> : shortcut <code>e INDEX [n/NAME] [r/RATING] [d/DESCRIPTION] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>e 2 n/Starbucks d/I like the coffee here</code></p>
 </li>
 <li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find Coffee Bean Tea Leaf</code></p>
+<p><strong>Search</strong> : shortcut <code>s KEYWORD [MORE_KEYWORDS]</code><br>
+e.g. <code>s Coffee Bean Tea Leaf</code></p>
 </li>
 <li>
-<p><strong>List</strong> : <code>list</code></p>
+<p><strong>List</strong> : shortcut <code>l</code></p>
 </li>
 <li>
-<p><strong>Help</strong> : <code>help</code></p>
+<p><strong>Help</strong> : shortcut <code>h</code></p>
 </li>
 <li>
-<p><strong>Select</strong> : <code>select INDEX</code><br>
-e.g.<code>select 2</code></p>
+<p><strong>Select</strong> : shortcut <code>s INDEX</code><br>
+e.g.<code>s 2</code></p>
 </li>
 <li>
-<p><strong>History</strong> : <code>history</code></p>
+<p><strong>History</strong> : shortcut <code>h</code></p>
 </li>
 <li>
-<p><strong>Undo</strong> : <code>undo</code></p>
+<p><strong>Undo</strong> : shortcut ] <code>u</code></p>
 </li>
 <li>
-<p><strong>Redo</strong> : <code>redo</code></p>
+<p><strong>Redo</strong> : shortcut <code>r</code></p>
 </li>
 <li>
-<p><strong>Generate</strong> : <code>generate</code></p>
+<p><strong>Generate</strong> : shortcut <code>generate</code></p>
 </li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-15 08:06:27 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-17 13:34:50 UTC</div></div></div></body></html>
