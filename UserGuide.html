@@ -18,20 +18,19 @@
 <li><a href="#listing-all-places-code-list-code">3.3. Listing all places : <code>list</code></a></li>
 <li><a href="#editing-a-place-code-edit-code">3.4. Editing a place : <code>edit</code></a></li>
 <li><a href="#searching-places-by-name-code-search-code">3.5. Searching places by name: <code>search</code></a></li>
-<li><a href="#searching-places-by-country-code-searchc-code">3.6. Searching places by country: <code>searchc</code></a></li>
-<li><a href="#searching-places-by-tags-code-searcht-code">3.7. Searching places by tags: <code>searcht</code></a></li>
-<li><a href="#searching-places-by-ratings-code-searchr-code">3.8. Searching places by ratings: <code>searchr</code></a></li>
-<li><a href="#deleting-a-place-code-delete-code">3.9. Deleting a place : <code>delete</code></a></li>
-<li><a href="#deleting-multiple-places-code-deletem-code">3.10. Deleting multiple places : <code>deletem</code></a></li>
-<li><a href="#selecting-a-place-code-select-code">3.11. Selecting a place : <code>select</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">3.12. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">3.13. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.14. Redoing the previously undone command : <code>redo</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.15. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.16. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.17. Saving the data</a></li>
-<li><a href="#generating-graphs-code-coming-in-v2-0-code">3.18. Generating graphs <code>[coming in v2.0]</code></a></li>
-<li><a href="#adding-photos-to-places-code-coming-in-v2-0-code">3.19. Adding Photos to Places <code>[coming in v2.0]</code></a></li>
+<li><a href="#searching-places-by-tags-code-searcht-code">3.6. Searching places by tags: <code>searcht</code></a></li>
+<li><a href="#searching-places-by-ratings-code-searchr-code">3.7. Searching places by ratings: <code>searchr</code></a></li>
+<li><a href="#deleting-a-place-code-delete-code">3.8. Deleting a place : <code>delete</code></a></li>
+<li><a href="#deleting-multiple-places-code-deletem-code">3.9. Deleting multiple places : <code>deletem</code></a></li>
+<li><a href="#selecting-a-place-code-select-code">3.10. Selecting a place : <code>select</code></a></li>
+<li><a href="#listing-entered-commands-code-history-code">3.11. Listing entered commands : <code>history</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">3.12. Undoing previous command : <code>undo</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.13. Redoing the previously undone command : <code>redo</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">3.14. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.15. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.16. Saving the data</a></li>
+<li><a href="#generating-graphs-code-coming-in-v2-0-code">3.17. Generating graphs <code>[coming in v2.0]</code></a></li>
+<li><a href="#adding-photos-to-places-code-coming-in-v2-0-code">3.18. Adding Photos to Places <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a>
@@ -125,33 +124,52 @@ a place named <code>NUS Computing</code> to TravelBuddy.</p>
 <div class="sect1">
 <h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
 <div class="sectionbody">
-<div class="exampleblock">
-<div class="content">
 <div class="paragraph">
-<p><strong>Command Format</strong>
-* Some commands may have an Shortcut, which you can also use to execute the command e.g. for <code>add</code>, its Shortcut is <code>a</code>, so
- you can either type <code>add n/NUS Computing</code> or <code>a n/NUS Computing</code>.
-* Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter
-which can be used as <code>add n/NUS Computing</code>.
-* Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/NUS Computing t/faculty</code> or as <code>n/NUS
-Computing</code>.
-* Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as
-<code>&#160;</code> (i.e. 0 times), <code>t/faculty</code>, <code>t/faculty t/school</code> etc.
-* Parameters can be in any order e.g. if the command specifies <code>n/NAME r/RATING</code>, <code>r/RATING n/NAME</code> is
-also acceptable.</p>
+<p>Before starting on the application, read through the below sections. They cover the format to be used for all the commands and the syntax that is to be followed.</p>
 </div>
+<div class="paragraph">
+<p>Command Format</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Some commands may have a shortcut, which you can also use to execute the command e.g. for add, its shortcut is <code>a</code>,
+so you can either type <code>add n/NUS Computing</code> or <code>a n/NUS Computing</code>.</p>
+</li>
+<li>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, NAME is a parameter which can be used as <code>add n/NUS Computing</code>.</p>
+</li>
+<li>
+<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/NUS Computing t/faculty</code> or as <code>n/NUS Computing</code>.</p>
+</li>
+<li>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME r/RATING</code>, <code>r/RATING n/NAME</code> is also acceptable.</p>
+</li>
+</ul>
 </div>
 <div class="sect2">
 <h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The help page will be shown in another window, but you can resize and move it
+around. This can be useful to refer to when using the app.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="adding-a-place-code-add-code"><a class="link" href="#adding-a-place-code-add-code">3.2. Adding a place: <code>add</code></a></h3>
 <div class="paragraph">
-<p>Adds a place to TravelBuddy<br>
+<p>Adds a place to TravelBuddy.<br>
 Shortcut: 'a'<br>
 Format: <code>add n/NAME r/RATING d/DESCRIPTION a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
 </div>
@@ -282,49 +300,7 @@ Returns any place having names <code>National</code> or <code>Temple</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="searching-places-by-country-code-searchc-code"><a class="link" href="#searching-places-by-country-code-searchc-code">3.6. Searching places by country: <code>searchc</code></a></h3>
-<div class="paragraph">
-<p>Finds places that are located within the countries specified.<br>
-Format: <code>searchc KEYWORD [MORE_KEYWORDS]</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The search follows ISO-3166 country code. e.g <code>SGP</code> corresponds to <code>Singapore</code></p>
-</li>
-<li>
-<p>Only the countries are searched.</p>
-</li>
-<li>
-<p>Only correct country codes will be matched e.g. <code>SGX</code> will not match <code>Singapore</code></p>
-</li>
-<li>
-<p>Places matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>SGP JPN</code> will return places found in <code>Singapore</code> or <code>Japan</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>searchc SGP</code><br>
-Returns a list of places in <code>Singapore</code></p>
-</li>
-<li>
-<p><code>searchc SGP JPN</code><br>
-Returns a list of places located in <code>Singapore</code> or <code>Japan</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="searching-places-by-tags-code-searcht-code"><a class="link" href="#searching-places-by-tags-code-searcht-code">3.7. Searching places by tags: <code>searcht</code></a></h3>
+<h3 id="searching-places-by-tags-code-searcht-code"><a class="link" href="#searching-places-by-tags-code-searcht-code">3.6. Searching places by tags: <code>searcht</code></a></h3>
 <div class="paragraph">
 <p>Finds places whose tags correspond to any given keywords.<br>
 Format: <code>searcht KEYWORD [MORE_KEYWORDS]</code></p>
@@ -366,7 +342,7 @@ Returns a list of places tagged with <code>temple</code> or <code>school</code><
 </div>
 </div>
 <div class="sect2">
-<h3 id="searching-places-by-ratings-code-searchr-code"><a class="link" href="#searching-places-by-ratings-code-searchr-code">3.8. Searching places by ratings: <code>searchr</code></a></h3>
+<h3 id="searching-places-by-ratings-code-searchr-code"><a class="link" href="#searching-places-by-ratings-code-searchr-code">3.7. Searching places by ratings: <code>searchr</code></a></h3>
 <div class="paragraph">
 <p>Finds places whose ratings match the specified rating from 1 to 5.<br>
 Format: <code>searchr INDEX [MORE_INDICES]</code></p>
@@ -402,7 +378,7 @@ Returns a list of places with ratings of <code>4</code> or <code>5</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-place-code-delete-code"><a class="link" href="#deleting-a-place-code-delete-code">3.9. Deleting a place : <code>delete</code></a></h3>
+<h3 id="deleting-a-place-code-delete-code"><a class="link" href="#deleting-a-place-code-delete-code">3.8. Deleting a place : <code>delete</code></a></h3>
 <div class="paragraph">
 <p>Deletes the specified place from TravelBuddy.<br>
 Shortcut: 'd'<br>
@@ -444,7 +420,7 @@ Deletes the 1st place in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-multiple-places-code-deletem-code"><a class="link" href="#deleting-multiple-places-code-deletem-code">3.10. Deleting multiple places : <code>deletem</code></a></h3>
+<h3 id="deleting-multiple-places-code-deletem-code"><a class="link" href="#deleting-multiple-places-code-deletem-code">3.9. Deleting multiple places : <code>deletem</code></a></h3>
 <div class="paragraph">
 <p>Deletes multiple places from TravelBuddy&#8217;s currently displayed list on the left.<br>
 Format: <code>deletem START_INDEX END_INDEX</code></p>
@@ -491,7 +467,7 @@ Deletes the 1st, 2nd and 3rd place in the results of the <code>search Singapore<
 </div>
 </div>
 <div class="sect2">
-<h3 id="selecting-a-place-code-select-code"><a class="link" href="#selecting-a-place-code-select-code">3.11. Selecting a place : <code>select</code></a></h3>
+<h3 id="selecting-a-place-code-select-code"><a class="link" href="#selecting-a-place-code-select-code">3.10. Selecting a place : <code>select</code></a></h3>
 <div class="paragraph">
 <p>Selects the place identified by the index number used in the currently displayed list on the left,
 which loads expanded details of the selected place on the right of the displayed list.
@@ -531,7 +507,7 @@ Selects the 1st place in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.12. Listing entered commands : <code>history</code></a></h3>
+<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.11. Listing entered commands : <code>history</code></a></h3>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
 Shortcut: 'h'<br>
@@ -553,7 +529,7 @@ Format: <code>history</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.13. Undoing previous command : <code>undo</code></a></h3>
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.12. Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
 <p>Restores TravelBuddy to the state before the previous <em>undoable</em> command was executed.<br>
 Shortcut: 'u'<br>
@@ -597,7 +573,7 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.14. Redoing the previously undone command : <code>redo</code></a></h3>
+<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.13. Redoing the previously undone command : <code>redo</code></a></h3>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
 Shortcut: 'r'<br>
@@ -628,7 +604,7 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.15. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.14. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>Clears all place entries from TravelBuddy.<br>
 Shortcut: 'c'<br>
@@ -636,28 +612,28 @@ Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.16. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.15. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.17. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.16. Saving the data</a></h3>
 <div class="paragraph">
 <p>TravelBuddy data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="generating-graphs-code-coming-in-v2-0-code"><a class="link" href="#generating-graphs-code-coming-in-v2-0-code">3.18. Generating graphs <code>[coming in v2.0]</code></a></h3>
+<h3 id="generating-graphs-code-coming-in-v2-0-code"><a class="link" href="#generating-graphs-code-coming-in-v2-0-code">3.17. Generating graphs <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Provides useful data analytics and visualization via graphs and charts, based on your data in TravelBuddy.<br>
 Format: <code>generate</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-photos-to-places-code-coming-in-v2-0-code"><a class="link" href="#adding-photos-to-places-code-coming-in-v2-0-code">3.19. Adding Photos to Places <code>[coming in v2.0]</code></a></h3>
+<h3 id="adding-photos-to-places-code-coming-in-v2-0-code"><a class="link" href="#adding-photos-to-places-code-coming-in-v2-0-code">3.18. Adding Photos to Places <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Add photo files to places in TravelBuddy.<br>
 Format: <code>generate</code></p>
@@ -798,4 +774,4 @@ e.g.<code>s 2</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-18 10:49:42 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-18 10:55:23 UTC</div></div></div></body></html>
