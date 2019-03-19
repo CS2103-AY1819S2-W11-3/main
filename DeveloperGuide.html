@@ -31,7 +31,7 @@
 <ul class="sectlevel2">
 <li><a href="#undo-redo-feature">3.1. Undo/Redo feature</a></li>
 <li><a href="#search-feature">3.2. Search Feature</a></li>
-<li><a href="#proposed-data-encryption">3.3. [Proposed] Data Encryption</a></li>
+<li><a href="#add-country-code-rating-description">3.3. Add Country Code, Rating &amp; Description</a></li>
 <li><a href="#logging">3.4. Logging</a></li>
 <li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
 </ul>
@@ -1012,9 +1012,121 @@ The command <code>searcht</code> is in lower-case. Mixed-case or upper-case comm
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.3. [Proposed] Data Encryption</a></h3>
+<h3 id="add-country-code-rating-description"><a class="link" href="#add-country-code-rating-description">3.3. Add Country Code, Rating &amp; Description</a></h3>
 <div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
+<p>The <code>add</code> command is used to add a place to the application. Apart from being able to add the name of the place,
+address of the place and tag. The user can also add the place&#8217;s country code, rating and description.</p>
+</div>
+<div class="sect3">
+<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.3.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>add</code> command requires the AddCommandParser class to parse user input and add a place with the details
+specified by the user. Currently, the details that are required by the user is Name, Country Code (3 letters), Rating,
+Description and Address. Tag is optional.</p>
+</div>
+<div class="paragraph">
+<p>AddCommandParser implements the Parser class which has the Parser#parse() operation. This operation will throw an error if the user input does not match the command format.</p>
+</div>
+<div class="paragraph">
+<p>The add command updates the context in ModelManager through addCommand.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the add feature works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddCommandSequenceDiagram.png" alt="AddCommandSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>The user enters the command with the command word <code>add</code> followed by the arguments. This is processed by the Logic
+component, which will then call <code>LogicManager#execute()</code> in the Logic component. <code>AddressBookParser#parseCommand()</code>
+is then called, which is also in the Logic component.</p>
+</div>
+<div class="sect4">
+<h5 id="add-feature"><a class="link" href="#add-feature">Add Feature</a></h5>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the add mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application and sees the GUI with no places.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddCommandStep1.png" alt="AddCommandStep1" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user types the full add command <code>add n/NUS Computing cc/SGP r/5 d/No description a/NUS School of
+Computing, COM1, 13 Computing Drive, 117417 t/school</code> to add the place to TravelBuddy and presses enter.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddCommandStep2.png" alt="AddCommandStep2" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Once the user enters the command with the arguments. It is then processed by the Logic
+component, which will then call <code>LogicManager#execute()</code> in the Logic component. <code>AddressBookParser#parseCommand()</code>
+is then called, which is also in the Logic component. Finally, the added place is displayed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The command <code>add</code> is in lower-case. Mixed-case or upper-case commands are not recognised by the TravelBuddy.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 3. Selecting the specific place allows the user to see more information in the placeholder.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddCommandStep3.png" alt="AddCommandStep3" width="800">
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.3.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-data-structure-to-store-country-codes"><a class="link" href="#aspect-data-structure-to-store-country-codes">Aspect: Data structure to store Country Codes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Use java.util.Locales.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and contains all country codes specified in ISO-3166.</p>
+</li>
+<li>
+<p>Cons: Slightly slow in locating country code.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Create own data structure containing most commonly traveled countries in the world.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Locating country code in data structure would be fast.</p>
+</li>
+<li>
+<p>Cons: Tedious process of typing out country codes in the data structure.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -2553,4 +2665,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-18 16:40:08 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-19 11:20:04 UTC</div></div></div></body></html>

@@ -102,8 +102,9 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><code>list</code></strong> : lists all places</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/NUS Computing r/5 d/No Description a/NUS School of Computing, COM1, 13 Computing Drive, 117417</code> : adds
-a place named <code>NUS Computing</code> to TravelBuddy.</p>
+<p><strong><code>add</code></strong><code>n/NUS Computing cc/SGP r/5 d/No Description a/NUS School of Computing, COM1, 13 Computing Drive, 117417</code> :
+adds
+ a place named <code>NUS Computing</code> to TravelBuddy.</p>
 </li>
 <li>
 <p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd place shown in the current list</p>
@@ -170,8 +171,8 @@ around. This can be useful to refer to when using the app.
 <h3 id="adding-a-place-code-add-code"><a class="link" href="#adding-a-place-code-add-code">3.2. Adding a place: <code>add</code></a></h3>
 <div class="paragraph">
 <p>Adds a place to TravelBuddy.<br>
-Shortcut: 'a'<br>
-Format: <code>add n/NAME r/RATING d/DESCRIPTION a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
+Shortcut: <code>a</code><br>
+Format: <code>add n/NAME cc/COUNTRYCODE r/RATING d/DESCRIPTION a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -191,10 +192,10 @@ A place can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/NUS Computing r/5 d/No description a/NUS School of Computing, COM1, 13 Computing Drive, 117417</code></p>
+<p><code>add n/NUS Computing cc/SGP r/5 d/No description a/NUS School of Computing, COM1, 13 Computing Drive, 117417</code></p>
 </li>
 <li>
-<p><code>add n/Raffles Hotel t/hotel d/This place is lovely a/Raffles Road r/5 t/staycation</code></p>
+<p><code>add n/Raffles Hotel t/hotel d/This place is lovely cc/SGP a/Raffles Road r/5 t/staycation</code></p>
 </li>
 </ul>
 </div>
@@ -203,7 +204,7 @@ A place can have any number of tags (including 0)
 <h3 id="listing-all-places-code-list-code"><a class="link" href="#listing-all-places-code-list-code">3.3. Listing all places : <code>list</code></a></h3>
 <div class="paragraph">
 <p>Shows a list of all places in TravelBuddy.<br>
-Shortcut: 'l'<br>
+Shortcut: <code>l</code><br>
 Format: <code>list</code></p>
 </div>
 </div>
@@ -211,8 +212,8 @@ Format: <code>list</code></p>
 <h3 id="editing-a-place-code-edit-code"><a class="link" href="#editing-a-place-code-edit-code">3.4. Editing a place : <code>edit</code></a></h3>
 <div class="paragraph">
 <p>Edits an existing place in TravelBuddy.<br>
-Shortcut: 'e'<br>
-Format: <code>edit INDEX [n/NAME] [r/RATING] [d/DESCRIPTION] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
+Shortcut: <code>e</code><br>
+Format: <code>edit INDEX [n/NAME] [cc/COUNTRYCODE] [r/RATING] [d/DESCRIPTION] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -381,7 +382,7 @@ Returns a list of places with ratings of <code>4</code> or <code>5</code></p>
 <h3 id="deleting-a-place-code-delete-code"><a class="link" href="#deleting-a-place-code-delete-code">3.8. Deleting a place : <code>delete</code></a></h3>
 <div class="paragraph">
 <p>Deletes the specified place from TravelBuddy.<br>
-Shortcut: 'd'<br>
+Shortcut: <code>d</code><br>
 Format: <code>delete INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -425,8 +426,10 @@ Deletes the 1st place in the results of the <code>find</code> command.</p>
 <p>Deletes multiple places from TravelBuddy&#8217;s currently displayed list on the left.<br>
 Format: <code>deletem START_INDEX END_INDEX</code></p>
 </div>
-<div class="paragraph">
-<p>&lt; screenshot of UI needed&gt;</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/deletemExample.png" alt="deletemExample" width="600">
+</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -510,7 +513,7 @@ Selects the 1st place in the results of the <code>find</code> command.</p>
 <h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.11. Listing entered commands : <code>history</code></a></h3>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
-Shortcut: 'h'<br>
+Shortcut: <code>h</code><br>
 Format: <code>history</code></p>
 </div>
 <div class="admonitionblock note">
@@ -532,7 +535,7 @@ Format: <code>history</code></p>
 <h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.12. Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
 <p>Restores TravelBuddy to the state before the previous <em>undoable</em> command was executed.<br>
-Shortcut: 'u'<br>
+Shortcut: <code>u</code><br>
 Format: <code>undo</code></p>
 </div>
 <div class="admonitionblock note">
@@ -576,7 +579,7 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 <h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.13. Redoing the previously undone command : <code>redo</code></a></h3>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
-Shortcut: 'r'<br>
+Shortcut: <code>r</code><br>
 Format: <code>redo</code></p>
 </div>
 <div class="paragraph">
@@ -607,7 +610,7 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 <h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.14. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>Clears all place entries from TravelBuddy.<br>
-Shortcut: 'c'<br>
+Shortcut: <code>c</code><br>
 Format: <code>clear</code></p>
 </div>
 </div>
@@ -693,16 +696,19 @@ Please do check the file that contains the data of your address book.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Name of place (Prefix: n/)</p>
+<p>Name of place (Prefix: <code>n/</code>)</p>
 </li>
 <li>
-<p>Rating of place (Prefix: r/)</p>
+<p>Country Code of place (Prefix: <code>cc/</code>)</p>
 </li>
 <li>
-<p>Description of place (Prefix: d/)</p>
+<p>Rating of place (Prefix: <code>r/</code>)</p>
 </li>
 <li>
-<p>Address of place (Prefix: a/)</p>
+<p>Description of place (Prefix: <code>d/</code>)</p>
+</li>
+<li>
+<p>Address of place (Prefix: <code>a/</code>)</p>
 </li>
 </ul>
 </div>
@@ -726,8 +732,9 @@ Please do check the file that contains the data of your address book.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> - shortcut <code>a</code> - <code>a n/NAME r/RATING d/DESCRIPTION a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>a n/NUS Computing r/5 d/No description a/NUS School of Computing, COM1, 13 Computing Drive, 117417 t/school</code></p>
+<p><strong>Add</strong> - shortcut <code>a</code> - <code>a n/NAME cc/COUNTRYCODE r/RATING d/DESCRIPTION a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>a n/NUS Computing cc/SGP r/5 d/No description a/NUS School of Computing, COM1, 13 Computing Drive, 117417
+t/school</code></p>
 </li>
 <li>
 <p><strong>Clear</strong> : shortcut <code>c</code></p>
@@ -742,7 +749,7 @@ e.g. <code>deletem 2 5</code>
 &lt;currently does not have a shortcut&gt;</p>
 </li>
 <li>
-<p><strong>Edit</strong> : shortcut <code>e INDEX [n/NAME] [r/RATING] [d/DESCRIPTION] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
+<p><strong>Edit</strong> : shortcut <code>e INDEX [n/NAME] [cc/COUNTRYCODE] [r/RATING] [d/DESCRIPTION] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
 e.g. <code>e 2 n/Starbucks d/I like the coffee here</code></p>
 </li>
 <li>
@@ -774,4 +781,4 @@ e.g.<code>s 2</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-18 16:40:08 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-19 11:20:04 UTC</div></div></div></body></html>
