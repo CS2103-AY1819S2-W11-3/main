@@ -32,8 +32,9 @@
 <li><a href="#undo-redo-feature">3.1. Undo/Redo feature</a></li>
 <li><a href="#search-feature">3.2. Search Feature</a></li>
 <li><a href="#add-country-code-rating-description">3.3. Add Country Code, Rating &amp; Description</a></li>
-<li><a href="#logging">3.4. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
+<li><a href="#generate-feature">3.4. Generate Feature</a></li>
+<li><a href="#logging">3.5. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.6. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a>
@@ -985,7 +986,8 @@ The command <code>searcht</code> is in lower-case. Mixed-case or upper-case comm
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
+<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming
+developers of our project.</p>
 </li>
 <li>
 <p>Cons: Inefficient as the entire list needs to be searched through.</p>
@@ -1020,15 +1022,16 @@ address of the place and tag. The user can also add the place&#8217;s country co
 <div class="sect3">
 <h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.3.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The <code>add</code> command requires the AddCommandParser class to parse user input and add a place with the details
+<p>The <code>add</code> command requires the <code>AddCommandParser</code> class to parse user input and add a place with the details
 specified by the user. Currently, the details that are required by the user is Name, Country Code (3 letters), Rating,
 Description and Address. Tag is optional.</p>
 </div>
 <div class="paragraph">
-<p>AddCommandParser implements the Parser class which has the Parser#parse() operation. This operation will throw an error if the user input does not match the command format.</p>
+<p><code>AddCommandParser</code> implements the <code>Parser</code> class which has the <code>Parser#parse()</code> operation. This operation will throw an
+error if the user input does not match the command format.</p>
 </div>
 <div class="paragraph">
-<p>The add command updates the context in ModelManager through addCommand.</p>
+<p>The add command updates the context in <code>ModelManager</code> through <code>addCommand</code>.</p>
 </div>
 <div class="paragraph">
 <p>The following sequence diagram shows how the add feature works:</p>
@@ -1130,17 +1133,60 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.4. Logging</a></h3>
+<h3 id="generate-feature"><a class="link" href="#generate-feature">3.4. Generate Feature</a></h3>
 <div class="paragraph">
-<p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
+<p>The <code>generate</code> command is used to generate different charts in the application.</p>
+</div>
+<div class="sect3">
+<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.4.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>At the GUI, the user enters the <code>generate</code> command, without any parameters. The UI takes in the input and passes it
+on to <code>LogicManager#execute()</code> in the Logic. The`AddressBookParser#parseCommand()` is then called, which parses the
+command and redirects to the <code>GenerateCommand</code> class.</p>
+</div>
+<div class="paragraph">
+<p>The <code>GenerateCommand#execute()</code> in Logic calls on Model to do two things:
+.  It stores the different country code found in TravelBuddy as keys, and stores the number of times each country
+code appears in TravelBuddy as values.
+.  A similar approach is done, except country code is now replaced with rating found in TravelBuddy as keys, and the
+number of times each rating appears as values.</p>
+</div>
+<div class="paragraph">
+<p>Once the two sets of data are obtained, a new Chart object is created. The Chart object displays the data to the user.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="future-implementation"><a class="link" href="#future-implementation">3.4.2. Future Implementation</a></h4>
+<div class="paragraph">
+<p>For future implementation, the task is to use JavaFX&#8217;s charting library to create a chart that can be displayed
+to the user, as seen in the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Ui.png" alt="Ui" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Furthermore, the <code>generate</code> command will have user input to specify if they want to generate either a chart by
+country or a chart by rating.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
+<div class="paragraph">
+<p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and
+ logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.5, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See
+<a href="#Implementation-Configuration">Section 3.6, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
-<p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
+<p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to
+the specified logging level</p>
 </li>
 <li>
 <p>Currently log messages are output through: <code>Console</code> and to a <code>.log</code> file.</p>
@@ -1162,15 +1208,17 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 <p><code>INFO</code> : Information showing the noteworthy actions by the App</p>
 </li>
 <li>
-<p><code>FINE</code> : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size</p>
+<p><code>FINE</code> : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead
+of just its size</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.5. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
 <div class="paragraph">
-<p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
+<p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the
+configuration file (default: <code>config.json</code>).</p>
 </div>
 </div>
 </div>
@@ -1188,7 +1236,8 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-We chose asciidoc over Markdown because asciidoc, although a bit more complex than Markdown, provides more flexibility in formatting.
+We chose asciidoc over Markdown because asciidoc, although a bit more complex than Markdown, provides more
+flexibility in formatting.
 </td>
 </tr>
 </table>
@@ -1196,8 +1245,9 @@ We chose asciidoc over Markdown because asciidoc, although a bit more complex th
 <div class="sect2">
 <h3 id="editing-documentation"><a class="link" href="#editing-documentation">4.1. Editing Documentation</a></h3>
 <div class="paragraph">
-<p>See <a href="UsingGradle.html#rendering-asciidoc-files">UsingGradle.adoc</a> to learn how to render <code>.adoc</code> files locally to preview the end result of your edits.
-Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows you to preview the changes you have made to your <code>.adoc</code> files in real-time.</p>
+<p>See <a href="UsingGradle.html#rendering-asciidoc-files">UsingGradle.adoc</a> to learn how to render <code>.adoc</code> files locally to
+preview the end result of your edits. Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows
+you to preview the changes you have made to your <code>.adoc</code> files in real-time.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1209,7 +1259,8 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="sect2">
 <h3 id="converting-documentation-to-pdf-format"><a class="link" href="#converting-documentation-to-pdf-format">4.3. Converting Documentation to PDF format</a></h3>
 <div class="paragraph">
-<p>We use <a href="https://www.google.com/chrome/browser/desktop/">Google Chrome</a> for converting documentation to PDF format, as Chrome&#8217;s PDF engine preserves hyperlinks used in webpages.</p>
+<p>We use <a href="https://www.google.com/chrome/browser/desktop/">Google Chrome</a> for converting documentation to PDF format, as
+Chrome&#8217;s PDF engine preserves hyperlinks used in webpages.</p>
 </div>
 <div class="paragraph">
 <p>Here are the steps to convert the project documentation files to PDF format.</p>
@@ -1217,16 +1268,19 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Follow the instructions in <a href="UsingGradle.html#rendering-asciidoc-files">UsingGradle.adoc</a> to convert the AsciiDoc files in the <code>docs/</code> directory to HTML format.</p>
+<p>Follow the instructions in <a href="UsingGradle.html#rendering-asciidoc-files">UsingGradle.adoc</a> to convert the AsciiDoc
+files in the <code>docs/</code> directory to HTML format.</p>
 </li>
 <li>
-<p>Go to your generated HTML files in the <code>build/docs</code> folder, right click on them and select <code>Open with</code> &#8594; <code>Google Chrome</code>.</p>
+<p>Go to your generated HTML files in the <code>build/docs</code> folder, right click on them and select <code>Open with</code> &#8594; <code>Google
+Chrome</code>.</p>
 </li>
 <li>
 <p>Within Chrome, click on the <code>Print</code> option in Chrome&#8217;s menu.</p>
 </li>
 <li>
-<p>Set the destination to <code>Save as PDF</code>, then click <code>Save</code> to save a copy of the file in PDF format. For best results, use the settings indicated in the screenshot below.</p>
+<p>Set the destination to <code>Save as PDF</code>, then click <code>Save</code> to save a copy of the file in PDF format. For best
+results, use the settings indicated in the screenshot below.</p>
 </li>
 </ol>
 </div>
@@ -1240,7 +1294,8 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="sect2">
 <h3 id="Docs-SiteWideDocSettings"><a class="link" href="#Docs-SiteWideDocSettings">4.4. Site-wide Documentation Settings</a></h3>
 <div class="paragraph">
-<p>The <a href="https://github.com/cs2103-ay1819s2-w11-3/main/build.gradle"><code>build.gradle</code></a> file specifies some project-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how all documentation files within this project are rendered.</p>
+<p>The <a href="https://github.com/cs2103-ay1819s2-w11-3/main/build.gradle"><code>build.gradle</code></a> file specifies some project-specific <a href="https://asciidoctor" class="bare">https://asciidoctor</a>
+.org/docs/user-manual/#attributes[asciidoc attributes] which affects how all documentation files within this project are rendered.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1299,10 +1354,12 @@ This will render the SE-EDU navigation bar at the top of the page, and add some 
 <div class="sect2">
 <h3 id="Docs-PerFileDocSettings"><a class="link" href="#Docs-PerFileDocSettings">4.5. Per-file Documentation Settings</a></h3>
 <div class="paragraph">
-<p>Each <code>.adoc</code> file may also specify some file-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how the file is rendered.</p>
+<p>Each <code>.adoc</code> file may also specify some file-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc
+attributes</a> which affects how the file is rendered.</p>
 </div>
 <div class="paragraph">
-<p>Asciidoctor&#8217;s <a href="https://asciidoctor.org/docs/user-manual/#builtin-attributes">built-in attributes</a> may be specified and used as well.</p>
+<p>Asciidoctor&#8217;s <a href="https://asciidoctor.org/docs/user-manual/#builtin-attributes">built-in attributes</a> may be specified and
+used as well.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1371,7 +1428,8 @@ These template files are written in a mixture of <a href="https://www.ruby-lang.
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Modifying the template files in <a href="https://github.com/cs2103-ay1819s2-w11-3/main/docs/templates"><code>docs/templates</code></a> requires some knowledge and experience with Ruby and Asciidoctor&#8217;s API.
+<p>Modifying the template files in <a href="https://github.com/cs2103-ay1819s2-w11-3/main/docs/templates"><code>docs/templates</code></a> requires some knowledge and
+experience with Ruby and Asciidoctor&#8217;s API.
 You should only modify them if you need greater control over the site&#8217;s layout than what stylesheets can provide.
 The SE-EDU team does not provide support for modified template files.</p>
 </div>
@@ -1397,7 +1455,8 @@ The SE-EDU team does not provide support for modified template files.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The most reliable way to run tests is the 3rd one. The first two methods might fail some GUI tests due to platform/resolution-specific idiosyncrasies.
+The most reliable way to run tests is the 3rd one. The first two methods might fail some GUI tests due to
+platform/resolution-specific idiosyncrasies.
 </td>
 </tr>
 </table>
@@ -1444,7 +1503,8 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 <p>Thanks to the <a href="https://github.com/TestFX/TestFX">TestFX</a> library we use, our GUI tests can be run in the <em>headless</em> mode. In the headless mode, GUI tests do not show up on the screen. That means the developer can do other things on the Computer while the tests are running.</p>
 </div>
 <div class="paragraph">
-<p>To run tests in headless mode, open a console and run the command <code>gradlew clean headless allTests</code> (Mac/Linux: <code>./gradlew clean headless allTests</code>)</p>
+<p>To run tests in headless mode, open a console and run the command <code>gradlew clean headless allTests</code> (Mac/Linux: `
+./gradlew clean headless allTests`)</p>
 </div>
 </div>
 <div class="sect2">
@@ -1476,11 +1536,13 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 e.g. <code>seedu.address.commons.StringUtilTest</code></p>
 </li>
 <li>
-<p><em>Integration tests</em> that are checking the integration of multiple code units (those code units are assumed to be working).<br>
+<p><em>Integration tests</em> that are checking the integration of multiple code units (those code units are assumed to be
+ working).<br>
 e.g. <code>seedu.address.storage.StorageManagerTest</code></p>
 </li>
 <li>
-<p>Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together.<br>
+<p>Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are
+connected together.<br>
 e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 </li>
 </ol>
@@ -2665,4 +2727,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-19 14:57:56 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-19 15:52:26 UTC</div></div></div></body></html>
