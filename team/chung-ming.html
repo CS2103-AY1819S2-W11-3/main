@@ -438,14 +438,105 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">[Proposed] Data Encryption</a></h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>=== Add Country Code, Rating &amp; Description
+The <code>add</code> command is used to add a place to the application. Apart from being able to add the name of the place,
+address of the place and tag. The user can also add the place&#8217;s country code, rating and description.</p>
+</div>
+<div class="paragraph">
+<p>==== Current Implementation</p>
+</div>
+<div class="paragraph">
+<p>The <code>add</code> command requires the <code>AddCommandParser</code> class to parse user input and add a place with the details
+specified by the user. Currently, the details that are required by the user is Name, Country Code (3 letters), Rating,
+Description and Address. Tag is optional.</p>
+</div>
+<div class="paragraph">
+<p><code>AddCommandParser</code> implements the <code>Parser</code> class which has the <code>Parser#parse()</code> operation. This operation will throw an
+error if the user input does not match the command format.</p>
+</div>
+<div class="paragraph">
+<p>The add command updates the context in <code>ModelManager</code> through <code>addCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the add feature works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddCommandSequenceDiagram.png" alt="AddCommandSequenceDiagram" width="800">
 </div>
 </div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
+<div class="paragraph">
+<p>The user enters the command with the command word <code>add</code> followed by the arguments. This is processed by the Logic
+component, which will then call <code>LogicManager#execute()</code> in the Logic component. <code>AddressBookParser#parseCommand()</code>
+is then called, which is also in the Logic component.</p>
+</div>
+<div class="paragraph">
+<p>===== Add Feature
+Given below is an example usage scenario and how the add mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application and sees the GUI with no places.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddCommandStep1.png" alt="AddCommandStep1" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user types the full add command <code>add n/NUS Computing cc/SGP r/5 d/No description a/NUS School of
+Computing, COM1, 13 Computing Drive, 117417 t/school</code> to add the place to TravelBuddy and presses enter.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddCommandStep2.png" alt="AddCommandStep2" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Once the user enters the command with the arguments. It is then processed by the Logic
+component, which will then call <code>LogicManager#execute()</code> in the Logic component. <code>AddressBookParser#parseCommand()</code>
+is then called, which is also in the Logic component. Finally, the added place is displayed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The command <code>add</code> is in lower-case. Mixed-case or upper-case commands are not recognised by the TravelBuddy.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 3. Selecting the specific place allows the user to see more information in the placeholder.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddCommandStep3.png" alt="AddCommandStep3" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>==== Design Considerations
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; b78fbd7ae6e5de6d52441e8f958c4e4658f380be</p>
+</div>
+<div class="paragraph">
+<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
+</div>
+<div class="paragraph">
+<p>== PROJECT: PowerPointLabs</p>
+</div>
 <hr>
 <div class="paragraph">
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-19 15:52:26 UTC</div></div></div></body></html>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-19 15:56:24 UTC</div></div></div></body></html>
