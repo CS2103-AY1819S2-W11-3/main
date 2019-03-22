@@ -141,7 +141,7 @@ This will generate all resources required by the application and tests.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Run the <code>seedu.address.MainApp</code> and try a few commands</p>
+<p>Run the <code>seedu.travel.MainApp</code> and try a few commands</p>
 </li>
 <li>
 <p><a href="#Testing">Run the tests</a> to ensure they all pass.</p>
@@ -853,7 +853,9 @@ The command is executed when the arguments parsed from the user input matches th
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>searchr 4</code> command to search for all entries in TravelBuddy with <code>4</code> as its rating.
-The <code>searchr</code> command will call <code>LogicManager#execute()</code>, which in turn uses <code>AddressBookParser#parseCommand()</code>. Since the argument is <code>searchr</code>, <code>SearchRatingCommandParser#parse(arguments)</code> will be called to parse the arguments to be used in <code>SearchRatingCommand</code>.
+The <code>searchr</code> command will call <code>LogicManager#execute()</code>, which in turn uses <code>AddressBookParser#parseCommand()</code>. Since
+the argument is <code>searchr</code>, <code>SearchRatingCommandParser#parse(arguments)</code> will be called to parse the arguments to be
+used in <code>SearchRatingCommand</code>.
 The parsed arguments will be used as a predicate to filter out entries that satisfy the predicate to be displayed.</p>
 </div>
 <div class="admonitionblock note">
@@ -882,10 +884,12 @@ The command <code>searchr</code> is in lower-case. Mixed-case or upper-case comm
 <div class="paragraph">
 <p>The search tags mechanism is facilitated by <code>SearchTagsCommand</code>.
 It extends <code>Command</code> with a predicate that specifies the conditions of the tags of the entry to be chosen.
-The command is executed when the arguments parsed from the user input matches the command word of <code>SearchTagsCommand</code>, which is <code>searcht</code>.</p>
+The command is executed when the arguments parsed from the user input matches the command word of <code>SearchTagsCommand</code>,
+which is <code>searcht</code>.</p>
 </div>
 <div class="paragraph">
-<p>The arguments entered by the user are stored in a list of keywords and passed into <code>TagContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to each entry in the address book.</p>
+<p>The arguments entered by the user are stored in a list of keywords and passed into <code>TagContainsKeywordsPredicate</code>,
+where the list is converted into a stream and individually matched to each entry in the address book.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the search tags mechanism behaves at each step.</p>
@@ -899,9 +903,11 @@ The command is executed when the arguments parsed from the user input matches th
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>searcht shoppingMall</code> command to search for all entries in TravelBuddy with <code>shoppingMall</code> as its tag.
-The <code>searcht</code> command will call <code>LogicManager#execute()</code>, which in turn uses <code>AddressBookParser#parseCommand()</code>. Since the argument is <code>searcht</code>, <code>SearchTagsCommandParser#parse(arguments)</code> will be called to parse the arguments to be used in <code>SearchTagsCommand</code>.
-The parsed arguments will be used as a predicate to filter out entries that satisfy the predicate to be displayed.</p>
+<p>Step 2. The user executes <code>searcht shoppingMall</code> command to search for all entries in TravelBuddy with <code>shoppingMall</code>
+as its tag. The <code>searcht</code> command will call <code>LogicManager#execute()</code>, which in turn uses
+<code>AddressBookParser#parseCommand()</code>. Since the argument is <code>searcht</code>, <code>SearchTagsCommandParser#parse(arguments)</code>
+will be called to parse the arguments to be used in <code>SearchTagsCommand</code>. The parsed arguments will be used as a
+predicate to filter out entries that satisfy the predicate to be displayed.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1127,7 +1133,7 @@ country or a chart by rating.</p>
 </div>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and
- logging destinations.</p>
+logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1244,7 +1250,8 @@ results, use the settings indicated in the screenshot below.</p>
 </div>
 <div class="paragraph">
 <p>The <a href="https://github.com/cs2103-ay1819s2-w11-3/main/build.gradle"><code>build.gradle</code></a> file specifies some project-specific <a href="https://asciidoctor" class="bare">https://asciidoctor</a>
-.org/docs/user-manual/#attributes[asciidoc attributes] which affects how all documentation files within this project are rendered.</p>
+.org/docs/user-manual/#attributes[asciidoc attributes] which affects how all documentation files within this project
+are rendered.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1468,7 +1475,7 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 <p><em>System Tests</em> that test the entire App by simulating user actions on the GUI. These are in the <code>systemtests</code> package.</p>
 </li>
 <li>
-<p><em>Unit tests</em> that test the individual components. These are in <code>seedu.address.ui</code> package.</p>
+<p><em>Unit tests</em> that test the individual components. These are in <code>seedu.travel.ui</code> package.</p>
 </li>
 </ol>
 </div>
@@ -1479,17 +1486,17 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 <ol class="loweralpha" type="a">
 <li>
 <p><em>Unit tests</em> targeting the lowest level methods/classes.<br>
-e.g. <code>seedu.address.commons.StringUtilTest</code></p>
+e.g. <code>seedu.travel.commons.StringUtilTest</code></p>
 </li>
 <li>
 <p><em>Integration tests</em> that are checking the integration of multiple code units (those code units are assumed to be
  working).<br>
-e.g. <code>seedu.address.storage.StorageManagerTest</code></p>
+e.g. <code>seedu.travel.storage.StorageManagerTest</code></p>
 </li>
 <li>
 <p>Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are
 connected together.<br>
-e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
+e.g. <code>seedu.travel.logic.LogicManagerTest</code></p>
 </li>
 </ol>
 </div>
@@ -1844,10 +1851,15 @@ constructor</a> (<code>new Label(tag.tagName)</code>). <a href="https://docs.ora
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> is raised by <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/ui/CommandBox.java"><code>CommandBox</code></a> which also knows whether the result is a success or failure, and is caught by <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/ui/ResultDisplay.java"><code>ResultDisplay</code></a> which is where we want to change the style to.</p>
+<p><a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a>
+is raised by <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/ui/CommandBox.java"><code>CommandBox</code></a> which also knows whether the
+result is a success or failure, and is caught by
+<a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/ui/ResultDisplay.java"><code>ResultDisplay</code></a> which is where we want to change the
+style to.</p>
 </li>
 <li>
-<p>Refer to <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/ui/CommandBox.java"><code>CommandBox</code></a> for an example on how to display an error.</p>
+<p>Refer to <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/ui/CommandBox.java"><code>CommandBox</code></a> for an example on how to
+display an error.</p>
 </li>
 </ul>
 </div>
@@ -1857,10 +1869,13 @@ constructor</a> (<code>new Label(tag.tagName)</code>). <a href="https://docs.ora
 <div class="ulist">
 <ul>
 <li>
-<p>Modify <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> 's constructor so that users of the event can indicate whether an error has occurred.</p>
+<p>Modify
+<a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> 's
+constructor so that users of the event can indicate whether an error has occurred.</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/ui/ResultDisplay.java"><code>ResultDisplay#handleNewResultAvailableEvent(NewResultAvailableEvent)</code></a> to react to this event appropriately.</p>
+<p>Modify
+<a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/ui/ResultDisplay.java"><code>ResultDisplay#handleNewResultAvailableEvent(NewResultAvailableEvent)</code></a> to react to this event appropriately.</p>
 </li>
 <li>
 <p>You can write two different kinds of tests to ensure that the functionality works:</p>
@@ -1870,7 +1885,8 @@ constructor</a> (<code>new Label(tag.tagName)</code>). <a href="https://docs.ora
 <p>The unit tests for <code>ResultDisplay</code> can be modified to include verification of the color.</p>
 </li>
 <li>
-<p>The system tests <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/test/java/systemtests/AddressBookSystemTest.java"><code>AddressBookSystemTest#assertCommandBoxShowsDefaultStyle() and AddressBookSystemTest#assertCommandBoxShowsErrorStyle()</code></a> to include verification for <code>ResultDisplay</code> as well.</p>
+<p>The system tests
+<a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/test/java/systemtests/AddressBookSystemTest.java"><code>AddressBookSystemTest#assertCommandBoxShowsDefaultStyle() and AddressBookSystemTest#assertCommandBoxShowsErrorStyle()</code></a> to include verification for <code>ResultDisplay</code> as well.</p>
 </li>
 </ul>
 </div>
@@ -1894,7 +1910,8 @@ constructor</a> (<code>new Label(tag.tagName)</code>). <a href="https://docs.ora
 </div>
 </li>
 <li>
-<p>Modify the <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> to show the total number of people in the address book.</p>
+<p>Modify the <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> to show the total
+number of people in the address book.</p>
 <div class="paragraph">
 <p><strong>Before</strong></p>
 </div>
@@ -1920,10 +1937,12 @@ constructor</a> (<code>new Label(tag.tagName)</code>). <a href="https://docs.ora
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/resources/view/StatusBarFooter.fxml"><code>StatusBarFooter.fxml</code></a> will need a new <code>StatusBar</code>. Be sure to set the <code>GridPane.columnIndex</code> properly for each <code>StatusBar</code> to avoid misalignment!</p>
+<p><a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/resources/view/StatusBarFooter.fxml"><code>StatusBarFooter.fxml</code></a> will need a new <code>StatusBar</code>.
+Be sure to set the <code>GridPane.columnIndex</code> properly for each <code>StatusBar</code> to avoid misalignment!</p>
 </li>
 <li>
-<p><a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> needs to initialize the status bar on application start, and to update it accordingly whenever the address book is updated.</p>
+<p><a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> needs to initialize the status
+bar on application start, and to update it accordingly whenever the address book is updated.</p>
 </li>
 </ul>
 </div>
@@ -1942,7 +1961,10 @@ take in the number of places when the application just started.</p>
  there are new changes to the addressbook.</p>
 </li>
 <li>
-<p>For tests, modify <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/test/java/guitests/guihandles/StatusBarFooterHandle.java"><code>StatusBarFooterHandle</code></a> by adding a state-saving functionality for the total number of people status, just like what we did for save location and sync status.</p>
+<p>For tests, modify
+<a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/test/java/guitests/guihandles/StatusBarFooterHandle.java"><code>StatusBarFooterHandle</code></a> by adding a
+state-saving functionality for the total number of people status, just like what we did for save location and sync
+status.</p>
 </li>
 <li>
 <p>For system tests, modify link:https://github.com/cs2103-ay1819s2-w11-3/main/src/test/java/systemtests/AddressBookSystemTest
@@ -1963,7 +1985,12 @@ take in the number of places when the application just started.</p>
 </div>
 <h4 id="code-storage-code-component" class="discrete"><code>Storage</code> component</h4>
 <div class="paragraph">
-<p><strong>Scenario:</strong> You are in charge of <code>storage</code>. For your next project milestone, your team plans to implement a new feature of saving the address book to the cloud. However, the current implementation of the application constantly saves the address book after the execution of each command, which is not ideal if the user is working on limited internet connection. Your team decided that the application should instead save the changes to a temporary local backup file first, and only upload to the cloud after the user closes the application. Your job is to implement a backup API for the address book storage.</p>
+<p><strong>Scenario:</strong> You are in charge of <code>storage</code>. For your next project milestone, your team plans to implement a new
+feature of saving the address book to the cloud. However, the current implementation of the application constantly
+saves the address book after the execution of each command, which is not ideal if the user is working on limited
+internet connection. Your team decided that the application should instead save the changes to a temporary local
+backup file first, and only upload to the cloud after the user closes the application. Your job is to implement a
+backup API for the address book storage.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1980,7 +2007,8 @@ Do take a look at <a href="#Design-Storage">Section 2.5, &#8220;Storage componen
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a new method <code>backupAddressBook(ReadOnlyAddressBook)</code>, so that the address book can be saved in a fixed temporary location.</p>
+<p>Add a new method <code>backupAddressBook(ReadOnlyAddressBook)</code>, so that the address book can be saved in a fixed temporary
+location.</p>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -1990,10 +2018,12 @@ Do take a look at <a href="#Design-Storage">Section 2.5, &#8220;Storage componen
 <div class="ulist">
 <ul>
 <li>
-<p>Add the API method in <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/storage/AddressBookStorage.java"><code>AddressBookStorage</code></a> interface.</p>
+<p>Add the API method in
+<a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/storage/AddressBookStorage.java"><code>AddressBookStorage</code></a> interface.</p>
 </li>
 <li>
-<p>Implement the logic in <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/storage/StorageManager.java"><code>StorageManager</code></a> and <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/storage/JsonAddressBookStorage.java"><code>JsonAddressBookStorage</code></a> class.</p>
+<p>Implement the logic in <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/storage/StorageManager.java"><code>StorageManager</code></a> and
+<a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/storage/JsonAddressBookStorage.java"><code>JsonAddressBookStorage</code></a> class.</p>
 </li>
 </ul>
 </div>
@@ -2019,10 +2049,16 @@ Do take a look at <a href="#Design-Storage">Section 2.5, &#8220;Storage componen
 <p>=== Creating a new command: <code>remark</code></p>
 </div>
 <div class="paragraph">
-<p>By creating this command, you will get a chance to learn how to implement a feature end-to-end, touching all major components of the app.</p>
+<p>By creating this command, you will get a chance to learn how to implement a feature end-to-end, touching all major
+components of the app.</p>
 </div>
 <div class="paragraph">
-<p><strong>Scenario:</strong> You are a software maintainer for <code>addressbook</code>, as the former developer team has moved on to new projects. The current users of your application have a list of new feature requests that they hope the software will eventually have. The most popular request is to allow adding additional comments/notes about a particular contact, by providing a flexible <code>remark</code> field for each contact, rather than relying on tags alone. After designing the specification for the <code>remark</code> command, you are convinced that this feature is worth implementing. Your job is to implement the <code>remark</code> command.</p>
+<p><strong>Scenario:</strong> You are a software maintainer for <code>addressbook</code>, as the former developer team has moved on to new projects.
+The current users of your application have a list of new feature requests that they hope the software will eventually
+have. The most popular request is to allow adding additional comments/notes about a particular contact, by providing a
+flexible <code>remark</code> field for each contact, rather than relying on tags alone. After designing the specification for the
+<code>remark</code> command, you are convinced that this feature is worth implementing. Your job is to implement the <code>remark</code>
+command.</p>
 </div>
 <div class="paragraph">
 <p>==== Description
@@ -2057,10 +2093,12 @@ Let&#8217;s start by teaching the application how to parse a <code>remark</code>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a <code>RemarkCommand</code> that extends <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/logic/commands/Command.java"><code>Command</code></a>. Upon execution, it should just throw an <code>Exception</code>.</p>
+<p>Add a <code>RemarkCommand</code> that extends <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/logic/commands/Command.java"><code>Command</code></a>.
+Upon execution, it should just throw an <code>Exception</code>.</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/logic/parser/AddressBookParser.java"><code>AddressBookParser</code></a> to accept a <code>RemarkCommand</code>.</p>
+<p>Modify <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/logic/parser/AddressBookParser.java"><code>AddressBookParser</code></a> to accept
+a <code>RemarkCommand</code>.</p>
 </li>
 </ol>
 </div>
@@ -2073,13 +2111,15 @@ Let&#8217;s start by teaching the application how to parse a <code>remark</code>
 <p>Add <code>RemarkCommandTest</code> that tests that <code>execute()</code> throws an Exception.</p>
 </li>
 <li>
-<p>Add new test method to <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/test/java/seedu/address/logic/parser/AddressBookParserTest.java"><code>AddressBookParserTest</code></a>, which tests that typing "remark" returns an instance of <code>RemarkCommand</code>.</p>
+<p>Add new test method to
+<a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/test/java/seedu/address/logic/parser/AddressBookParserTest.java"><code>AddressBookParserTest</code></a>, which
+tests that typing "remark" returns an instance of <code>RemarkCommand</code>.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <p>===== [Step 2] Logic: Teach the app to accept 'remark' arguments
-Let&#8217;s teach the application to parse arguments that our <code>remark</code> command will accept. E.g. <code>1 r/Likes to drink coffee.</code></p>
+Let&#8217;s teach the application to parse arguments that our <code>remark</code> command will accept. E.g. <code>1 r/Likes to drink coffee</code>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -2093,7 +2133,8 @@ Let&#8217;s teach the application to parse arguments that our <code>remark</code
 <p>Add <code>RemarkCommandParser</code> that knows how to parse two arguments, one index and one with prefix 'r/'.</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/logic/parser/AddressBookParser.java"><code>AddressBookParser</code></a> to use the newly implemented <code>RemarkCommandParser</code>.</p>
+<p>Modify <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/logic/parser/AddressBookParser.java"><code>AddressBookParser</code></a> to use
+the newly implemented <code>RemarkCommandParser</code>.</p>
 </li>
 </ol>
 </div>
@@ -2110,7 +2151,8 @@ Let&#8217;s teach the application to parse arguments that our <code>remark</code
 for <code>RemarkCommandParser</code>.</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/test/java/seedu/address/logic/parser/AddressBookParserTest.java"><code>AddressBookParserTest</code></a> to test that the correct command is generated according to the user input.</p>
+<p>Modify <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/test/java/seedu/address/logic/parser/AddressBookParserTest.java"><code>AddressBookParserTest</code></a>
+to test that the correct command is generated according to the user input.</p>
 </li>
 </ol>
 </div>
@@ -2147,9 +2189,9 @@ can read the contents of the remark label.</p>
 </div>
 <div class="paragraph">
 <p>===== [Step 4] Model: Add <code>Remark</code> class
-We have to properly encapsulate the remark in our link:https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/model/place/Place
-.java[<code>Place</code>] class. Instead of just using a <code>String</code>, let&#8217;s follow the conventional class structure that the codebase
-already uses by adding a <code>Remark</code> class.</p>
+We have to properly encapsulate the remark in our
+<a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/model/place/Place.java"><code>Place</code></a> class. Instead of just using a <code>String</code>,
+let&#8217;s follow the conventional class structure that the codebase already uses by adding a <code>Remark</code> class.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -2193,7 +2235,9 @@ Now we have the <code>Remark</code> class, we need to actually use it inside
 the place will be created without a remark).</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/model/util/SampleDataUtil.java/"><code>SampleDataUtil</code></a> to add remarks for the sample data (delete your <code>data/addressbook.json</code> so that the application will load the sample data when you launch it.)</p>
+<p>Modify <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/model/util/SampleDataUtil.java/"><code>SampleDataUtil</code></a> to add remarks
+for the sample data (delete your <code>data/addressbook.json</code> so that the application will load the sample data when you
+launch it.)</p>
 </li>
 </ol>
 </div>
@@ -2219,7 +2263,7 @@ field so that it will be saved.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Fix <code>invalidAndValidPlaceAddressBook.json</code>, <code>typicalPlacesAddressBook.json</code>, <code>validAddressBook.json</code> etc., such that
+<p>Fix <code>invalidAndValidPlaceAddressBook.json</code>, <code>typicalPlacesTravelBuddy.json</code>, <code>validAddressBook.json</code> etc., such that
 the JSON tests will not fail due to a missing <code>remark</code> field.</p>
 </li>
 </ol>
@@ -2274,7 +2318,8 @@ field to the <code>Place</code> 's remark.</p>
 </div>
 <div class="paragraph">
 <p>===== [Step 8] Logic: Implement <code>RemarkCommand#execute()</code> logic
-We now have everything set up&#8230;&#8203; but we still can&#8217;t modify the remarks. Let&#8217;s finish it up by adding in actual logic for our <code>remark</code> command.</p>
+We now have everything set up&#8230;&#8203; but we still can&#8217;t modify the remarks. Let&#8217;s finish it up by adding in actual logic
+for our <code>remark</code> command.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -2381,7 +2426,8 @@ to modify the remarks of a place.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-contact-detail">private contact details</a> by default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else seeing them by accident</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else
+seeing them by accident</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
@@ -2635,4 +2681,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-22 05:24:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-22 13:30:31 UTC</div></div></div></body></html>
