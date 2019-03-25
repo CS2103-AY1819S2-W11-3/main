@@ -790,7 +790,7 @@ It extends <code>Command</code> with a predicate that specifies the conditions o
 The command is executed when the arguments parsed from the user input matches the command word of <code>SearchCommand</code>, which is <code>search</code>.</p>
 </div>
 <div class="paragraph">
-<p>The arguments entered by the user are stored in a list of keywords and passed into <code>NameContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to each entry in the address book.</p>
+<p>The arguments entered by the user are stored in a list of keywords and passed into <code>NameContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to each entry in TravelBuddy.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the search mechanism behaves at each step.</p>
@@ -805,7 +805,7 @@ The command is executed when the arguments parsed from the user input matches th
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>search Singapore</code> command to search for all entries in TravelBuddy with <code>Singapore</code> in its name.
-The <code>search</code> command will call <code>LogicManager#execute()</code>, which in turn uses <code>AddressBookParser#parseCommand()</code>. Since the argument is <code>search</code>, <code>SearchCommandParser#parse(arguments)</code> will be called to parse the arguments to be used in <code>SearchCommand</code>.
+The <code>search</code> command will call <code>LogicManager#execute()</code>, which in turn uses <code>TravelBuddyParser#parseCommand()</code>. Since the argument is <code>search</code>, <code>SearchCommandParser#parse(arguments)</code> will be called to parse the arguments to be used in <code>SearchCommand</code>.
 The parsed arguments will be used as a predicate to filter out entries that satisfy the predicate to be displayed.</p>
 </div>
 <div class="admonitionblock note">
@@ -838,7 +838,7 @@ The valid ratings range from integers of 1 to 5. Any value outside this range wi
 The command is executed when the arguments parsed from the user input matches the command word of <code>SearchRatingCommand</code>, which is <code>searchr</code>.</p>
 </div>
 <div class="paragraph">
-<p>The arguments entered by the user are stored in a list of keywords and passed into <code>RatingContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to each entry in the address book.</p>
+<p>The arguments entered by the user are stored in a list of keywords and passed into <code>RatingContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to each entry in TravelBuddy.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the search rating mechanism behaves at each step.</p>
@@ -853,7 +853,7 @@ The command is executed when the arguments parsed from the user input matches th
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>searchr 4</code> command to search for all entries in TravelBuddy with <code>4</code> as its rating.
-The <code>searchr</code> command will call <code>LogicManager#execute()</code>, which in turn uses <code>AddressBookParser#parseCommand()</code>. Since
+The <code>searchr</code> command will call <code>LogicManager#execute()</code>, which in turn uses <code>TravelBuddyParser#parseCommand()</code>. Since
 the argument is <code>searchr</code>, <code>SearchRatingCommandParser#parse(arguments)</code> will be called to parse the arguments to be
 used in <code>SearchRatingCommand</code>.
 The parsed arguments will be used as a predicate to filter out entries that satisfy the predicate to be displayed.</p>
@@ -889,7 +889,7 @@ which is <code>searcht</code>.</p>
 </div>
 <div class="paragraph">
 <p>The arguments entered by the user are stored in a list of keywords and passed into <code>TagContainsKeywordsPredicate</code>,
-where the list is converted into a stream and individually matched to each entry in the address book.</p>
+where the list is converted into a stream and individually matched to each entry in TravelBuddy.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the search tags mechanism behaves at each step.</p>
@@ -928,6 +928,88 @@ The command <code>searcht</code> is in lower-case. Mixed-case or upper-case comm
 <div class="content">
 <img src="images/UIsearchtagsresults.png" alt="UIsearchtagsresults" width="800">
 </div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="search-country-feature"><a class="link" href="#search-country-feature">Search Country Feature</a></h5>
+<div class="paragraph">
+<p>The search country mechanism is facilitated by <code>SearchCountryCommand</code>.
+It extends <code>Command</code> with a predicate that specifies the conditions of the country of the entry to be chosen.
+The command is executed when the arguments parsed from the user input matches the command word of <code>SearchCountryCommand</code>,
+which is <code>searchc</code>.</p>
+</div>
+<div class="paragraph">
+<p>The arguments entered by the user are stored in a list of keywords and passed into <code>CountryContainsKeywordsPredicate</code>,
+where the list is converted into a stream and individually matched to each entry in TravelBuddy.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the search country mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>searchc SGP JPN</code> command to search for all entries in TravelBuddy with <code>SGP</code> or <code>JPN</code>
+as its country. The <code>searchc</code> command will call <code>LogicManager#execute()</code>, which in turn uses
+<code>TravelBuddyParser#parseCommand()</code>. Since the argument is <code>searchc</code>, <code>SearchCountryCommandParser#parse(arguments)</code>
+will be called to parse the arguments to be used in <code>SearchCountryCommand</code>. The parsed arguments will be used as a
+predicate to filter out entries that satisfy the predicate to be displayed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The command <code>searchc</code> is in lower-case. Mixed-case or upper-case commands are not recognised by the application.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="search-year-feature"><a class="link" href="#search-year-feature">Search Year Feature</a></h5>
+<div class="paragraph">
+<p>The search year mechanism is facilitated by <code>SearchYearCommand</code>.
+It extends <code>Command</code> with a predicate that specifies the conditions of the year of the date visited of the entry to be chosen.
+The command is executed when the arguments parsed from the user input matches the command word of <code>SearchYearCommand</code>,
+which is <code>searchyear</code>.</p>
+</div>
+<div class="paragraph">
+<p>The arguments entered by the user are stored in a list of keywords and passed into <code>YearContainsKeywordsPredicate</code>,
+where the list is converted into a stream and individually matched to each entry in TravelBuddy.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the search year mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>searchyear 2016</code> command to search for all entries in TravelBuddy with <code>2016</code>
+as its year visited. The <code>searchyear</code> command will call <code>LogicManager#execute()</code>, which in turn uses
+<code>TravelBuddyParser#parseCommand()</code>. Since the argument is <code>searchyear</code>, <code>SearchYearCommandParser#parse(arguments)</code>
+will be called to parse the arguments to be used in <code>SearchYearCommand</code>. The parsed arguments will be used as a
+predicate to filter out entries that satisfy the predicate to be displayed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The command <code>searchyear</code> is in lower-case. Mixed-case or upper-case commands are not recognised by the application.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input.</p>
 </div>
 </div>
 </div>
@@ -2681,4 +2763,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-24 13:50:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-25 15:24:43 UTC</div></div></div></body></html>
