@@ -107,7 +107,8 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><code>list</code></strong> : lists all places</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/NUS Computing cc/SGP r/5 d/No Description a/NUS School of Computing, COM1, 13 Computing Drive, 117417</code> :
+<p><strong><code>add</code></strong><code>n/NUS Computing cc/SGP dv/10/10/2018 r/5 d/No Description a/NUS School of Computing, COM1, 13 Computing
+Drive, 117417</code> :
 adds
  a place named <code>NUS Computing</code> to TravelBuddy.</p>
 </li>
@@ -176,7 +177,7 @@ around. This can be useful to refer to when using the app.
 </div>
 <div class="paragraph">
 <p>Shortcut: <code>a</code><br>
-Format: <code>add n/NAME cc/COUNTRYCODE r/RATING d/DESCRIPTION a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>add n/NAME cc/COUNTRY_CODE dv/DATE_VISITED r/RATING d/DESCRIPTION a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -201,10 +202,11 @@ A place can have any number of tags (including 0).
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/NUS Computing cc/SGP r/5 d/No description a/NUS School of Computing, COM1, 13 Computing Drive, 117417</code></p>
+<p><code>add n/NUS Computing cc/SGP dv/10/10/2018 r/5 d/No description a/NUS School of Computing, COM1, 13 Computing Drive,
+117417</code></p>
 </li>
 <li>
-<p><code>add n/Raffles Hotel t/hotel d/This place is lovely cc/SGP a/Raffles Road r/5 t/staycation</code></p>
+<p><code>add n/Raffles Hotel dv/08/07/2010 t/hotel d/This place is lovely cc/SGP a/Raffles Road r/5 t/staycation</code></p>
 </li>
 </ul>
 </div>
@@ -234,7 +236,7 @@ Format: <code>list</code></p>
 </div>
 <div class="paragraph">
 <p>Shortcut: <code>e</code><br>
-Format: <code>edit INDEX [n/NAME] [cc/COUNTRYCODE] [r/RATING] [d/DESCRIPTION] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>edit INDEX [n/NAME] [cc/COUNTRY_CODE] [dv/DATE_VISITED] [r/RATING] [d/DESCRIPTION] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -651,7 +653,8 @@ Format: <code>select INDEX</code></p>
 </div>
 </div>
 <div class="paragraph">
-<p>The image below shows the result of using <code>select 3</code> command. The place with an index of 3 is highlighted in a blue box and additional information is shown on the right side of the GUI.</p>
+<p>The image below shows the result of using <code>select 2</code> command. The place with an index of 2 is highlighted in a blue
+box and additional information is shown on the right side of the GUI.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -892,7 +895,10 @@ Please do check the file that contains the data of your TravelBuddy.</p>
 <p>Name of place (Prefix: <code>n/</code>)</p>
 </li>
 <li>
-<p>Country Code of place (Prefix: <code>cc/</code>)</p>
+<p>Country code of place (Prefix: <code>cc/</code>)</p>
+</li>
+<li>
+<p>Date the place was visited (Prefix: <code>dv/</code>)</p>
 </li>
 <li>
 <p>Rating of place (Prefix: <code>r/</code>)</p>
@@ -925,8 +931,9 @@ Please do check the file that contains the data of your TravelBuddy.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> - shortcut <code>a</code> - <code>a n/NAME cc/COUNTRYCODE r/RATING d/DESCRIPTION a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>a n/NUS Computing cc/SGP r/5 d/No description a/NUS School of Computing, COM1, 13 Computing Drive, 117417
+<p><strong>Add</strong> - shortcut <code>a</code> - <code>a n/NAME cc/COUNTRY_CODE dv/DATE_VISITED r/RATING d/DESCRIPTION a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>a n/NUS Computing cc/SGP dv/10/10/2017 r/5 d/No description a/NUS School of Computing, COM1, 13 Computing
+Drive, 117417
 t/school</code></p>
 </li>
 <li>
@@ -974,4 +981,4 @@ e.g.<code>s 2</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-25 15:24:43 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-26 11:37:35 UTC</div></div></div></body></html>
