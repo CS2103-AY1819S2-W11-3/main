@@ -18,8 +18,8 @@
 <li><a href="#listing-all-places-code-list-code">3.3. Listing all places : <code>list</code></a></li>
 <li><a href="#editing-a-place-code-edit-code">3.4. Editing a place : <code>edit</code></a></li>
 <li><a href="#searching-places-by-name-code-search-code">3.5. Searching places by name: <code>search</code></a></li>
-<li><a href="#searching-places-by-tags-code-searcht-code">3.6. Searching places by tags: <code>searcht</code></a></li>
-<li><a href="#searching-places-by-ratings-code-searchr-code">3.7. Searching places by ratings: <code>searchr</code></a></li>
+<li><a href="#searching-places-by-ratings-code-searchr-code">3.6. Searching places by ratings: <code>searchr</code></a></li>
+<li><a href="#searching-places-by-tags-code-searcht-code">3.7. Searching places by tags: <code>searcht</code></a></li>
 <li><a href="#searching-places-by-country-code-searchc-code">3.8. Searching places by country: <code>searchc</code></a></li>
 <li><a href="#searching-places-by-year-of-visit-code-searchyear-code">3.9. Searching places by year of visit: <code>searchyear</code></a></li>
 <li><a href="#deleting-a-place-code-delete-code">3.10. Deleting a place : <code>delete</code></a></li>
@@ -300,7 +300,8 @@ Edits the name of the 2nd place to be <code>Raffles Hotel</code> and clears all 
 <p>The <code>search</code> command helps you to search for places whose names contain any of the given keywords.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>search KEYWORD [MORE_KEYWORDS]</code></p>
+<p>Shortcut: <code>f</code><br>
+Format: <code>search KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -347,7 +348,50 @@ Returns any place having names <code>National</code> or <code>Temple</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="searching-places-by-tags-code-searcht-code"><a class="link" href="#searching-places-by-tags-code-searcht-code">3.6. Searching places by tags: <code>searcht</code></a></h3>
+<h3 id="searching-places-by-ratings-code-searchr-code"><a class="link" href="#searching-places-by-ratings-code-searchr-code">3.6. Searching places by ratings: <code>searchr</code></a></h3>
+<div class="paragraph">
+<p>The <code>searchr</code> command helps you to search for places whose ratings match the specified rating from 1 to 5.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>searchr INDEX [MORE_INDICES]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search rating is from a range of 1 to 5. e.g <code>5</code> will return places with 5 star ratings.</p>
+</li>
+<li>
+<p>Only the ratings are searched.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UIsearchratingresults.png" alt="UIsearchratingresults" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>searchr 5</code><br>
+Returns a list of places with rating of <code>5</code></p>
+</li>
+<li>
+<p><code>searchr 4 5</code><br>
+Returns a list of places with ratings of <code>4</code> or <code>5</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="searching-places-by-tags-code-searcht-code"><a class="link" href="#searching-places-by-tags-code-searcht-code">3.7. Searching places by tags: <code>searcht</code></a></h3>
 <div class="paragraph">
 <p>The <code>searcht</code> command helps you to search for places whose tags correspond to any given keywords.<br></p>
 </div>
@@ -396,49 +440,6 @@ Returns a list of places tagged with <code>temple</code> or <code>school</code><
 </div>
 </div>
 <div class="sect2">
-<h3 id="searching-places-by-ratings-code-searchr-code"><a class="link" href="#searching-places-by-ratings-code-searchr-code">3.7. Searching places by ratings: <code>searchr</code></a></h3>
-<div class="paragraph">
-<p>The <code>searchr</code> command helps you to search for places whose ratings match the specified rating from 1 to 5.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>searchr INDEX [MORE_INDICES]</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The search rating is from a range of 1 to 5. e.g <code>5</code> will return places with 5 star ratings.</p>
-</li>
-<li>
-<p>Only the ratings are searched.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UIsearchratingresults.png" alt="UIsearchratingresults" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>searchr 5</code><br>
-Returns a list of places with rating of <code>5</code></p>
-</li>
-<li>
-<p><code>searchr 4 5</code><br>
-Returns a list of places with ratings of <code>4</code> or <code>5</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
 <h3 id="searching-places-by-country-code-searchc-code"><a class="link" href="#searching-places-by-country-code-searchc-code">3.8. Searching places by country: <code>searchc</code></a></h3>
 <div class="paragraph">
 <p>The <code>searchc</code> command helps you to search for places whose country matches the specified ISO-3166 3-letter country code.<br></p>
@@ -451,6 +452,9 @@ Returns a list of places with ratings of <code>4</code> or <code>5</code></p>
 <div class="ulist">
 <ul>
 <li>
+<p>The country code keywords for <code>searchc</code> must be valid 3-letter ISO-3166 country codes.</p>
+</li>
+<li>
 <p>The search country is from a list of ISO-3166 country codes. e.g <code>JPN</code> will return places located in Japan.</p>
 </li>
 <li>
@@ -458,6 +462,11 @@ Returns a list of places with ratings of <code>4</code> or <code>5</code></p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UIsearchcountryresults.png" alt="UIsearchcountryresults" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -482,23 +491,32 @@ Returns a list of places located in either <code>Japan</code> or <code>Germany</
 <p>The <code>searchyear</code> command helps you to search for places whose year of visit matches the specified year of interest.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>searchyear KEYWORD [MORE_KEYWORDS]</code></p>
+<p>Format: <code>searchyear KEYWORD [MORE_KEYWORDS]</code> OR<br>
+<code>searchyear KEYWORD-KEYWORD</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>The search year ranges from 1900 to the current year. e.g <code>2016</code> will return places visited in the year 2016.</p>
+<p>The search year is bounded from 1900 to the current year. e.g <code>2016</code> will return places visited in the year 2016.</p>
 </li>
 <li>
-<p>Searches outside the range will issue a warning.</p>
+<p>Searches outside the bounds will issue a warning.</p>
+</li>
+<li>
+<p>The year keywords for <code>searchyear</code> can be entered as a range. e.g <code>2010-2017</code> will return all the places visited from <code>2010</code> to <code>2017</code></p>
 </li>
 <li>
 <p>Only the year of visit is searched.</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UIsearchyearresults.png" alt="UIsearchyearresults" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -513,6 +531,10 @@ Returns a list of places visited in the year <code>2017</code></p>
 <li>
 <p><code>searchyear 2016 2018</code><br>
 Returns a list of places visited in the year <code>2016</code> or <code>2018</code></p>
+</li>
+<li>
+<p><code>searchyear 2010-2017</code><br>
+Returns a list of places visited from <code>2010</code> to <code>2017</code></p>
 </li>
 </ul>
 </div>
@@ -926,59 +948,94 @@ Please do check the file that contains the data of your TravelBuddy.</p>
 <h2 id="shortcuts-cheatsheet"><a class="link" href="#shortcuts-cheatsheet">5. Shortcuts Cheatsheet</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Below is a summarized list of all the shortcuts for commands that TravelBuddy supports:</p>
+<p>Below is a summarized list of all the command words that TravelBuddy supports:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Add</strong> - shortcut <code>a</code> - <code>a n/NAME cc/COUNTRY_CODE dv/DATE_VISITED r/RATING d/DESCRIPTION a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>a n/NUS Computing cc/SGP dv/10/10/2017 r/5 d/No description a/NUS School of Computing, COM1, 13 Computing
-Drive, 117417
-t/school</code></p>
-</li>
-<li>
-<p><strong>Clear</strong> : shortcut <code>c</code></p>
-</li>
-<li>
-<p><strong>Delete</strong> : shortcut <code>d INDEX</code><br>
-e.g. <code>d 3</code></p>
-</li>
-<li>
-<p><strong>Delete Multiple</strong> : <code>deletem START_INDEX END_INDEX</code><br>
-e.g. <code>deletem 2 5</code>
-&lt;currently does not have a shortcut&gt;</p>
-</li>
-<li>
-<p><strong>Edit</strong> : shortcut <code>e INDEX [n/NAME] [cc/COUNTRYCODE] [r/RATING] [d/DESCRIPTION] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>e 2 n/Starbucks d/I like the coffee here</code></p>
-</li>
-<li>
-<p><strong>Search</strong> : shortcut <code>s KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>s Coffee Bean Tea Leaf</code></p>
-</li>
-<li>
-<p><strong>List</strong> : shortcut <code>l</code></p>
-</li>
-<li>
-<p><strong>Help</strong> : shortcut <code>h</code></p>
-</li>
-<li>
-<p><strong>Select</strong> : shortcut <code>s INDEX</code><br>
-e.g.<code>s 2</code></p>
-</li>
-<li>
-<p><strong>History</strong> : shortcut <code>h</code></p>
-</li>
-<li>
-<p><strong>Undo</strong> : shortcut <code>u</code></p>
-</li>
-<li>
-<p><strong>Redo</strong> : shortcut <code>r</code></p>
-</li>
-<li>
-<p><strong>Generate</strong> : shortcut <code>generate</code></p>
-</li>
-</ul>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a n/NAME cc/COUNTRY_CODE dv/DATE_VISITED r/RATING d/DESCRIPTION a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>a n/NUS Computing cc/SGP dv/10/10/2017 r/5 d/No description a/NUS School of Computing, COM1, 13 Computing Drive, 117417 t/school</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Clear</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>c</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delete</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>d INDEX</code><br>
+e.g. <code>d 3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delete Multiple</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>deletem START_INDEX END_INDEX</code><br>
+e.g. <code>deletem 2 5</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Edit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>e INDEX [n/NAME] [cc/COUNTRYCODE] [r/RATING] [d/DESCRIPTION] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>e 2 n/Starbucks d/I like the coffee here</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Search</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search KEYWORD [MORE_KEYWORDS]</code><br>
+e.g. <code>s Coffee Bean Tea Leaf</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Search Rating</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>searchr RATING [MORE_RATINGS]</code><br>
+e.g. <code>searchr 4 5</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Search Tags</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>searcht KEYWORD [MORE_KEYWORDS]</code><br>
+e.g. <code>searcht school airport</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Search Country</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>searchc KEYWORD [MORE_KEYWORDS]</code><br>
+e.g. <code>searchc JPN CHN</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Search Year</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>searchyear KEYWORD [MORE_KEYWORDS]</code><br>
+e.g. `searchyear 2011<br>
+e.g. `searchyear 2008-2017</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>l</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Help</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Select</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>s INDEX</code><br>
+e.g. <code>s 2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>History</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>h</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Undo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>u</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Redo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>r</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Generate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>generate</code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-31 04:30:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-31 05:04:04 UTC</div></div></div></body></html>
