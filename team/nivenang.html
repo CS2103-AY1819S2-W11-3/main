@@ -10,7 +10,7 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>TravelBuddy - Level 4 is a desktop address book application used for teaching Software Engineering principles. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
+<p>TravelBuddy is a desktop Travel Guide application for travel enthusiasts to record places previously visited. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 </div>
 </div>
 </div>
@@ -20,29 +20,36 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to undo/redo previous commands</strong></p>
+<p><strong>Major enhancement</strong>: added <strong>the ability to perform search by name, rating, tags, country and year</strong> on the places in TravelBuddy</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+<p>What it does: allows the user to search TravelBuddy for places whose requested field matches the user input.</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
+<p>Justification: TravelBuddy can get long and messy when more places are added. This feature improves TravelBuddy as it allows users to filter through the long place list to obtain what the users want.</p>
 </li>
 <li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
-</li>
-<li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p>Highlights: This feature helps users search for what they need. Multiple keywords can also be included in the search to obtain a wider scope of results.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
+<p><strong>Minor enhancement</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>added Rating class for Place object to track ratings of each place in TravelBuddy.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p>addded delete multiple feature to delete multiple entries in TravelBuddy with one command.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: <a href="https://nus-cs2103-ay1819s2.github.io/cs2103-dashboard/#search=nivenang&amp;sort=displayName&amp;since=2019-02-10&amp;until=2019-03-26&amp;timeframe=day&amp;reverse=false&amp;repoSort=true">RepoSense</a></p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -53,7 +60,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+<p>Helped to streamline issue tracking using milestone labels and assignees on Github.</p>
 </li>
 </ul>
 </div>
@@ -63,10 +70,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
-</li>
-<li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Updated tests and wrote additional tests from people in address book to places in TravelBuddy: <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/50">#50</a></p>
 </li>
 </ul>
 </div>
@@ -76,7 +80,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Updated AboutUs with the responsbilities of team members: <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/12">#12</a></p>
+</li>
+<li>
+<p>Updated the User Guide with features I added and FAQ section: <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/53">#53</a>, <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/63">#63</a>, <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/77">#77</a>, <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/85">#85</a></p>
+</li>
+<li>
+<p>Updated the Developer with features I added: <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/68">#68</a>, <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/85">#85</a></p>
 </li>
 </ul>
 </div>
@@ -86,29 +96,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+<p>Review pull requests (with non-trivial review comments): <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/84">#84</a></p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
-</li>
-<li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>Reported bugs and helped to fix bugs: <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/82">#82</a></p>
 </li>
 </ul>
 </div>
@@ -117,9 +108,6 @@
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -137,82 +125,246 @@
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">Undoing previous command : <code>undo</code></a></h3>
+<h3 id="searching-places-by-name-code-search-code"><a class="link" href="#searching-places-by-name-code-search-code">Searching places by name: <code>search</code></a></h3>
 <div class="paragraph">
-<p>The <code>undo</code> command restores TravelBuddy to the state before the previous <em>undoable</em> command was executed.<br></p>
+<p>The <code>search</code> command helps you to search for places whose names contain any of the given keywords.<br></p>
 </div>
 <div class="paragraph">
-<p>Shortcut: <code>u</code><br>
-Format: <code>undo</code></p>
+<p>Shortcut: <code>f</code><br>
+Format: <code>search KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>national</code> will match <code>National</code></p>
+</li>
+<li>
+<p>The order of the keywords does not matter. e.g. <code>University National of Singapore</code> will match <code>National University of Singapore</code></p>
+</li>
+<li>
+<p>Only the name is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. <code>Nation</code> will not match <code>National</code></p>
+</li>
+<li>
+<p>Places matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>National Museum</code> will return <code>National Museum of Singapore</code>, <code>National University Hospital</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UIsearchresults.png" alt="UIsearchresults" width="600">
+</div>
+</div>
 <div class="paragraph">
-<p>Undoable commands: Commands that modify TravelBuddy&#8217;s data (<code>add</code>, <code>delete</code>, <code>deletem</code>, <code>edit</code> and <code>clear</code>).</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:<br></p>
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
-<code>list</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+<p><code>search National</code><br>
+Returns <code>National Museum of Singapore</code> and <code>National University Hospital</code></p>
 </li>
 <li>
-<p><code>select 1</code><br>
-<code>list</code><br>
-<code>undo</code><br>
-The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+<p><code>search National Temple</code><br>
+Returns any place having names <code>National</code> or <code>Temple</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">Redoing the previously undone command : <code>redo</code></a></h3>
+<h3 id="searching-places-by-ratings-code-searchr-code"><a class="link" href="#searching-places-by-ratings-code-searchr-code">Searching places by ratings: <code>searchr</code></a></h3>
 <div class="paragraph">
-<p>The <code>redo</code> command reverses the most recent <code>undo</code> command.<br></p>
+<p>The <code>searchr</code> command helps you to search for places whose ratings match the specified rating from 1 to 5.<br></p>
 </div>
 <div class="paragraph">
-<p>Shortcut: <code>r</code><br>
-Format: <code>redo</code></p>
+<p>Format: <code>searchr INDEX [MORE_INDICES]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search rating is from a range of 1 to 5. e.g <code>5</code> will return places with 5 star ratings.</p>
+</li>
+<li>
+<p>Only the ratings are searched.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UIsearchratingresults.png" alt="UIsearchratingresults" width="600">
+</div>
 </div>
 <div class="paragraph">
-<p>Examples:
-* <code>delete 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
-<code>redo</code><br>
-The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
+<p><code>searchr 5</code><br>
+Returns a list of places with rating of <code>5</code></p>
 </li>
 <li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+<p><code>searchr 4 5</code><br>
+Returns a list of places with ratings of <code>4</code> or <code>5</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="searching-places-by-tags-code-searcht-code"><a class="link" href="#searching-places-by-tags-code-searcht-code">Searching places by tags: <code>searcht</code></a></h3>
+<div class="paragraph">
+<p>The <code>searcht</code> command helps you to search for places whose tags correspond to any given keywords.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>searcht KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>Temple</code> will match <code>temple</code></p>
+</li>
+<li>
+<p>Only the tags are searched.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. <code>temp</code> will not match <code>temple</code></p>
+</li>
+<li>
+<p>Places tagged with at least one matching keyword will be returned (i.e. <code>OR</code> search). e.g. <code>temple school</code> will return places tagged with <code>temple</code> or <code>school</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UIsearchtagsresults.png" alt="UIsearchtagsresults" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>searcht temple</code><br>
+Returns a list of places tagged with <code>temple</code></p>
+</li>
+<li>
+<p><code>searcht temple school</code><br>
+Returns a list of places tagged with <code>temple</code> or <code>school</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="searching-places-by-country-code-searchc-code"><a class="link" href="#searching-places-by-country-code-searchc-code">Searching places by country: <code>searchc</code></a></h3>
+<div class="paragraph">
+<p>The <code>searchc</code> command helps you to search for places whose country matches the specified ISO-3166 3-letter country code.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>searchc KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The country code keywords for <code>searchc</code> must be valid 3-letter ISO-3166 country codes.</p>
+</li>
+<li>
+<p>The search country is from a list of ISO-3166 country codes. e.g <code>JPN</code> will return places located in Japan.</p>
+</li>
+<li>
+<p>Only the country is searched.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UIsearchcountryresults.png" alt="UIsearchcountryresults" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>searchc CHN</code><br>
+Returns a list of places located in <code>China</code></p>
+</li>
+<li>
+<p><code>searchc JPN DEU</code><br>
+Returns a list of places located in either <code>Japan</code> or <code>Germany</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="searching-places-by-year-of-visit-code-searchyear-code"><a class="link" href="#searching-places-by-year-of-visit-code-searchyear-code">Searching places by year of visit: <code>searchyear</code></a></h3>
+<div class="paragraph">
+<p>The <code>searchyear</code> command helps you to search for places whose year of visit matches the specified year of interest.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>searchyear KEYWORD [MORE_KEYWORDS]</code> OR<br>
+<code>searchyear KEYWORD-KEYWORD</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search year is bounded from 1900 to the current year. e.g <code>2016</code> will return places visited in the year 2016.</p>
+</li>
+<li>
+<p>Searches outside the bounds will issue a warning.</p>
+</li>
+<li>
+<p>The year keywords for <code>searchyear</code> can be entered as a range. e.g <code>2010-2017</code> will return all the places visited from <code>2010</code> to <code>2017</code></p>
+</li>
+<li>
+<p>Only the year of visit is searched.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UIsearchyearresults.png" alt="UIsearchyearresults" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>searchyear 2017</code><br>
+Returns a list of places visited in the year <code>2017</code></p>
+</li>
+<li>
+<p><code>searchyear 2016 2018</code><br>
+Returns a list of places visited in the year <code>2016</code> or <code>2018</code></p>
+</li>
+<li>
+<p><code>searchyear 2010-2017</code><br>
+Returns a list of places visited from <code>2010</code> to <code>2017</code></p>
 </li>
 </ul>
 </div>
@@ -233,57 +385,268 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">Undo/Redo feature</a></h3>
+<h3 id="search-feature"><a class="link" href="#search-feature">Search Feature</a></h3>
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
-It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
+<p>The following diagram shows how the search feature works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SearchCommandSequenceDiagram.png" alt="SearchCommandSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 3.2.1.1 Sequence Diagram for <code>search</code> command</p>
+</div>
+<div class="paragraph">
+<p>The control flow of the sequence diagram above is as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A command with the command word <code>search</code> followed by argument(s) is used entered by the user.</p>
+</li>
+<li>
+<p><code>LogicManager</code> receives the <code>execute</code> command and calls the <code>parseCommand</code> method in <code>TravelBuddyParser</code>.</p>
+</li>
+<li>
+<p><code>TravelBuddyParser</code> parses <code>search</code> as the command and a <code>SearchCommandParser</code> will be instantiated to further parse the command.</p>
+</li>
+<li>
+<p><code>SearchCommandParser</code> receives the fields if at least one field is provided, a NameContainsKeywordPredicate will be instantiated with the fields as the predicate.</p>
+</li>
+<li>
+<p><code>SearchCommand</code> will be created and returned to <code>LogicManager</code>.</p>
+</li>
+<li>
+<p>The <code>execute</code> command of <code>SearchCommand</code> is then called by <code>LogicManager</code>.</p>
+</li>
+<li>
+<p>The list is updated in the <code>Model</code> by <code>SearchCommand</code>.</p>
+</li>
+<li>
+<p>A <code>CommandResult</code> is instantiated and returned to <code>LogicManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The search feature comprises of:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current address book state in its history.</p>
+<p><code>Search by Name</code></p>
 </li>
 <li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous address book state from its history.</p>
+<p><code>Search by Rating</code></p>
 </li>
 <li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone address book state from its history.</p>
+<p><code>Search by Tags</code></p>
+</li>
+<li>
+<p><code>Search by Country</code></p>
+</li>
+<li>
+<p><code>Search by Year</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> and <code>Model#redoAddressBook()</code> respectively.</p>
+<p>The various search features are differentiated by the <code>Parser</code> which is called using different command words and the <code>Predicate</code> to filter arguments.</p>
+</div>
+<div class="sect4">
+<h5 id="search-name-feature"><a class="link" href="#search-name-feature">Search Name Feature</a></h5>
+<div class="paragraph">
+<p>The command word for search name is <code>search</code> and is parsed by <code>TravelBuddyParser</code>. The arguments are then passed into <code>SearchCommandParser</code>.</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
+<p>The name arguments entered by the user are stored in a list of keywords and passed into <code>NameContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to the names of each entry in TravelBuddy.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the initial address book state, and the <code>currentStatePointer</code> pointing to that single address book state.</p>
+<p>The search name mechanism is facilitated by <code>SearchCommand</code>, which extends <code>Command</code> with a predicate that specifies the conditions of the name of the place to be chosen from TravelBuddy.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the search mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/UndoRedoStartingStateListDiagram.png" alt="UndoRedoStartingStateListDiagram" width="800">
+<img src="../images/UIsearch.png" alt="UIsearch" width="800">
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th place in the address book. The <code>delete</code> command calls
-<code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
+<p>Step 2. The user executes <code>search Singapore</code> command to search for all entries in TravelBuddy with <code>Singapore</code> in its name.
+The user input will be passed into <code>LogicManager#execute()</code>, which in turn uses <code>TravelBuddyParser#parseCommand()</code>. Since the argument is <code>search</code>, <code>SearchCommandParser#parse(arguments)</code> will be called to parse the arguments to be used in <code>SearchCommand</code>.
+The parsed arguments will be used as a predicate to filter out entries that satisfy the predicate to be displayed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The command <code>search</code> is in lower-case. Mixed-case or upper-case commands are not recognised by the application.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/UndoRedoNewCommand1StateListDiagram.png" alt="UndoRedoNewCommand1StateListDiagram" width="800">
+<img src="../images/UIsearchresults.png" alt="UIsearchresults" width="800">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="search-rating-feature"><a class="link" href="#search-rating-feature">Search Rating Feature</a></h5>
+<div class="paragraph">
+<p>The command word for search rating is <code>searchr</code> and is parsed by <code>TravelBuddyParser</code>. The arguments are then passed into <code>SearchRatingCommandParser</code>.</p>
+</div>
+<div class="paragraph">
+<p>The rating arguments entered by the user are stored in a list of keywords and passed into <code>RatingContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to the rating of each entry in TravelBuddy.</p>
+</div>
+<div class="paragraph">
+<p>The search rating mechanism is facilitated by <code>SearchRatingCommand</code>, which extends <code>Command</code> with a predicate that specifies the conditions of the rating of the place to be chosen from TravelBuddy.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the search rating mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UIsearchrating.png" alt="UIsearchrating" width="800">
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new place. The <code>add</code> command also calls <code>Model#commitAddressBook()
-`, causing another modified address book state to be saved into the `addressBookStateList</code>.</p>
+<p>Step 2. The user executes <code>searchr 4</code> command to search for all entries in TravelBuddy with <code>4</code> as its rating.
+The user input will be passed into <code>LogicManager#execute()</code>, which in turn uses <code>TravelBuddyParser#parseCommand()</code>. Since
+the argument is <code>searchr</code>, <code>SearchRatingCommandParser#parse(arguments)</code> will be called to parse the arguments to be
+used in <code>SearchRatingCommand</code>.
+The parsed arguments will be used as a predicate to filter out entries that satisfy the predicate to be displayed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The command <code>searchr</code> is in lower-case. Mixed-case or upper-case commands are not recognised by the application.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The arguments for <code>searchr</code> range from 1 to 5. Non-integer values outside the range are not recognised by the application.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/UndoRedoNewCommand2StateListDiagram.png" alt="UndoRedoNewCommand2StateListDiagram" width="800">
+<img src="../images/UIsearchratingresults.png" alt="UIsearchratingresults" width="800">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="search-tags-feature"><a class="link" href="#search-tags-feature">Search Tags Feature</a></h5>
+<div class="paragraph">
+<p>The command word for search tags is <code>searcht</code> and is parsed by <code>TravelBuddyParser</code>. The arguments are then passed into <code>SearchTagsCommandParser</code>.</p>
+</div>
+<div class="paragraph">
+<p>The tags arguments entered by the user are stored in a list of keywords and passed into <code>TagsContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to the tags of each entry in TravelBuddy.</p>
+</div>
+<div class="paragraph">
+<p>The search tags mechanism is facilitated by <code>SearchTagsCommand</code>, which extends <code>Command</code> with a predicate that specifies the conditions of the tags of the place to be chosen from TravelBuddy.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the search tags mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UIsearchtags.png" alt="UIsearchtags" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>searcht distillery</code> command to search for all entries in TravelBuddy with <code>distillery</code>
+as its tag. The user input will be passed into <code>LogicManager#execute()</code>, which in turn uses
+<code>TravelBuddyParser#parseCommand()</code>. Since the argument is <code>searcht</code>, <code>SearchTagsCommandParser#parse(arguments)</code>
+will be called to parse the arguments to be used in <code>SearchTagsCommand</code>. The parsed arguments will be used as a
+predicate to filter out entries that satisfy the predicate to be displayed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The command <code>searcht</code> is in lower-case. Mixed-case or upper-case commands are not recognised by the application.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UIsearchtagsresults.png" alt="UIsearchtagsresults" width="800">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="search-country-feature"><a class="link" href="#search-country-feature">Search Country Feature</a></h5>
+<div class="paragraph">
+<p>The command word for search country is <code>searchc</code> and is parsed by <code>TravelBuddyParser</code>. The arguments are then passed into <code>SearchCountryCommandParser</code>.</p>
+</div>
+<div class="paragraph">
+<p>The country code arguments entered by the user are stored in a list of keywords and passed into <code>CountryCodeContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to the country code of each entry in TravelBuddy.</p>
+</div>
+<div class="paragraph">
+<p>The search country mechanism is facilitated by <code>SearchCountryCommand</code>, which extends <code>Command</code> with a predicate that specifies the conditions of the country code of the place to be chosen from TravelBuddy.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the search country mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UIsearchcountry.png" alt="UIsearchcountry" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>searchc SGP JPN</code> command to search for all entries in TravelBuddy with <code>SGP</code> or <code>JPN</code>
+as its country. The <code>searchc</code> command will call <code>LogicManager#execute()</code>, which in turn uses
+<code>TravelBuddyParser#parseCommand()</code>. Since the argument is <code>searchc</code>, <code>SearchCountryCommandParser#parse(arguments)</code>
+will be called to parse the arguments to be used in <code>SearchCountryCommand</code>. The parsed arguments will be used as a
+predicate to filter out entries that satisfy the predicate to be displayed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UIsearchcountryresults.png" alt="UIsearchcountryresults" width="800">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -293,18 +656,59 @@ Additionally, it implements the following operations:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the address book state will not be saved into the <code>addressBookStateList</code>.
+The command <code>searchc</code> is in lower-case. Mixed-case or upper-case commands are not recognised by the application.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The country code arguments for <code>searchc</code> must be valid 3-letter ISO-3166 country codes.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 4. The user now decides that adding the place was a mistake, and decides to undo that action by executing the
-<code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="search-year-feature"><a class="link" href="#search-year-feature">Search Year Feature</a></h5>
+<div class="paragraph">
+<p>The command word for search year is <code>searchyear</code> and is parsed by <code>TravelBuddyParser</code>. The arguments are then passed into <code>SearchYearCommandParser</code>.</p>
+</div>
+<div class="paragraph">
+<p>The year arguments entered by the user are stored in a list of keywords and passed into <code>YearContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to the year of visit of each entry in TravelBuddy.</p>
+</div>
+<div class="paragraph">
+<p>The search year mechanism is facilitated by <code>SearchYearCommand</code>, which extends <code>Command</code> with a predicate that specifies the conditions of the year of visit of the place to be chosen from TravelBuddy.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the search year mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/UndoRedoExecuteUndoStateListDiagram.png" alt="UndoRedoExecuteUndoStateListDiagram" width="800">
+<img src="../images/UIsearchyear.png" alt="UIsearchyear" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>searchyear 2016</code> command to search for all entries in TravelBuddy with <code>2016</code>
+as its year visited. The <code>searchyear</code> command will call <code>LogicManager#execute()</code>, which in turn uses
+<code>TravelBuddyParser#parseCommand()</code>. Since the argument is <code>searchyear</code>, <code>SearchYearCommandParser#parse(arguments)</code>
+will be called to parse the arguments to be used in <code>SearchYearCommand</code>. The parsed arguments will be used as a
+predicate to filter out entries that satisfy the predicate to be displayed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UIsearchyearresults.png" alt="UIsearchyearresults" width="800">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -314,21 +718,10 @@ If a command fails its execution, it will not call <code>Model#commitAddressBook
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial address book state, then there are no previous address book states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
+The command <code>searchyear</code> is in lower-case. Mixed-case or upper-case commands are not recognised by the application.
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoSequenceDiagram.png" alt="UndoRedoSequenceDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the address book to that state.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -337,64 +730,47 @@ If the <code>currentStatePointer</code> is at index 0, pointing to the initial a
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest address book state, then there are no undone address book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+The year arguments range from 1900 to the current year. A single year, multiple years or a range of years can be passed in as arguments.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the address book, such as <code>list</code>, will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the <code>addressBookStateList</code> remains unchanged.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand3StateListDiagram.png" alt="UndoRedoNewCommand3StateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand4StateListDiagram.png" alt="UndoRedoNewCommand4StateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram" width="650">
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
+<h5 id="aspect-how-search-executes"><a class="link" href="#aspect-how-search-executes">Aspect: How search executes</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
+<p><strong>Alternative 1 (current choice):</strong> Matches entire keyword.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to implement.</p>
+<p>Pros: Easy to implement, searching is fast.</p>
 </li>
 <li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
+<p>Cons: Unable to search partial keyword</p>
+</li>
+<li>
+<p>Example: <code>search Singapore</code> will return <code>National University of Singapore</code> but <code>search Singapor</code> will not.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
+<p><strong>Alternative 2:</strong> Remove whitespaces and check if the place contains the argument string.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the place being deleted).</p>
+<p>Pros: Can match partial keywords.</p>
 </li>
 <li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
+<p>Cons: Uses more processing power and time during checking.</p>
 </li>
 </ul>
 </div>
@@ -403,31 +779,32 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
+<h5 id="aspect-data-structure-to-support-search-commands"><a class="link" href="#aspect-data-structure-to-support-search-commands">Aspect: Data structure to support search commands</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of address book states.</p>
+<p><strong>Alternative 1 (current choice):</strong> Use a list to store the user input keywords and places.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
+<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming
+developers of our project.</p>
 </li>
 <li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedAddressBook</code>.</p>
+<p>Cons: Inefficient as the entire list needs to be searched through.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
+<p><strong>Alternative 2:</strong> Use <code>HashMap</code> to map keywords to each place</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
+<p>Pros: Faster searching as HashMap lookup runs in O(1) time.</p>
 </li>
 <li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
+<p>Cons: Requires more memory as a separate HashMap needs to be stored.</p>
 </li>
 </ul>
 </div>
@@ -447,4 +824,4 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-29 06:45:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-31 02:59:02 UTC</div></div></div></body></html>
