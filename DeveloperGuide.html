@@ -826,74 +826,21 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 3.2.1.1 Sequence Diagram for <code>search</code> command</p>
+<p>The user enters a command with the command word <code>search</code> followed by argument(s). This is processed by the UI component, which will then
+call <code>LogicManager#execute()</code> in the Logic component. <code>AddressBookParser#parseCommand()</code> is then called, which is also in the Logic component.</p>
 </div>
 <div class="paragraph">
-<p>The control flow of the sequence diagram above is as follows:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>A command with the command word <code>search</code> followed by argument(s) is used entered by the user.</p>
-</li>
-<li>
-<p><code>LogicManager</code> receives the <code>execute</code> command and calls the <code>parseCommand</code> method in <code>TravelBuddyParser</code>.</p>
-</li>
-<li>
-<p><code>TravelBuddyParser</code> parses <code>search</code> as the command and a <code>SearchCommandParser</code> will be instantiated to further parse the command.</p>
-</li>
-<li>
-<p><code>SearchCommandParser</code> receives the fields if at least one field is provided, a NameContainsKeywordPredicate will be instantiated with the fields as the predicate.</p>
-</li>
-<li>
-<p><code>SearchCommand</code> will be created and returned to <code>LogicManager</code>.</p>
-</li>
-<li>
-<p>The <code>execute</code> command of <code>SearchCommand</code> is then called by <code>LogicManager</code>.</p>
-</li>
-<li>
-<p>The list is updated in the <code>Model</code> by <code>SearchCommand</code>.</p>
-</li>
-<li>
-<p>A <code>CommandResult</code> is instantiated and returned to <code>LogicManager</code>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>The search feature comprises of:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Search by Name</code></p>
-</li>
-<li>
-<p><code>Search by Rating</code></p>
-</li>
-<li>
-<p><code>Search by Tags</code></p>
-</li>
-<li>
-<p><code>Search by Country</code></p>
-</li>
-<li>
-<p><code>Search by Year</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The various search features are differentiated by the <code>Parser</code> which is called using different command words and the <code>Predicate</code> to filter arguments.</p>
+<p>The appropriate search command is then called depending on the command word used. It will then update the visible list based on the predicate through <code>ModelManager#updateFilteredList(p)</code> where p represents the predicate derived from the user input argument(s).</p>
 </div>
 <div class="sect4">
 <h5 id="search-name-feature"><a class="link" href="#search-name-feature">Search Name Feature</a></h5>
 <div class="paragraph">
-<p>The command word for search name is <code>search</code> and is parsed by <code>TravelBuddyParser</code>. The arguments are then passed into <code>SearchCommandParser</code>.</p>
+<p>The search name mechanism is facilitated by <code>SearchCommand</code>.
+It extends <code>Command</code> with a predicate that specifies the conditions of the name of the entry to be chosen.
+The command is executed when the arguments parsed from the user input matches the command word of <code>SearchCommand</code>, which is <code>search</code>.</p>
 </div>
 <div class="paragraph">
-<p>The name arguments entered by the user are stored in a list of keywords and passed into <code>NameContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to the names of each entry in TravelBuddy.</p>
-</div>
-<div class="paragraph">
-<p>The search name mechanism is facilitated by <code>SearchCommand</code>, which extends <code>Command</code> with a predicate that specifies the conditions of the name of the place to be chosen from TravelBuddy.</p>
+<p>The arguments entered by the user are stored in a list of keywords and passed into <code>NameContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to each entry in TravelBuddy.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the search mechanism behaves at each step.</p>
@@ -908,7 +855,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>search Singapore</code> command to search for all entries in TravelBuddy with <code>Singapore</code> in its name.
-The user input will be passed into <code>LogicManager#execute()</code>, which in turn uses <code>TravelBuddyParser#parseCommand()</code>. Since the argument is <code>search</code>, <code>SearchCommandParser#parse(arguments)</code> will be called to parse the arguments to be used in <code>SearchCommand</code>.
+The <code>search</code> command will call <code>LogicManager#execute()</code>, which in turn uses <code>TravelBuddyParser#parseCommand()</code>. Since the argument is <code>search</code>, <code>SearchCommandParser#parse(arguments)</code> will be called to parse the arguments to be used in <code>SearchCommand</code>.
 The parsed arguments will be used as a predicate to filter out entries that satisfy the predicate to be displayed.</p>
 </div>
 <div class="admonitionblock note">
@@ -935,13 +882,13 @@ The command <code>search</code> is in lower-case. Mixed-case or upper-case comma
 <div class="sect4">
 <h5 id="search-rating-feature"><a class="link" href="#search-rating-feature">Search Rating Feature</a></h5>
 <div class="paragraph">
-<p>The command word for search rating is <code>searchr</code> and is parsed by <code>TravelBuddyParser</code>. The arguments are then passed into <code>SearchRatingCommandParser</code>.</p>
+<p>The search rating mechanism is facilitated by <code>SearchRatingCommand</code>.
+It extends <code>Command</code> with a predicate that specifies the conditions of the rating of the entry to be chosen.
+The valid ratings range from integers of 1 to 5. Any value outside this range will throw an exception.
+The command is executed when the arguments parsed from the user input matches the command word of <code>SearchRatingCommand</code>, which is <code>searchr</code>.</p>
 </div>
 <div class="paragraph">
-<p>The rating arguments entered by the user are stored in a list of keywords and passed into <code>RatingContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to the rating of each entry in TravelBuddy.</p>
-</div>
-<div class="paragraph">
-<p>The search rating mechanism is facilitated by <code>SearchRatingCommand</code>, which extends <code>Command</code> with a predicate that specifies the conditions of the rating of the place to be chosen from TravelBuddy.</p>
+<p>The arguments entered by the user are stored in a list of keywords and passed into <code>RatingContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to each entry in TravelBuddy.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the search rating mechanism behaves at each step.</p>
@@ -956,7 +903,7 @@ The command <code>search</code> is in lower-case. Mixed-case or upper-case comma
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>searchr 4</code> command to search for all entries in TravelBuddy with <code>4</code> as its rating.
-The user input will be passed into <code>LogicManager#execute()</code>, which in turn uses <code>TravelBuddyParser#parseCommand()</code>. Since
+The <code>searchr</code> command will call <code>LogicManager#execute()</code>, which in turn uses <code>TravelBuddyParser#parseCommand()</code>. Since
 the argument is <code>searchr</code>, <code>SearchRatingCommandParser#parse(arguments)</code> will be called to parse the arguments to be
 used in <code>SearchRatingCommand</code>.
 The parsed arguments will be used as a predicate to filter out entries that satisfy the predicate to be displayed.</p>
@@ -973,18 +920,6 @@ The command <code>searchr</code> is in lower-case. Mixed-case or upper-case comm
 </tr>
 </table>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The arguments for <code>searchr</code> range from 1 to 5. Non-integer values outside the range are not recognised by the application.
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>Step 3. The filtered list is now displayed according to the requirements set by the user input.</p>
 </div>
@@ -997,13 +932,14 @@ The arguments for <code>searchr</code> range from 1 to 5. Non-integer values out
 <div class="sect4">
 <h5 id="search-tags-feature"><a class="link" href="#search-tags-feature">Search Tags Feature</a></h5>
 <div class="paragraph">
-<p>The command word for search tags is <code>searcht</code> and is parsed by <code>TravelBuddyParser</code>. The arguments are then passed into <code>SearchTagsCommandParser</code>.</p>
+<p>The search tags mechanism is facilitated by <code>SearchTagsCommand</code>.
+It extends <code>Command</code> with a predicate that specifies the conditions of the tags of the entry to be chosen.
+The command is executed when the arguments parsed from the user input matches the command word of <code>SearchTagsCommand</code>,
+which is <code>searcht</code>.</p>
 </div>
 <div class="paragraph">
-<p>The tags arguments entered by the user are stored in a list of keywords and passed into <code>TagsContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to the tags of each entry in TravelBuddy.</p>
-</div>
-<div class="paragraph">
-<p>The search tags mechanism is facilitated by <code>SearchTagsCommand</code>, which extends <code>Command</code> with a predicate that specifies the conditions of the tags of the place to be chosen from TravelBuddy.</p>
+<p>The arguments entered by the user are stored in a list of keywords and passed into <code>TagContainsKeywordsPredicate</code>,
+where the list is converted into a stream and individually matched to each entry in TravelBuddy.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the search tags mechanism behaves at each step.</p>
@@ -1017,9 +953,9 @@ The arguments for <code>searchr</code> range from 1 to 5. Non-integer values out
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>searcht distillery</code> command to search for all entries in TravelBuddy with <code>distillery</code>
-as its tag. The user input will be passed into <code>LogicManager#execute()</code>, which in turn uses
-<code>TravelBuddyParser#parseCommand()</code>. Since the argument is <code>searcht</code>, <code>SearchTagsCommandParser#parse(arguments)</code>
+<p>Step 2. The user executes <code>searcht shoppingMall</code> command to search for all entries in TravelBuddy with <code>shoppingMall</code>
+as its tag. The <code>searcht</code> command will call <code>LogicManager#execute()</code>, which in turn uses
+<code>AddressBookParser#parseCommand()</code>. Since the argument is <code>searcht</code>, <code>SearchTagsCommandParser#parse(arguments)</code>
 will be called to parse the arguments to be used in <code>SearchTagsCommand</code>. The parsed arguments will be used as a
 predicate to filter out entries that satisfy the predicate to be displayed.</p>
 </div>
@@ -1047,13 +983,14 @@ The command <code>searcht</code> is in lower-case. Mixed-case or upper-case comm
 <div class="sect4">
 <h5 id="search-country-feature"><a class="link" href="#search-country-feature">Search Country Feature</a></h5>
 <div class="paragraph">
-<p>The command word for search country is <code>searchc</code> and is parsed by <code>TravelBuddyParser</code>. The arguments are then passed into <code>SearchCountryCommandParser</code>.</p>
+<p>The search country mechanism is facilitated by <code>SearchCountryCommand</code>.
+It extends <code>Command</code> with a predicate that specifies the conditions of the country of the entry to be chosen.
+The command is executed when the arguments parsed from the user input matches the command word of <code>SearchCountryCommand</code>,
+which is <code>searchc</code>.</p>
 </div>
 <div class="paragraph">
-<p>The country code arguments entered by the user are stored in a list of keywords and passed into <code>CountryCodeContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to the country code of each entry in TravelBuddy.</p>
-</div>
-<div class="paragraph">
-<p>The search country mechanism is facilitated by <code>SearchCountryCommand</code>, which extends <code>Command</code> with a predicate that specifies the conditions of the country code of the place to be chosen from TravelBuddy.</p>
+<p>The arguments entered by the user are stored in a list of keywords and passed into <code>CountryContainsKeywordsPredicate</code>,
+where the list is converted into a stream and individually matched to each entry in TravelBuddy.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the search country mechanism behaves at each step.</p>
@@ -1061,22 +998,12 @@ The command <code>searcht</code> is in lower-case. Mixed-case or upper-case comm
 <div class="paragraph">
 <p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UIsearchcountry.png" alt="UIsearchcountry" width="800">
-</div>
-</div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>searchc SGP JPN</code> command to search for all entries in TravelBuddy with <code>SGP</code> or <code>JPN</code>
 as its country. The <code>searchc</code> command will call <code>LogicManager#execute()</code>, which in turn uses
 <code>TravelBuddyParser#parseCommand()</code>. Since the argument is <code>searchc</code>, <code>SearchCountryCommandParser#parse(arguments)</code>
 will be called to parse the arguments to be used in <code>SearchCountryCommand</code>. The parsed arguments will be used as a
 predicate to filter out entries that satisfy the predicate to be displayed.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UIsearchcountryresults.png" alt="UIsearchcountryresults" width="800">
-</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1090,18 +1017,6 @@ The command <code>searchc</code> is in lower-case. Mixed-case or upper-case comm
 </tr>
 </table>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The country code arguments for <code>searchc</code> must be valid 3-letter ISO-3166 country codes.
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>Step 3. The filtered list is now displayed according to the requirements set by the user input.</p>
 </div>
@@ -1109,13 +1024,14 @@ The country code arguments for <code>searchc</code> must be valid 3-letter ISO-3
 <div class="sect4">
 <h5 id="search-year-feature"><a class="link" href="#search-year-feature">Search Year Feature</a></h5>
 <div class="paragraph">
-<p>The command word for search year is <code>searchyear</code> and is parsed by <code>TravelBuddyParser</code>. The arguments are then passed into <code>SearchYearCommandParser</code>.</p>
+<p>The search year mechanism is facilitated by <code>SearchYearCommand</code>.
+It extends <code>Command</code> with a predicate that specifies the conditions of the year of the date visited of the entry to be chosen.
+The command is executed when the arguments parsed from the user input matches the command word of <code>SearchYearCommand</code>,
+which is <code>searchyear</code>.</p>
 </div>
 <div class="paragraph">
-<p>The year arguments entered by the user are stored in a list of keywords and passed into <code>YearContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to the year of visit of each entry in TravelBuddy.</p>
-</div>
-<div class="paragraph">
-<p>The search year mechanism is facilitated by <code>SearchYearCommand</code>, which extends <code>Command</code> with a predicate that specifies the conditions of the year of visit of the place to be chosen from TravelBuddy.</p>
+<p>The arguments entered by the user are stored in a list of keywords and passed into <code>YearContainsKeywordsPredicate</code>,
+where the list is converted into a stream and individually matched to each entry in TravelBuddy.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the search year mechanism behaves at each step.</p>
@@ -1123,22 +1039,12 @@ The country code arguments for <code>searchc</code> must be valid 3-letter ISO-3
 <div class="paragraph">
 <p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UIsearchyear.png" alt="UIsearchyear" width="800">
-</div>
-</div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>searchyear 2016</code> command to search for all entries in TravelBuddy with <code>2016</code>
 as its year visited. The <code>searchyear</code> command will call <code>LogicManager#execute()</code>, which in turn uses
 <code>TravelBuddyParser#parseCommand()</code>. Since the argument is <code>searchyear</code>, <code>SearchYearCommandParser#parse(arguments)</code>
 will be called to parse the arguments to be used in <code>SearchYearCommand</code>. The parsed arguments will be used as a
 predicate to filter out entries that satisfy the predicate to be displayed.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UIsearchyearresults.png" alt="UIsearchyearresults" width="800">
-</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1148,18 +1054,6 @@ predicate to filter out entries that satisfy the predicate to be displayed.</p>
 </td>
 <td class="content">
 The command <code>searchyear</code> is in lower-case. Mixed-case or upper-case commands are not recognised by the application.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The year arguments range from 1900 to the current year. A single year, multiple years or a range of years can be passed in as arguments.
 </td>
 </tr>
 </table>
@@ -2996,4 +2890,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-31 02:59:02 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-31 04:00:31 UTC</div></div></div></body></html>
