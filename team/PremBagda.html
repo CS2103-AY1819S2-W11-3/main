@@ -137,82 +137,185 @@
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">Undoing previous command : <code>undo</code></a></h3>
+<h3 id="adding-a-place-code-add-code"><a class="link" href="#adding-a-place-code-add-code">Adding a place: <code>add</code></a></h3>
 <div class="paragraph">
-<p>The <code>undo</code> command restores TravelBuddy to the state before the previous <em>undoable</em> command was executed.<br></p>
+<p>The <code>add</code> command adds a place to TravelBuddy.<br></p>
 </div>
 <div class="paragraph">
-<p>Shortcut: <code>u</code><br>
-Format: <code>undo</code></p>
+<p>Shortcut: <code>a</code><br>
+Format: <code>add n/NAME cc/COUNTRY_CODE dv/DATE_VISITED r/RATING d/DESCRIPTION a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Undoable commands: Commands that modify TravelBuddy&#8217;s data (<code>add</code>, <code>delete</code>, <code>deletem</code>, <code>edit</code> and <code>clear</code>).</p>
-</div>
+A place can have any number of tags (including 0).
 </td>
 </tr>
 </table>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/addCommand.png" alt="addCommand" width="600">
+</div>
+</div>
 <div class="paragraph">
-<p>Examples:<br></p>
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
-<code>list</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+<p><code>add n/NUS Computing cc/SGP dv/10/10/2018 r/5 d/No description a/NUS School of Computing, COM1, 13 Computing Drive,
+117417</code></p>
 </li>
 <li>
-<p><code>select 1</code><br>
-<code>list</code><br>
-<code>undo</code><br>
-The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+<p><code>add n/Raffles Hotel dv/08/07/2010 t/hotel d/This place is lovely cc/SGP a/Raffles Road r/5 t/staycation</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">Redoing the previously undone command : <code>redo</code></a></h3>
+<h3 id="listing-all-places-code-list-code"><a class="link" href="#listing-all-places-code-list-code">Listing all places : <code>list</code></a></h3>
 <div class="paragraph">
-<p>The <code>redo</code> command reverses the most recent <code>undo</code> command.<br></p>
+<p>The <code>list</code> command shows a list of all places in TravelBuddy.<br></p>
 </div>
 <div class="paragraph">
-<p>Shortcut: <code>r</code><br>
-Format: <code>redo</code></p>
+<p>Shortcut: <code>l</code><br>
+Format: <code>list</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:
-* <code>delete 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
+<p>Calling the <code>list</code> command will return a list of all the places in TravelBuddy as shown in the image below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/listCommand.png" alt="listCommand" width="600">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-a-place-code-edit-code"><a class="link" href="#editing-a-place-code-edit-code">Editing a place : <code>edit</code></a></h3>
+<div class="paragraph">
+<p>You can use the <code>edit</code> command to edit an existing place in TravelBuddy.<br></p>
+</div>
+<div class="paragraph">
+<p>Shortcut: <code>e</code><br>
+Format: <code>edit INDEX [n/NAME] [cc/COUNTRY_CODE] [dv/DATE_VISITED] [r/RATING] [d/DESCRIPTION] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the place at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed place list. The
+index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the place will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the place&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The image below shows the list of places before the <code>edit</code> command is used.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/editCommandBefore.png" alt="editCommandBefore" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>The following image below shows the edited list of places after the <code>edit</code> command is called.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/editCommandAfter.png" alt="editCommandAfter" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
-<code>redo</code><br>
-The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
+<p><code>edit 1 r/3 d/No description</code><br>
+Edits the rating and description address of the 1st place to be <code>3</code> and <code>No description</code> respectively.</p>
 </li>
 <li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+<p><code>edit 2 n/Raffles Hotel t/</code><br>
+Edits the name of the 2nd place to be <code>Raffles Hotel</code> and clears all existing tags.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-place-code-delete-code"><a class="link" href="#deleting-a-place-code-delete-code">Deleting a place : <code>delete</code></a></h3>
+<div class="paragraph">
+<p>The <code>delete</code> command deletes the specified place from TravelBuddy.<br></p>
+</div>
+<div class="paragraph">
+<p>Shortcut: <code>d</code><br>
+Format: <code>delete INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the place at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the currently displayed list, on the left.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The image below shows TravelBuddy before <code>delete</code> command is used.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/deleteCommandBefore.png" alt="deleteCommandBefore" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>The following image below shows the result of using the <code>delete</code> command on the first place of interest.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/deleteCommandAfter.png" alt="deleteCommandAfter" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>delete 2</code><br>
+Deletes the 2nd place in TravelBuddy.</p>
+</li>
+<li>
+<p><code>search Raffles</code><br>
+<code>delete 1</code><br>
+Deletes the 1st place in the results of the <code>find</code> command.</p>
 </li>
 </ul>
 </div>
@@ -233,62 +336,118 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">Undo/Redo feature</a></h3>
+<h3 id="add-feature"><a class="link" href="#add-feature">Add Feature</a></h3>
 <div class="paragraph">
-<p>Called by the <code>undo</code> and <code>redo</code> commands to undo and redo changes to TravelBuddy Place entries.
-Undoable commands include <code>add</code> <code>edit</code> <code>delete</code> <code>deletem</code> <code>clear</code> <code>generate</code> and 'redo'
-Redoable commands include <code>add</code> <code>edit</code> <code>delete</code> <code>deletem</code> <code>clear</code> <code>generate</code> and 'undo'</p>
-</div>
-<div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
-<div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedTravelBuddy</code>.
-It extends <code>TravelBuddy</code> with an undo/redo history, stored internally as an <code>travelBuddyStateList</code> and <code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
+<p>The <code>add</code> command is used to add a place into TravelBuddy. The user can add the following details related to the
+place:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>VersionedTravelBuddy#commit()</code>&#8201;&#8212;&#8201;Saves the current TravelBuddy state in its history.</p>
+<p>Name</p>
 </li>
 <li>
-<p><code>VersionedTravelBuddy#undo()</code>&#8201;&#8212;&#8201;Restores the previous TravelBuddy state from its history.</p>
+<p>Country Code</p>
 </li>
 <li>
-<p><code>VersionedTravelBuddy#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone TravelBuddy state from its history.</p>
+<p>Date Visited</p>
+</li>
+<li>
+<p>Rating</p>
+</li>
+<li>
+<p>Address</p>
+</li>
+<li>
+<p>Description</p>
+</li>
+<li>
+<p>Tag (Optional)</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitTravelBuddy()</code>, <code>Model#undoTravelBuddy()</code> and <code>Model#redoTravelBuddy()</code> respectively.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The Country Code adheres to the three-letters ISO-3166 standard. The full list of Country Codes can be found in
+CountryCodes.adoc
+</td>
+</tr>
+</table>
 </div>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedTravelBuddy</code> will be initialized with the initial TravelBuddy state, and the <code>currentStatePointer</code> pointing to that single TravelBuddy state.</p>
+<p>Given below is a sequence of steps, illustrating the interaction between various classes when the add command is
+entered.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/UndoRedoStartingStateListDiagram.png" alt="UndoRedoStartingStateListDiagram" width="800">
+<img src="../images/AddCommandSequenceDiagram.PNG" alt="AddCommandSequenceDiagram" width="800">
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th place in TravelBuddy. The <code>delete</code> command calls
-<code>Model#commitTravelBuddy()</code>, causing the modified state of TravelBuddy after the <code>delete 5</code> command executes to be saved in the <code>travelBuddyStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted TravelBuddy state.</p>
+<p>Figure 10: Add Command Sequence Diagram</p>
+</div>
+<div class="paragraph">
+<p>Step 1: The user enters the command <code>add n/NUS Computing cc/SGP dv/10/10/2017 r/3 d/My School a/13 Computing Drive,
+117417 t/faculty</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2: The command is processed by the Logic component, which will then call <code>LogicManager#execute()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 3: <code>TravelBuddyParser#parseCommand()</code> is invoked, which is also located in the Logic component.</p>
+</div>
+<div class="paragraph">
+<p>Step 4: <code>AddCommandParser#AddCommandParser()</code> is invoked.</p>
+</div>
+<div class="paragraph">
+<p>Step 5: The <code>AddCommandParser#parse()</code> is called and receives the command with the arguments given as a string.</p>
+</div>
+<div class="paragraph">
+<p>Step 6: The <code>AddCommandParser</code> interprets the arguments and constructs an <code>AddCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 7: The <code>AddCommand</code> with a Place specified by the user is returned.</p>
+</div>
+<div class="paragraph">
+<p>Step 8: The <code>AddCommand#execute()</code> method is invoked.</p>
+</div>
+<div class="paragraph">
+<p>Step 9: The <code>Model#addPlace()</code> method is invoked with the argument <code>toAdd</code>. The <code>Model#commitTravelBuddy()</code> method is
+ also invoked.</p>
+</div>
+<div class="paragraph">
+<p>Step 10: The <code>TravelBuddy#addPlace()</code> method is invoked by <code>Model</code> with the argument <code>toAdd</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 11: A result object is returned.</p>
+</div>
+<div class="sect4">
+<h5 id="add-command"><a class="link" href="#add-command">Add Command</a></h5>
+<div class="paragraph">
+<p>Given below is an example usage scenario and what the user will see in the GUI.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application and sees the GUI with no places.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/UndoRedoNewCommand1StateListDiagram.png" alt="UndoRedoNewCommand1StateListDiagram" width="800">
+<img src="../images/AddCommandStep1.png" alt="AddCommandStep1" width="800">
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new place. The <code>add</code> command also calls <code>Model#commitTravelBuddy()
-`, causing another modified TravelBuddy state to be saved into the `travelBuddyStateList</code>.</p>
+<p>Step 2. The user enters the full add command <code>add n/NUS Computing cc/SGP dv/10/10/2017 r/3 d/My School a/13 Computing Drive,
+117417 t/faculty</code> to add the place to TravelBuddy and presses enter. TravelBuddy will start executing the steps mentioned in Figure 10.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/UndoRedoNewCommand2StateListDiagram.png" alt="UndoRedoNewCommand2StateListDiagram" width="800">
+<img src="../images/AddCommandStep2.png" alt="AddCommandStep2" width="800">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -298,141 +457,41 @@ Additionally, it implements the following operations:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If a command fails its execution, it will not call <code>Model#commitTravelBuddy()</code>, so the TravelBuddy state will not be saved into the <code>travelBuddyStateList</code>.
+The command <code>add</code> is in lower-case. Mixed-case or upper-case commands are not recognised by TravelBuddy.
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>Step 4. The user now decides that adding the place was a mistake, and decides to undo that action by executing the
-<code>undo</code> command. The <code>undo</code> command will call <code>Model#undoTravelBuddy()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous TravelBuddy state, and restores the TravelBuddy to that state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoExecuteUndoStateListDiagram.png" alt="UndoRedoExecuteUndoStateListDiagram" width="800">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial TravelBuddy state, then there are no previous TravelBuddy states to restore. The <code>undo</code> command uses <code>Model#canUndoTravelBuddy()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoSequenceDiagram.png" alt="UndoRedoSequenceDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoTravelBuddy()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores TravelBuddy to that state.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index <code>travelBuddyStateList.size() - 1</code>, pointing to the latest TravelBuddy state, then there are no undone TravelBuddy states to restore. The <code>redo</code> command uses <code>Model#canRedoTravelBuddy()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify TravelBuddy, such as <code>list</code>, will usually not call <code>Model#commitTravelBuddy()</code>, <code>Model#undoTravelBuddy()</code> or <code>Model#redoTravelBuddy()</code>. Thus, the <code>travelBuddyStateList</code> remains unchanged.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand3StateListDiagram.png" alt="UndoRedoNewCommand3StateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitTravelBuddy()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>travelBuddyStateList</code>, all TravelBuddy states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand4StateListDiagram.png" alt="UndoRedoNewCommand4StateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram" width="650">
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
+<h5 id="aspect-data-structure-to-store-country-codes"><a class="link" href="#aspect-data-structure-to-store-country-codes">Aspect: Data structure to store Country Codes</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire TravelBuddy.</p>
+<p><strong>Alternative 1 (current choice):</strong> Use enum specified in java.util.Locales.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to implement.</p>
+<p>Pros: Easy to implement and contains all three-letters country codes specified in ISO-3166.</p>
 </li>
 <li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
+<p>Cons: Slightly slow in searching for country code.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
+<p><strong>Alternative 2:</strong> Create own data structure containing most commonly traveled countries in the world.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the place being deleted).</p>
+<p>Pros: Locating country code in data structure would be faster than Alternative 1.</p>
 </li>
 <li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of TravelBuddy states.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedTravelBuddy</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
+<p>Cons: Tedious process of typing out country codes in the data structure.</p>
 </li>
 </ul>
 </div>
@@ -443,13 +502,4 @@ If the <code>currentStatePointer</code> is at index <code>travelBuddyStateList.s
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
-<hr>
-<div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 13:05:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 13:08:11 UTC</div></div></div></body></html>
