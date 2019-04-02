@@ -308,10 +308,10 @@ Format: <code>search KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case insensitive. e.g <code>national</code> will match <code>National</code></p>
+<p>The search is case insensitive. e.g <code>national</code> will match <code>National</code>.</p>
 </li>
 <li>
-<p>The order of the keywords does not matter. e.g. <code>University National of Singapore</code> will match <code>National University of Singapore</code></p>
+<p>The order of the keywords does not matter. e.g. <code>University National of Singapore</code> will match <code>National University of Singapore</code>.</p>
 </li>
 <li>
 <p>Only the name is searched.</p>
@@ -320,7 +320,7 @@ Format: <code>search KEYWORD [MORE_KEYWORDS]</code></p>
 <p>Only full words will be matched e.g. <code>Nation</code> will not match <code>National</code></p>
 </li>
 <li>
-<p>Places matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>National Museum</code> will return <code>National Museum of Singapore</code>, <code>National University Hospital</code></p>
+<p>Places matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>National Museum</code> will return <code>National Museum of Singapore</code>, <code>National University Hospital</code>.</p>
 </li>
 </ul>
 </div>
@@ -403,16 +403,16 @@ Returns a list of places with ratings of <code>4</code> or <code>5</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case insensitive. e.g <code>Temple</code> will match <code>temple</code></p>
+<p>The search is case insensitive. e.g <code>Temple</code> will match <code>temple</code>.</p>
 </li>
 <li>
 <p>Only the tags are searched.</p>
 </li>
 <li>
-<p>Only full words will be matched e.g. <code>temp</code> will not match <code>temple</code></p>
+<p>Only full words will be matched e.g. <code>temp</code> will not match <code>temple</code>.</p>
 </li>
 <li>
-<p>Places tagged with at least one matching keyword will be returned (i.e. <code>OR</code> search). e.g. <code>temple school</code> will return places tagged with <code>temple</code> or <code>school</code></p>
+<p>Places tagged with at least one matching keyword will be returned (i.e. <code>OR</code> search). e.g. <code>temple school</code> will return places tagged with <code>temple</code> or <code>school</code>.</p>
 </li>
 </ul>
 </div>
@@ -505,7 +505,7 @@ Returns a list of places located in either <code>Japan</code> or <code>Germany</
 <p>Searches outside the bounds will issue a warning.</p>
 </li>
 <li>
-<p>The year keywords for <code>searchyear</code> can be entered as a range. e.g <code>2010-2017</code> will return all the places visited from <code>2010</code> to <code>2017</code></p>
+<p>The year keywords for <code>searchyear</code> can be entered as a range. e.g <code>2010-2017</code> will return all the places visited from <code>2010</code> to <code>2017</code>.</p>
 </li>
 <li>
 <p>Only the year of visit is searched.</p>
@@ -617,13 +617,19 @@ Deletes the 1st place in the results of the <code>find</code> command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes multiple places from a specified range from <code>START_INDEX</code> to <code>END_INDEX</code></p>
+<p>Deletes multiple places from a specified range from <code>START_INDEX</code> to <code>END_INDEX</code>.</p>
+</li>
+<li>
+<p><code>START_INDEX</code> must be smaller than or equal to the last index in the list.</p>
+</li>
+<li>
+<p>Deletem will delete up till the last entry in TravelBuddy if specified <code>END_INDEX</code> exceeds the last entry.</p>
 </li>
 <li>
 <p>Inclusive of both places specified by <code>START_INDEX</code> and <code>END_INDEX</code>.</p>
 </li>
 <li>
-<p>The index refers to the index number to the left of each place name, ie. "4. Jalan Kayu"</p>
+<p>The index refers to the index number to the left of each place name, ie. "4. Jalan Kayu".</p>
 </li>
 <li>
 <p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
@@ -1038,4 +1044,4 @@ e.g. <code>s 2</code></p></td>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 08:59:15 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 13:05:26 UTC</div></div></div></body></html>

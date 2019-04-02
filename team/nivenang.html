@@ -10,7 +10,15 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>TravelBuddy is a desktop Travel Guide application for travel enthusiasts to record places previously visited. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
+<p>TravelBuddy is a desktop Travel Guide application for travel enthusiasts to record places previously visited.
+TravelBuddy enables travellers to record and store places that they have visited previously. With the recorded data, travellers can
+search for places according to the fields requested, analyse and provide statistics for places that they have been to so far.
+Travellers can also store their precious photos on TravelBuddy, which helps them remember and reminisce the places that wonderful places they have journeyed to.
+The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
+</div>
+<div class="paragraph">
+<p>My role in this Software Engineering project was to design and write the code for the <code>search</code> features. The following sections showcase, in greater detail, my contributions and enhancements added to TravelBuddy,
+as well as the documentation of these enhancements in the User Guide and Developer Guide.</p>
 </div>
 </div>
 </div>
@@ -24,13 +32,14 @@
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to search TravelBuddy for places whose requested field matches the user input.</p>
+<p>What it does: allows the user to search TravelBuddy for places whose requested field (name, rating, tags, country or year) matches the user input.</p>
 </li>
 <li>
 <p>Justification: TravelBuddy can get long and messy when more places are added. This feature improves TravelBuddy as it allows users to filter through the long place list to obtain what the users want.</p>
 </li>
 <li>
-<p>Highlights: This feature helps users search for what they need. Multiple keywords can also be included in the search to obtain a wider scope of results.</p>
+<p>Highlights: This feature helps users search for what they need. Multiple keywords can also be included in the search to obtain a wider scope of results.
+An in-depth analysis of design alternatives in keyword matching as well as the data structure used for the search feature was done to obtain the most optimal solution. The non-functional requirements were also taken into account while weighing the options.</p>
 </li>
 </ul>
 </div>
@@ -62,6 +71,9 @@
 <li>
 <p>Helped to streamline issue tracking using milestone labels and assignees on Github.</p>
 </li>
+<li>
+<p>Added user stories to help with implementation of features.</p>
+</li>
 </ul>
 </div>
 </li>
@@ -70,7 +82,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Updated tests and wrote additional tests from people in address book to places in TravelBuddy: <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/50">#50</a></p>
+<p>Updated tests and wrote additional tests to convert people in address book to places in TravelBuddy: <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/50">#50</a></p>
 </li>
 </ul>
 </div>
@@ -86,7 +98,10 @@
 <p>Updated the User Guide with features I added and FAQ section: <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/53">#53</a>, <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/63">#63</a>, <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/77">#77</a>, <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/85">#85</a></p>
 </li>
 <li>
-<p>Updated the Developer with features I added: <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/68">#68</a>, <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/85">#85</a></p>
+<p>Updated the User Guide with a command cheatsheet: <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/101">#101</a></p>
+</li>
+<li>
+<p>Updated the Developer Guide with features I added and diagrams for illustration purposes: <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/68">#68</a>, <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/85">#85</a>, <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/101">#101</a></p>
 </li>
 </ul>
 </div>
@@ -114,13 +129,16 @@
 <div class="sect1">
 <h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>We had to update the User Guide of TravelBuddy with information on the use of the enhancements that we implemented.</p>
+</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below is an excerpt from the User Guide, showing the additions that I made for the search feature. They showcase my ability to write documentation targeting end-users.</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -138,10 +156,10 @@ Format: <code>search KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case insensitive. e.g <code>national</code> will match <code>National</code></p>
+<p>The search is case insensitive. e.g <code>national</code> will match <code>National</code>.</p>
 </li>
 <li>
-<p>The order of the keywords does not matter. e.g. <code>University National of Singapore</code> will match <code>National University of Singapore</code></p>
+<p>The order of the keywords does not matter. e.g. <code>University National of Singapore</code> will match <code>National University of Singapore</code>.</p>
 </li>
 <li>
 <p>Only the name is searched.</p>
@@ -150,7 +168,7 @@ Format: <code>search KEYWORD [MORE_KEYWORDS]</code></p>
 <p>Only full words will be matched e.g. <code>Nation</code> will not match <code>National</code></p>
 </li>
 <li>
-<p>Places matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>National Museum</code> will return <code>National Museum of Singapore</code>, <code>National University Hospital</code></p>
+<p>Places matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>National Museum</code> will return <code>National Museum of Singapore</code>, <code>National University Hospital</code>.</p>
 </li>
 </ul>
 </div>
@@ -233,16 +251,16 @@ Returns a list of places with ratings of <code>4</code> or <code>5</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case insensitive. e.g <code>Temple</code> will match <code>temple</code></p>
+<p>The search is case insensitive. e.g <code>Temple</code> will match <code>temple</code>.</p>
 </li>
 <li>
 <p>Only the tags are searched.</p>
 </li>
 <li>
-<p>Only full words will be matched e.g. <code>temp</code> will not match <code>temple</code></p>
+<p>Only full words will be matched e.g. <code>temp</code> will not match <code>temple</code>.</p>
 </li>
 <li>
-<p>Places tagged with at least one matching keyword will be returned (i.e. <code>OR</code> search). e.g. <code>temple school</code> will return places tagged with <code>temple</code> or <code>school</code></p>
+<p>Places tagged with at least one matching keyword will be returned (i.e. <code>OR</code> search). e.g. <code>temple school</code> will return places tagged with <code>temple</code> or <code>school</code>.</p>
 </li>
 </ul>
 </div>
@@ -335,7 +353,7 @@ Returns a list of places located in either <code>Japan</code> or <code>Germany</
 <p>Searches outside the bounds will issue a warning.</p>
 </li>
 <li>
-<p>The year keywords for <code>searchyear</code> can be entered as a range. e.g <code>2010-2017</code> will return all the places visited from <code>2010</code> to <code>2017</code></p>
+<p>The year keywords for <code>searchyear</code> can be entered as a range. e.g <code>2010-2017</code> will return all the places visited from <code>2010</code> to <code>2017</code>.</p>
 </li>
 <li>
 <p>Only the year of visit is searched.</p>
@@ -374,13 +392,16 @@ Returns a list of places visited from <code>2010</code> to <code>2017</code></p>
 <div class="sect1">
 <h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>We had to update the Developer Guide of TravelBuddy with the logic behind the implementation of the enhancements that we implemented.</p>
+</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below is excerpt from the Developer Guide, showing the additions that I made for the search feature. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -397,7 +418,7 @@ Returns a list of places visited from <code>2010</code> to <code>2017</code></p>
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 3.2.1.1 Sequence Diagram for <code>search</code> command</p>
+<p>Figure 4.2.1.1 Sequence Diagram for <code>search</code> command</p>
 </div>
 <div class="paragraph">
 <p>The control flow of the sequence diagram above is as follows:</p>
@@ -470,12 +491,15 @@ Returns a list of places visited from <code>2010</code> to <code>2017</code></p>
 <p>Given below is an example usage scenario and how the search mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places.</p>
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in the diagram below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/UIsearch.png" alt="UIsearch" width="800">
 </div>
+</div>
+<div class="paragraph">
+<p>Figure 4.2.1.2 GUI with user&#8217;s list of places, prior to running <code>search Singapore</code> command</p>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>search Singapore</code> command to search for all entries in TravelBuddy with <code>Singapore</code> in its name.
@@ -495,12 +519,15 @@ The command <code>search</code> is in lower-case. Mixed-case or upper-case comma
 </table>
 </div>
 <div class="paragraph">
-<p>Step 3. The filtered list is now displayed according to the requirements set by the user input.</p>
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in the diagram below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/UIsearchresults.png" alt="UIsearchresults" width="800">
 </div>
+</div>
+<div class="paragraph">
+<p>Figure 4.2.1.3 Application Interface displaying the results of <code>search Singapore</code> command</p>
 </div>
 </div>
 <div class="sect4">
@@ -518,10 +545,15 @@ The command <code>search</code> is in lower-case. Mixed-case or upper-case comma
 <p>Given below is an example usage scenario and how the search rating mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places.</p>
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in the diagram below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UIsearchrating.png" alt="UIsearchrating" width="800">
+</div>
 </div>
 <div class="paragraph">
-<p>pimage::UIsearchrating.png[width="800"]</p>
+<p>Figure 4.2.1.4 GUI with user&#8217;s list of places, prior to running <code>searchr 4</code> command</p>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>searchr 4</code> command to search for all entries in TravelBuddy with <code>4</code> as its rating.
@@ -555,12 +587,15 @@ The arguments for <code>searchr</code> range from 1 to 5. Non-integer values out
 </table>
 </div>
 <div class="paragraph">
-<p>Step 3. The filtered list is now displayed according to the requirements set by the user input.</p>
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in the diagram below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/UIsearchratingresults.png" alt="UIsearchratingresults" width="800">
 </div>
+</div>
+<div class="paragraph">
+<p>Figure 4.2.1.5 Application Interface displaying the results of <code>searchr 4</code> command</p>
 </div>
 </div>
 <div class="sect4">
@@ -578,12 +613,15 @@ The arguments for <code>searchr</code> range from 1 to 5. Non-integer values out
 <p>Given below is an example usage scenario and how the search tags mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places.</p>
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in the diagram below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/UIsearchtags.png" alt="UIsearchtags" width="800">
 </div>
+</div>
+<div class="paragraph">
+<p>Figure 4.2.1.6 GUI with user&#8217;s list of places, prior to running <code>searcht distillery</code> command</p>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>searcht distillery</code> command to search for all entries in TravelBuddy with <code>distillery</code>
@@ -605,12 +643,15 @@ The command <code>searcht</code> is in lower-case. Mixed-case or upper-case comm
 </table>
 </div>
 <div class="paragraph">
-<p>Step 3. The filtered list is now displayed according to the requirements set by the user input.</p>
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in the diagram below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/UIsearchtagsresults.png" alt="UIsearchtagsresults" width="800">
 </div>
+</div>
+<div class="paragraph">
+<p>Figure 4.2.1.7 Application Interface displaying the results of <code>searcht distillery</code> command</p>
 </div>
 </div>
 <div class="sect4">
@@ -628,7 +669,7 @@ The command <code>searcht</code> is in lower-case. Mixed-case or upper-case comm
 <p>Given below is an example usage scenario and how the search country mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places.</p>
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in the diagram below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -636,16 +677,14 @@ The command <code>searcht</code> is in lower-case. Mixed-case or upper-case comm
 </div>
 </div>
 <div class="paragraph">
+<p>Figure 4.2.1.8 GUI with user&#8217;s list of places, prior to running <code>searchc JPN</code> command</p>
+</div>
+<div class="paragraph">
 <p>Step 2. The user executes <code>searchc SGP JPN</code> command to search for all entries in TravelBuddy with <code>SGP</code> or <code>JPN</code>
 as its country. The <code>searchc</code> command will call <code>LogicManager#execute()</code>, which in turn uses
 <code>TravelBuddyParser#parseCommand()</code>. Since the argument is <code>searchc</code>, <code>SearchCountryCommandParser#parse(arguments)</code>
 will be called to parse the arguments to be used in <code>SearchCountryCommand</code>. The parsed arguments will be used as a
 predicate to filter out entries that satisfy the predicate to be displayed.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UIsearchcountryresults.png" alt="UIsearchcountryresults" width="800">
-</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -672,7 +711,15 @@ The country code arguments for <code>searchc</code> must be valid 3-letter ISO-3
 </table>
 </div>
 <div class="paragraph">
-<p>Step 3. The filtered list is now displayed according to the requirements set by the user input.</p>
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in the diagram below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UIsearchcountryresults.png" alt="UIsearchcountryresults" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 4.2.1.9 Application Interface displaying the results of <code>searchc JPN</code> command</p>
 </div>
 </div>
 <div class="sect4">
@@ -690,7 +737,7 @@ The country code arguments for <code>searchc</code> must be valid 3-letter ISO-3
 <p>Given below is an example usage scenario and how the search year mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places.</p>
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in the diagram below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -698,16 +745,14 @@ The country code arguments for <code>searchc</code> must be valid 3-letter ISO-3
 </div>
 </div>
 <div class="paragraph">
+<p>Figure 4.2.1.10 GUI with user&#8217;s list of places, prior to running <code>searchyear 2016</code> command</p>
+</div>
+<div class="paragraph">
 <p>Step 2. The user executes <code>searchyear 2016</code> command to search for all entries in TravelBuddy with <code>2016</code>
 as its year visited. The <code>searchyear</code> command will call <code>LogicManager#execute()</code>, which in turn uses
 <code>TravelBuddyParser#parseCommand()</code>. Since the argument is <code>searchyear</code>, <code>SearchYearCommandParser#parse(arguments)</code>
 will be called to parse the arguments to be used in <code>SearchYearCommand</code>. The parsed arguments will be used as a
 predicate to filter out entries that satisfy the predicate to be displayed.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UIsearchyearresults.png" alt="UIsearchyearresults" width="800">
-</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -734,7 +779,15 @@ The year arguments range from 1900 to the current year. A single year, multiple 
 </table>
 </div>
 <div class="paragraph">
-<p>Step 3. The filtered list is now displayed according to the requirements set by the user input.</p>
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in the diagram below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UIsearchyearresults.png" alt="UIsearchyearresults" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 4.2.1.11 Application Interface displaying the results of <code>searchyear 2016</code> command</p>
 </div>
 </div>
 </div>
@@ -775,6 +828,10 @@ The year arguments range from 1900 to the current year. A single year, multiple 
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p><strong>Decision</strong>: Alternative 1 of matching the entire keyword is adopted as it reduces processing time during keyword matching.
+In addition, it narrows down the search options by only returning keywords that matches the search query, which is the main objective of implementing a search feature.</p>
+</div>
 </div>
 <div class="sect4">
 <h5 id="aspect-data-structure-to-support-search-commands"><a class="link" href="#aspect-data-structure-to-support-search-commands">Aspect: Data structure to support search commands</a></h5>
@@ -809,17 +866,11 @@ developers of our project.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
-<hr>
 <div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+<p><strong>Decision</strong>: Alternative 1 of using a list is preferred as it uses less memory compared to alternative 2. Moreover, future contributors to the project are likely to be student undergraduates, so a simple data structure would be more optimal for educational purposes.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 08:59:15 UTC</div></div></div></body></html>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 13:05:26 UTC</div></div></div></body></html>
