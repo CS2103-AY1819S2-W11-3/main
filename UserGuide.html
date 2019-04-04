@@ -303,6 +303,39 @@ Edits the name of the 2nd place to be <code>Raffles Hotel</code> and clears all 
 <p>Shortcut: <code>f</code><br>
 Format: <code>search KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
+<div class="paragraph">
+<p>Example:
+<code>search Singapore</code><br>
+Executes a search for places that contain the keyword <code>Singapore</code> in its name.</p>
+</div>
+<div id="img-UIsearchresults" class="imageblock">
+<div class="content">
+<img src="images/UIsearchresults.png" alt="UIsearchresults" width="600">
+</div>
+<div class="title">Figure 3.5.1: Search results of <code>search Singapore</code>.</div>
+</div>
+<div class="paragraph">
+<p>From Figure 3.5.1, using <code>search Singapore</code> will return all places in your TravelBuddy that contain <code>Singapore</code> in its name.</p>
+</div>
+<div class="paragraph">
+<p>In this case, the following are returned as they contain <code>Singapore</code> in their names:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Universal Studios <strong>Singapore</strong></p>
+</li>
+<li>
+<p>National University of <strong>Singapore</strong></p>
+</li>
+<li>
+<p><strong>Singapore</strong> Zoo</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Given below is a list of guidelines for the search feature.</p>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -314,7 +347,7 @@ Format: <code>search KEYWORD [MORE_KEYWORDS]</code></p>
 <p>The order of the keywords does not matter. e.g. <code>University National of Singapore</code> will match <code>National University of Singapore</code>.</p>
 </li>
 <li>
-<p>Only the name is searched.</p>
+<p>Only the name of the places in TravelBuddy is searched.</p>
 </li>
 <li>
 <p>Only full words will be matched e.g. <code>Nation</code> will not match <code>National</code></p>
@@ -326,26 +359,6 @@ Format: <code>search KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 </div>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UIsearchresults.png" alt="UIsearchresults" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>search National</code><br>
-Returns <code>National Museum of Singapore</code> and <code>National University Hospital</code></p>
-</li>
-<li>
-<p><code>search National Temple</code><br>
-Returns any place having names <code>National</code> or <code>Temple</code></p>
-</li>
-</ul>
-</div>
 </div>
 <div class="sect2">
 <h3 id="searching-places-by-ratings-code-searchr-code"><a class="link" href="#searching-places-by-ratings-code-searchr-code">3.6. Searching places by ratings: <code>searchr</code></a></h3>
@@ -355,6 +368,23 @@ Returns any place having names <code>National</code> or <code>Temple</code></p>
 <div class="paragraph">
 <p>Format: <code>searchr INDEX [MORE_INDICES]</code></p>
 </div>
+<div class="paragraph">
+<p>Example:
+<code>searchr 4</code><br>
+Executes a search for places with a rating of <code>4</code>.</p>
+</div>
+<div id="img-UIsearchratingresults" class="imageblock">
+<div class="content">
+<img src="images/UIsearchratingresults.png" alt="UIsearchratingresults" width="600">
+</div>
+<div class="title">Figure 3.6.1: Search results of <code>searchr 4</code>.</div>
+</div>
+<div class="paragraph">
+<p>From Figure 3.6.1, using <code>searchr 4</code> will return all places in your TravelBuddy that have a rating of <code>4</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is a list of guidelines for the search rating feature.</p>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -363,31 +393,14 @@ Returns any place having names <code>National</code> or <code>Temple</code></p>
 <p>The search rating is from a range of 1 to 5. e.g <code>5</code> will return places with 5 star ratings.</p>
 </li>
 <li>
-<p>Only the ratings are searched.</p>
+<p>Only the rating of the places in TravelBuddy is searched.</p>
+</li>
+<li>
+<p>Multiple indices can be included in the query, i.e. <code>searchr 4 5</code> will return places with <code>4</code> or <code>5</code> star ratings.</p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UIsearchratingresults.png" alt="UIsearchratingresults" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>searchr 5</code><br>
-Returns a list of places with rating of <code>5</code></p>
-</li>
-<li>
-<p><code>searchr 4 5</code><br>
-Returns a list of places with ratings of <code>4</code> or <code>5</code></p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect2">
@@ -398,6 +411,23 @@ Returns a list of places with ratings of <code>4</code> or <code>5</code></p>
 <div class="paragraph">
 <p>Format: <code>searcht KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
+<div class="paragraph">
+<p>Example:
+<code>searcht distillery</code><br>
+Executes a search for places that are tagged with <code>distillery</code>.</p>
+</div>
+<div id="img-UIsearchtagsresults" class="imageblock">
+<div class="content">
+<img src="images/UIsearchtagsresults.png" alt="UIsearchtagsresults" width="600">
+</div>
+<div class="title">Figure 3.7.1: Search results of <code>searcht distillery</code>.</div>
+</div>
+<div class="paragraph">
+<p>From Figure 3.7.1, using <code>searcht distillery</code> will return all places in your TravelBuddy that are tagged with <code>distillery</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is a list of guidelines for the search tags feature.</p>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -406,7 +436,7 @@ Returns a list of places with ratings of <code>4</code> or <code>5</code></p>
 <p>The search is case insensitive. e.g <code>Temple</code> will match <code>temple</code>.</p>
 </li>
 <li>
-<p>Only the tags are searched.</p>
+<p>Only the tags of the places in TravelBuddy are searched.</p>
 </li>
 <li>
 <p>Only full words will be matched e.g. <code>temp</code> will not match <code>temple</code>.</p>
@@ -414,29 +444,12 @@ Returns a list of places with ratings of <code>4</code> or <code>5</code></p>
 <li>
 <p>Places tagged with at least one matching keyword will be returned (i.e. <code>OR</code> search). e.g. <code>temple school</code> will return places tagged with <code>temple</code> or <code>school</code>.</p>
 </li>
-</ul>
-</div>
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UIsearchtagsresults.png" alt="UIsearchtagsresults" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
 <li>
-<p><code>searcht temple</code><br>
-Returns a list of places tagged with <code>temple</code></p>
-</li>
-<li>
-<p><code>searcht temple school</code><br>
-Returns a list of places tagged with <code>temple</code> or <code>school</code></p>
+<p>Multiple keywords can be included in the query, i.e. <code>searcht distillery temple</code> will return places tagged with <code>distillery</code> or <code>temple</code>.</p>
 </li>
 </ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -446,6 +459,22 @@ Returns a list of places tagged with <code>temple</code> or <code>school</code><
 </div>
 <div class="paragraph">
 <p>Format: <code>searchc KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>searchc JPN</code><br>
+Executes a search for places located in <code>JPN</code> (Japan).</p>
+</div>
+<div id="img-UIsearchcountryresults" class="imageblock">
+<div class="content">
+<img src="images/UIsearchcountryresults.png" alt="UIsearchcountryresults" width="600">
+</div>
+<div class="title">Figure 3.8.1: Search results of <code>searchc JPN</code>.</div>
+</div>
+<div class="paragraph">
+<p>From Figure 3.8.1, using <code>searchc JPN</code> will return all places in your TravelBuddy that are located in Japan.</p>
+</div>
+<div class="paragraph">
+<p>Given below is a list of guidelines for the search country feature.</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -458,31 +487,14 @@ Returns a list of places tagged with <code>temple</code> or <code>school</code><
 <p>The search country is from a list of ISO-3166 country codes. e.g <code>JPN</code> will return places located in Japan.</p>
 </li>
 <li>
-<p>Only the country is searched.</p>
+<p>Only the country of the places in TravelBuddy is searched.</p>
+</li>
+<li>
+<p>Multiple keywords can be included in the query, i.e. <code>searchc JPN CHN</code> will return places located in Japan or China.</p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UIsearchcountryresults.png" alt="UIsearchcountryresults" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>searchc CHN</code><br>
-Returns a list of places located in <code>China</code></p>
-</li>
-<li>
-<p><code>searchc JPN DEU</code><br>
-Returns a list of places located in either <code>Japan</code> or <code>Germany</code></p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect2">
@@ -494,6 +506,22 @@ Returns a list of places located in either <code>Japan</code> or <code>Germany</
 <p>Format: <code>searchyear KEYWORD [MORE_KEYWORDS]</code> OR<br>
 <code>searchyear KEYWORD-KEYWORD</code></p>
 </div>
+<div class="paragraph">
+<p>Example: <code>searchyear 2016</code><br>
+Executes a search for places visited in the year <code>2016</code>.</p>
+</div>
+<div id="img-UIsearchyearresults" class="imageblock">
+<div class="content">
+<img src="images/UIsearchyearresults.png" alt="UIsearchyearresults" width="600">
+</div>
+<div class="title">Figure 3.9.1: Search results of <code>searchyear 2016</code>.</div>
+</div>
+<div class="paragraph">
+<p>From Figure 3.9.1, using <code>searchyear 2016</code> will return all places in your TravelBuddy you visited in the year <code>2016</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is a list of guidelines for the search country feature.</p>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -502,41 +530,17 @@ Returns a list of places located in either <code>Japan</code> or <code>Germany</
 <p>The search year is bounded from 1900 to the current year. e.g <code>2016</code> will return places visited in the year 2016.</p>
 </li>
 <li>
-<p>Searches outside the bounds will issue a warning.</p>
+<p>Search requests outside the bounds will issue a warning.</p>
 </li>
 <li>
 <p>The year keywords for <code>searchyear</code> can be entered as a range. e.g <code>2010-2017</code> will return all the places visited from <code>2010</code> to <code>2017</code>.</p>
 </li>
 <li>
-<p>Only the year of visit is searched.</p>
+<p>Only the year of visit of the places in TravelBuddy is searched.</p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UIsearchyearresults.png" alt="UIsearchyearresults" width="600">
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>searchyear 2017</code><br>
-Returns a list of places visited in the year <code>2017</code></p>
-</li>
-<li>
-<p><code>searchyear 2016 2018</code><br>
-Returns a list of places visited in the year <code>2016</code> or <code>2018</code></p>
-</li>
-<li>
-<p><code>searchyear 2010-2017</code><br>
-Returns a list of places visited from <code>2010</code> to <code>2017</code></p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect2">
@@ -769,12 +773,10 @@ Format: <code>undo</code></p>
 <ul>
 <li>
 <p><code>delete 1</code><br>
-<code>list</code><br>
 <code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
 </li>
 <li>
 <p><code>select 1</code><br>
-<code>list</code><br>
 <code>undo</code><br>
 The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
 </li>
@@ -1044,4 +1046,4 @@ e.g. <code>s 2</code></p></td>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-04 08:16:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-04 23:54:27 UTC</div></div></div></body></html>
