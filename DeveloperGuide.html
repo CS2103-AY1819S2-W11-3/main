@@ -10,27 +10,27 @@
 <div id="toctitle"></div>
 <ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#setting-up">2. Setting up</a>
+<li><a href="#setting-up">2. Setting Up</a>
 <ul class="sectlevel2">
 <li><a href="#prerequisites">2.1. Prerequisites</a></li>
-<li><a href="#setting-up-the-project-in-your-computer">2.2. Setting up the project in your computer</a></li>
-<li><a href="#verifying-the-setup">2.3. Verifying the setup</a></li>
-<li><a href="#configurations-to-do-before-writing-code">2.4. Configurations to do before writing code</a></li>
+<li><a href="#setting-up-the-project-in-your-computer">2.2. Setting Up the Project in Your Computer</a></li>
+<li><a href="#verifying-the-setup">2.3. Verifying the Setup</a></li>
+<li><a href="#configurations-to-do-before-writing-code">2.4. Configurations to do Before Writing Code</a></li>
 </ul>
 </li>
 <li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
 <li><a href="#Design-Architecture">3.1. Architecture</a></li>
-<li><a href="#Design-Ui">3.2. UI component</a></li>
-<li><a href="#Design-Logic">3.3. Logic component</a></li>
-<li><a href="#Design-Model">3.4. Model component</a></li>
-<li><a href="#Design-Storage">3.5. Storage component</a></li>
-<li><a href="#Design-Commons">3.6. Common classes</a></li>
+<li><a href="#Design-Ui">3.2. UI Component</a></li>
+<li><a href="#Design-Logic">3.3. Logic Component</a></li>
+<li><a href="#Design-Model">3.4. Model Component</a></li>
+<li><a href="#Design-Storage">3.5. Storage Component</a></li>
+<li><a href="#Design-Commons">3.6. Common Classes</a></li>
 </ul>
 </li>
 <li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#undo-redo-feature">4.1. Undo/Redo feature</a></li>
+<li><a href="#undo-redo-feature">4.1. Undo/Redo Feature</a></li>
 <li><a href="#search-feature">4.2. Search Feature</a></li>
 <li><a href="#add-feature">4.3. Add Feature</a></li>
 <li><a href="#generate-feature">4.4. Generate Feature</a></li>
@@ -42,7 +42,7 @@
 <ul class="sectlevel2">
 <li><a href="#editing-documentation">5.1. Editing Documentation</a></li>
 <li><a href="#publishing-documentation">5.2. Publishing Documentation</a></li>
-<li><a href="#converting-documentation-to-pdf-format">5.3. Converting Documentation to PDF format</a></li>
+<li><a href="#converting-documentation-to-pdf-format">5.3. Converting Documentation to PDF Format</a></li>
 <li><a href="#Docs-SiteWideDocSettings">5.4. Site-wide Documentation Settings</a></li>
 <li><a href="#Docs-PerFileDocSettings">5.5. Per-file Documentation Settings</a></li>
 <li><a href="#site-template">5.6. Site Template</a></li>
@@ -51,7 +51,7 @@
 <li><a href="#Testing">6. Testing</a>
 <ul class="sectlevel2">
 <li><a href="#running-tests">6.1. Running Tests</a></li>
-<li><a href="#types-of-tests">6.2. Types of tests</a></li>
+<li><a href="#types-of-tests">6.2. Types of Tests</a></li>
 <li><a href="#troubleshooting-testing">6.3. Troubleshooting Testing</a></li>
 </ul>
 </li>
@@ -74,8 +74,8 @@
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-place">G.2. Deleting a place</a></li>
-<li><a href="#saving-data">G.3. Saving data</a></li>
+<li><a href="#deleting-a-place">G.2. Deleting a Place</a></li>
+<li><a href="#saving-data">G.3. Saving Data</a></li>
 </ul>
 </li>
 </ul>
@@ -85,24 +85,25 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Welcome to the TravelBuddy developer guide, put together by Chung Ming, Prem, Niven and Shaun.
-In this guide, you will find enough information to get your started on contributing to the TravelBuddy source code.
-<a href="#setting-up">Section 2, &#8220;Setting up&#8221;</a> provides details on how to start contributing to TravelBuddy.</p>
+<p>Welcome to <strong>TravelBuddy&#8217;s</strong> Developer Guide, put together by Chung Ming, Prem, Niven and Shaun. In this guide, you will find all the relevant information to get you familiarize with TravelBuddy&#8217;s design and implementation.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">2. Setting up</a></h2>
+<h2 id="setting-up"><a class="link" href="#setting-up">2. Setting Up</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section gives a quick guide to getting started with the TravelBuddy source code on your machine.</p>
+<p>Before we begin, here is a quick guide on how you can set up your machine to optimize the performance of TravelBuddy.</p>
 </div>
 <div class="sect2">
 <h3 id="prerequisites"><a class="link" href="#prerequisites">2.1. Prerequisites</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="paragraph">
+<p>There are two prerequisites that you need to take note of. They are:</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><strong>JDK <code>9</code></strong> or later</p>
+<p>JDK <code>9</code> or later</p>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -116,7 +117,8 @@ Windows developers are highly recommended to use JDK <code>9</code>.
 </tr>
 </table>
 </div>
-</li>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p><strong>IntelliJ</strong> IDE</p>
 <div class="admonitionblock note">
@@ -135,9 +137,12 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 </li>
 </ol>
 </div>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
-<h3 id="setting-up-the-project-in-your-computer"><a class="link" href="#setting-up-the-project-in-your-computer">2.2. Setting up the project in your computer</a></h3>
+<h3 id="setting-up-the-project-in-your-computer"><a class="link" href="#setting-up-the-project-in-your-computer">2.2. Setting Up the Project in Your Computer</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -176,7 +181,7 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 This will generate all resources required by the application and tests.</p>
 </li>
 <li>
-<p>Open <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
+<p>Open <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -189,13 +194,13 @@ This will generate all resources required by the application and tests.</p>
 </div>
 </li>
 <li>
-<p>Repeat this for the test folder as well (e.g. check <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/test/java/seedu/address/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way)</p>
+<p>Repeat this for the test folder as well (e.g. check <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/test/java/seedu/address/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way)</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="verifying-the-setup"><a class="link" href="#verifying-the-setup">2.3. Verifying the setup</a></h3>
+<h3 id="verifying-the-setup"><a class="link" href="#verifying-the-setup">2.3. Verifying the Setup</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -208,9 +213,9 @@ This will generate all resources required by the application and tests.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="configurations-to-do-before-writing-code"><a class="link" href="#configurations-to-do-before-writing-code">2.4. Configurations to do before writing code</a></h3>
+<h3 id="configurations-to-do-before-writing-code"><a class="link" href="#configurations-to-do-before-writing-code">2.4. Configurations to do Before Writing Code</a></h3>
 <div class="sect3">
-<h4 id="configuring-the-coding-style"><a class="link" href="#configuring-the-coding-style">2.4.1. Configuring the coding style</a></h4>
+<h4 id="configuring-the-coding-style"><a class="link" href="#configuring-the-coding-style">2.4.1. Configuring the Coding Style</a></h4>
 <div class="paragraph">
 <p>This project follows <a href="https://github.com/oss-generic/process/blob/master/docs/CodingStandards.adoc">oss-generic coding standards</a>. IntelliJ&#8217;s default style is mostly compliant with ours but it uses a different import order from ours. To rectify,</p>
 </div>
@@ -242,7 +247,7 @@ This will generate all resources required by the application and tests.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="setting-up-ci"><a class="link" href="#setting-up-ci">2.4.2. Setting up CI</a></h4>
+<h4 id="setting-up-ci"><a class="link" href="#setting-up-ci">2.4.2. Setting Up CI</a></h4>
 <div class="paragraph">
 <p>Set up Travis to perform Continuous Integration (CI) for your fork. See <a href="UsingTravis.html">UsingTravis.adoc</a> to learn how to set it up.</p>
 </div>
@@ -321,13 +326,13 @@ including the design and structure of components and their constituent classes.<
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/cs2103-ay1819s2-w11-3/main/docs/diagrams/">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.
+The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/CS2103-AY1819S2-W11-3/main/docs/diagrams/">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has only one class called <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -406,7 +411,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI component</a></h3>
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI Component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram" width="800">
@@ -414,7 +419,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 4. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The <strong>layout</strong> of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The <strong>layout</strong> of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The 'UI' component <strong>controllers</strong> are found in the <code>src/main/java/seedu/address/ui</code> folder. Each class corresponds to a specific <code>.fxml</code> file.</p>
@@ -498,7 +503,7 @@ contains helper methods for switching functionality, interacts with model and lo
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component</a></h3>
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic Component</a></h3>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
@@ -507,7 +512,7 @@ contains helper methods for switching functionality, interacts with model and lo
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -539,7 +544,7 @@ contains helper methods for switching functionality, interacts with model and lo
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
+<h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model Component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram" width="800">
@@ -547,7 +552,7 @@ contains helper methods for switching functionality, interacts with model and lo
 <div class="title">Figure 7. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -587,7 +592,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>TravelBuddy</
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage Component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram" width="800">
@@ -595,7 +600,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>TravelBuddy</
 <div class="title">Figure 8. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -612,7 +617,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>TravelBuddy</
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Common Classes</a></h3>
 <div class="paragraph">
 <p>Classes used by multiple components are in the <code>seedu.travel.commons</code> package.</p>
 </div>
@@ -626,7 +631,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>TravelBuddy</
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.1. Undo/Redo feature</a></h3>
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.1. Undo/Redo Feature</a></h3>
 <div class="paragraph">
 <p>Called by the <code>undo</code> and <code>redo</code> commands to undo and redo changes to TravelBuddy Place entries.
 Undoable commands include <code>add</code> <code>edit</code> <code>delete</code> <code>deletem</code> <code>clear</code> <code>generate</code> and 'redo'
@@ -1593,7 +1598,7 @@ you to preview the changes you have made to your <code>.adoc</code> files in rea
 </div>
 </div>
 <div class="sect2">
-<h3 id="converting-documentation-to-pdf-format"><a class="link" href="#converting-documentation-to-pdf-format">5.3. Converting Documentation to PDF format</a></h3>
+<h3 id="converting-documentation-to-pdf-format"><a class="link" href="#converting-documentation-to-pdf-format">5.3. Converting Documentation to PDF Format</a></h3>
 <div class="paragraph">
 <p>We use <a href="https://www.google.com/chrome/browser/desktop/">Google Chrome</a> for converting documentation to PDF format, as
 Chrome&#8217;s PDF engine preserves hyperlinks used in webpages.</p>
@@ -1630,7 +1635,7 @@ results, use the settings indicated in the screenshot below.</p>
 <div class="sect2">
 <h3 id="Docs-SiteWideDocSettings"><a class="link" href="#Docs-SiteWideDocSettings">5.4. Site-wide Documentation Settings</a></h3>
 <div class="paragraph">
-<p>The <a href="https://github.com/cs2103-ay1819s2-w11-3/main/build.gradle"><code>build.gradle</code></a> file specifies some project-specific <a href="https://asciidoctor" class="bare">https://asciidoctor</a>
+<p>The <a href="https://github.com/CS2103-AY1819S2-W11-3/main/build.gradle"><code>build.gradle</code></a> file specifies some project-specific <a href="https://asciidoctor" class="bare">https://asciidoctor</a>
 .org/docs/user-manual/#attributes[asciidoc attributes] which affects how all documentation files within this project
 are rendered.</p>
 </div>
@@ -1750,11 +1755,11 @@ One of: <code>UserGuide</code>, <code>DeveloperGuide</code>, <code>LearningOutco
 <div class="sect2">
 <h3 id="site-template"><a class="link" href="#site-template">5.6. Site Template</a></h3>
 <div class="paragraph">
-<p>The files in <a href="https://github.com/cs2103-ay1819s2-w11-3/main/docs/stylesheets"><code>docs/stylesheets</code></a> are the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS stylesheets</a> of the site.
+<p>The files in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/docs/stylesheets"><code>docs/stylesheets</code></a> are the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS stylesheets</a> of the site.
 You can modify them to change some properties of the site&#8217;s design.</p>
 </div>
 <div class="paragraph">
-<p>The files in <a href="https://github.com/cs2103-ay1819s2-w11-3/main/docs/templates"><code>docs/templates</code></a> controls the rendering of <code>.adoc</code> files into HTML5.
+<p>The files in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/docs/templates"><code>docs/templates</code></a> controls the rendering of <code>.adoc</code> files into HTML5.
 These template files are written in a mixture of <a href="https://www.ruby-lang.org">Ruby</a> and <a href="http://slim-lang.com">Slim</a>.</p>
 </div>
 <div class="admonitionblock warning">
@@ -1765,7 +1770,7 @@ These template files are written in a mixture of <a href="https://www.ruby-lang.
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Modifying the template files in <a href="https://github.com/cs2103-ay1819s2-w11-3/main/docs/templates"><code>docs/templates</code></a> requires some knowledge and
+<p>Modifying the template files in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/docs/templates"><code>docs/templates</code></a> requires some knowledge and
 experience with Ruby and Asciidoctor&#8217;s API.
 You should only modify them if you need greater control over the site&#8217;s layout than what stylesheets can provide.
 The SE-EDU team does not provide support for modified template files.</p>
@@ -1844,7 +1849,7 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 </div>
 </div>
 <div class="sect2">
-<h3 id="types-of-tests"><a class="link" href="#types-of-tests">6.2. Types of tests</a></h3>
+<h3 id="types-of-tests"><a class="link" href="#types-of-tests">6.2. Types of Tests</a></h3>
 <div class="paragraph">
 <p>We have two types of tests:</p>
 </div>
@@ -1940,7 +1945,7 @@ e.g. <code>seedu.travel.logic.LogicManagerTest</code></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Update the version number in <a href="https://github.com/cs2103-ay1819s2-w11-3/main/src/main/java/seedu/address/MainApp.java"><code>MainApp.java</code></a>.</p>
+<p>Update the version number in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/address/MainApp.java"><code>MainApp.java</code></a>.</p>
 </li>
 <li>
 <p>Generate a JAR file <a href="UsingGradle.html#creating-the-jar-file">using Gradle</a>.</p>
@@ -2260,7 +2265,7 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-place"><a class="link" href="#deleting-a-place">G.2. Deleting a place</a></h3>
+<h3 id="deleting-a-place"><a class="link" href="#deleting-a-place">G.2. Deleting a Place</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2292,7 +2297,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving Data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2312,4 +2317,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-04 23:54:27 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-05 00:06:07 UTC</div></div></div></body></html>
