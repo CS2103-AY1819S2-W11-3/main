@@ -98,12 +98,12 @@
 <div class="sect2">
 <h3 id="prerequisites"><a class="link" href="#prerequisites">2.1. Prerequisites</a></h3>
 <div class="paragraph">
-<p>There are two prerequisites that you need to take note of. They are:</p>
+<p>There are two installations that you need to take note of. They are:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>JDK <code>9</code> or later</p>
+<p><strong>Install JDK version <code>9</code> or later</strong></p>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -111,16 +111,14 @@
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-JDK <code>10</code> on Windows will fail to run tests in <a href="UsingGradle.html#Running-Tests">headless mode</a> due to a <a href="https://github.com/javafxports/openjdk-jfx/issues/66">JavaFX bug</a>.
-Windows developers are highly recommended to use JDK <code>9</code>.
+For Windows developers, JDK version <code>10</code> will fail to run tests in headless mode due to a <a href="https://github.com/javafxports/openjdk-jfx/issues/66">JavaFX bug</a>. Therefore, we strongly encourage all Windows developers to stick with JDK version <code>9</code>.
 </td>
 </tr>
 </table>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
-<p><strong>IntelliJ</strong> IDE</p>
+<p><strong>Install IntelliJ IDE</strong></p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -128,14 +126,10 @@ Windows developers are highly recommended to use JDK <code>9</code>.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-IntelliJ by default has Gradle and JavaFx plugins installed.<br>
-Do not disable them. If you have disabled them, go to <code>File</code> &gt; <code>Settings</code> &gt; <code>Plugins</code> to re-enable them.
+By default, IntelliJ already has both Gradle and JavaFx plugins installed. As TravelBuddy will be making use of them, please do not disable them. If you have disabled them, go to <code>File</code> &gt; <code>Settings</code> &gt; <code>Plugins</code> to re-enable them.
 </td>
 </tr>
 </table>
-</div>
-</li>
-</ol>
 </div>
 </li>
 </ul>
@@ -143,10 +137,13 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 </div>
 <div class="sect2">
 <h3 id="setting-up-the-project-in-your-computer"><a class="link" href="#setting-up-the-project-in-your-computer">2.2. Setting Up the Project in Your Computer</a></h3>
+<div class="paragraph">
+<p>For this section, we will integrate JDK, IntelliJ and GitHub with TravelBuddy, before compiling it using Gradle. The steps are listed below:</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Fork this repo, and clone the fork to your computer</p>
+<p>Go to this repo, fork it first before cloning it. Fork it again to your computer.</p>
 </li>
 <li>
 <p>Open IntelliJ (if you are not in the welcome screen, click <code>File</code> &gt; <code>Close Project</code> to close the existing project dialog first)</p>
@@ -2157,18 +2154,37 @@ seeing them by accident</p></td>
 <div class="sect1">
 <h2 id="glossary"><a class="link" href="#glossary">Appendix E: Glossary</a></h2>
 <div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
-<dd>
-<p>Windows, Linux, Unix, OS-X</p>
-</dd>
-<dt class="hdlist1"><a id="private-contact-detail"></a> Private contact detail</dt>
-<dd>
-<p>A contact detail that is not meant to be shared with others</p>
-</dd>
-</dl>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. A List of Terms Used in this Developer Guide</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Terms</th>
+<th class="tableblock halign-left valign-top">Definitions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="mainstream-os"></a> <strong>Mainstream OS</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Some mainstream operating systems include Windows, Linux, Unix and OS-X.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="private-contact-detail"></a> <strong>Private contact detail</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A contact detail that is not meant to be shared with others.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="jdk"></a> <strong>Java Development Kit (JDK)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A software development environment used for developing Java applications and applets.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="ide"></a><strong>Integrated Development Environment (IDE)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A software application that provides comprehensive facilities to computer programmers for software development.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -2317,4 +2333,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-05 00:20:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-05 01:48:14 UTC</div></div></div></body></html>
