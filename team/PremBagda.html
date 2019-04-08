@@ -142,7 +142,7 @@
 <dl>
 <dt class="hdlist1"><strong>Description:</strong> </dt>
 <dd>
-<p>The <code>add</code> command adds a place to TravelBuddy, as seen in <a href="#addFigure">Adding a place to TravelBuddy</a>.</p>
+<p>The <code>add</code> command adds a place to TravelBuddy.</p>
 </dd>
 <dt class="hdlist1"><strong>Shortcut:</strong> </dt>
 <dd>
@@ -178,11 +178,14 @@ Adds Raffles Hotel to the list of places you have visited into TravelBuddy.</p>
 </div>
 </div>
 </div>
+<div class="paragraph">
+<p><a href="#addFigure">Figure 4.3.1</a> below shows the outcome of a specific <code>add</code> command</p>
+</div>
 <div id="addFigure" class="imageblock">
 <div class="content">
 <img src="../images/addCommand.png" alt="addCommand" width="600">
 </div>
-<div class="title">Figure 1. Adding a place to TravelBuddy</div>
+<div class="title">Figure 4.3.1: Adding a place to TravelBuddy</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -191,7 +194,7 @@ Adds Raffles Hotel to the list of places you have visited into TravelBuddy.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-A place can have any number of tags (including 0).
+A place can have any number of tags (including 0 tags).
 </td>
 </tr>
 </table>
@@ -203,7 +206,7 @@ A place can have any number of tags (including 0).
 <dl>
 <dt class="hdlist1"><strong>Description:</strong> </dt>
 <dd>
-<p>The <code>list</code> command displays a list of all the places in TravelBuddy, as seen in <a href="#listFigure">Listing all the places in TravelBuddy</a> below.</p>
+<p>The <code>list</code> command displays a list of all the places in TravelBuddy.</p>
 </dd>
 <dt class="hdlist1"><strong>Shortcut:</strong> </dt>
 <dd>
@@ -222,7 +225,7 @@ A place can have any number of tags (including 0).
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Calling the <code>list</code> command returns a list of all the places in TravelBuddy as shown in the image below.
+Calling the <code>list</code> command returns a list of all the places in TravelBuddy as shown in <a href="#listFigure">Figure 4.4.1</a> below.
 </td>
 </tr>
 </table>
@@ -231,7 +234,7 @@ Calling the <code>list</code> command returns a list of all the places in Travel
 <div class="content">
 <img src="../images/listCommand.png" alt="listCommand" width="600">
 </div>
-<div class="title">Figure 2. Listing all the places in TravelBuddy</div>
+<div class="title">Figure 4.4.1: Listing all the places in TravelBuddy</div>
 </div>
 </div>
 <div class="sect2">
@@ -240,7 +243,7 @@ Calling the <code>list</code> command returns a list of all the places in Travel
 <dl>
 <dt class="hdlist1"><strong>Description:</strong> </dt>
 <dd>
-<p>The <code>edit</code> command edits an existing place in TravelBuddy. A comparision can be made between <a href="#editFigureBefore">Before the <code>edit</code> command was used</a> and <a href="#editFigureAfter">After the <code>edit</code> command was used</a></p>
+<p>The <code>edit</code> command edits an existing place in TravelBuddy.</p>
 </dd>
 <dt class="hdlist1"><strong>Shortcut:</strong> </dt>
 <dd>
@@ -250,12 +253,6 @@ Calling the <code>list</code> command returns a list of all the places in Travel
 <dd>
 <p><code>edit INDEX [n/NAME] [cc/COUNTRY_CODE] [dv/DATE_VISITED] [r/RATING] [d/DESCRIPTION] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
 </dd>
-</dl>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="dlist">
-<dl>
 <dt class="hdlist1"><strong>Preconditions:</strong> </dt>
 <dd>
 <p>Given below is a list of preconditions that must be met for the <code>edit</code> command to work:</p>
@@ -281,8 +278,6 @@ Calling the <code>list</code> command returns a list of all the places in Travel
 </dd>
 </dl>
 </div>
-</div>
-</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="dlist">
@@ -307,17 +302,23 @@ Edits the name of the 2nd place to be <code>Raffles Hotel</code> and clears all 
 </div>
 </div>
 </div>
+<div class="paragraph">
+<p><a href="#editFigureBefore">Figure 4.5.1</a> below shows the list of places before the <code>edit</code> command was used.</p>
+</div>
 <div id="editFigureBefore" class="imageblock">
 <div class="content">
 <img src="../images/editCommandBefore.png" alt="editCommandBefore" width="600">
 </div>
-<div class="title">Figure 3. Before the <code>edit</code> command was used</div>
+<div class="title">Figure 4.5.1: Before the <code>edit</code> command was used</div>
+</div>
+<div class="paragraph">
+<p><a href="#editFigureAfter">Figure 4.5.2</a> below shows the list of places after the <code>edit</code> command was used.</p>
 </div>
 <div id="editFigureAfter" class="imageblock">
 <div class="content">
 <img src="../images/editCommandAfter.png" alt="editCommandAfter" width="600">
 </div>
-<div class="title">Figure 4. After the <code>edit</code> command was used</div>
+<div class="title">Figure 4.5.2: After the <code>edit</code> command was used</div>
 </div>
 </div>
 <div class="sect2">
@@ -336,12 +337,6 @@ Edits the name of the 2nd place to be <code>Raffles Hotel</code> and clears all 
 <dd>
 <p><code>delete INDEX</code></p>
 </dd>
-</dl>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="dlist">
-<dl>
 <dt class="hdlist1"><strong>Preconditions:</strong> </dt>
 <dd>
 <p>Given below is a list of preconditions that must be met for the <code>delete</code> command to work:</p>
@@ -361,25 +356,23 @@ Edits the name of the 2nd place to be <code>Raffles Hotel</code> and clears all 
 </dd>
 </dl>
 </div>
-</div>
-</div>
 <div class="paragraph">
-<p>The image below shows TravelBuddy before <code>delete</code> command was used.</p>
+<p><a href="#deleteFigureBefore">Figure 4.11.1</a> below shows TravelBuddy before <code>delete</code> command was used.</p>
 </div>
 <div id="deleteFigureBefore" class="imageblock">
 <div class="content">
 <img src="../images/deleteCommandBefore.png" alt="deleteCommandBefore" width="600">
 </div>
-<div class="title">Figure 5. Before the <code>delete</code> command was used</div>
+<div class="title">Figure 4.11.1: Before the <code>delete</code> command was used</div>
 </div>
 <div class="paragraph">
-<p>The following image below shows the result of using the <code>delete</code> command on the first place of interest.</p>
+<p><a href="#deleteFigureAfter">Figure 4.11.2</a> below shows the result of using the <code>delete</code> command on the first place of interest.</p>
 </div>
 <div id="deleteFigureAfter" class="imageblock">
 <div class="content">
 <img src="../images/deleteCommandAfter.png" alt="deleteCommandAfter" width="600">
 </div>
-<div class="title">Figure 6. After the <code>delete</code> command was used</div>
+<div class="title">Figure 4.11.2: After the <code>delete</code> command was used</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -592,4 +585,4 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-08 13:09:13 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-08 15:05:26 UTC</div></div></div></body></html>
