@@ -33,7 +33,7 @@
 <li><a href="#undo-redo-feature">4.1. Undo/Redo Feature</a></li>
 <li><a href="#search-feature">4.2. Search Feature</a></li>
 <li><a href="#add-feature">4.3. Add Feature</a></li>
-<li><a href="#generate-feature">4.4. Generate Feature</a></li>
+<li><a href="#chart-feature">4.4. Chart Feature</a></li>
 <li><a href="#logging">4.5. Logging</a></li>
 <li><a href="#Implementation-Configuration">4.6. Configuration</a></li>
 </ul>
@@ -1524,10 +1524,7 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 </div>
 </div>
 <div class="sect2">
-<h3 id="generate-feature"><a class="link" href="#generate-feature">4.4. Generate Feature</a></h3>
-<div class="paragraph">
-<p>The <code>generate</code> command is used to generate different charts in the application.</p>
-</div>
+<h3 id="chart-feature"><a class="link" href="#chart-feature">4.4. Chart Feature</a></h3>
 <div class="sect3">
 <h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.1. Current Implementation</a></h4>
 <div class="paragraph">
@@ -1547,7 +1544,106 @@ number of times each rating appears as values.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="future-implementation"><a class="link" href="#future-implementation">4.4.2. Future Implementation</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-chart-generation-executes"><a class="link" href="#aspect-how-chart-generation-executes">Aspect: How chart generation executes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice)</strong><br>
+abcdef</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pros:</strong></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"></dt>
+<dd>
+<p>abcdef</p>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p><strong>Cons:</strong></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"></dt>
+<dd>
+<p>abcdef</p>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p><strong>Example:</strong></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"></dt>
+<dd>
+<p>abcdef</p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2</strong><br>
+abcdef</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pros:</strong></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"></dt>
+<dd>
+<p>abcdef</p>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p><strong>Cons:</strong></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"></dt>
+<dd>
+<p>abcdef</p>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p><strong>Example:</strong></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"></dt>
+<dd>
+<p>abcdef</p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Decision:</strong></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"></dt>
+<dd>
+<p>abcdef</p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p>For future implementation, the task is to use JavaFX&#8217;s charting library to create a chart that can be displayed
 to the user, as seen in the figure below.</p>
@@ -1560,6 +1656,7 @@ to the user, as seen in the figure below.</p>
 <div class="paragraph">
 <p>Furthermore, the <code>generate</code> command will have user input to specify if they want to generate either a chart by
 country or a chart by rating.</p>
+</div>
 </div>
 </div>
 </div>
@@ -2386,4 +2483,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-08 02:01:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-08 02:42:31 UTC</div></div></div></body></html>

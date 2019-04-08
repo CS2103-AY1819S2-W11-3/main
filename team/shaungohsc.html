@@ -138,12 +138,21 @@
 </table>
 <div class="sect2">
 <h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">Undoing previous command: <code>undo</code></a></h3>
-<div class="paragraph">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Description:</strong> </dt>
+<dd>
 <p>The <code>undo</code> command restores TravelBuddy to the state before the previous <em>undoable</em> command was executed.<br></p>
-</div>
-<div class="paragraph">
-<p>Shortcut: <code>u</code><br>
-Format: <code>undo</code></p>
+</dd>
+<dt class="hdlist1"><strong>Shortcut:</strong> </dt>
+<dd>
+<p><code>u</code></p>
+</dd>
+<dt class="hdlist1"><strong>Format:</strong> </dt>
+<dd>
+<p><code>undo</code></p>
+</dd>
+</dl>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -159,60 +168,106 @@ Format: <code>undo</code></p>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Examples:<br></p>
-</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Examples:</strong> </dt>
+<dd>
+<p>Given below are some examples on how to utilize the <code>undo</code> command:</p>
 <div class="ulist">
 <ul>
 <li>
 <p><code>delete 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+Deletes the 1st place on the list currently displayed<br>
+<code>undo</code><br>
+Reverses the <code>delete 1</code> command<br></p>
 </li>
 <li>
 <p><code>select 1</code><br>
+Selects the 1st place on the list currently displayed<br>
 <code>undo</code><br>
-The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
+The <code>undo</code> command fails as there are no undoable commands executed previously<br></p>
 </li>
 <li>
 <p><code>delete 1</code><br>
+Deletes the 1st place on the list currently displayed<br>
 <code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+Clears all contents in the list<br>
+<code>undo</code><br>
+Reverses the <code>clear</code> command<br>
+<code>undo</code><br>
+Reverses the <code>delete 1</code> command<br></p>
 </li>
 </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">Redoing the previously undone command: <code>redo</code></a></h3>
-<div class="paragraph">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Description:</strong> </dt>
+<dd>
 <p>The <code>redo</code> command reverses the most recent <code>undo</code> command.<br></p>
+</dd>
+<dt class="hdlist1"><strong>Shortcut:</strong> </dt>
+<dd>
+<p><code>r</code></p>
+</dd>
+<dt class="hdlist1"><strong>Format:</strong> </dt>
+<dd>
+<p><code>redo</code></p>
+</dd>
+</dl>
 </div>
-<div class="paragraph">
-<p>Shortcut: <code>r</code><br>
-Format: <code>redo</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:
-* <code>delete 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
-</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Examples:</strong> </dt>
+<dd>
+<p>Given below are some examples on how to utilize the <code>redo</code> command:</p>
 <div class="ulist">
 <ul>
 <li>
 <p><code>delete 1</code><br>
+Deletes the 1st place on the list currently displayed<br>
+<code>undo</code><br>
+Reverses the <code>delete 1</code> command<br>
+<code>redo</code><br>
+Reapplies the <code>delete 1</code> command<br></p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+Deletes the 1st place on the list currently displayed<br>
 <code>redo</code><br>
 The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
 </li>
 <li>
 <p><code>delete 1</code><br>
+Deletes the 1st place on the list currently displayed<br>
 <code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+Clears all contents in the list<br>
+<code>undo</code><br>
+Reverses the <code>clear</code> command<br>
+<code>undo</code><br>
+Reverses the <code>delete 1</code> command<br>
+<code>redo</code><br>
+Reapplies the <code>delete 1</code> command<br>
+<code>redo</code><br>
+Reapplies the <code>clear</code> command<br></p>
 </li>
 </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -450,4 +505,4 @@ If the <code>currentStatePointer</code> is at index <code>travelBuddyStateList.s
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-08 02:01:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-08 02:42:31 UTC</div></div></div></body></html>
