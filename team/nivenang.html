@@ -3,18 +3,23 @@
 <link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">TravelBuddy</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S2-W11-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Niven Ang Jia Hao - Project Portfolio</h1></div><div id="content"><div class="sect1">
 <h2 id="project-travelbuddy"><a class="link" href="#project-travelbuddy">PROJECT: TravelBuddy</a></h2>
 <div class="sectionbody">
-<hr>
+
 </div>
 </div>
 <div class="sect1">
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
+<p>This project portfolio documents my contribution to TravelBuddy, a desktop application developed as a Software Engineering team project for CS2103T.
+The team is made up of 4 members, including myself, from the National University of Singapore.
+As part of the module objectives to prepare students for the working world, a brown-field approach was adopted where we were tasked to morph <a href="https://github.com/nus-cs2103-AY1819S2/addressbook-level4">AddressBook Level 4</a>.
+The user interacts with it using a Command Line Interface, and it has a Graphical User Interface created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
+</div>
+<div class="paragraph">
 <p>TravelBuddy is a desktop Travel Guide application for travel enthusiasts to record places previously visited.
 TravelBuddy enables travellers to record and store places that they have visited previously. With the recorded data, travellers can
 search for places according to the fields requested, analyse and provide statistics for places that they have been to so far.
-Travellers can also store their precious photos on TravelBuddy, which helps them remember and reminisce the places that wonderful places they have journeyed to.
-The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
+Travellers can also store their precious photos on TravelBuddy, which helps them remember and reminisce the places that wonderful places they have journeyed to.</p>
 </div>
 <div class="paragraph">
 <p>My role in this Software Engineering project was to design and write the code for the <code>search</code> features. The following sections showcase, in greater detail, my contributions and enhancements added to TravelBuddy,
@@ -114,7 +119,7 @@ An in-depth analysis of design alternatives in keyword matching as well as the d
 <p>Reviewed pull requests (with non-trivial review comments): <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/84">#84</a></p>
 </li>
 <li>
-<p>Reported bugs and helped to fix bugs: <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/82">#82</a>, <a href="https://github.com/CS2103-AY1819S2-W11-3/main/pull/118">#118</a></p>
+<p>Reported bugs and helped to fix bugs: <a href="https://github.com/cs2103-ay1819s2-w11-3/main/pull/82">#82</a>, <a href="https://github.com/CS2103-AY1819S2-W11-3/main/pull/118">#118</a>, <a href="https://github.com/CS2103-AY1819S2-W11-3/main/pull/161">#161</a></p>
 </li>
 </ul>
 </div>
@@ -414,15 +419,33 @@ Executes a search for places visited in the year <code>2016</code>.</p>
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
 <div class="paragraph">
-<p>The following diagram shows how the search feature works:</p>
+<p>The <code>search</code> command provides functionality for users to search for places in TravelBuddy that contains the specified input.
+The user&#8217;s input is split in separate keywords and matched as a <code>Predicate</code> to the list of places in TravelBuddy.
+Places with matching keywords will be displayed on the GUI, which allows users to retrieve a list of places according to their input.</p>
 </div>
-<div class="imageblock">
+<div class="paragraph">
+<p>The example below is a usage scenario for the search feature and is based on the search name feature.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The various search features (i.e. search name, country code, rating, tags, year) function on a similar concept, differing only in the <code>Parser</code> which is called using different command words and the <code>Predicate</code> to filter arguments.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the search feature works:</p>
+</div>
+<div id="img-SearchCommandSequenceDiagram" class="imageblock">
 <div class="content">
 <img src="../images/SearchCommandSequenceDiagram.png" alt="SearchCommandSequenceDiagram" width="800">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure 4.2.1.1 Sequence Diagram for <code>search</code> command</p>
+<div class="title">Figure 4.2.1.1: Sequence Diagram for <code>search</code> command.</div>
 </div>
 <div class="paragraph">
 <p>The control flow of the sequence diagram above is as follows:</p>
@@ -430,7 +453,7 @@ Executes a search for places visited in the year <code>2016</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>A command with the command word <code>search</code> followed by argument(s) is used entered by the user.</p>
+<p>Initially, a user enters a command with the command word <code>search</code> followed by argument(s).</p>
 </li>
 <li>
 <p><code>LogicManager</code> receives the <code>execute</code> command and calls the <code>parseCommand</code> method in <code>TravelBuddyParser</code>.</p>
@@ -439,19 +462,54 @@ Executes a search for places visited in the year <code>2016</code>.</p>
 <p><code>TravelBuddyParser</code> parses <code>search</code> as the command and a <code>SearchCommandParser</code> will be instantiated to further parse the command.</p>
 </li>
 <li>
-<p><code>SearchCommandParser</code> receives the fields if at least one field is provided, a NameContainsKeywordPredicate will be instantiated with the fields as the predicate.</p>
+<p><code>SearchCommandParser</code> receives the arguments if the command word input matches the command word of any search command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The argument string is split into an array of keywords based on the <code>regex</code> which is <code>\\s+</code> in the code snippet below.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">String</span><span class="type">[]</span> nameKeywords = trimmedArgs.split(<span class="string"><span class="delimiter">&quot;</span><span class="char">\\</span><span class="content">s+</span><span class="delimiter">&quot;</span></span>);
+<span class="keyword">return</span> <span class="keyword">new</span> SearchCommand(<span class="keyword">new</span>
+    NameContainsKeywordsPredicate(<span class="predefined-type">Arrays</span>.asList(nameKeywords)));</code></pre>
+</div>
+</div>
 </li>
 <li>
-<p><code>SearchCommand</code> will be created and returned to <code>LogicManager</code>.</p>
+<p>A NameContainsKeywordPredicate will be instantiated with the array of arguments as the predicate, which will be used to check if any of the places in TravelBuddy matches the user&#8217;s input.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">boolean</span> test(Place place) {
+    <span class="keyword">return</span> keywords.stream().anyMatch(
+        keyword -&gt; StringUtil.containsWordIgnoreCase(
+        place.getName().fullName, keyword));
+}</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>The <code>execute</code> command of <code>SearchCommand</code> is then called by <code>LogicManager</code>.</p>
+<p>Subsequently, <code>SearchCommandParser</code> creates a <code>SearchCommand</code> object with the predicate and returns it to <code>LogicManager</code>.</p>
 </li>
 <li>
-<p>The list is updated in the <code>Model</code> by <code>SearchCommand</code>.</p>
+<p>Following that, <code>LogicManager</code> calls the <code>execute</code> method of <code>SearchCommand</code>, shown in the code snippet below.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> CommandResult execute(Model model, CommandHistory history) {
+    requireNonNull(model);
+    model.updateFilteredPlaceList(predicate);
+    <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(constructFeedbackToUser(model));
+}</code></pre>
+</div>
+</div>
 </li>
 <li>
-<p>A <code>CommandResult</code> is instantiated and returned to <code>LogicManager</code>.</p>
+<p><code>SearchCommand</code> updates the list in <code>Model</code>, which will be displayed in the GUI.</p>
+</li>
+<li>
+<p><code>SearchCommand</code> instantiates a <code>CommandResult</code> object and passes it to <code>LogicManager</code> .</p>
 </li>
 </ol>
 </div>
@@ -477,9 +535,6 @@ Executes a search for places visited in the year <code>2016</code>.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>The various search features are differentiated by the <code>Parser</code> which is called using different command words and the <code>Predicate</code> to filter arguments.</p>
-</div>
 <div class="sect4">
 <h5 id="search-name-feature"><a class="link" href="#search-name-feature">Search Name Feature</a></h5>
 <div class="paragraph">
@@ -497,13 +552,11 @@ Executes a search for places visited in the year <code>2016</code>.</p>
 <div class="paragraph">
 <p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in the diagram below.</p>
 </div>
-<div class="imageblock">
+<div id="img-UIsearch" class="imageblock">
 <div class="content">
 <img src="../images/UIsearch.png" alt="UIsearch" width="800">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure 4.2.1.2 GUI with user&#8217;s list of places, prior to running <code>search Singapore</code> command</p>
+<div class="title">Figure 4.2.1.2: GUI with user&#8217;s list of places, prior to running <code>search Singapore</code> command.</div>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>search Singapore</code> command to search for all entries in TravelBuddy with <code>Singapore</code> in its name.
@@ -525,13 +578,11 @@ The command <code>search</code> is in lower-case. Mixed-case or upper-case comma
 <div class="paragraph">
 <p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in the diagram below.</p>
 </div>
-<div class="imageblock">
+<div id="img-UIsearchresults" class="imageblock">
 <div class="content">
 <img src="../images/UIsearchresults.png" alt="UIsearchresults" width="800">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure 4.2.1.3 Application Interface displaying the results of <code>search Singapore</code> command</p>
+<div class="title">Figure 4.2.1.3: Application Interface displaying the results of <code>search Singapore</code> command.</div>
 </div>
 </div>
 <div class="sect4">
@@ -540,7 +591,7 @@ The command <code>search</code> is in lower-case. Mixed-case or upper-case comma
 <p>The command word for search rating is <code>searchr</code> and is parsed by <code>TravelBuddyParser</code>. The arguments are then passed into <code>SearchRatingCommandParser</code>.</p>
 </div>
 <div class="paragraph">
-<p>The rating arguments entered by the user are stored in a list of keywords and passed into <code>RatingContainsKeywordsPredicate</code>, where the list is converted into a stream and individually matched to the rating of each entry in TravelBuddy.</p>
+<p>The rating arguments entered by the user are first checked for validity before being stored in a list of keywords and passed into <code>RatingContainsKeywordsPredicate</code>. The list is then converted into a stream and individually matched to the rating of each entry in TravelBuddy.</p>
 </div>
 <div class="paragraph">
 <p>The search rating mechanism is facilitated by <code>SearchRatingCommand</code>, which extends <code>Command</code> with a predicate that specifies the conditions of the rating of the place to be chosen from TravelBuddy.</p>
@@ -551,20 +602,32 @@ The command <code>search</code> is in lower-case. Mixed-case or upper-case comma
 <div class="paragraph">
 <p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in the diagram below.</p>
 </div>
-<div class="imageblock">
+<div id="img-UIsearchrating" class="imageblock">
 <div class="content">
 <img src="../images/UIsearchrating.png" alt="UIsearchrating" width="800">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure 4.2.1.4 GUI with user&#8217;s list of places, prior to running <code>searchr 4</code> command</p>
+<div class="title">Figure 4.2.1.4: GUI with user&#8217;s list of places, prior to running <code>searchr 4</code> command.</div>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>searchr 4</code> command to search for all entries in TravelBuddy with <code>4</code> as its rating.
 The user input will be passed into <code>LogicManager#execute()</code>, which in turn uses <code>TravelBuddyParser#parseCommand()</code>. Since
 the argument is <code>searchr</code>, <code>SearchRatingCommandParser#parse(arguments)</code> will be called to parse the arguments to be
-used in <code>SearchRatingCommand</code>.
-The parsed arguments will be used as a predicate to filter out entries that satisfy the predicate to be displayed.</p>
+used in <code>SearchRatingCommand</code>. The arguments are checked for validity (i.e. rating value between 1 to 5) as seen in the code snippet below before being parsed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">String</span><span class="type">[]</span> ratingKeywords = trimmedArgs.split(<span class="string"><span class="delimiter">&quot;</span><span class="char">\\</span><span class="content">s+</span><span class="delimiter">&quot;</span></span>);
+<span class="keyword">for</span> (<span class="predefined-type">String</span> rating : ratingKeywords) {
+    <span class="keyword">if</span> (!Rating.isValidRating(rating)) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">ParseException</span>(<span class="predefined-type">String</span>.format(Rating.MESSAGE_CONSTRAINTS,
+             SearchRatingCommand.MESSAGE_USAGE));
+    }
+}
+<span class="keyword">return</span> <span class="keyword">new</span> SearchRatingCommand(<span class="keyword">new</span> RatingContainsKeywordsPredicate(<span class="predefined-type">Arrays</span>.asList(ratingKeywords)));</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The parsed arguments will be used as a predicate to filter out entries that satisfy the predicate to be displayed.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -593,13 +656,11 @@ The arguments for <code>searchr</code> range from 1 to 5. Non-integer values out
 <div class="paragraph">
 <p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in the diagram below.</p>
 </div>
-<div class="imageblock">
+<div id="img-UIsearchratingresults" class="imageblock">
 <div class="content">
 <img src="../images/UIsearchratingresults.png" alt="UIsearchratingresults" width="800">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure 4.2.1.5 Application Interface displaying the results of <code>searchr 4</code> command</p>
+<div class="title">Figure 4.2.1.5: Application Interface displaying the results of <code>searchr 4</code> command.</div>
 </div>
 </div>
 <div class="sect4">
@@ -619,13 +680,11 @@ The arguments for <code>searchr</code> range from 1 to 5. Non-integer values out
 <div class="paragraph">
 <p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in the diagram below.</p>
 </div>
-<div class="imageblock">
+<div id="img-UIsearchtags" class="imageblock">
 <div class="content">
 <img src="../images/UIsearchtags.png" alt="UIsearchtags" width="800">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure 4.2.1.6 GUI with user&#8217;s list of places, prior to running <code>searcht distillery</code> command</p>
+<div class="title">Figure 4.2.1.6: GUI with user&#8217;s list of places, prior to running <code>searcht distillery</code> command.</div>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>searcht distillery</code> command to search for all entries in TravelBuddy with <code>distillery</code>
@@ -649,13 +708,11 @@ The command <code>searcht</code> is in lower-case. Mixed-case or upper-case comm
 <div class="paragraph">
 <p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in the diagram below.</p>
 </div>
-<div class="imageblock">
+<div id="img-UIsearchtagsresults" class="imageblock">
 <div class="content">
 <img src="../images/UIsearchtagsresults.png" alt="UIsearchtagsresults" width="800">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure 4.2.1.7 Application Interface displaying the results of <code>searcht distillery</code> command</p>
+<div class="title">Figure 4.2.1.7: Application Interface displaying the results of <code>searcht distillery</code> command.</div>
 </div>
 </div>
 <div class="sect4">
@@ -675,20 +732,18 @@ The command <code>searcht</code> is in lower-case. Mixed-case or upper-case comm
 <div class="paragraph">
 <p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in the diagram below.</p>
 </div>
-<div class="imageblock">
+<div id="img-UIsearchcountry" class="imageblock">
 <div class="content">
 <img src="../images/UIsearchcountry.png" alt="UIsearchcountry" width="800">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure 4.2.1.8 GUI with user&#8217;s list of places, prior to running <code>searchc JPN</code> command</p>
+<div class="title">Figure 4.2.1.8: GUI with user&#8217;s list of places, prior to running <code>searchc JPN</code> command.</div>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>searchc SGP JPN</code> command to search for all entries in TravelBuddy with <code>SGP</code> or <code>JPN</code>
 as its country. The <code>searchc</code> command will call <code>LogicManager#execute()</code>, which in turn uses
 <code>TravelBuddyParser#parseCommand()</code>. Since the argument is <code>searchc</code>, <code>SearchCountryCommandParser#parse(arguments)</code>
-will be called to parse the arguments to be used in <code>SearchCountryCommand</code>. The parsed arguments will be used as a
-predicate to filter out entries that satisfy the predicate to be displayed.</p>
+will be called to parse the arguments to be used in <code>SearchCountryCommand</code>. The arguments are then checked for validity (i.e. valid ISO-3166 country code).
+The parsed arguments will be used as a predicate to filter out entries that satisfy the predicate to be displayed.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -717,13 +772,11 @@ The country code arguments for <code>searchc</code> must be valid 3-letter ISO-3
 <div class="paragraph">
 <p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in the diagram below.</p>
 </div>
-<div class="imageblock">
+<div id="img-UIsearchcountryresults" class="imageblock">
 <div class="content">
 <img src="../images/UIsearchcountryresults.png" alt="UIsearchcountryresults" width="800">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure 4.2.1.9 Application Interface displaying the results of <code>searchc JPN</code> command</p>
+<div class="title">Figure 4.2.1.9: Application Interface displaying the results of <code>searchc JPN</code> command.</div>
 </div>
 </div>
 <div class="sect4">
@@ -743,20 +796,18 @@ The country code arguments for <code>searchc</code> must be valid 3-letter ISO-3
 <div class="paragraph">
 <p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in the diagram below.</p>
 </div>
-<div class="imageblock">
+<div id="img-UIsearchyear" class="imageblock">
 <div class="content">
 <img src="../images/UIsearchyear.png" alt="UIsearchyear" width="800">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure 4.2.1.10 GUI with user&#8217;s list of places, prior to running <code>searchyear 2016</code> command</p>
+<div class="title">Figure 4.2.1.10: GUI with user&#8217;s list of places, prior to running <code>searchyear 2016</code> command.</div>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>searchyear 2016</code> command to search for all entries in TravelBuddy with <code>2016</code>
 as its year visited. The <code>searchyear</code> command will call <code>LogicManager#execute()</code>, which in turn uses
 <code>TravelBuddyParser#parseCommand()</code>. Since the argument is <code>searchyear</code>, <code>SearchYearCommandParser#parse(arguments)</code>
-will be called to parse the arguments to be used in <code>SearchYearCommand</code>. The parsed arguments will be used as a
-predicate to filter out entries that satisfy the predicate to be displayed.</p>
+will be called to parse the arguments to be used in <code>SearchYearCommand</code>. The arguments are then checked for validity (i.e. valid year from 1900 to the current year).
+The parsed arguments will be used as a predicate to filter out entries that satisfy the predicate to be displayed.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -785,13 +836,20 @@ The year arguments range from 1900 to the current year. A single year, multiple 
 <div class="paragraph">
 <p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in the diagram below.</p>
 </div>
-<div class="imageblock">
+<div id="img-UIsearchyearresults" class="imageblock">
 <div class="content">
 <img src="../images/UIsearchyearresults.png" alt="UIsearchyearresults" width="800">
 </div>
+<div class="title">Figure 4.2.1.11: Application Interface displaying the results of <code>searchyear 2016</code> command.</div>
 </div>
 <div class="paragraph">
-<p>Figure 4.2.1.11 Application Interface displaying the results of <code>searchyear 2016</code> command</p>
+<p>The activity diagram below summarises what happens when a user inputs a search command:</p>
+</div>
+<div id="img-SearchCommandActivityDiagram" class="imageblock">
+<div class="content">
+<img src="../images/SearchCommandActivityDiagram.png" alt="SearchCommandActivityDiagram" width="800">
+</div>
+<div class="title">Figure 4.2.1.12: Activity Diagram showing the process flow when a search command is issued.</div>
 </div>
 </div>
 </div>
@@ -877,4 +935,4 @@ developers of our project.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-07 02:14:08 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-08 02:01:16 UTC</div></div></div></body></html>
