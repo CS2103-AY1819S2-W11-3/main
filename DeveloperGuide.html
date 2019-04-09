@@ -178,7 +178,7 @@ By default, IntelliJ already has both Gradle and JavaFx plugins installed. As Tr
 This will generate all resources required by the application and tests.</p>
 </li>
 <li>
-<p>Open <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
+<p>Open <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/travel/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -191,7 +191,7 @@ This will generate all resources required by the application and tests.</p>
 </div>
 </li>
 <li>
-<p>Repeat this for the test folder as well (e.g. check <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/test/java/seedu/address/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way)</p>
+<p>Repeat this for the test folder as well (e.g. check <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/test/java/seedu/travel/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way)</p>
 </li>
 </ol>
 </div>
@@ -307,14 +307,14 @@ including the design and structure of components and their constituent classes.<
 </div>
 <div class="sect2">
 <h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
-<div class="imageblock">
+<div id="ArchitectureDiagram" class="imageblock">
 <div class="content">
 <img src="images/Architecture.png" alt="Architecture" width="600">
 </div>
-<div class="title">Figure 1. Architecture Diagram</div>
+<div class="title">Figure 3.1.1: Architecture Diagram</div>
 </div>
 <div class="paragraph">
-<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
+<p><a href="#ArchitectureDiagram">Figure 3.1.1</a> above explains the high-level design of the App. Given below is a quick overview of each component.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -329,7 +329,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/travel/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -385,23 +385,23 @@ The following class plays an important role at the architecture level:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
+<p>For example, the <code>Logic</code> component, as seen in the class diagram in <a href="#LogicClassDiagram">Figure 3.1.2</a>, defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
 </div>
-<div class="imageblock">
+<div id="LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
 </div>
-<div class="title">Figure 2. Class Diagram of the Logic Component</div>
+<div class="title">Figure 3.1.2: Class Diagram of the Logic Component</div>
 </div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
+<p>The sequence diagram, as seen in <a href="#SeqDiagramDforDeletePlace">Figure 3.1.3</a>, below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
 </div>
-<div class="imageblock">
+<div id="SeqDiagramDforDeletePlace" class="imageblock">
 <div class="content">
 <img src="images/SDforDeletePlace.png" alt="SDforDeletePlace" width="800">
 </div>
-<div class="title">Figure 3. Component interactions for <code>delete 1</code> command</div>
+<div class="title">Figure 3.1.3: Component interactions for <code>delete 1</code> command</div>
 </div>
 <div class="paragraph">
 <p>The sections below give more details of each component.</p>
@@ -409,17 +409,17 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="sect2">
 <h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI Component</a></h3>
-<div class="imageblock">
+<div id="UiClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram" width="800">
 </div>
-<div class="title">Figure 4. Structure of the UI Component</div>
+<div class="title">Figure 3.2.1: Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The <strong>layout</strong> of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component, as seen in <a href="#UiClassDiagram">Figure 3.2.1</a>, uses JavaFx UI framework. The <strong>layout</strong> of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/travel/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
-<p>The 'UI' component <strong>controllers</strong> are found in the <code>src/main/java/seedu/address/ui</code> folder. Each class corresponds to a specific <code>.fxml</code> file.</p>
+<p>The 'UI' component <strong>controllers</strong> are found in the <code>src/main/java/seedu/travel/ui</code> folder. Each class corresponds to a specific <code>.fxml</code> file.</p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -505,11 +505,11 @@ contains helper methods for switching functionality, interacts with model and lo
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
 </div>
-<div class="title">Figure 5. Structure of the Logic Component</div>
+<div class="title">Figure 3.3.1: Structure of the Logic Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/travel/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -531,25 +531,25 @@ contains helper methods for switching functionality, interacts with model and lo
 </ol>
 </div>
 <div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
+<p>Given in <a href="#DeletePersonSdForLogic">Figure 3.3.2</a> below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
 </div>
-<div class="imageblock">
+<div id="DeletePersonSdForLogic" class="imageblock">
 <div class="content">
 <img src="images/DeletePersonSdForLogic.png" alt="DeletePersonSdForLogic" width="800">
 </div>
-<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 3.3.2: Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model Component</a></h3>
-<div class="imageblock">
+<div id="ModelClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram" width="800">
 </div>
-<div class="title">Figure 7. Structure of the Model Component</div>
+<div class="title">Figure 3.4.1: Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/travel/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -578,8 +578,7 @@ the UI automatically updates when the data in the list change.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-As a more OOP model, we can store a <code>Tag</code> list in <code>TravelBuddy</code>, which <code>Place</code> can reference. This would allow <code>Address
- Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Place</code> needing their own <code>Tag</code> object. An
+As a more OOP model, we can store a <code>Tag</code> list in <code>TravelBuddy</code>, which <code>Place</code> can reference. This would allow <code>TravelBuddy</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Place</code> needing their own <code>Tag</code> object. An
  example of how such a model may look like is given below.<br>
 <br>
 <span class="image"><img src="images/ModelClassBetterOopDiagram.png" alt="ModelClassBetterOopDiagram" width="800"></span>
@@ -590,14 +589,14 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>TravelBuddy</
 </div>
 <div class="sect2">
 <h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage Component</a></h3>
-<div class="imageblock">
+<div id="StorageClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram" width="800">
 </div>
-<div class="title">Figure 8. Structure of the Storage Component</div>
+<div class="title">Figure 3.5.1: Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/travel/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -631,8 +630,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>TravelBuddy</
 <h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.1. Undo/Redo Feature</a></h3>
 <div class="paragraph">
 <p>Called by the <code>undo</code> and <code>redo</code> commands to undo and redo changes to TravelBuddy Place entries.
-Undoable commands include <code>add</code> <code>edit</code> <code>delete</code> <code>deletem</code> <code>clear</code> <code>generate</code> and 'redo'
-Redoable commands include <code>add</code> <code>edit</code> <code>delete</code> <code>deletem</code> <code>clear</code> <code>generate</code> and 'undo'</p>
+Undoable commands include <code>add</code>, <code>edit</code>, <code>delete</code>, <code>deletem</code>, <code>clear</code>, <code>generate</code> and <code>redo</code>. Redoable commands include <code>add</code>, <code>edit</code>, <code>delete</code>, <code>deletem</code>, <code>clear</code>, <code>generate</code> and <code>undo</code>.</p>
 </div>
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">4.1.1. Current Implementation</a></h4>
@@ -1525,137 +1523,285 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 </div>
 <div class="sect2">
 <h3 id="chart-feature"><a class="link" href="#chart-feature">4.4. Chart Feature</a></h3>
+<div class="paragraph">
+<p>The Chart feature displays to users three different charts in TravelBuddy. They are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The Number of Places Visited by Rating Category</p>
+</li>
+<li>
+<p>The Number of Places Visited by Year</p>
+</li>
+<li>
+<p>The Number of Places Visited by Country</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Chart feature is activated in TravelBuddy by default when the application launches. Alternatively, the <code>generate</code> command is also used to generate the charts. The <code>generate</code> command does not require any parameters.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Instead of typing <code>generate</code>, you can simply type the shortcut <code>g</code>.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect3">
 <h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.1. Current Implementation</a></h4>
-<div class="paragraph">
-<p>At the GUI, the user enters the <code>generate</code> command, without any parameters. The UI takes in the input and passes it
-on to <code>LogicManager#execute()</code> in the Logic. The`TravelBuddyParser#parseCommand()` is then called, which parses the
-command and redirects to the <code>GenerateCommand</code> class.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Logic:</strong> </dt>
+<dd>
+<p>The <code>generate</code> mechanism is executed by <code>GenerateCommand</code>, which extends from <code>Command</code>. A code snippet is shown below:</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"></dt>
+<dd>
+<p>The operations implemented are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>GenerateCommand#setChartDisplayed(chartDisplayed)</code> - Signals to the UI to display the charts.</p>
+</li>
+<li>
+<p><code>GenerateCommand#commitTravelBuddy()</code> - Saves the current TravelBuddy state from its history.</p>
+</li>
+<li>
+<p><code>GenerateCommand#getFilteredPlaceList()</code> - Verifies if the list is empty.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1"></dt>
+<dd>
+<p>These operations are exposed in the <code>Model</code> interface as <code>Model#setChartDisplayed(chartDisplayed)</code>, <code>Model#commitTravelBuddy()</code> and <code>Model#getFilteredPlaceList()</code>.</p>
+</dd>
+<dt class="hdlist1"><strong>Model:</strong> </dt>
+<dd>
+<p>The chart generation mechanism is facilitated by <code>VersionedTravelBuddy</code>, which extends from <code>TravelBuddy</code>, as seen in the Model Class Diagram in <a href="#ModelClassDiagram">Figure 3.4.1</a>.</p>
+</dd>
+</dl>
+</div>
+<div id="chartOopDiagramFigure" class="imageblock">
+<div class="content">
+<img src="images/Chart_ModelClassBetterOopDiagram.png" alt="Chart ModelClassBetterOopDiagram" width="600">
+</div>
+<div class="title">Figure 4.4.3: OOP Diagram</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"></dt>
+<dd>
+<p>For this section on Charts, the focus is on the class diagram as seen in <a href="#chartOopDiagramFigure">Figure 4.4.3</a>. The step-by-step explanation of the class diagram can be found below:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>ModelManager</code> is a container for a <code>VersionedTravelBuddy</code> object.</p>
+</li>
+<li>
+<p>VersionedTravelBuddy consists of a <code>UniquePlaceList</code> object.</p>
+</li>
+<li>
+<p><code>UniquePlaceList</code> is a container for one or more <code>ChartBook</code> objects and for one or more <code>Place</code> object.</p>
+</li>
+<li>
+<p><code>ChartBook</code> consists of a <code>CountryChartList</code> object, a <code>RatingChartList</code> object and a <code>YearChartList</code> object.</p>
+</li>
+<li>
+<p><code>countryChartList</code> is a container for one or more <code>CountryChart</code> objects. Similarly, <code>ratingChartList</code> is a container for one or more <code>RatingChart</code> objects and <code>yearChartList</code> is a container for one or more <code>YearChart</code> objects.</p>
+</li>
+<li>
+<p><code>CountryChart</code> consists of a <code>CountryCode</code> object and a <code>Total</code> object. Similarly, <code>RatingChart</code> consists of a <code>Rating</code> object and a <code>Total</code> object and <code>YearChart</code> consists of a <code>Year</code> object and a <code>Total</code> object.</p>
+</li>
+</ol>
+</div>
+</dd>
+<dt class="hdlist1"><strong>Storage:</strong> </dt>
+<dd>
+<p>It is stored internally</p>
+</dd>
+<dt class="hdlist1"><strong>UI:</strong> </dt>
+</dl>
+</div>
+<div id="chartSeqDiagramFigure" class="imageblock">
+<div class="content">
+<img src="images/GenerateCommandSeqDiagram.png" alt="GenerateCommandSeqDiagram" width="600">
+</div>
+<div class="title">Figure 4.4.1: Sequence Diagram for the <code>generate</code> command</div>
 </div>
 <div class="paragraph">
-<p>The <code>GenerateCommand#execute()</code> in Logic calls on Model to do two things:
-.  It stores the different country code found in TravelBuddy as keys, and stores the number of times each country
-code appears in TravelBuddy as values.
-.  A similar approach is done, except country code is now replaced with rating found in TravelBuddy as keys, and the
-number of times each rating appears as values.</p>
+<p><a href="#chartSeqDiagramFigure">Figure 4.4.1</a> is a sequence diagram which illustrates the interaction between various classes when the <code>generate</code> command is entered. The step-by-step explanation of the sequence diagram are:</p>
 </div>
-<div class="paragraph">
-<p>Once the two sets of data are obtained, a new Chart object is created. The Chart object displays the data to the user.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Step 1:</strong> </dt>
+<dd>
+<p>The user enters the command <code>generate</code> without any parameters.</p>
+</dd>
+<dt class="hdlist1"><strong>Step 2:</strong> </dt>
+<dd>
+<p>The command is processed by the Logic component, which will then call <code>LogicManager#execute()</code>.</p>
+</dd>
+<dt class="hdlist1"><strong>Step 3:</strong> </dt>
+<dd>
+<p>The <code>GenerateCommand#execute()</code> method s invoked.</p>
+</dd>
+<dt class="hdlist1"><strong>Step 4:</strong> </dt>
+<dd>
+<p>The <code>Model#setChartDisplayed()</code> method is invoked with the argument <code>true</code>. The <code>Model#commitTravelBuddy()</code> method is also invoked.</p>
+</dd>
+<dt class="hdlist1"><strong>Step 5:</strong> </dt>
+<dd>
+<p>The <code>TravelBuddy#commitTravelBuddy()</code> method is invoked by <code>Model</code>.</p>
+</dd>
+<dt class="hdlist1"><strong>Step 6:</strong> </dt>
+<dd>
+<p>The <code>ChartBook#commitChart()</code> method is invoked by <code>TravelBuddy</code>.</p>
+</dd>
+<dt class="hdlist1"><strong>Step 7:</strong> </dt>
+<dd>
+<p>A result object is returned.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-chart-generation-executes"><a class="link" href="#aspect-how-chart-generation-executes">Aspect: How chart generation executes</a></h5>
+<h4 id="generate-command"><a class="link" href="#generate-command">4.4.2. Generate Command</a></h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Preconditions:</strong> </dt>
+<dd>
+<p>Given below is a list of preconditions that must be met for the <code>generate</code> command to work:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice)</strong><br>
-abcdef</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Pros:</strong></p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"></dt>
-<dd>
-<p>abcdef</p>
-</dd>
-</dl>
-</div>
+<p>By default, the charts are automatically generated each time TravelBuddy loads.</p>
 </li>
 <li>
-<p><strong>Cons:</strong></p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"></dt>
-<dd>
-<p>abcdef</p>
-</dd>
-</dl>
-</div>
+<p>The <code>generate</code> command always triggers the display of all three charts.</p>
 </li>
 <li>
-<p><strong>Example:</strong></p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"></dt>
-<dd>
-<p>abcdef</p>
-</dd>
-</dl>
-</div>
+<p>The charts always update themselves in real-time.<br>
+<em>Example:</em> When a place is added via the <code>add</code> command, the charts are automatically updated so that no <code>generate</code> command is necessary.</p>
+</li>
+<li>
+<p>The chart will not display anything when the list is empty.</p>
+</li>
+<li>
+<p>You can type in any parameters after the <code>generate</code> command, TravelBuddy will simply ignore them.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p><strong>Alternative 2</strong><br>
-abcdef</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Pros:</strong></p>
-<div class="dlist">
-<dl>
+</dd>
+<dt class="hdlist1"><strong>Example:</strong> </dt>
+<dd>
+<p>Given below is an example usage scenario and what the user will see in the GUI.</p>
+</dd>
 <dt class="hdlist1"></dt>
 <dd>
-<p>abcdef</p>
+<p><strong>Step 1:</strong> By default, the charts are displayed when TravelBuddy launches. To navigate away from the charts, type in <code>select 1</code>, as seen in <a href="#generateCommand1">Figure 4.4.4</a>.<br>
+<strong>Outcome:</strong> The first place in the place list will be selected and displayed on the right-hand side of the panel, as shown in <a href="#generateCommand2">Figure 4.4.5</a>.</p>
 </dd>
 </dl>
 </div>
-</li>
-<li>
-<p><strong>Cons:</strong></p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"></dt>
-<dd>
-<p>abcdef</p>
-</dd>
-</dl>
-</div>
-</li>
-<li>
-<p><strong>Example:</strong></p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"></dt>
-<dd>
-<p>abcdef</p>
-</dd>
-</dl>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Decision:</strong></p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"></dt>
-<dd>
-<p>abcdef</p>
-</dd>
-</dl>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For future implementation, the task is to use JavaFX&#8217;s charting library to create a chart that can be displayed
-to the user, as seen in the figure below.</p>
-</div>
-<div class="imageblock">
+<div id="generateCommand1" class="imageblock">
 <div class="content">
-<img src="images/Ui.png" alt="Ui" width="800">
+<img src="images/generateCommand1.png" alt="generateCommand1" width="600">
+</div>
+<div class="title">Figure 4.4.4: The user types in <code>select 1</code></div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"></dt>
+<dd>
+<p><strong>Step 2:</strong> Type in <code>generate</code> to generate the charts, as seen in <a href="#generateCommand2">Figure 4.4.5</a>.<br>
+<strong>Outcome:</strong> The charts will be displayed on the right-hand side of the panel, as shown in <a href="#generateCommand3">Figure 4.4.6</a>.</p>
+</dd>
+</dl>
+</div>
+<div id="generateCommand2" class="imageblock">
+<div class="content">
+<img src="images/generateCommand2.png" alt="generateCommand2" width="600">
+</div>
+<div class="title">Figure 4.4.5: The user types in <code>generate</code></div>
+</div>
+<div id="generateCommand3" class="imageblock">
+<div class="content">
+<img src="images/generateCommand3.png" alt="generateCommand3" width="600">
+</div>
+<div class="title">Figure 4.4.6: The charts are generated</div>
 </div>
 </div>
-<div class="paragraph">
-<p>Furthermore, the <code>generate</code> command will have user input to specify if they want to generate either a chart by
-country or a chart by rating.</p>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.3. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-chart-generation-executes"><a class="link" href="#aspect-how-chart-generation-executes">Aspect: How Chart Generation Executes</a></h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Alternative 1 (current choice):</strong> </dt>
+<dd>
+<p>Charts are updated in real-time.</p>
+</dd>
+<dt class="hdlist1"><strong>Pros:</strong> </dt>
+<dd>
+<p>Ease-of-use. Users do not need to type an additional <code>generate</code> command after changes are made to the Place list.</p>
+</dd>
+<dt class="hdlist1"></dt>
+<dd>
+<p>Accurate. The chart reflects the latest changes regardless of whether the user types the <code>generate</code> command.</p>
+</dd>
+<dt class="hdlist1"><strong>Cons:</strong> </dt>
+<dd>
+<p>Computationally more intensive, especially when the Place list is huge, as all three charts need to be regenerated every time a change is detected.</p>
+</dd>
+<dt class="hdlist1"><strong>Example:</strong> </dt>
+<dd>
+<p><a href="#generateCommand7">Figure 4.4.7</a> shows the state of the bar charts before the command <code>edit 1 cc/USA</code> was executed, while <a href="#generateCommand8">Figure 4.4.8</a> shows the state of the bar chart, with USA included, after the <code>edit</code> command was executed.</p>
+</dd>
+<dt class="hdlist1"><strong>Alternative 2:</strong> </dt>
+<dd>
+<p>Charts are updated only when the <code>generate</code> command is used.</p>
+</dd>
+<dt class="hdlist1"><strong>Pros:</strong> </dt>
+<dd>
+<p>Computationally less intensive, as the charts are only generated when required.</p>
+</dd>
+<dt class="hdlist1"><strong>Cons:</strong> </dt>
+<dd>
+<p>Less user-friendly. Users will need to type the <code>generate</code> command for the charts to reflect the changes made to the Place list.</p>
+</dd>
+<dt class="hdlist1"></dt>
+<dd>
+<p>Less accurate. The chart does not reflect the latest changes until the user types the <code>generate</code> command.</p>
+</dd>
+<dt class="hdlist1"><strong>Decision:</strong> </dt>
+<dd>
+<p>Alternative 1, which is to update the charts in real-time, was adopted as it promotes ease-of-use, so users are not required to type in an additional <code>generate</code> command whenever changes are made to the Place list. Moreover, Alternative 1 is the more accurate option of the two, as the chart reflects the latest changes even if the user forgets to type the <code>generate</code> command.</p>
+</dd>
+</dl>
+</div>
+<div id="generateCommand7" class="imageblock">
+<div class="content">
+<img src="images/generateCommand7.png" alt="generateCommand7" width="600">
+</div>
+<div class="title">Figure 4.4.7: Before the <code>edit</code> command was executed</div>
+</div>
+<div id="generateCommand8" class="imageblock">
+<div class="content">
+<img src="images/generateCommand8.png" alt="generateCommand8" width="600">
+</div>
+<div class="title">Figure 4.4.8: After the <code>edit</code> command was executed</div>
 </div>
 </div>
 </div>
@@ -1776,7 +1922,7 @@ results, use the settings indicated in the screenshot below.</p>
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 9. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 1. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -2092,7 +2238,7 @@ e.g. <code>seedu.travel.logic.LogicManagerTest</code></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Update the version number in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/address/MainApp.java"><code>MainApp.java</code></a>.</p>
+<p>Update the version number in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/travel/MainApp.java"><code>MainApp.java</code></a>.</p>
 </li>
 <li>
 <p>Generate a JAR file <a href="UsingGradle.html#creating-the-jar-file">using Gradle</a>.</p>
@@ -2483,4 +2629,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-08 15:05:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-09 08:12:06 UTC</div></div></div></body></html>

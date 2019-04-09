@@ -30,7 +30,7 @@
 <li><a href="#listing-previously-entered-commands-code-history-code">4.14. Listing previously entered commands: <code>history</code></a></li>
 <li><a href="#undoing-previous-command-code-undo-code">4.15. Undoing previous command: <code>undo</code></a></li>
 <li><a href="#redoing-the-previously-undone-command-code-redo-code">4.16. Redoing the previously undone command: <code>redo</code></a></li>
-<li><a href="#generating-charts">4.17. Generating charts</a></li>
+<li><a href="#generating-charts-code-generate-code">4.17. Generating charts: <code>generate</code></a></li>
 <li><a href="#clearing-all-entries-code-clear-code">4.18. Clearing all entries: <code>clear</code></a></li>
 <li><a href="#exiting-the-program-code-exit-code">4.19. Exiting the program: <code>exit</code></a></li>
 <li><a href="#adding-photos-to-places-code-coming-in-v2-0-code">4.20. Adding photos to places <code>[coming in v2.0]</code></a></li>
@@ -282,10 +282,6 @@ A quick alternatvive way to seek help is to hit the <kbd>F1</kbd> key.
 <dd>
 <p><code>a</code></p>
 </dd>
-<dt class="hdlist1"><strong>Format:</strong> </dt>
-<dd>
-<p><code>add n/NAME cc/COUNTRY_CODE dv/DATE_VISITED r/RATING d/DESCRIPTION a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
-</dd>
 </dl>
 </div>
 <div class="sidebarblock">
@@ -504,7 +500,7 @@ Edits the name of the 2nd place to be <code>Raffles Hotel</code> and clears all 
 <dd>
 <p><code>search Singapore</code><br>
 Executes a search for places that contain the keyword <code>Singapore</code> in its name.<br>
-From <a href="#searchFigure">[searchFigure]</a>, using <code>search Singapore</code> will return all places in your TravelBuddy that contain <code>Singapore</code> in its name.<br>
+From <a href="#searchFigure">Figure 4.6.1</a>, using <code>search Singapore</code> will return all places in your TravelBuddy that contain <code>Singapore</code> in its name.<br>
 In this case, the following are returned as they contain <code>Singapore</code> in their names:</p>
 <div class="ulist">
 <ul>
@@ -524,7 +520,7 @@ In this case, the following are returned as they contain <code>Singapore</code> 
 </div>
 </div>
 </div>
-<div id="img-UIsearchresults" class="imageblock">
+<div id="searchFigure" class="imageblock">
 <div class="content">
 <img src="images/UIsearchresults.png" alt="UIsearchresults" width="600">
 </div>
@@ -574,13 +570,13 @@ In this case, the following are returned as they contain <code>Singapore</code> 
 <dd>
 <p><code>searchr 4</code><br>
 Executes a search for places with a rating of <code>4</code>.<br>
-From <a href="#searchRatingFigure">[searchRatingFigure]</a>, using <code>searchr 4</code> will return all places in your TravelBuddy that have a rating of <code>4</code>.</p>
+From <a href="#searchRatingFigure">Figure 4.7.1</a>, using <code>searchr 4</code> will return all places in your TravelBuddy that have a rating of <code>4</code>.</p>
 </dd>
 </dl>
 </div>
 </div>
 </div>
-<div id="img-UIsearchratingresults" class="imageblock">
+<div id="searchRatingFigure" class="imageblock">
 <div class="content">
 <img src="images/UIsearchratingresults.png" alt="UIsearchratingresults" width="600">
 </div>
@@ -636,13 +632,13 @@ From <a href="#searchRatingFigure">[searchRatingFigure]</a>, using <code>searchr
 <dd>
 <p><code>searcht distillery</code><br>
 Executes a search for places that are tagged with <code>distillery</code>.<br>
-From <a href="#searchTagFigure">[searchTagFigure]</a>, using <code>searcht distillery</code> will return all places in your TravelBuddy that are tagged with <code>distillery</code>.</p>
+From <a href="#searchTagFigure">Figure 4.8.1</a>, using <code>searcht distillery</code> will return all places in your TravelBuddy that are tagged with <code>distillery</code>.</p>
 </dd>
 </dl>
 </div>
 </div>
 </div>
-<div id="img-UIsearchtagsresults" class="imageblock">
+<div id="searchTagFigure" class="imageblock">
 <div class="content">
 <img src="images/UIsearchtagsresults.png" alt="UIsearchtagsresults" width="600">
 </div>
@@ -695,13 +691,13 @@ From <a href="#searchTagFigure">[searchTagFigure]</a>, using <code>searcht disti
 <dd>
 <p><code>searchc JPN</code><br>
 Executes a search for places located in <code>JPN</code> (Japan).<br>
-From <a href="#searchCountryFigure">[searchCountryFigure]</a>, using <code>searchc JPN</code> will return all places in your TravelBuddy that are located in Japan.</p>
+From <a href="#searchCountryFigure">Figure 4.9.1</a>, using <code>searchc JPN</code> will return all places in your TravelBuddy that are located in Japan.</p>
 </dd>
 </dl>
 </div>
 </div>
 </div>
-<div id="img-UIsearchcountryresults" class="imageblock">
+<div id="searchCountryFigure" class="imageblock">
 <div class="content">
 <img src="images/UIsearchcountryresults.png" alt="UIsearchcountryresults" width="600">
 </div>
@@ -755,13 +751,13 @@ From <a href="#searchCountryFigure">[searchCountryFigure]</a>, using <code>searc
 <dd>
 <p><code>searchyear 2016</code><br>
 Executes a search for places visited in the year <code>2016</code>.<br>
-From <a href="#searchYearFigure">[searchYearFigure]</a>, using <code>searchyear 2016</code> will return all places in your TravelBuddy you visited in the year <code>2016</code>.</p>
+From <a href="#searchYearFigure">Figure 4.10.1</a>, using <code>searchyear 2016</code> will return all places in your TravelBuddy you visited in the year <code>2016</code>.</p>
 </dd>
 </dl>
 </div>
 </div>
 </div>
-<div id="img-UIsearchyearresults" class="imageblock">
+<div id="searchYearFigure" class="imageblock">
 <div class="content">
 <img src="images/UIsearchyearresults.png" alt="UIsearchyearresults" width="600">
 </div>
@@ -861,10 +857,6 @@ Deletes the 1st place in the results of the <code>search</code> command.</p>
 <dt class="hdlist1"><strong>Shortcut:</strong> </dt>
 <dd>
 <p><code>dm</code></p>
-</dd>
-<dt class="hdlist1"><strong>Format:</strong> </dt>
-<dd>
-<p><code>deletem START_INDEX END_INDEX</code></p>
 </dd>
 <dt class="hdlist1"><strong>Preconditions:</strong> </dt>
 <dd>
@@ -1178,7 +1170,7 @@ Reapplies the <code>clear</code> command<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="generating-charts"><a class="link" href="#generating-charts">4.17. Generating charts</a></h3>
+<h3 id="generating-charts-code-generate-code"><a class="link" href="#generating-charts-code-generate-code">4.17. Generating charts: <code>generate</code></a></h3>
 <div class="sidebarblock">
 <div class="content">
 <div class="dlist">
@@ -1252,7 +1244,10 @@ Reapplies the <code>clear</code> command<br></p>
 <em>Example:</em> When a place is added via the <code>add</code> command, the charts are automatically updated so that no <code>generate</code> command is necessary.</p>
 </li>
 <li>
-<p>As seen in <a href="#generateCommand6Figure">Figure 4.17.9</a>, the chart will not display anything when the list is empty.</p>
+<p>If the list is empty (<a href="#generateCommand5Figure">Figure 4.17.8</a>), the <code>generate</code> command will not display any charts (<a href="#generateCommand6Figure">Figure 4.17.9</a>).</p>
+</li>
+<li>
+<p>You can type in any parameters after the <code>generate</code> command, TravelBuddy will simply ignore them.</p>
 </li>
 </ul>
 </div>
@@ -1713,4 +1708,4 @@ Please do check the file that contains the data of your TravelBuddy.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-08 15:05:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-09 08:12:06 UTC</div></div></div></body></html>
