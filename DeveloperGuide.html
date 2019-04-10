@@ -569,12 +569,17 @@ the UI automatically updates when the data in the list change.</p>
 </td>
 <td class="content">
 As a more OOP model, we can store a <code>Tag</code> list in <code>TravelBuddy</code>, which <code>Place</code> can reference. This would allow <code>TravelBuddy</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Place</code> needing their own <code>Tag</code> object. An
- example of how such a model may look like is given below.<br>
+ example of how such a model may look like is seen in <a href="#ModelClassBetterOopDiagram">Figure 3.4.2</a>.<br>
 <br>
-<span class="image"><img src="images/ModelClassBetterOopDiagram.png" alt="ModelClassBetterOopDiagram" width="800"></span>
 </td>
 </tr>
 </table>
+</div>
+<div id="ModelClassBetterOopDiagram" class="imageblock">
+<div class="content">
+<img src="images/ModelClassBetterOopDiagram.png" alt="ModelClassBetterOopDiagram" width="800">
+</div>
+<div class="title">Figure 3.4.2: OOP Class Diagram</div>
 </div>
 </div>
 <div class="sect2">
@@ -1546,13 +1551,8 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </div>
 <div class="sect3">
 <h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.1. Current Implementation</a></h4>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><strong>Logic:</strong> </dt>
-<dd>
-<p>The <code>generate</code> mechanism is executed by <code>GenerateCommand</code>, which extends from <code>Command</code>. A code snippet is shown below:</p>
-</dd>
-</dl>
+<div class="paragraph">
+<p><strong>Logic:</strong> The <code>generate</code> mechanism is executed by <code>GenerateCommand</code>, which extends from <code>Command</code>. A code snippet is shown below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1568,11 +1568,9 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
  }</code></pre>
 </div>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"></dt>
-<dd>
+<div class="paragraph">
 <p>The operations implemented are:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1586,28 +1584,21 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </li>
 </ul>
 </div>
-</dd>
-<dt class="hdlist1"></dt>
-<dd>
+<div class="paragraph">
 <p>These operations are exposed in the <code>Model</code> interface as <code>Model#setChartDisplayed(chartDisplayed)</code>, <code>Model#commitTravelBuddy()</code> and <code>Model#getFilteredPlaceList()</code>.</p>
-</dd>
-<dt class="hdlist1"><strong>Model:</strong> </dt>
-<dd>
-<p>The chart generation mechanism is facilitated by <code>VersionedTravelBuddy</code>, which extends from <code>TravelBuddy</code>, as seen in the Model Class Diagram in <a href="#ModelClassDiagram">Figure 3.4.1</a>.</p>
-</dd>
-</dl>
+</div>
+<div class="paragraph">
+<p><strong>Model:</strong> The chart generation mechanism is facilitated by <code>VersionedTravelBuddy</code>, which extends from <code>TravelBuddy</code>, as seen in the Model Class Diagram in <a href="#ModelClassDiagram">Figure 3.4.1</a>.</p>
 </div>
 <div id="chartOopDiagramFigure" class="imageblock">
 <div class="content">
 <img src="images/Chart_ModelClassBetterOopDiagram.png" alt="Chart ModelClassBetterOopDiagram" width="600">
 </div>
-<div class="title">Figure 4.4.3: OOP Diagram</div>
+<div class="title">Figure 4.4.1: OOP Diagram</div>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"></dt>
-<dd>
-<p>For this section on Charts, the focus is on the <a href="#class-diagram">class diagram</a> as seen in <a href="#chartOopDiagramFigure">Figure 4.4.3</a>. The step-by-step explanation of the class diagram can be found below:</p>
+<div class="paragraph">
+<p>For this section on Charts, the focus is on the <a href="#class-diagram">class diagram</a> as seen in <a href="#chartOopDiagramFigure">Figure 4.4.1</a>. The step-by-step explanation of the class diagram can be found below:</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1630,24 +1621,12 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </li>
 </ol>
 </div>
-</dd>
-<dt class="hdlist1"><strong>Logic &amp; Model Interaction:</strong> </dt>
-<dd>
-<p>Having discussed Logic and Model, we can now model the workflow of the <code>generate</code> command. This can be accomplished using an <a href="#activity-diagram">activity diagram</a>, as seen in <a href="#GenerateCommandActivityDiagramFigure">Figure 4.4.1</a> below.</p>
-</dd>
-</dl>
+<div class="paragraph">
+<p><strong>Logic &amp; Model Interaction:</strong> Having discussed Logic and Model, we can now model the workflow of the <code>generate</code> command. This can be accomplished using an <a href="#activity-diagram">activity diagram</a>, as seen in <a href="#GenerateCommandActivityDiagram">Figure 4.4.2</a>.</p>
 </div>
-<div id="GenerateCommandActivityDiagramFigure" class="imageblock">
-<div class="content">
-<img src="images/GenerateCommandActivityDiagram.png" alt="GenerateCommandActivityDiagram" width="600">
+<div class="paragraph">
+<p>Additionally, we want to be able to capture the interaction between multiple objects for the <code>generate</code> command. This can be accomplished using a <a href="#sequence-diagram">sequence diagram</a>, as seen in <a href="#GenerateCommandSeqDiagramFigure">Figure 4.4.3</a> below. The step-by-step explanation of the sequence diagram is as follows:</p>
 </div>
-<div class="title">Figure 4.4.1: Activity Diagram for the <code>generate</code> command</div>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"></dt>
-<dd>
-<p>Additionally, we want to be able to capture the interaction between multiple objects for the <code>generate</code> command. This can be accomplished using a <a href="#sequence-diagram">sequence diagram</a>, as seen in <a href="#GenerateCommandSeqDiagramFigure">Figure 4.4.2</a> below. The step-by-step explanation of the sequence diagram is as follows:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1657,7 +1636,7 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 <p>The command is processed by the Logic component, which will then call <code>LogicManager#execute()</code>.</p>
 </li>
 <li>
-<p>The <code>GenerateCommand#execute()</code> method s invoked.</p>
+<p>The <code>GenerateCommand#execute()</code> method is invoked.</p>
 </li>
 <li>
 <p>The <code>Model#setChartDisplayed()</code> method is invoked with the argument <code>true</code>. The <code>Model#commitTravelBuddy()</code> method is also invoked.</p>
@@ -1673,20 +1652,21 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </li>
 </ol>
 </div>
-</dd>
-</dl>
+<div id="GenerateCommandActivityDiagram" class="imageblock">
+<div class="content">
+<img src="images/GenerateCommandActivityDiagram.png" alt="GenerateCommandActivityDiagram" width="400">
+</div>
+<div class="title">Figure 4.4.2: Activity Diagram for the <code>generate</code> command</div>
 </div>
 <div id="GenerateCommandSeqDiagramFigure" class="imageblock">
 <div class="content">
-<img src="images/GenerateCommandSeqDiagram.png" alt="GenerateCommandSeqDiagram" width="600">
+<img src="images/GenerateCommandSeqDiagram.png" alt="GenerateCommandSeqDiagram" width="700">
 </div>
-<div class="title">Figure 4.4.2: Sequence Diagram for the <code>generate</code> command</div>
+<div class="title">Figure 4.4.3: Sequence Diagram for the <code>generate</code> command</div>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><strong>Storage:</strong> </dt>
-<dd>
-<p>The Chart&#8217;s storage is handled by <code>JsonChartBookStorage</code>, which implements from <code>ChartBookStorage</code>. The three main methods it implement are:</p>
+<div class="paragraph">
+<p><strong>Storage:</strong> The Chart&#8217;s storage is handled by <code>JsonChartBookStorage</code>, which implements from <code>ChartBookStorage</code>. The three main methods it implement are:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1700,12 +1680,8 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </li>
 </ul>
 </div>
-</dd>
-<dt class="hdlist1"></dt>
-<dd>
+<div class="paragraph">
 <p>A code snippet for <code>saveCountryChart(filePath)</code> is shown below. A third-party library called Gson was used to convert Java Objects into JSON and back. The Gson API can be found <a href="https://www.javadoc.io/doc/com.google.code.gson/gson/2.8.5">here</a>.</p>
-</dd>
-</dl>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1726,11 +1702,9 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </div>
 <div class="sect3">
 <h4 id="generate-command"><a class="link" href="#generate-command">4.4.2. Generate Command</a></h4>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><strong>Preconditions:</strong> </dt>
-<dd>
-<p>Given below is a list of preconditions that must be met for the <code>generate</code> command to work:</p>
+<div class="paragraph">
+<p><strong>Preconditions:</strong> Given below is a list of preconditions that must be met for the <code>generate</code> command to work:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1751,44 +1725,16 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </li>
 </ul>
 </div>
-</dd>
-<dt class="hdlist1"><strong>Example:</strong> </dt>
-<dd>
-<p>Given below is an example usage scenario and what the user will see in the GUI.</p>
-</dd>
-<dt class="hdlist1"></dt>
-<dd>
-<p><strong>Step 1:</strong> By default, the charts are displayed when TravelBuddy launches. To navigate away from the charts, type in <code>select 1</code>, as seen in <a href="#generateCommand1">Figure 4.4.3</a>.<br>
-<strong>Outcome:</strong> The first place in the place list will be selected and displayed on the right-hand side of the panel, as shown in <a href="#generateCommand2">Figure 4.4.4</a>.</p>
-</dd>
-</dl>
+<div class="paragraph">
+<p><strong>Example:</strong> Given below is an example usage scenario and what the user will see in the GUI.</p>
 </div>
-<div id="generateCommand1" class="imageblock">
-<div class="content">
-<img src="images/generateCommand1.png" alt="generateCommand1" width="600">
+<div class="paragraph">
+<p><strong>Step 1:</strong> By default, the charts are displayed when TravelBuddy launches. To navigate away from the charts, type in <code>select 1</code>.+
+<strong>Outcome:</strong> The first index in the place list will be selected and displayed on the right-hand side of the panel..</p>
 </div>
-<div class="title">Figure 4.4.3: The user types in <code>select 1</code></div>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"></dt>
-<dd>
-<p><strong>Step 2:</strong> Type in <code>generate</code> to generate the charts, as seen in <a href="#generateCommand2">Figure 4.4.4</a>.<br>
-<strong>Outcome:</strong> The charts will be displayed on the right-hand side of the panel, as shown in <a href="#generateCommand3">Figure 4.4.5</a>.</p>
-</dd>
-</dl>
-</div>
-<div id="generateCommand2" class="imageblock">
-<div class="content">
-<img src="images/generateCommand2.png" alt="generateCommand2" width="600">
-</div>
-<div class="title">Figure 4.4.4: The user types in <code>generate</code></div>
-</div>
-<div id="generateCommand3" class="imageblock">
-<div class="content">
-<img src="images/generateCommand3.png" alt="generateCommand3" width="600">
-</div>
-<div class="title">Figure 4.4.5: The charts are generated</div>
+<div class="paragraph">
+<p><strong>Step 2:</strong> Type in <code>generate</code> to generate the charts..<br>
+<strong>Outcome:</strong> The charts will be displayed on the right-hand side of the panel..</p>
 </div>
 </div>
 <div class="sect3">
@@ -1797,9 +1743,9 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 <h5 id="aspect-how-chart-generation-executes"><a class="link" href="#aspect-how-chart-generation-executes">Aspect: How Chart Generation Executes</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 9.0909%;">
-<col style="width: 45.4545%;">
-<col style="width: 45.4546%;">
+<col style="width: 13.7931%;">
+<col style="width: 43.1034%;">
+<col style="width: 43.1035%;">
 </colgroup>
 <thead>
 <tr>
@@ -1810,43 +1756,37 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updates the charts both in real-time and when the <code>generate</code> command is used.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updates the charts only when the <code>generate</code> command is used.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pros</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ease-of-use. Users do not need to type an additional <code>generate</code> command after changes are made to the Place list.<br></p>
-<p class="tableblock">Accurate. The chart reflects the latest changes regardless of whether the user types the <code>generate</code> command.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Computationally less intensive, as the charts are only generated when required.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-use</strong>. This approach is more user-friendly, as users do not need to type an additional <code>generate</code> command after changes are made to the Place list.<br>
+<strong>Accuracy</strong>. This approach is more accurate as the charts reflect the latest changes regardless of whether the user types the <code>generate</code> command.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Scalability</strong>. This approach is computationally less intensive, as the charts are only generated when required.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cons</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Computationally more intensive, especially when the Place list is huge, as all three charts need to be regenerated every time a change is detected.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Less user-friendly. Users will need to type the <code>generate</code> command for the charts to reflect the changes made to the Place list.<br></p>
-<p class="tableblock">Less accurate. The chart does not reflect the latest changes until the user types the <code>generate</code> command.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Scalability</strong>. This approach is computationally more intensive, especially when the Place list is huge, as all three charts need to be regenerated every time a change is detected.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-use</strong>. This approach is Less user-friendly as users will need to type the <code>generate</code> command for the charts to reflect the changes made to the Place list.<br>
+<strong>Accuracy</strong>. This approach is less accurate as the charts does not reflect the latest changes until the user types the <code>generate</code> command.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Example</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#generateCommand7">Figure 4.4.6</a> shows the state of the bar charts before the command <code>edit 1 cc/USA</code> was executed, while <a href="#generateCommand8">Figure 4.4.7</a> shows the state of the bar chart, with USA included, after the <code>edit</code> command was executed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As shown in <a href="#Generate_BeforeEditAfterEdit">Figure 4.4.4</a>, before the <code>edit 1 cc/USA</code> command was executed, the chart did not have a separate bar for USA. After the command was executed, the chart updated in real-time to include a bar for USA. All this was done without invoking the <code>generate</code> command.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N.A.</p></td>
 </tr>
 </tbody>
 </table>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><strong>Decision:</strong> </dt>
-<dd>
-<p>Alternative 1, which is to update the charts in real-time, was adopted as it promotes ease-of-use, so users are not required to type in an additional <code>generate</code> command whenever changes are made to the Place list. Moreover, Alternative 1 is the more accurate option of the two, as the chart reflects the latest changes even if the user forgets to type the <code>generate</code> command.</p>
-</dd>
-</dl>
+<div class="paragraph">
+<p><strong>Decision:</strong> Alternative 1, which is to update the charts in real-time, was adopted as it promotes ease-of-use, so users are not required to type in an additional <code>generate</code> command whenever changes are made to the Place list. Moreover, Alternative 1 is the more accurate option of the two, as the chart reflects the latest changes even if the user forgets to type the <code>generate</code> command.</p>
 </div>
-<div id="generateCommand7" class="imageblock">
+<div id="Generate_BeforeEditAfterEdit" class="imageblock">
 <div class="content">
-<img src="images/generateCommand7.png" alt="generateCommand7" width="600">
+<img src="images/Generate_BeforeEditAfterEdit.png" alt="Generate BeforeEditAfterEdit" width="800">
 </div>
-<div class="title">Figure 4.4.6: Before the <code>edit</code> command was executed</div>
-</div>
-<div id="generateCommand8" class="imageblock">
-<div class="content">
-<img src="images/generateCommand8.png" alt="generateCommand8" width="600">
-</div>
-<div class="title">Figure 4.4.7: After the <code>edit</code> command was executed</div>
+<div class="title">Figure 4.4.4: A comparison before and after the <code>edit</code> command was executed</div>
 </div>
 </div>
 </div>
@@ -2919,4 +2859,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-10 03:03:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-10 10:52:31 UTC</div></div></div></body></html>

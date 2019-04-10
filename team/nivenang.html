@@ -149,23 +149,18 @@ An in-depth analysis of design alternatives in keyword matching as well as the d
 </table>
 <div class="sect2">
 <h3 id="searching-places-by-name-code-search-code"><a class="link" href="#searching-places-by-name-code-search-code">Searching places by name: <code>search</code></a></h3>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><strong>Description:</strong> </dt>
-<dd>
-<p>The <code>search</code> command searches for places whose names contain any of the given keywords.</p>
-</dd>
-<dt class="hdlist1"><strong>Shortcut:</strong> </dt>
-<dd>
-<p><code>se</code></p>
-</dd>
-<dt class="hdlist1"><strong>Format:</strong> </dt>
-<dd>
-<p><code>search KEYWORD [MORE_KEYWORDS]</code></p>
-</dd>
-<dt class="hdlist1"><strong>Preconditions:</strong> </dt>
-<dd>
-<p>Given below is a list of preconditions that must be met for the <code>search</code> command to work:</p>
+<div class="paragraph">
+<p><strong>Description:</strong> The <code>search</code> command searches for places whose names contain any of the given keywords.</p>
+</div>
+<div class="paragraph">
+<p><strong>Shortcut:</strong> <code>se</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>search KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Preconditions:</strong> Given below is a list of preconditions that must be met for the <code>search</code> command to work:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -185,19 +180,14 @@ An in-depth analysis of design alternatives in keyword matching as well as the d
 </li>
 </ul>
 </div>
-</dd>
-</dl>
-</div>
 <div class="sidebarblock">
 <div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><strong>Example:</strong> </dt>
-<dd>
-<p><code>search Singapore</code><br>
+<div class="paragraph">
+<p><strong>Example:</strong> <code>search Singapore</code><br>
 Executes a search for places that contain the keyword <code>Singapore</code> in its name.<br>
 From <a href="#searchFigure">Figure 4.6.1</a>, using <code>search Singapore</code> will return all places in your TravelBuddy that contain <code>Singapore</code> in its name.<br>
 In this case, the following are returned as they contain <code>Singapore</code> in their names:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -211,37 +201,29 @@ In this case, the following are returned as they contain <code>Singapore</code> 
 </li>
 </ul>
 </div>
-</dd>
-</dl>
-</div>
 </div>
 </div>
 <div id="searchFigure" class="imageblock">
 <div class="content">
-<img src="../images/UIsearchresults.png" alt="UIsearchresults" width="600">
+<img src="../images/UIsearchresults.png" alt="UIsearchresults" width="400">
 </div>
 <div class="title">Figure 4.6.1: Search results of <code>search Singapore</code></div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="searching-places-by-ratings-code-searchr-code"><a class="link" href="#searching-places-by-ratings-code-searchr-code">Searching places by ratings: <code>searchr</code></a></h3>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><strong>Description:</strong> </dt>
-<dd>
-<p>The <code>searchr</code> command searches for places whose ratings match the specified rating from 1 to 5.<br></p>
-</dd>
-<dt class="hdlist1"><strong>Shortcut:</strong> </dt>
-<dd>
-<p><code>sr</code></p>
-</dd>
-<dt class="hdlist1"><strong>Format:</strong> </dt>
-<dd>
-<p><code>searchr INDEX [MORE_INDICES]</code></p>
-</dd>
-<dt class="hdlist1"><strong>Preconditions:</strong> </dt>
-<dd>
-<p>Given below is a list of preconditions that must be met for the <code>searchr</code> command to work:</p>
+<div class="paragraph">
+<p><strong>Description:</strong> The <code>searchr</code> command searches for places whose ratings match the specified rating from 1 to 5.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Shortcut:</strong> <code>sr</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>searchr INDEX [MORE_INDICES]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Preconditions:</strong> Given below is a list of preconditions that must be met for the <code>searchr</code> command to work:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -255,49 +237,36 @@ In this case, the following are returned as they contain <code>Singapore</code> 
 </li>
 </ul>
 </div>
-</dd>
-</dl>
-</div>
 <div class="sidebarblock">
 <div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><strong>Example:</strong> </dt>
-<dd>
-<p><code>searchr 4</code><br>
+<div class="paragraph">
+<p><strong>Example:</strong> <code>searchr 4</code><br>
 Executes a search for places with a rating of <code>4</code>.<br>
 From <a href="#searchRatingFigure">Figure 4.7.1</a>, using <code>searchr 4</code> will return all places in your TravelBuddy that have a rating of <code>4</code>.</p>
-</dd>
-</dl>
 </div>
 </div>
 </div>
 <div id="searchRatingFigure" class="imageblock">
 <div class="content">
-<img src="../images/UIsearchratingresults.png" alt="UIsearchratingresults" width="600">
+<img src="../images/UIsearchratingresults.png" alt="UIsearchratingresults" width="400">
 </div>
 <div class="title">Figure 4.7.1: Search results of <code>searchr 4</code></div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="searching-places-by-tags-code-searcht-code"><a class="link" href="#searching-places-by-tags-code-searcht-code">Searching places by tags: <code>searcht</code></a></h3>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><strong>Description:</strong> </dt>
-<dd>
-<p>The <code>searcht</code> command searches for places whose tags correspond to any given keywords.<br></p>
-</dd>
-<dt class="hdlist1"><strong>Shortcut:</strong> </dt>
-<dd>
-<p><code>st</code></p>
-</dd>
-<dt class="hdlist1"><strong>Format:</strong> </dt>
-<dd>
-<p><code>searcht KEYWORD [MORE_KEYWORDS]</code></p>
-</dd>
-<dt class="hdlist1"><strong>Preconditions:</strong> </dt>
-<dd>
-<p>Given below is a list of preconditions that must be met for the <code>searcht</code> command to work:</p>
+<div class="paragraph">
+<p><strong>Description:</strong> The <code>searcht</code> command searches for places whose tags correspond to any given keywords.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Shortcut:</strong> <code>st</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>searcht KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Preconditions:</strong> Given below is a list of preconditions that must be met for the <code>searcht</code> command to work:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -317,49 +286,36 @@ From <a href="#searchRatingFigure">Figure 4.7.1</a>, using <code>searchr 4</code
 </li>
 </ul>
 </div>
-</dd>
-</dl>
-</div>
 <div class="sidebarblock">
 <div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><strong>Example:</strong> </dt>
-<dd>
-<p><code>searcht distillery</code><br>
+<div class="paragraph">
+<p><strong>Example:</strong> <code>searcht distillery</code><br>
 Executes a search for places that are tagged with <code>distillery</code>.<br>
 From <a href="#searchTagFigure">Figure 4.8.1</a>, using <code>searcht distillery</code> will return all places in your TravelBuddy that are tagged with <code>distillery</code>.</p>
-</dd>
-</dl>
 </div>
 </div>
 </div>
 <div id="searchTagFigure" class="imageblock">
 <div class="content">
-<img src="../images/UIsearchtagsresults.png" alt="UIsearchtagsresults" width="600">
+<img src="../images/UIsearchtagsresults.png" alt="UIsearchtagsresults" width="400">
 </div>
 <div class="title">Figure 4.8.1: Search results of <code>searcht distillery</code></div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="searching-places-by-country-code-searchc-code"><a class="link" href="#searching-places-by-country-code-searchc-code">Searching places by country: <code>searchc</code></a></h3>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><strong>Description:</strong> </dt>
-<dd>
-<p>The <code>searchc</code> command searches for places whose country matches the specified ISO-3166 3-letter country code.<br></p>
-</dd>
-<dt class="hdlist1"><strong>Shortcut:</strong> </dt>
-<dd>
-<p><code>sc</code></p>
-</dd>
-<dt class="hdlist1"><strong>Format:</strong> </dt>
-<dd>
-<p><code>searchc KEYWORD [MORE_KEYWORDS]</code></p>
-</dd>
-<dt class="hdlist1"><strong>Preconditions:</strong> </dt>
-<dd>
-<p>Given below is a list of preconditions that must be met for the <code>searchc</code> command to work:</p>
+<div class="paragraph">
+<p><strong>Description:</strong> The <code>searchc</code> command searches for places whose country matches the specified ISO-3166 3-letter country code.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Shortcut:</strong> <code>sc</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>searchc KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Preconditions:</strong> Given below is a list of preconditions that must be met for the <code>searchc</code> command to work:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -376,50 +332,37 @@ From <a href="#searchTagFigure">Figure 4.8.1</a>, using <code>searcht distillery
 </li>
 </ul>
 </div>
-</dd>
-</dl>
-</div>
 <div class="sidebarblock">
 <div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><strong>Example:</strong> </dt>
-<dd>
-<p><code>searchc JPN</code><br>
+<div class="paragraph">
+<p><strong>Example:</strong> <code>searchc JPN</code><br>
 Executes a search for places located in <code>JPN</code> (Japan).<br>
 From <a href="#searchCountryFigure">Figure 4.9.1</a>, using <code>searchc JPN</code> will return all places in your TravelBuddy that are located in Japan.</p>
-</dd>
-</dl>
 </div>
 </div>
 </div>
 <div id="searchCountryFigure" class="imageblock">
 <div class="content">
-<img src="../images/UIsearchcountryresults.png" alt="UIsearchcountryresults" width="600">
+<img src="../images/UIsearchcountryresults.png" alt="UIsearchcountryresults" width="400">
 </div>
 <div class="title">Figure 4.9.1: Search results of <code>searchc JPN</code></div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="searching-places-by-year-of-visit-code-searchyear-code"><a class="link" href="#searching-places-by-year-of-visit-code-searchyear-code">Searching places by year of visit: <code>searchyear</code></a></h3>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><strong>Description:</strong> </dt>
-<dd>
-<p>The <code>searchyear</code> command searches for places whose year of visit matches the specified year of interest.</p>
-</dd>
-<dt class="hdlist1"><strong>Shortcut:</strong> </dt>
-<dd>
-<p><code>sy</code></p>
-</dd>
-<dt class="hdlist1"><strong>Format:</strong> </dt>
-<dd>
-<p><code>searchyear KEYWORD [MORE_KEYWORDS]</code> OR<br>
+<div class="paragraph">
+<p><strong>Description:</strong> The <code>searchyear</code> command searches for places whose year of visit matches the specified year of interest.</p>
+</div>
+<div class="paragraph">
+<p><strong>Shortcut:</strong> <code>sy</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>searchyear KEYWORD [MORE_KEYWORDS]</code> OR<br>
 <code>searchyear KEYWORD-KEYWORD</code></p>
-</dd>
-<dt class="hdlist1"><strong>Preconditions:</strong> </dt>
-<dd>
-<p>Given below is a list of preconditions that must be met for the <code>searchyear</code> command to work:</p>
+</div>
+<div class="paragraph">
+<p><strong>Preconditions:</strong> Given below is a list of preconditions that must be met for the <code>searchyear</code> command to work:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -436,26 +379,18 @@ From <a href="#searchCountryFigure">Figure 4.9.1</a>, using <code>searchc JPN</c
 </li>
 </ul>
 </div>
-</dd>
-</dl>
-</div>
 <div class="sidebarblock">
 <div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><strong>Example:</strong> </dt>
-<dd>
-<p><code>searchyear 2016</code><br>
+<div class="paragraph">
+<p><strong>Example:</strong> <code>searchyear 2016</code><br>
 Executes a search for places visited in the year <code>2016</code>.<br>
 From <a href="#searchYearFigure">Figure 4.10.1</a>, using <code>searchyear 2016</code> will return all places in your TravelBuddy you visited in the year <code>2016</code>.</p>
-</dd>
-</dl>
 </div>
 </div>
 </div>
 <div id="searchYearFigure" class="imageblock">
 <div class="content">
-<img src="../images/UIsearchyearresults.png" alt="UIsearchyearresults" width="600">
+<img src="../images/UIsearchyearresults.png" alt="UIsearchyearresults" width="400">
 </div>
 <div class="title">Figure 4.10.1: Search results of <code>searchyear 2016</code></div>
 </div>
@@ -999,4 +934,4 @@ developers of our project.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-10 03:03:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-10 10:52:31 UTC</div></div></div></body></html>
