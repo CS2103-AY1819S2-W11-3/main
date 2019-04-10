@@ -180,44 +180,10 @@ interacts with it using a CLI, and it has a GUI created with JavaFX. It is writt
 </div>
 </div>
 <div class="sect1">
-<h2 id="additional-information"><a class="link" href="#additional-information">Additional Information</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Before going through the User Guide, it may be helpful to familiarize yourself with some of the symbols that you may encounter throughout this User Guide:</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The <strong>NOTE</strong> symbol is used to alert you of some things you should take note of.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The <strong>TIP</strong> symbol is used to alert you of some useful tips.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="Features"><a class="link" href="#Features">Features</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="generating-charts-code-generate-code"><a class="link" href="#generating-charts-code-generate-code">Generating charts: <code>generate</code></a></h3>
-<div class="sidebarblock">
-<div class="content">
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><strong>Description:</strong> </dt>
@@ -242,8 +208,6 @@ The <strong>TIP</strong> symbol is used to alert you of some useful tips.
 </div>
 </dd>
 </dl>
-</div>
-</div>
 </div>
 <div id="chart1Figure" class="imageblock">
 <div class="content">
@@ -560,6 +524,11 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </dd>
 </dl>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Unresolved directive in /home/travis/build/CS2103-AY1819S2-W11-<span class="integer">3</span>/main/docs/DeveloperGuide.adoc - include::{sourceDir}/seedu/travel/logic/commands/GenerateCommand.java[tags=execute,indent=<span class="integer">1</span>]</code></pre>
+</div>
+</div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"></dt>
@@ -599,7 +568,7 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 <dl>
 <dt class="hdlist1"></dt>
 <dd>
-<p>For this section on Charts, the focus is on the class diagram as seen in <a href="#chartOopDiagramFigure">Figure 4.4.3</a>. The step-by-step explanation of the class diagram can be found below:</p>
+<p>For this section on Charts, the focus is on the <a href="#class-diagram">class diagram</a> as seen in <a href="#chartOopDiagramFigure">Figure 4.4.3</a>. The step-by-step explanation of the class diagram can be found below:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -623,53 +592,86 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </ol>
 </div>
 </dd>
-<dt class="hdlist1"><strong>Storage:</strong> </dt>
+<dt class="hdlist1"><strong>Logic &amp; Model Interaction:</strong> </dt>
 <dd>
-<p>It is stored internally</p>
+<p>Having discussed Logic and Model, we can now model the workflow of the <code>generate</code> command. This can be accomplished using an <a href="#activity-diagram">activity diagram</a>, as seen in <a href="#GenerateCommandActivityDiagramFigure">Figure 4.4.1</a> below.</p>
 </dd>
-<dt class="hdlist1"><strong>UI:</strong> </dt>
 </dl>
 </div>
-<div id="chartSeqDiagramFigure" class="imageblock">
+<div id="GenerateCommandActivityDiagramFigure" class="imageblock">
 <div class="content">
-<img src="../images/GenerateCommandSeqDiagram.png" alt="GenerateCommandSeqDiagram" width="600">
+<img src="../images/GenerateCommandActivityDiagram.png" alt="GenerateCommandActivityDiagram" width="600">
 </div>
-<div class="title">Figure 4.4.1: Sequence Diagram for the <code>generate</code> command</div>
-</div>
-<div class="paragraph">
-<p><a href="#chartSeqDiagramFigure">Figure 4.4.1</a> is a sequence diagram which illustrates the interaction between various classes when the <code>generate</code> command is entered. The step-by-step explanation of the sequence diagram are:</p>
+<div class="title">Figure 4.4.1: Activity Diagram for the <code>generate</code> command</div>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><strong>Step 1:</strong> </dt>
+<dt class="hdlist1"></dt>
 <dd>
+<p>Additionally, we want to be able to capture the interaction between multiple objects for the <code>generate</code> command. This can be accomplished using a <a href="#sequence-diagram">sequence diagram</a>, as seen in <a href="#GenerateCommandSeqDiagramFigure">Figure 4.4.2</a> below. The step-by-step explanation of the sequence diagram is as follows:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
 <p>The user enters the command <code>generate</code> without any parameters.</p>
-</dd>
-<dt class="hdlist1"><strong>Step 2:</strong> </dt>
-<dd>
+</li>
+<li>
 <p>The command is processed by the Logic component, which will then call <code>LogicManager#execute()</code>.</p>
-</dd>
-<dt class="hdlist1"><strong>Step 3:</strong> </dt>
-<dd>
+</li>
+<li>
 <p>The <code>GenerateCommand#execute()</code> method s invoked.</p>
-</dd>
-<dt class="hdlist1"><strong>Step 4:</strong> </dt>
-<dd>
+</li>
+<li>
 <p>The <code>Model#setChartDisplayed()</code> method is invoked with the argument <code>true</code>. The <code>Model#commitTravelBuddy()</code> method is also invoked.</p>
-</dd>
-<dt class="hdlist1"><strong>Step 5:</strong> </dt>
-<dd>
+</li>
+<li>
 <p>The <code>TravelBuddy#commitTravelBuddy()</code> method is invoked by <code>Model</code>.</p>
-</dd>
-<dt class="hdlist1"><strong>Step 6:</strong> </dt>
-<dd>
+</li>
+<li>
 <p>The <code>ChartBook#commitChart()</code> method is invoked by <code>TravelBuddy</code>.</p>
-</dd>
-<dt class="hdlist1"><strong>Step 7:</strong> </dt>
-<dd>
+</li>
+<li>
 <p>A result object is returned.</p>
+</li>
+</ol>
+</div>
 </dd>
 </dl>
+</div>
+<div id="GenerateCommandSeqDiagramFigure" class="imageblock">
+<div class="content">
+<img src="../images/GenerateCommandSeqDiagram.png" alt="GenerateCommandSeqDiagram" width="600">
+</div>
+<div class="title">Figure 4.4.2: Sequence Diagram for the <code>generate</code> command</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Storage:</strong> </dt>
+<dd>
+<p>The Chart&#8217;s storage is handled by <code>JsonChartBookStorage</code>, which implements from <code>ChartBookStorage</code>. The three main methods it implement are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>saveCountryChart(filePath)</code> - Saves the countries data into a JSON file.</p>
+</li>
+<li>
+<p><code>saveRatingChart(filePath)</code> - Saves the ratings data into a JSON file.</p>
+</li>
+<li>
+<p><code>saveYearChart(filePath)</code> - Saves the years data into a JSON file.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1"></dt>
+<dd>
+<p>A code snippet for <code>saveCountryChart(filePath)</code> is shown below. A third-party library called Gson was used to convert Java Objects into JSON and back. The Gson API can be found <a href="https://www.javadoc.io/doc/com.google.code.gson/gson/2.8.5">here</a>.</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Unresolved directive in /home/travis/build/CS2103-AY1819S2-W11-<span class="integer">3</span>/main/docs/DeveloperGuide.adoc - include::{sourceDir}/seedu/travel/storage/JsonChartBookStorage.java[tags=saveCountryChart,indent=<span class="integer">1</span>]</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -706,8 +708,8 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </dd>
 <dt class="hdlist1"></dt>
 <dd>
-<p><strong>Step 1:</strong> By default, the charts are displayed when TravelBuddy launches. To navigate away from the charts, type in <code>select 1</code>, as seen in <a href="#generateCommand1">Figure 4.4.4</a>.<br>
-<strong>Outcome:</strong> The first place in the place list will be selected and displayed on the right-hand side of the panel, as shown in <a href="#generateCommand2">Figure 4.4.5</a>.</p>
+<p><strong>Step 1:</strong> By default, the charts are displayed when TravelBuddy launches. To navigate away from the charts, type in <code>select 1</code>, as seen in <a href="#generateCommand1">Figure 4.4.3</a>.<br>
+<strong>Outcome:</strong> The first place in the place list will be selected and displayed on the right-hand side of the panel, as shown in <a href="#generateCommand2">Figure 4.4.4</a>.</p>
 </dd>
 </dl>
 </div>
@@ -715,14 +717,14 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 <div class="content">
 <img src="../images/generateCommand1.png" alt="generateCommand1" width="600">
 </div>
-<div class="title">Figure 4.4.4: The user types in <code>select 1</code></div>
+<div class="title">Figure 4.4.3: The user types in <code>select 1</code></div>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"></dt>
 <dd>
-<p><strong>Step 2:</strong> Type in <code>generate</code> to generate the charts, as seen in <a href="#generateCommand2">Figure 4.4.5</a>.<br>
-<strong>Outcome:</strong> The charts will be displayed on the right-hand side of the panel, as shown in <a href="#generateCommand3">Figure 4.4.6</a>.</p>
+<p><strong>Step 2:</strong> Type in <code>generate</code> to generate the charts, as seen in <a href="#generateCommand2">Figure 4.4.4</a>.<br>
+<strong>Outcome:</strong> The charts will be displayed on the right-hand side of the panel, as shown in <a href="#generateCommand3">Figure 4.4.5</a>.</p>
 </dd>
 </dl>
 </div>
@@ -730,57 +732,54 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 <div class="content">
 <img src="../images/generateCommand2.png" alt="generateCommand2" width="600">
 </div>
-<div class="title">Figure 4.4.5: The user types in <code>generate</code></div>
+<div class="title">Figure 4.4.4: The user types in <code>generate</code></div>
 </div>
 <div id="generateCommand3" class="imageblock">
 <div class="content">
 <img src="../images/generateCommand3.png" alt="generateCommand3" width="600">
 </div>
-<div class="title">Figure 4.4.6: The charts are generated</div>
+<div class="title">Figure 4.4.5: The charts are generated</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-chart-generation-executes"><a class="link" href="#aspect-how-chart-generation-executes">Aspect: How Chart Generation Executes</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 9.0909%;">
+<col style="width: 45.4545%;">
+<col style="width: 45.4546%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong>Alternative 1 (current choice)</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Alternative 2</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pros</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ease-of-use. Users do not need to type an additional <code>generate</code> command after changes are made to the Place list.<br></p>
+<p class="tableblock">Accurate. The chart reflects the latest changes regardless of whether the user types the <code>generate</code> command.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Computationally less intensive, as the charts are only generated when required.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cons</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Computationally more intensive, especially when the Place list is huge, as all three charts need to be regenerated every time a change is detected.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Less user-friendly. Users will need to type the <code>generate</code> command for the charts to reflect the changes made to the Place list.<br></p>
+<p class="tableblock">Less accurate. The chart does not reflect the latest changes until the user types the <code>generate</code> command.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Example</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#generateCommand7">Figure 4.4.6</a> shows the state of the bar charts before the command <code>edit 1 cc/USA</code> was executed, while <a href="#generateCommand8">Figure 4.4.7</a> shows the state of the bar chart, with USA included, after the <code>edit</code> command was executed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N.A.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><strong>Alternative 1 (current choice):</strong> </dt>
-<dd>
-<p>Charts are updated in real-time.</p>
-</dd>
-<dt class="hdlist1"><strong>Pros:</strong> </dt>
-<dd>
-<p>Ease-of-use. Users do not need to type an additional <code>generate</code> command after changes are made to the Place list.</p>
-</dd>
-<dt class="hdlist1"></dt>
-<dd>
-<p>Accurate. The chart reflects the latest changes regardless of whether the user types the <code>generate</code> command.</p>
-</dd>
-<dt class="hdlist1"><strong>Cons:</strong> </dt>
-<dd>
-<p>Computationally more intensive, especially when the Place list is huge, as all three charts need to be regenerated every time a change is detected.</p>
-</dd>
-<dt class="hdlist1"><strong>Example:</strong> </dt>
-<dd>
-<p><a href="#generateCommand7">Figure 4.4.7</a> shows the state of the bar charts before the command <code>edit 1 cc/USA</code> was executed, while <a href="#generateCommand8">Figure 4.4.8</a> shows the state of the bar chart, with USA included, after the <code>edit</code> command was executed.</p>
-</dd>
-<dt class="hdlist1"><strong>Alternative 2:</strong> </dt>
-<dd>
-<p>Charts are updated only when the <code>generate</code> command is used.</p>
-</dd>
-<dt class="hdlist1"><strong>Pros:</strong> </dt>
-<dd>
-<p>Computationally less intensive, as the charts are only generated when required.</p>
-</dd>
-<dt class="hdlist1"><strong>Cons:</strong> </dt>
-<dd>
-<p>Less user-friendly. Users will need to type the <code>generate</code> command for the charts to reflect the changes made to the Place list.</p>
-</dd>
-<dt class="hdlist1"></dt>
-<dd>
-<p>Less accurate. The chart does not reflect the latest changes until the user types the <code>generate</code> command.</p>
-</dd>
 <dt class="hdlist1"><strong>Decision:</strong> </dt>
 <dd>
 <p>Alternative 1, which is to update the charts in real-time, was adopted as it promotes ease-of-use, so users are not required to type in an additional <code>generate</code> command whenever changes are made to the Place list. Moreover, Alternative 1 is the more accurate option of the two, as the chart reflects the latest changes even if the user forgets to type the <code>generate</code> command.</p>
@@ -791,13 +790,348 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 <div class="content">
 <img src="../images/generateCommand7.png" alt="generateCommand7" width="600">
 </div>
-<div class="title">Figure 4.4.7: Before the <code>edit</code> command was executed</div>
+<div class="title">Figure 4.4.6: Before the <code>edit</code> command was executed</div>
 </div>
 <div id="generateCommand8" class="imageblock">
 <div class="content">
 <img src="../images/generateCommand8.png" alt="generateCommand8" width="600">
 </div>
-<div class="title">Figure 4.4.8: After the <code>edit</code> command was executed</div>
+<div class="title">Figure 4.4.7: After the <code>edit</code> command was executed</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="user-stories"><a class="link" href="#user-stories">Appendix A: User Stories</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The priority of <a href="#user-stories">user stories</a> are divided into three categories:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>High (must have) - <code>* * *</code></p>
+</li>
+<li>
+<p>Medium (nice to have) - <code>* *</code></p>
+</li>
+<li>
+<p>Low (unlikely to have) - <code>*</code></p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. User Stories</caption>
+<colgroup>
+<col style="width: 8.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 31.25%;">
+<col style="width: 52.0834%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Priority</th>
+<th class="tableblock halign-left valign-top">As a &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">I want to &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">So that &#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">search places by their names</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can quickly retrieve information about that place</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of all the places I have visited</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can easily search for them in the future</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rate the places I have visited</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I know which places I want to revisit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be able to search for places by ratings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can recommend the highly-rated places to others and avoid the lowly-rated ones</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be able to search for places by countries</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can plan for future trips</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">search places by their tag(s)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can quickly compile a list of places with related tags</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know the countries and continents that I have not visited</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I may visit them in future</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see a graphical representation of the places I have visited</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can plan which country to visit next</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to know the number of times I have revisited a place</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I know which places are popular for me</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">search for the places I have visited by years</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I am able to see which places I have visited in by year</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have a map view indicating all of the places I have visited</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can quickly find out the places by countries I have visited in a user-friendly way</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I want to get the locations of highly-rated places in my vicinity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find a place to visit</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-cases"><a class="link" href="#use-cases">Appendix B: Use Cases</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>(For all <a href="#use-cases">use cases</a> below, the <strong>System</strong> is the <code>TravelBuddy</code> and the <a href="#actor"><strong>Actor</strong></a> is the <code>user</code>, unless specified otherwise)</p>
+</div>
+<h3 id="use-case-deleting-a-place" class="discrete">Use case: Deleting a place</h3>
+<div class="paragraph">
+<p><a href="#mss"><strong>MSS</strong></a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list places</p>
+</li>
+<li>
+<p>TravelBuddy shows a list of places</p>
+</li>
+<li>
+<p>User requests to delete a specific place in the list</p>
+</li>
+<li>
+<p>TravelBuddy deletes the place</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><a href="#extension"><strong>Extensions</strong></a></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. TravelBuddy shows an error message "The place index provided is invalid".</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. The given command is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b1. TravelBuddy shows an error message "Unknown command".</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-search-for-a-place" class="discrete">Use case: Search for a place</h3>
+<div class="paragraph">
+<p><a href="#mss"><strong>MSS</strong></a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list places</p>
+</li>
+<li>
+<p>TravelBuddy shows a list of places</p>
+</li>
+<li>
+<p>User searches for a place with a specific word</p>
+</li>
+<li>
+<p>TravelBuddy displays all places with the specified word.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><a href="#extension"><strong>Extensions</strong></a></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given word is not found.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. TravelBuddy shows an error message "0 places listed!".</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. The given command is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b1. TravelBuddy shows an error message "Unknown command".</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-edits-a-place" class="discrete">Use case: Edits a place</h3>
+<div class="paragraph">
+<p><a href="#mss"><strong>MSS</strong></a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list places</p>
+</li>
+<li>
+<p>TravelBuddy shows a list of places</p>
+</li>
+<li>
+<p>User edits a place with a specified index and a specified parameter.</p>
+</li>
+<li>
+<p>TravelBuddy identifies the place and updates the changes on the specified parameter.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><a href="#extension"><strong>Extensions</strong></a></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. TravelBuddy shows an error message "Invalid command format!".</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. The given prefix is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b1. TravelBuddy shows an error message "Invalid command format!".</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3c. The given parameter is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3c1. TravelBuddy shows an error message depending on the parameter.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3d. The given command is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3d1. TravelBuddy shows an error message "Unknown command".</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -810,16 +1144,4 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </tbody>
 </table>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
-<hr>
-<div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-09 17:02:32 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-10 03:03:44 UTC</div></div></div></body></html>
