@@ -65,16 +65,16 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong><em>TravelBuddy Records</em></strong>: Lets you capture, store, organize and modify the places you want to curate.</p>
+<p><strong><em>TravelBuddy Records</em></strong>: Helps you capture, store, organize and modify the places you want to curate.</p>
 </li>
 <li>
-<p><strong><em>TravelBuddy Search</em></strong>: Lets you search through your list of places quickly to pick out the specific place you were looking for.</p>
+<p><strong><em>TravelBuddy Search</em></strong>: Helps you search through your list of places quickly to pick out the specific place you were looking for.</p>
 </li>
 <li>
-<p><strong><em>TravelBuddy Photos</em></strong>: Lets you attach photos to your list of places.</p>
+<p><strong><em>TravelBuddy Photos</em></strong>: Helps you attach photos to your list of places.</p>
 </li>
 <li>
-<p><strong><em>TravelBuddy Analytics</em></strong>: Lets you gather insights into your travel patterns and behavior, based on the places you have visited.</p>
+<p><strong><em>TravelBuddy Analytics</em></strong>: Helps you gather insights into your travel patterns and behavior, based on the places you have visited.</p>
 </li>
 </ul>
 </div>
@@ -213,15 +213,19 @@ The code in this section is merely for illustrative purposes. It is kept brief t
 </li>
 <li>
 <p><em>Items in square brackets are optional.</em><br>
-<strong>Example:</strong> For <code>n/NAME [t/TAG]</code>, it can either be specified as <code>n/Botanic Gardens t/faculty</code> or as <code>n/Botanic Gardens</code>.</p>
+<strong>Example:</strong> For <code>add n/NAME [t/TAG]</code>, it can either be specified as <code>add n/Botanic Gardens t/faculty</code> or as <code>add n/Botanic Gardens</code>.</p>
 </li>
 <li>
 <p><em>Parameters can be in any order.</em><br>
-<strong>Example:</strong> If the command specifies <code>n/NAME r/RATING</code>, then changing the order to <code>r/RATING n/NAME</code> is also acceptable.</p>
+<strong>Example:</strong> If the command specifies the parameters <code>n/NAME r/RATING</code>, then changing the order to <code>r/RATING n/NAME</code> is also acceptable.</p>
 </li>
 <li>
 <p><em>Whenever there are duplicate parameters, the last duplicated parameter is chosen.</em><br>
 <strong>Example:</strong> If the command is <code>add n/Singapore Zoo n/Botanic Gardens</code>, where there are duplicates of the <code>n/NAME</code> parameters, the last parameter, <code>n/Botanic Gardens</code>, is chosen to be added to the list of places.</p>
+</li>
+<li>
+<p><em>Some parameters have a specific input format</em><br>
+<strong>Example:</strong> For <code>dv/DATE_VISITED</code>, the <code>DATE_VISITED</code> needs to follow the <code>DD/MM/YYYY</code> format.</p>
 </li>
 </ul>
 </div>
@@ -257,7 +261,7 @@ around. This can be useful to refer to when using the app.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-A quick alternatvive way to seek help is to hit the <kbd>F1</kbd> key.
+A quick alternative way to seek help is to hit the <kbd>F1</kbd> key.
 </td>
 </tr>
 </table>
@@ -271,6 +275,34 @@ A quick alternatvive way to seek help is to hit the <kbd>F1</kbd> key.
 <div class="paragraph">
 <p><strong>Shortcut:</strong> <code>a</code></p>
 </div>
+<div class="paragraph">
+<p>The table below shows the parameters that require a specific input format to be added.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 77.7778%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Specific Input Format</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>RATING</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An integer ranging from <code>1</code> to <code>5</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>COUNTRY_CODE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A valid ISO-3166 country code<br>
+e.g. <code>JPN</code> to represent <code>Japan</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATE_VISITED</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A valid date that follows the <code>DD/MM/YYYY</code> format ranging from <code>01/01/1900</code> to the current date</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
@@ -279,11 +311,11 @@ A quick alternatvive way to seek help is to hit the <kbd>F1</kbd> key.
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/Botanic Gardens cc/SGP dv/1/1/2017 r/4 d/UNESCO World Heritage Site a/1 Cluny Rd, Singapore 259569 t/nature</code><br>
+<p><code>add n/Botanic Gardens cc/SGP dv/01/01/2017 r/4 d/UNESCO World Heritage Site a/1 Cluny Rd, Singapore 259569 t/nature</code><br>
 Adds Botanic Gardens to the list of places you have visited into TravelBuddy.<br></p>
 </li>
 <li>
-<p><code>add n/Raffles Hotel cc/SGP dv/5/5/2016 t/hotel d/This place is lovely a/Raffles Road r/5 t/staycation</code><br>
+<p><code>add n/Raffles Hotel cc/SGP dv/05/05/2016 t/hotel d/This place is lovely a/Raffles Road r/5 t/staycation</code><br>
 Adds Raffles Hotel to the list of places you have visited into TravelBuddy.</p>
 </li>
 </ul>
@@ -373,6 +405,9 @@ Calling the <code>list</code> command returns a list of all the places in Travel
 <li>
 <p>The tags can all be removed by typing <code>t/</code> without specifying any tags after it.</p>
 </li>
+<li>
+<p>Some parameters have a specific input format.</p>
+</li>
 </ul>
 </div>
 <div class="sidebarblock">
@@ -384,11 +419,11 @@ Calling the <code>list</code> command returns a list of all the places in Travel
 <ul>
 <li>
 <p><code>edit 1 r/3 d/No description</code><br>
-Edits the rating and description address of the 1st place to be <code>3</code> and <code>No description</code> respectively.</p>
+Edits the rating and description of the 1st place entry in the list to be <code>3</code> and <code>No description</code> respectively.</p>
 </li>
 <li>
 <p><code>edit 2 n/Raffles Hotel t/</code><br>
-Edits the name of the 2nd place to be <code>Raffles Hotel</code> and clears all existing tags.</p>
+Edits the name of the 2nd place entry in the list to be <code>Raffles Hotel</code> and clears all existing tags.</p>
 </li>
 </ul>
 </div>
@@ -401,16 +436,16 @@ Edits the name of the 2nd place to be <code>Raffles Hotel</code> and clears all 
 <div class="content">
 <img src="images/editCommandBefore.png" alt="editCommandBefore" width="400">
 </div>
-<div class="title">Figure 4.5.1: Before the <code>edit</code> command was used</div>
+<div class="title">Figure 4.5.1: Before the <code>edit</code> command is used</div>
 </div>
 <div class="paragraph">
-<p><a href="#editFigureAfter">Figure 4.5.2</a> below shows the list of places after the <code>edit</code> command was used.</p>
+<p><a href="#editFigureAfter">Figure 4.5.2</a> below shows the list of places after the <code>edit</code> command is used.</p>
 </div>
 <div id="editFigureAfter" class="imageblock">
 <div class="content">
 <img src="images/editCommandAfter.png" alt="editCommandAfter" width="400">
 </div>
-<div class="title">Figure 4.5.2: After the <code>edit</code> command was used</div>
+<div class="title">Figure 4.5.2: After the <code>edit</code> command is used</div>
 </div>
 </div>
 <div class="sect2">
@@ -433,16 +468,19 @@ Edits the name of the 2nd place to be <code>Raffles Hotel</code> and clears all 
 <p>The search is case insensitive. e.g <code>national</code> will match <code>National</code>.</p>
 </li>
 <li>
-<p>The order of the keywords does not matter. e.g. <code>University National of Singapore</code> will match <code>National University of Singapore</code>.</p>
+<p>The order of the keywords does not matter.<br>
+e.g. <code>University National of Singapore</code> will match <code>National University of Singapore</code>.</p>
 </li>
 <li>
 <p>Only the name of the places in TravelBuddy is searched.</p>
 </li>
 <li>
-<p>Only full words will be matched e.g. <code>Nation</code> will not match <code>National</code></p>
+<p>Only full words will be matched<br>
+e.g. <code>Nation</code> will not match <code>National</code></p>
 </li>
 <li>
-<p>Places matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>National Museum</code> will return <code>National Museum of Singapore</code>, <code>National University Hospital</code>.</p>
+<p>Places matching at least one keyword will be returned (i.e. <code>OR</code> search).<br>
+e.g. <code>National Museum</code> will return <code>National Museum of Singapore</code> and <code>National University Hospital</code>.</p>
 </li>
 </ul>
 </div>
@@ -493,7 +531,8 @@ In this case, the following are returned as they contain <code>Singapore</code> 
 <div class="ulist">
 <ul>
 <li>
-<p>The search rating is from a range of 1 to 5. e.g <code>5</code> will return places with 5 star ratings.</p>
+<p>The rating used in the search must be an integer ranging from 1 to 5.<br>
+e.g <code>searchr 5</code> will return places with 5-star ratings.</p>
 </li>
 <li>
 <p>Only the rating of the places in TravelBuddy is searched.</p>
@@ -508,7 +547,7 @@ In this case, the following are returned as they contain <code>Singapore</code> 
 <div class="paragraph">
 <p><strong>Example:</strong> <code>searchr 4</code><br>
 Executes a search for places with a rating of <code>4</code>.<br>
-From <a href="#searchRatingFigure">Figure 4.7.1</a>, using <code>searchr 4</code> will return all places in your TravelBuddy that have a rating of <code>4</code>.</p>
+From <a href="#searchRatingFigure">Figure 4.7.1</a> below, using <code>searchr 4</code> will return all places in your TravelBuddy that have a rating of <code>4</code>.</p>
 </div>
 </div>
 </div>
@@ -557,7 +596,7 @@ From <a href="#searchRatingFigure">Figure 4.7.1</a>, using <code>searchr 4</code
 <div class="paragraph">
 <p><strong>Example:</strong> <code>searcht distillery</code><br>
 Executes a search for places that are tagged with <code>distillery</code>.<br>
-From <a href="#searchTagFigure">Figure 4.8.1</a>, using <code>searcht distillery</code> will return all places in your TravelBuddy that are tagged with <code>distillery</code>.</p>
+From <a href="#searchTagFigure">Figure 4.8.1</a> below, using <code>searcht distillery</code> will return all places in your TravelBuddy that are tagged with <code>distillery</code>.</p>
 </div>
 </div>
 </div>
@@ -603,7 +642,7 @@ From <a href="#searchTagFigure">Figure 4.8.1</a>, using <code>searcht distillery
 <div class="paragraph">
 <p><strong>Example:</strong> <code>searchc JPN</code><br>
 Executes a search for places located in <code>JPN</code> (Japan).<br>
-From <a href="#searchCountryFigure">Figure 4.9.1</a>, using <code>searchc JPN</code> will return all places in your TravelBuddy that are located in Japan.</p>
+From <a href="#searchCountryFigure">Figure 4.9.1</a> below, using <code>searchc JPN</code> will return all places in your TravelBuddy that are located in Japan.</p>
 </div>
 </div>
 </div>
@@ -650,7 +689,7 @@ From <a href="#searchCountryFigure">Figure 4.9.1</a>, using <code>searchc JPN</c
 <div class="paragraph">
 <p><strong>Example:</strong> <code>searchyear 2016</code><br>
 Executes a search for places visited in the year <code>2016</code>.<br>
-From <a href="#searchYearFigure">Figure 4.10.1</a>, using <code>searchyear 2016</code> will return all places in your TravelBuddy you visited in the year <code>2016</code>.</p>
+From <a href="#searchYearFigure">Figure 4.10.1</a> below, using <code>searchyear 2016</code> will return all places in your TravelBuddy you visited in the year <code>2016</code>.</p>
 </div>
 </div>
 </div>
@@ -689,13 +728,13 @@ From <a href="#searchYearFigure">Figure 4.10.1</a>, using <code>searchyear 2016<
 </ul>
 </div>
 <div class="paragraph">
-<p><a href="#deleteFigureBefore">Figure 4.11.1</a> below shows TravelBuddy before <code>delete</code> command was used.</p>
+<p><a href="#deleteFigureBefore">Figure 4.11.1</a> below shows TravelBuddy before <code>delete</code> command is used.</p>
 </div>
 <div id="deleteFigureBefore" class="imageblock">
 <div class="content">
 <img src="images/deleteCommandBefore.png" alt="deleteCommandBefore" width="400">
 </div>
-<div class="title">Figure 4.11.1: Before the <code>delete</code> command was used</div>
+<div class="title">Figure 4.11.1: Before the <code>delete</code> command is used</div>
 </div>
 <div class="paragraph">
 <p><a href="#deleteFigureAfter">Figure 4.11.2</a> below shows the result of using the <code>delete</code> command on the first place of interest.</p>
@@ -704,7 +743,7 @@ From <a href="#searchYearFigure">Figure 4.10.1</a>, using <code>searchyear 2016<
 <div class="content">
 <img src="images/deleteCommandAfter.png" alt="deleteCommandAfter" width="400">
 </div>
-<div class="title">Figure 4.11.2: After the <code>delete</code> command was used</div>
+<div class="title">Figure 4.11.2: After the <code>delete</code> command is used</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -750,7 +789,7 @@ Deletes the 1st place in the results of the <code>search</code> command.</p>
 <p>Deletes multiple places within a specified range from <code>START_INDEX</code> to <code>END_INDEX</code>.</p>
 </li>
 <li>
-<p><code>START_INDEX</code> must be smaller than or equal to the last index in the list.</p>
+<p><code>START_INDEX</code> must be smaller than or equal to the last index in the list and <code>END_INDEX</code>.</p>
 </li>
 <li>
 <p>Deletem will delete up till the last entry in TravelBuddy if specified <code>END_INDEX</code> exceeds the last entry.</p>
@@ -1470,4 +1509,4 @@ Please do check the file that contains the data of your TravelBuddy.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-10 10:52:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-10 23:54:28 UTC</div></div></div></body></html>

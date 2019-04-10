@@ -840,6 +840,27 @@ The user&#8217;s input is split in separate keywords and matched as a <code>Pred
 Places with matching keywords will be displayed on the GUI, which allows users to retrieve a list of places according to their input.</p>
 </div>
 <div class="paragraph">
+<p><strong>Logic:</strong> The <code>search</code> mechanism is executed by <code>SearchCommand</code>, which extends from <code>Command</code>. A code snippet is shown below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> CommandResult execute(Model model, CommandHistory history) {
+    requireNonNull(model);
+    model.updateFilteredPlaceList(predicate);
+    <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(constructFeedbackToUser(model));
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="#SearchCommandClassDiagram">Figure 4.2.1.1</a> below shows the class diagram of the <code>search</code> mechanism and its associations with the other class in the Logic component.</p>
+</div>
+<div id="SearchCommandClassDiagram" class="imageblock">
+<div class="content">
+<img src="images/SearchCommandClassDiagram.png" alt="SearchCommandClassDiagram" width="800">
+</div>
+<div class="title">Figure 4.2.1.1: Class Diagram for <code>search</code> command.</div>
+</div>
+<div class="paragraph">
 <p>The example below is a usage scenario for the search feature and is based on the search name feature.</p>
 </div>
 <div class="admonitionblock note">
@@ -855,13 +876,13 @@ The various search features (i.e. search name, country code, rating, tags, year)
 </table>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram shows how the search feature works:</p>
+<p>The following sequence diagram, <a href="#SearchCommandSequenceDiagram">Figure 4.2.1.2</a>, shows how the search feature works:</p>
 </div>
-<div id="img-SearchCommandSequenceDiagram" class="imageblock">
+<div id="SearchCommandSequenceDiagram" class="imageblock">
 <div class="content">
 <img src="images/SearchCommandSequenceDiagram.png" alt="SearchCommandSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 4.2.1.1: Sequence Diagram for <code>search</code> command.</div>
+<div class="title">Figure 4.2.1.2: Sequence Diagram for <code>search</code> command.</div>
 </div>
 <div class="paragraph">
 <p>The control flow of the sequence diagram above is as follows:</p>
@@ -886,8 +907,7 @@ The various search features (i.e. search name, country code, rating, tags, year)
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">String</span><span class="type">[]</span> nameKeywords = trimmedArgs.split(<span class="string"><span class="delimiter">&quot;</span><span class="char">\\</span><span class="content">s+</span><span class="delimiter">&quot;</span></span>);
-<span class="keyword">return</span> <span class="keyword">new</span> SearchCommand(<span class="keyword">new</span>
-    NameContainsKeywordsPredicate(<span class="predefined-type">Arrays</span>.asList(nameKeywords)));</code></pre>
+<span class="keyword">return</span> <span class="keyword">new</span> SearchCommand(<span class="keyword">new</span> NameContainsKeywordsPredicate(<span class="predefined-type">Arrays</span>.asList(nameKeywords)));</code></pre>
 </div>
 </div>
 </li>
@@ -966,13 +986,13 @@ The various search features (i.e. search name, country code, rating, tags, year)
 <p>Given below is an example usage scenario and how the search mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in the diagram below.</p>
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in <a href="#UIsearch">Figure 4.2.1.3</a> below.</p>
 </div>
-<div id="img-UIsearch" class="imageblock">
+<div id="UIsearch" class="imageblock">
 <div class="content">
 <img src="images/UIsearch.png" alt="UIsearch" width="800">
 </div>
-<div class="title">Figure 4.2.1.2: GUI with user&#8217;s list of places, prior to running <code>search Singapore</code> command.</div>
+<div class="title">Figure 4.2.1.3: GUI with user&#8217;s list of places, prior to running <code>search Singapore</code> command.</div>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>search Singapore</code> command to search for all entries in TravelBuddy with <code>Singapore</code> in its name.
@@ -992,13 +1012,13 @@ The command <code>search</code> is in lower-case. Mixed-case or upper-case comma
 </table>
 </div>
 <div class="paragraph">
-<p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in the diagram below.</p>
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in <a href="#UIsearchresults">Figure 4.2.1.4</a> below.</p>
 </div>
-<div id="img-UIsearchresults" class="imageblock">
+<div id="UIsearchresults" class="imageblock">
 <div class="content">
 <img src="images/UIsearchresults.png" alt="UIsearchresults" width="800">
 </div>
-<div class="title">Figure 4.2.1.3: Application Interface displaying the results of <code>search Singapore</code> command.</div>
+<div class="title">Figure 4.2.1.4: Application Interface displaying the results of <code>search Singapore</code> command.</div>
 </div>
 </div>
 <div class="sect4">
@@ -1016,13 +1036,13 @@ The command <code>search</code> is in lower-case. Mixed-case or upper-case comma
 <p>Given below is an example usage scenario and how the search rating mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in the diagram below.</p>
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in <a href="#UIsearchrating">Figure 4.2.1.5</a> below.</p>
 </div>
-<div id="img-UIsearchrating" class="imageblock">
+<div id="UIsearchrating" class="imageblock">
 <div class="content">
 <img src="images/UIsearchrating.png" alt="UIsearchrating" width="800">
 </div>
-<div class="title">Figure 4.2.1.4: GUI with user&#8217;s list of places, prior to running <code>searchr 4</code> command.</div>
+<div class="title">Figure 4.2.1.5: GUI with user&#8217;s list of places, prior to running <code>searchr 4</code> command.</div>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>searchr 4</code> command to search for all entries in TravelBuddy with <code>4</code> as its rating.
@@ -1070,13 +1090,13 @@ The arguments for <code>searchr</code> range from 1 to 5. Non-integer values out
 </table>
 </div>
 <div class="paragraph">
-<p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in the diagram below.</p>
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in <a href="#UIsearchratingresults">Figure 4.2.1.6</a> below.</p>
 </div>
-<div id="img-UIsearchratingresults" class="imageblock">
+<div id="UIsearchratingresults" class="imageblock">
 <div class="content">
 <img src="images/UIsearchratingresults.png" alt="UIsearchratingresults" width="800">
 </div>
-<div class="title">Figure 4.2.1.5: Application Interface displaying the results of <code>searchr 4</code> command.</div>
+<div class="title">Figure 4.2.1.6: Application Interface displaying the results of <code>searchr 4</code> command.</div>
 </div>
 </div>
 <div class="sect4">
@@ -1094,13 +1114,13 @@ The arguments for <code>searchr</code> range from 1 to 5. Non-integer values out
 <p>Given below is an example usage scenario and how the search tags mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in the diagram below.</p>
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in <a href="#UIsearchtags">Figure 4.2.1.7</a> below.</p>
 </div>
-<div id="img-UIsearchtags" class="imageblock">
+<div id="UIsearchtags" class="imageblock">
 <div class="content">
 <img src="images/UIsearchtags.png" alt="UIsearchtags" width="800">
 </div>
-<div class="title">Figure 4.2.1.6: GUI with user&#8217;s list of places, prior to running <code>searcht distillery</code> command.</div>
+<div class="title">Figure 4.2.1.7: GUI with user&#8217;s list of places, prior to running <code>searcht distillery</code> command.</div>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>searcht distillery</code> command to search for all entries in TravelBuddy with <code>distillery</code>
@@ -1122,13 +1142,13 @@ The command <code>searcht</code> is in lower-case. Mixed-case or upper-case comm
 </table>
 </div>
 <div class="paragraph">
-<p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in the diagram below.</p>
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in <a href="#UIsearchtagsresults">Figure 4.2.1.8</a> below.</p>
 </div>
-<div id="img-UIsearchtagsresults" class="imageblock">
+<div id="UIsearchtagsresults" class="imageblock">
 <div class="content">
 <img src="images/UIsearchtagsresults.png" alt="UIsearchtagsresults" width="800">
 </div>
-<div class="title">Figure 4.2.1.7: Application Interface displaying the results of <code>searcht distillery</code> command.</div>
+<div class="title">Figure 4.2.1.8: Application Interface displaying the results of <code>searcht distillery</code> command.</div>
 </div>
 </div>
 <div class="sect4">
@@ -1146,13 +1166,13 @@ The command <code>searcht</code> is in lower-case. Mixed-case or upper-case comm
 <p>Given below is an example usage scenario and how the search country mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in the diagram below.</p>
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in <a href="#UIsearchcountry">Figure 4.2.1.9</a> below.</p>
 </div>
-<div id="img-UIsearchcountry" class="imageblock">
+<div id="UIsearchcountry" class="imageblock">
 <div class="content">
 <img src="images/UIsearchcountry.png" alt="UIsearchcountry" width="800">
 </div>
-<div class="title">Figure 4.2.1.8: GUI with user&#8217;s list of places, prior to running <code>searchc JPN</code> command.</div>
+<div class="title">Figure 4.2.1.9: GUI with user&#8217;s list of places, prior to running <code>searchc JPN</code> command.</div>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>searchc SGP JPN</code> command to search for all entries in TravelBuddy with <code>SGP</code> or <code>JPN</code>
@@ -1186,13 +1206,13 @@ The country code arguments for <code>searchc</code> must be valid 3-letter ISO-3
 </table>
 </div>
 <div class="paragraph">
-<p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in the diagram below.</p>
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in <a href="#UIsearchcountryresults">Figure 4.2.1.10</a> below.</p>
 </div>
-<div id="img-UIsearchcountryresults" class="imageblock">
+<div id="UIsearchcountryresults" class="imageblock">
 <div class="content">
 <img src="images/UIsearchcountryresults.png" alt="UIsearchcountryresults" width="800">
 </div>
-<div class="title">Figure 4.2.1.9: Application Interface displaying the results of <code>searchc JPN</code> command.</div>
+<div class="title">Figure 4.2.1.10: Application Interface displaying the results of <code>searchc JPN</code> command.</div>
 </div>
 </div>
 <div class="sect4">
@@ -1210,13 +1230,13 @@ The country code arguments for <code>searchc</code> must be valid 3-letter ISO-3
 <p>Given below is an example usage scenario and how the search year mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in the diagram below.</p>
+<p>Step 1. The user launches the application and sees the GUI with the user&#8217;s list of places as shown in <a href="#img-UIsearchyear">Figure 4.2.1.11</a> below.</p>
 </div>
 <div id="img-UIsearchyear" class="imageblock">
 <div class="content">
 <img src="images/UIsearchyear.png" alt="UIsearchyear" width="800">
 </div>
-<div class="title">Figure 4.2.1.10: GUI with user&#8217;s list of places, prior to running <code>searchyear 2016</code> command.</div>
+<div class="title">Figure 4.2.1.11: GUI with user&#8217;s list of places, prior to running <code>searchyear 2016</code> command.</div>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>searchyear 2016</code> command to search for all entries in TravelBuddy with <code>2016</code>
@@ -1250,22 +1270,22 @@ The year arguments range from 1900 to the current year. A single year, multiple 
 </table>
 </div>
 <div class="paragraph">
-<p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in the diagram below.</p>
+<p>Step 3. The filtered list is now displayed according to the requirements set by the user input as shown in <a href="#UIsearchyearresults">Figure 4.2.1.12</a> below.</p>
 </div>
-<div id="img-UIsearchyearresults" class="imageblock">
+<div id="UIsearchyearresults" class="imageblock">
 <div class="content">
 <img src="images/UIsearchyearresults.png" alt="UIsearchyearresults" width="800">
 </div>
-<div class="title">Figure 4.2.1.11: Application Interface displaying the results of <code>searchyear 2016</code> command.</div>
+<div class="title">Figure 4.2.1.12: Application Interface displaying the results of <code>searchyear 2016</code> command.</div>
 </div>
 <div class="paragraph">
-<p>The activity diagram below summarises what happens when a user inputs a search command:</p>
+<p>The activity diagram, <a href="#SearchCommandActivityDiagram">Figure 4.2.1.13</a>, below summarises what happens when a user inputs a search command:</p>
 </div>
-<div id="img-SearchCommandActivityDiagram" class="imageblock">
+<div id="SearchCommandActivityDiagram" class="imageblock">
 <div class="content">
 <img src="images/SearchCommandActivityDiagram.png" alt="SearchCommandActivityDiagram" width="800">
 </div>
-<div class="title">Figure 4.2.1.12: Activity Diagram showing the process flow when a search command is issued.</div>
+<div class="title">Figure 4.2.1.13: Activity Diagram showing the process flow when a search command is issued.</div>
 </div>
 </div>
 </div>
@@ -1273,39 +1293,38 @@ The year arguments range from 1900 to the current year. A single year, multiple 
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-search-executes"><a class="link" href="#aspect-how-search-executes">Aspect: How search executes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Matches entire keyword.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement, searching is fast.</p>
-</li>
-<li>
-<p>Cons: Unable to search partial keyword</p>
-</li>
-<li>
-<p>Example: <code>search Singapore</code> will return <code>National University of Singapore</code> but <code>search Singapor</code> will not.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Remove whitespaces and check if the place contains the argument string.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Can match partial keywords.</p>
-</li>
-<li>
-<p>Cons: Uses more processing power and time during checking.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 13.7931%;">
+<col style="width: 43.1034%;">
+<col style="width: 43.1035%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong>Alternative 1 (current choice)</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Alternative 2</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches entire keyword.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remove whitespaces and check if the place contains the argument string.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pros</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Speed</strong>: This approach is faster in processing speed and computationally less intensive.<br>
+<strong>Refined results</strong>: This approach provides more refined results as it narrows down the search scope to only what the user needs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Flexibility</strong>: This approach supports a search for partial keywords, so that users do not have to type the full keyword.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cons</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inflexible</strong>: This approach is unable to support a search for partial keywords and may prove to be restrictive for certain users.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Wide range of results</strong>. This approach provides a wider range of results, which may devolve into a messy clutter if the keyword is too general, defeating the purpose of filtering the list through search.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p><strong>Decision</strong>: Alternative 1 of matching the entire keyword is adopted as it reduces processing time during keyword matching.
 In addition, it narrows down the search options by only returning keywords that matches the search query, which is the main objective of implementing a search feature.</p>
@@ -1313,37 +1332,38 @@ In addition, it narrows down the search options by only returning keywords that 
 </div>
 <div class="sect4">
 <h5 id="aspect-data-structure-to-support-search-commands"><a class="link" href="#aspect-data-structure-to-support-search-commands">Aspect: Data structure to support search commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the user input keywords and places.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming
-developers of our project.</p>
-</li>
-<li>
-<p>Cons: Inefficient as the entire list needs to be searched through.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>HashMap</code> to map keywords to each place</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Faster searching as HashMap lookup runs in O(1) time.</p>
-</li>
-<li>
-<p>Cons: Requires more memory as a separate HashMap needs to be stored.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 13.7931%;">
+<col style="width: 43.1034%;">
+<col style="width: 43.1035%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong>Alternative 1 (current choice)</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Alternative 2</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use a list to store the user input keywords and places.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>HashMap</code> to map keywords to each place.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pros</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-implementation</strong>: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.
+<strong>Refined results</strong>: This approach provides more refined results as it narrows down the search scope to only what the user needs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Faster search</strong>: Faster searching as HashMap lookup runs in O(1) time.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cons</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Slower search</strong>: This approach is less efficient as the entire list needs to be searched through.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Memory-consuming</strong>. This approach requires more memory as a separate HashMap needs to be stored.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p><strong>Decision</strong>: Alternative 1 of using a list is preferred as it uses less memory compared to alternative 2. Moreover, future contributors to the project are likely to be student undergraduates, so a simple data structure would be more optimal for educational purposes.</p>
 </div>
@@ -2859,4 +2879,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-10 10:52:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-10 23:54:28 UTC</div></div></div></body></html>
