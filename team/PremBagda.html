@@ -149,25 +149,30 @@
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 22.2222%;">
-<col style="width: 77.7778%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameter Prefix</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Specific Input Format</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>RATING</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>r/</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">An integer ranging from <code>1</code> to <code>5</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>COUNTRY_CODE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cc/</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A valid ISO-3166 country code<br>
 e.g. <code>JPN</code> to represent <code>Japan</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATE_VISITED</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dv/</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A valid date that follows the <code>DD/MM/YYYY</code> format ranging from <code>01/01/1900</code> to the current date</p></td>
 </tr>
 </tbody>
@@ -212,6 +217,135 @@ A place can have any number of tags (including 0 tags).
 </tr>
 </table>
 </div>
+<div class="sect3">
+<h4 id="including-a-photo-when-adding-a-place-with-code-p-code"><a class="link" href="#including-a-photo-when-adding-a-place-with-code-p-code">Including a photo when adding a place with <code>p/</code></a></h4>
+<div class="paragraph">
+<p><strong>Description:</strong> The <code>add</code> command can also include attach a single photo
+when adding a new place to TravelBuddy.</p>
+</div>
+<div class="paragraph">
+<p>The photo must be a image file that already exists in your computer.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameter Prefix</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Specific Input Format</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PHOTO</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>p/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The file path must be an <strong>absolute file path</strong> and include the <strong>filename</strong> and <strong>file extension</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A filepath specifies a unique location for a file.
+<strong>Absolute file paths</strong> are paths that start with a drive letter (eg. <code>C:\</code>)
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Examples:</strong> Given below is an example that uses the add command to include
+ a photo with the <code>p/</code> parameter:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add n/Himeiji Castle cc/JPN dv/15/12/2017 r/5 d/Wow. a/Kyoto t/castle p/C:\Users\Michael\Pictures\castle-photo.jpg</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Adds Himeiji Castle as a place in TravelBuddy, and include the image <code>castle-photo.jpg</code> at the location specified by
+the filepath <code>C:\Users\Michael\Pictures\castle-photo.jpg</code>.</p>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you are using Windows 10, below is a quick way to obtain the file path of the
+photo you would like to include:
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Step 1:</strong> Open File Explorer.</p>
+</li>
+<li>
+<p><strong>Step 2:</strong> Navigate to the folder that contains the photo you would like to add.</p>
+</li>
+<li>
+<p><strong>Step 3:</strong> Select the Photo you would like to add.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddPhotoStep3.png" alt="AddPhotoStep3" width="400">
+</div>
+<div class="title">Figure 4.3.3: Select the Photo you would like to add</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Step 4:</strong> Click on <code>Copy Path</code> at the top left corner of the File Explorer window.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddPhotoStep4.png" alt="AddPhotoStep4" width="400">
+</div>
+<div class="title">Figure 4.3.4: Click on <code>Copy Path</code> at the top left corner File Explorer window</div>
+</div>
+<div class="paragraph">
+<p>` <strong>Step 5:</strong> Open TravelBuddy and paste the filepath after the parameter prefix <code>p/</code>.
+<strong>TravelBuddy allows for double quotation marks around the filepath, so there is no need to delete them.</strong></p>
+</div>
+<div class="paragraph">
+<p>Currently, TravelBuddy supports the following image <strong>file formats/extensions</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>JPEG <code>.jpg</code></p>
+</li>
+<li>
+<p>PNG  <code>.png</code></p>
+</li>
+<li>
+<p>Bitmap <code>.bmp</code></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="listing-all-places-code-list-code"><a class="link" href="#listing-all-places-code-list-code">Listing all places: <code>list</code></a></h3>
@@ -252,7 +386,7 @@ Calling the <code>list</code> command returns a list of all the places in Travel
 <p><strong>Shortcut:</strong> <code>e</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Format:</strong> <code>edit INDEX [n/NAME] [cc/COUNTRY_CODE] [dv/DATE_VISITED] [r/RATING] [d/DESCRIPTION] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
+<p><strong>Format:</strong> <code>edit INDEX [n/NAME] [cc/COUNTRY_CODE] [dv/DATE_VISITED] [r/RATING] [d/DESCRIPTION] [a/ADDRESS] [p/FILE_PATH] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Preconditions:</strong> Given below is a list of preconditions that must be met for the <code>edit</code> command to work:</p>
@@ -276,6 +410,9 @@ Calling the <code>list</code> command returns a list of all the places in Travel
 </li>
 <li>
 <p>Some parameters have a specific input format.</p>
+</li>
+<li>
+<p>Preconditions for changing the photo file [FILE_PATH] are in <a href="#replacing-the-photo-of-a-place-with-code-edit-p-code">Replacing the photo of a place with <code>edit p/</code></a></p>
 </li>
 </ul>
 </div>
@@ -315,6 +452,41 @@ Edits the name of the 2nd place entry in the list to be <code>Raffles Hotel</cod
 <img src="../images/editCommandAfter.png" alt="editCommandAfter" width="400">
 </div>
 <div class="title">Figure 4.5.2: After the <code>edit</code> command is used</div>
+</div>
+<div class="sect3">
+<h4 id="replacing-the-photo-of-a-place-with-code-edit-p-code"><a class="link" href="#replacing-the-photo-of-a-place-with-code-edit-p-code">Replacing the photo of a place with <code>edit p/</code></a></h4>
+<div class="paragraph">
+<p>The <code>Edit</code> command can also be used to change the photo of a place by replacing
+the <code>FILE_PATH</code> of the current photo with the <code>FILE_PATH</code> of the new photo.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Examples:</strong> Given below is an example of using <code>Edit</code> to replace a photo:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit 3 p/C:\Users\Michael\Pictures\Wallpapers\Zion National Park 1.jpg</code><br>
+Replaces the current photo of 3rd Place Entry with the photo named <code>Zion National Park 1.jpg</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The image FILE_PATH being replaced with the <code>edit</code> command must still follow the
+specifications laid out in <a href="#including-a-photo-when-adding-a-place-with-code-p-code">Including a photo when adding a place with <code>p/</code></a>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -568,4 +740,4 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-11 06:13:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-11 11:49:00 UTC</div></div></div></body></html>
