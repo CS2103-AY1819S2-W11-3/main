@@ -70,14 +70,7 @@
 <li><a href="#use-cases">Appendix C: Use Cases</a></li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
-<li><a href="#product-survey">Appendix F: Product Survey</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
-<ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-place">G.2. Deleting a Place</a></li>
-<li><a href="#saving-data">G.3. Saving Data</a></li>
-</ul>
-</li>
+<li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a></li>
 </ul>
 </div>
 </div>
@@ -1397,6 +1390,9 @@ place:</p>
 <p>Description</p>
 </li>
 <li>
+<p>Photo (Optional)</p>
+</li>
+<li>
 <p>Tag (Optional)</p>
 </li>
 </ul>
@@ -1408,8 +1404,8 @@ place:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The Country Code adheres to the three-letters ISO-3166 standard. The full list of Country Codes can be found in
-CountryCodes.adoc
+The country code adheres to the three-letter ISO-3166 standard. The full list of country codes can be found
+<a href="https://cs2103-ay1819s2-w11-3.github.io/main/CountryCodes.html">here</a>.
 </td>
 </tr>
 </table>
@@ -1439,7 +1435,7 @@ entered.</p>
 <p>Step 3: <code>TravelBuddyParser#parseCommand()</code> is invoked, which is also located in the Logic component.</p>
 </div>
 <div class="paragraph">
-<p>Step 4: <code>AddCommandParser#AddCommandParser()</code> is invoked.</p>
+<p>Step 4: `AddCommandParser&#8217;s constructor is invoked.</p>
 </div>
 <div class="paragraph">
 <p>Step 5: The <code>AddCommandParser#parse()</code> is called and receives the command with the arguments given as a string.</p>
@@ -1448,7 +1444,7 @@ entered.</p>
 <p>Step 6: The <code>AddCommandParser</code> interprets the arguments and constructs an <code>AddCommand</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 7: The <code>AddCommand</code> with a Place specified by the user is returned.</p>
+<p>Step 7: The <code>AddCommand</code> with a <code>Place</code> specified by the user is returned.</p>
 </div>
 <div class="paragraph">
 <p>Step 8: The <code>AddCommand#execute()</code> method is invoked.</p>
@@ -1461,15 +1457,10 @@ entered.</p>
 <p>Step 10: The <code>TravelBuddy#addPlace()</code> method is invoked by <code>Model</code> with the argument <code>toAdd</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 11: A result object is returned.</p>
-</div>
-<div class="sect4">
-<h5 id="add-command"><a class="link" href="#add-command">Add Command</a></h5>
-<div class="paragraph">
-<p>Given below is an example usage scenario and what the user will see in the GUI.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application and sees the GUI with no places.</p>
+<p>Step 11: A result object is returned.
+===== Add Command
+Given below is an example usage scenario and what the user will see in the GUI.
+Step 1. The user launches the application and sees the GUI with no places.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1478,7 +1469,7 @@ entered.</p>
 </div>
 <div class="paragraph">
 <p>Step 2. The user enters the full add command <code>add n/NUS Computing cc/SGP dv/10/10/2017 r/3 d/My School a/13 Computing Drive,
-117417 t/faculty</code> to add the place to TravelBuddy and presses enter. TravelBuddy will start executing the steps mentioned in Figure 10.</p>
+117417 t/faculty</code> to add the place to TravelBuddy and presses <kbd>ENTER</kbd>. TravelBuddy will start executing the steps mentioned in Figure 10.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1498,7 +1489,6 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 </table>
 </div>
 </div>
-</div>
 <div class="sect3">
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
 <div class="sect4">
@@ -1506,11 +1496,11 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Use enum specified in java.util.Locales.</p>
+<p><strong>Alternative 1 (current choice):</strong> Use <code>enum</code> specified in <code>java.util.Locales</code>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to implement and contains all three-letters country codes specified in ISO-3166.</p>
+<p>Pros: Easy to implement and contains all three-letter country codes as specified in ISO-3166.</p>
 </li>
 <li>
 <p>Cons: Slightly slow in searching for country code.</p>
@@ -1519,7 +1509,7 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Create own data structure containing most commonly traveled countries in the world.</p>
+<p><strong>Alternative 2:</strong> Create a data structure containing the most commonly traveled countries in the world.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -2303,29 +2293,30 @@ e.g. <code>seedu.travel.logic.LogicManagerTest</code></p>
 <h2 id="product-scope"><a class="link" href="#product-scope">Appendix A: Product Scope</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Target user profile</strong>:</p>
+<p><strong>Target user profile</strong>:
+The target audience that we have identified are stated below.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>has a need to manage a significant number of contacts</p>
+<p>The user has a need to manage a significant number of places</p>
 </li>
 <li>
-<p>prefer desktop apps over other types</p>
+<p>The user prefers desktop apps over other types</p>
 </li>
 <li>
-<p>can type fast</p>
+<p>The user can type fast</p>
 </li>
 <li>
-<p>prefers typing over mouse input</p>
+<p>The user prefers typing over mouse input</p>
 </li>
 <li>
-<p>is reasonably comfortable using CLI apps</p>
+<p>The user is reasonably comfortable using CLI apps</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Value proposition</strong>: manage contacts faster than a typical mouse/GUI driven app</p>
+<p><strong>Value proposition</strong>: Manage contacts faster than a typical mouse/GUI driven app</p>
 </div>
 </div>
 </div>
@@ -2445,7 +2436,8 @@ e.g. <code>seedu.travel.logic.LogicManagerTest</code></p>
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all <a href="#use-cases">use cases</a> below, the <strong>System</strong> is the <code>TravelBuddy</code> and the <a href="#actor"><strong>Actor</strong></a> is the <code>user</code>, unless specified otherwise)</p>
+<p>For all <a href="#use-cases">use cases</a> below, the <strong>System</strong> is the <code>TravelBuddy</code> and the <a href="#actor"><strong>Actor</strong></a> is the <code>user</code>,
+unless specified otherwise.</p>
 </div>
 <h3 id="use-case-deleting-a-place" class="discrete">Use case: Deleting a place</h3>
 <div class="paragraph">
@@ -2675,10 +2667,35 @@ e.g. <code>seedu.travel.logic.LogicManagerTest</code></p>
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
 </li>
+<li>
+<p>Business/domain rules: e.g. the size of the minefield cannot be smaller than five.</p>
+</li>
+<li>
+<p>Constraints: e.g. the system should be backward compatible with data produced by earlier versions of the system;</p>
+</li>
+<li>
+<p>system testers are available only during the last month of the project; the total project cost should not exceed $1
+.5 million.</p>
+</li>
+<li>
+<p>Technical requirements: e.g. the system should work on both 32-bit and 64-bit environments.</p>
+</li>
+<li>
+<p>Performance requirements: e.g. the system should respond within two seconds.</p>
+</li>
+<li>
+<p>Quality requirements: e.g. the system should be usable by a novice who has never carried out an online purchase.</p>
+</li>
+<li>
+<p>Process requirements: e.g. the project is expected to adhere to a schedule that delivers a feature set every one month.</p>
+</li>
+<li>
+<p>Notes about project scope: e.g. the product is not required to handle the printing of reports.</p>
+</li>
+<li>
+<p>Any other noteworthy points: e.g. the game should not use images deemed offensive to those injured in real mine clearing activities.</p>
+</li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
 </div>
 </div>
 </div>
@@ -2758,44 +2775,7 @@ e.g. <code>seedu.travel.logic.LogicManagerTest</code></p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Product Name</strong></p>
-</div>
-<div class="paragraph">
-<p>Author: &#8230;&#8203;</p>
-</div>
-<div class="paragraph">
-<p>Pros:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -2807,13 +2787,15 @@ e.g. <code>seedu.travel.logic.LogicManagerTest</code></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-These instructions only provide a starting point for testers to work on; testers are expected to do more <em>exploratory</em> testing.
+These instructions only provide a starting point for testers to work on. Testers are expected to do more <em>exploratory</em>
+ testing.
 </td>
 </tr>
 </table>
 </div>
-<div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
+<div class="paragraph">
+<p><strong>Launching and Shutdown</strong></p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2847,11 +2829,8 @@ Expected: The most recent window size and location is retained.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+<p><strong>Deleting a Place</strong></p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="deleting-a-place"><a class="link" href="#deleting-a-place">G.2. Deleting a Place</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2870,7 +2849,7 @@ Expected: First contact is deleted from the list. Details of the deleted contact
 Expected: No place is deleted. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <br>
 Expected: Similar to previous.</p>
 </li>
 </ol>
@@ -2878,29 +2857,5 @@ Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving Data</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Dealing with missing/corrupted data files</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-12 08:41:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-12 09:05:59 UTC</div></div></div></body></html>

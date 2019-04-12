@@ -15,17 +15,17 @@
 <h1 id="project-travelbuddy" class="sect0"><a class="link" href="#project-travelbuddy">PROJECT: TravelBuddy</a></h1>
 <div class="paragraph">
 <p>This project portfolio serves to document my contribution to <strong>TravelBuddy</strong>, a desktop application developed as a
-Software Engineering team project for the National University of Singapore (NUS) module CS2103T. The
-<a href="https://cs2103-ay1819s2-w11-3.github.io/main/AboutUs.html">team</a> comprised of 4 NUS computer science students,
+software engineering team project for the National University of Singapore (NUS) module CS2103T. The
+<a href="https://cs2103-ay1819s2-w11-3.github.io/main/AboutUs.html">team</a> comprised of 4 NUS Computer Science undergraduates,
 including myself.</p>
 </div>
 <div class="paragraph">
-<p>The application was developed over the span of 8 weeks in Academic Year 18/19 Semester 2 using an iterative approach.
+<p>The application was developed over a span of 8 weeks in Academic Year 18/19 Semester 2 using an iterative approach.
 During that time, we
 were
 asked to morph an existing desktop application <a href="https://se-education.org/addressbook-level4/">AddressBook Level 4</a>,
 which is made up of 10KLoC in Java. One main user requirement was the preference of the user to interact with the
-application using Command Line Interface (CLI) rather than a Graphical User Interface (GUI). The final product we
+application using Command Line Interface (CLI) rather than Graphical User Interface (GUI). The final product we
 created is <a href="https://travelbuddy-cs2103.netlify.com/">TravelBuddy</a>, which is detailed below.</p>
 </div>
 <hr>
@@ -34,16 +34,17 @@ created is <a href="https://travelbuddy-cs2103.netlify.com/">TravelBuddy</a>, wh
 <div class="sectionbody">
 <div class="paragraph">
 <p>TravelBuddy is a travel journal desktop application for travel enthusiasts to record places which they have previously
-visited. With the recorded data, travellers can search for places visited based on specified filters such as rating
-and tags. Using the data, the application can analyse travel history and generate statistics. Users
+visited. With the recorded data, travelers can search for places visited based on specified filters such as rating
+and tags. Additionally, the application can also analyse travel history and generate statistics. Users
 can also store their
 travel photos on TravelBuddy, which can help them remember and reminisce the places they have visited before.</p>
 </div>
 <div class="paragraph">
-<p>My role in the project was to design and write the code for the Create, Read, Update and Delete (CRUD) feature. The
+<p>My role in the project was to design and write code for the Create, Read, Update and Delete (CRUD) feature. The
 following
 sections showcase, in
-greater detail, my contributions and enhancements added to TravelBuddy, as well as the documentation of these enhancements in the User Guide and Developer Guide.</p>
+greater detail, my contributions and enhancements added to TravelBuddy, as well as the documentation of these
+enhancements in the user and developer guide.</p>
 </div>
 </div>
 </div>
@@ -53,30 +54,32 @@ greater detail, my contributions and enhancements added to TravelBuddy, as well 
 <div class="sect2">
 <h3 id="major-enhancement"><a class="link" href="#major-enhancement">2.1. Major Enhancement</a></h3>
 <div class="paragraph">
-<p>The major enhancement I added was <strong>the ability to add, list, edit and delete places in Travelbuddy</strong></p>
+<p>The major enhancement I added was <strong>the ability to add, list, edit and delete places in TravelBuddy</strong>.</p>
 </div>
 <div class="paragraph">
 <p><strong>What it does</strong>: It allows users to add, list, edit and delete places in TravelBuddy.</p>
 </div>
 <div class="paragraph">
-<p><strong>Justification</strong>: The user needs to be able to add the places into TravelBuddy. When the user applies some filters
+<p><strong>Justification</strong>: The user needs to be able to <code>add</code> places to TravelBuddy. When the user applies some filters
 such as rating, a limited number of places would be shown. In order for the user to see all the places again, the
-list command would be used. The user may make some mistakes when adding a place, for which the edit command can be
-used to rectify the mistake. The user may have accidentally added a place, for which the delete command allows the user
+<code>list</code> command will be used. The user may make some mistakes when adding a place, for which the <code>edit</code> command can be
+used to rectify the mistake. The user may have accidentally added a place, for which the <code>delete</code> command will allow
+the
+user
 to remove the specific place.</p>
 </div>
 <div class="paragraph">
-<p><strong>Highlights</strong>: This enhancement involved a large amount of refactoring and careful crafting of test cases to test
-thoroughly the Date Visited field.</p>
+<p><strong>Highlights</strong>: This enhancement involved a large amount of refactoring and careful crafting of test cases in order to
+test thoroughly the <code>DateVisited</code> field.</p>
 </div>
 <div class="paragraph">
-<p><strong>Overall code contributed</strong>: <a href="https://nus-cs2103-ay1819s2.github.io/cs2103-dashboard/#search=Prem&amp;sort=displayName&amp;since=2019-02-10&amp;until=2019-04-10&amp;timeframe=day&amp;reverse=false&amp;repoSort=true">Commits</a></p>
+<p><strong>Overall code contributed</strong>: [<a href="https://nus-cs2103-ay1819s2.github.io/cs2103-dashboard/#search=Prem&amp;sort=displayName&amp;since=2019-02-10&amp;until=2019-04-10&amp;timeframe=day&amp;reverse=false&amp;repoSort=true">Commits</a>]</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="minor-enhancement"><a class="link" href="#minor-enhancement">2.2. Minor Enhancement</a></h3>
 <div class="paragraph">
-<p>The minor enhancement I did was to convert the Person object from the original code base to a Place object.</p>
+<p>The minor enhancement I did was to convert the <code>Person</code> object from the original code base to a <code>Place</code> object.</p>
 </div>
 <div class="paragraph">
 <p><strong>Code contributed to minor enhancement</strong>: <a href="https://github.com/CS2103-AY1819S2-W11-3/main/commit/436363babbf8fd7458afb5957bae481f4656fa58">Convert Place to Person</a></p>
@@ -96,7 +99,8 @@ thoroughly the Date Visited field.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Project management</strong></p></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>As the leader, I spearheaded project planning and managed the project scope. I conducted weekly meetings and
+<p>As Team Lead, I spearheaded the project planning and managed the project scope. Additionally, I conducted weekly
+meetings and
 managed the scheduling of tasks so as to prevent merge conflicts.</p>
 </div></div></td>
 </tr>
@@ -223,6 +227,9 @@ place:</p>
 <p>Description</p>
 </li>
 <li>
+<p>Photo (Optional)</p>
+</li>
+<li>
 <p>Tag (Optional)</p>
 </li>
 </ul>
@@ -234,8 +241,8 @@ place:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The Country Code adheres to the three-letters ISO-3166 standard. The full list of Country Codes can be found in
-CountryCodes.adoc
+The country code adheres to the three-letter ISO-3166 standard. The full list of country codes can be found
+<a href="https://cs2103-ay1819s2-w11-3.github.io/main/CountryCodes.html">here</a>.
 </td>
 </tr>
 </table>
@@ -265,7 +272,7 @@ entered.</p>
 <p>Step 3: <code>TravelBuddyParser#parseCommand()</code> is invoked, which is also located in the Logic component.</p>
 </div>
 <div class="paragraph">
-<p>Step 4: <code>AddCommandParser#AddCommandParser()</code> is invoked.</p>
+<p>Step 4: `AddCommandParser&#8217;s constructor is invoked.</p>
 </div>
 <div class="paragraph">
 <p>Step 5: The <code>AddCommandParser#parse()</code> is called and receives the command with the arguments given as a string.</p>
@@ -274,7 +281,7 @@ entered.</p>
 <p>Step 6: The <code>AddCommandParser</code> interprets the arguments and constructs an <code>AddCommand</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 7: The <code>AddCommand</code> with a Place specified by the user is returned.</p>
+<p>Step 7: The <code>AddCommand</code> with a <code>Place</code> specified by the user is returned.</p>
 </div>
 <div class="paragraph">
 <p>Step 8: The <code>AddCommand#execute()</code> method is invoked.</p>
@@ -287,15 +294,10 @@ entered.</p>
 <p>Step 10: The <code>TravelBuddy#addPlace()</code> method is invoked by <code>Model</code> with the argument <code>toAdd</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 11: A result object is returned.</p>
-</div>
-<div class="sect4">
-<h5 id="add-command"><a class="link" href="#add-command">Add Command</a></h5>
-<div class="paragraph">
-<p>Given below is an example usage scenario and what the user will see in the GUI.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application and sees the GUI with no places.</p>
+<p>Step 11: A result object is returned.
+===== Add Command
+Given below is an example usage scenario and what the user will see in the GUI.
+Step 1. The user launches the application and sees the GUI with no places.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -304,7 +306,7 @@ entered.</p>
 </div>
 <div class="paragraph">
 <p>Step 2. The user enters the full add command <code>add n/NUS Computing cc/SGP dv/10/10/2017 r/3 d/My School a/13 Computing Drive,
-117417 t/faculty</code> to add the place to TravelBuddy and presses enter. TravelBuddy will start executing the steps mentioned in Figure 10.</p>
+117417 t/faculty</code> to add the place to TravelBuddy and presses <kbd>ENTER</kbd>. TravelBuddy will start executing the steps mentioned in Figure 10.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -324,7 +326,6 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 </table>
 </div>
 </div>
-</div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design Considerations</a></h4>
 <div class="sect4">
@@ -332,11 +333,11 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Use enum specified in java.util.Locales.</p>
+<p><strong>Alternative 1 (current choice):</strong> Use <code>enum</code> specified in <code>java.util.Locales</code>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to implement and contains all three-letters country codes specified in ISO-3166.</p>
+<p>Pros: Easy to implement and contains all three-letter country codes as specified in ISO-3166.</p>
 </li>
 <li>
 <p>Cons: Slightly slow in searching for country code.</p>
@@ -345,7 +346,7 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Create own data structure containing most commonly traveled countries in the world.</p>
+<p><strong>Alternative 2:</strong> Create a data structure containing the most commonly traveled countries in the world.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -373,4 +374,4 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-12 08:41:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-12 09:05:59 UTC</div></div></div></body></html>
