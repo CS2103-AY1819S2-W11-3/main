@@ -6,10 +6,10 @@
 <h2 id="overview"><a class="link" href="#overview">1. Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This document serves to highlight my contributions to <strong>TravelBuddy</strong>, a travel log application that lets users efficiently manage their travel records, i.e. the places that they have visited. Additional features built into TravelBuddy allows them to search through the records, attach photos and view statistical models. This project is part of the CS2103 Software Engineering module in NUS, in which <a href="https://cs2103-ay1819s2-w11-3.github.io/main/AboutUs.html">my team and I</a> were tasked to morph a given <a href="https://se-education.org/addressbook-level4/">address book</a> product into a new product&#8201;&#8212;&#8201;TravelBuddy. The complete source code for TravelBuddy is available on <a href="https://github.com/CS2103-AY1819S2-W11-3/main">GitHub</a>.</p>
+<p>This document serves to highlight my contributions to <strong>TravelBuddy</strong>, a travel log application that allows users to efficiently manage their travel records, i.e. the places that they have visited. Additional features built into TravelBuddy allows them to search through the records, attach photos and view statistical models. This  <a href="https://cs2103-ay1819s2-w11-3.github.io/main/AboutUs.html">team-based</a> project is part of the CS2103T Software Engineering module in National University of Singapore, in which my team and I were tasked to morph a given <a href="https://se-education.org/addressbook-level4/">address book</a> product into a new product&#8201;&#8212;&#8201;TravelBuddy. The complete source code for TravelBuddy is available on <a href="https://github.com/CS2103-AY1819S2-W11-3/main">GitHub</a>.</p>
 </div>
 <div class="paragraph">
-<p>My role was to design the chart feature. The following sections describes these enhancements in more detail, as well as the relevant sections I have added to the user and developer guides in relation to these enhancements.</p>
+<p>My role was to design the chart feature. The following sections describe the enhancements I made in greater detail. They also include relevant sections from the user and developer guide related to these enhancements.</p>
 </div>
 </div>
 </div>
@@ -19,16 +19,16 @@
 <div class="sect2">
 <h3 id="major-enhancement"><a class="link" href="#major-enhancement">2.1. Major Enhancement</a></h3>
 <div class="paragraph">
-<p>The major enhancement I did was adding the ability to generate charts in real-time and via the <code>generate</code> command, details of which can be found below:</p>
+<p>The major enhancement I did was adding the ability to generate charts in real-time or via the <code>generate</code> command, the details of which are stated below:</p>
 </div>
 <div class="paragraph">
-<p><strong>What it does:</strong> It allows users to generate charts based on their travel data that they have accumulated in the product.</p>
+<p><strong>What it does:</strong> It allows users to generate charts based on their travel data that they have accumulated in TravelBuddy.</p>
 </div>
 <div class="paragraph">
-<p><strong>Justification:</strong> This feature allows users to gather insights into their travel patterns. It improves the user-friendliness of the product, gives the product additional functionality and is the differentiating factor among other travel log products on the market.</p>
+<p><strong>Justification:</strong> This feature allows users to gather insights into their travel patterns. It improves the user-friendliness of TravelBuddy while giving it additional functionality. As such, this feature is the differentiating factor for TravelBuddy among other travel log products on the market.</p>
 </div>
 <div class="paragraph">
-<p><strong>Highlights:</strong> Due to the real-time update of the charts, this enhancement affects existing and future commands. Furthermore, the complexity of this enhancement is due to the fact that it links up with all the components of the existing architecture, as described below:</p>
+<p><strong>Highlights:</strong> The complexity of this enhancement is due to the fact that it links up with all the components of the existing architecture, as described below:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -64,11 +64,14 @@
 <div class="paragraph">
 <p><strong>Code contributed to minor enhancement</strong>: [<a href="https://github.com/CS2103-AY1819S2-W11-3/main/pulls?utf8=%E2%9C%93&amp;q=is%3Apr+author%3Achung-ming+label%3Atype.MinorEnhancement">Functional code</a>]</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">2.3. Other Contributions</a></h3>
 <div class="paragraph">
-<p><strong>Other contributions</strong>: The details of other contributions can be found in <a href="#OtherContributions">Table 2.2.1</a> below:</p>
+<p>The details of other contributions can be found in <a href="#OtherContributions">Table 2.3.1</a> below:</p>
 </div>
 <table id="OtherContributions" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 2.2.1: Details of Other Contributions</caption>
+<caption class="title">Table 2.3.1: Details of Other Contributions</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -153,7 +156,7 @@
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p><em>Given below is the start of extract of sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p>
+<p><em>Given below is the start of extract of sections I contributed to the <a href="https://cs2103-ay1819s2-w11-3.github.io/main/UserGuide.html">User Guide</a>. They showcase my ability to write documentation targeting end-users.</em></p>
 </div>
 </div>
 </div>
@@ -265,7 +268,7 @@ Generates the charts. <br>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p><em>Given below is the start of extract of sections I contributed to the Developer Guide. They showcase my ability to write documentation targeting end-users.</em></p>
+<p><em>Given below is the start of extract of sections I contributed to the <a href="https://cs2103-ay1819s2-w11-3.github.io/main/UserGuide.html">Developer Guide</a>. They showcase my ability to write documentation targeting end-users.</em></p>
 </div>
 </div>
 </div>
@@ -440,7 +443,6 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"> <span class="directive">public</span> <span class="type">void</span> saveCountryChart(ReadOnlyCountryChart countryChart, Path filePath) {
      requireAllNonNull(countryChart, filePath);
-
      Gson gson = <span class="keyword">new</span> GsonBuilder().setPrettyPrinting().create();
      <span class="keyword">try</span> {
          <span class="predefined-type">FileWriter</span> fileWriter = <span class="keyword">new</span> <span class="predefined-type">FileWriter</span>(<span class="predefined-type">String</span>.valueOf(filePath));
@@ -577,4 +579,4 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-12 02:42:39 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-12 06:17:49 UTC</div></div></div></body></html>
