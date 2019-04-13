@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>TravelBuddy - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>TravelBuddy - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">TravelBuddy</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S2-W11-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>TravelBuddy - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>CS2103T W11-3 Team</code>      Since: <code>Feb 2019</code>      Licence: <code>MIT</code></p>
@@ -683,16 +683,13 @@ specifications laid out in <a href="#including-a-photo-when-adding-a-place-with-
 <div class="sect2">
 <h3 id="searching-places-by-name-code-search-code"><a class="link" href="#searching-places-by-name-code-search-code">4.6. Searching places by name: <code>search</code></a></h3>
 <div class="paragraph">
-<p><strong>Description:</strong> The <code>search</code> command searches for places whose names contain any of the given keywords.</p>
-</div>
-<div class="paragraph">
-<p><strong>Shortcut:</strong> <code>se</code></p>
+<p><strong>Description:</strong> The <code>search</code> (Shortcut: <code>se</code>) command searches for places whose names contain any of the given keywords.</p>
 </div>
 <div class="paragraph">
 <p><strong>Format:</strong> <code>search KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Preconditions:</strong> Given below is a list of preconditions that must be met for the <code>search</code> command to work:</p>
+<p><strong>Preconditions:</strong> Given below are preconditions that must be met for the <code>search</code> command to work:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -700,44 +697,24 @@ specifications laid out in <a href="#including-a-photo-when-adding-a-place-with-
 <p>The search is case insensitive. e.g <code>national</code> will match <code>National</code>.</p>
 </li>
 <li>
-<p>The order of the keywords does not matter.<br>
-e.g. <code>University National of Singapore</code> will match <code>National University of Singapore</code>.</p>
+<p>The order of the keywords does not matter. e.g. <code>University National of Singapore</code> will match <code>National University of Singapore</code>.</p>
 </li>
 <li>
-<p>Only the name of the places in TravelBuddy is searched.</p>
+<p>Only full words will be matched. e.g. <code>Nation</code> will not match <code>National</code></p>
 </li>
 <li>
-<p>Only full words will be matched.<br>
-e.g. <code>Nation</code> will not match <code>National</code></p>
-</li>
-<li>
-<p>Places matching at least one keyword will be returned (i.e. <code>OR</code> search).<br>
-e.g. <code>National Museum</code> will return <code>National Museum of Singapore</code> and <code>National University Hospital</code>.</p>
+<p>Places matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>National Museum</code> will return <code>National Museum of Singapore</code> and <code>National University Hospital</code>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p><strong>Example:</strong> <code>search Singapore</code><br>
 Executes a search for places that contain the keyword <code>Singapore</code> in its name.<br>
-From <a href="#searchFigure">Figure 4.6.1</a>, using <code>search Singapore</code> will return all places in your TravelBuddy that contain <code>Singapore</code> in its name.<br>
-In this case, the following are returned as they contain <code>Singapore</code> in their names:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Universal Studios <strong>Singapore</strong></p>
-</li>
-<li>
-<p>National University of <strong>Singapore</strong></p>
-</li>
-<li>
-<p><strong>Singapore</strong> Zoo</p>
-</li>
-</ul>
+In <a href="#searchFigure">Figure 4.6.1</a>, running the <code>search</code> returns places that contain <code>Singapore</code> in their names:</p>
 </div>
 <div id="searchFigure" class="imageblock">
 <div class="content">
-<img src="images/UIsearchresults.png" alt="UIsearchresults" width="400">
+<img src="images/PPPsearchname.png" alt="PPPsearchname" width="400">
 </div>
 <div class="title">Figure 4.6.1: Search results of <code>search Singapore</code></div>
 </div>
@@ -745,28 +722,21 @@ In this case, the following are returned as they contain <code>Singapore</code> 
 <div class="sect2">
 <h3 id="searching-places-by-ratings-code-searchr-code"><a class="link" href="#searching-places-by-ratings-code-searchr-code">4.7. Searching places by ratings: <code>searchr</code></a></h3>
 <div class="paragraph">
-<p><strong>Description:</strong> The <code>searchr</code> command searches for places whose ratings match the specified rating from 1 to 5.<br></p>
-</div>
-<div class="paragraph">
-<p><strong>Shortcut:</strong> <code>sr</code></p>
+<p><strong>Description:</strong> The <code>searchr</code> (Shortcut: <code>sr</code>) command searches for places whose ratings match the specified rating from 1 to 5.<br></p>
 </div>
 <div class="paragraph">
 <p><strong>Format:</strong> <code>searchr INDEX [MORE_INDICES]</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Preconditions:</strong> Given below is a list of preconditions that must be met for the <code>searchr</code> command to work:</p>
+<p><strong>Preconditions:</strong> Given below are preconditions that must be met for the <code>searchr</code> command to work:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The rating used in the search must be an integer ranging from 1 to 5.<br>
-e.g <code>searchr 5</code> will return places with 5-star ratings.</p>
+<p>The rating used in the search must be an integer ranging from 1 to 5. e.g <code>searchr 5</code> will return places with 5-star ratings.</p>
 </li>
 <li>
-<p>Only the rating of the places in TravelBuddy is searched.</p>
-</li>
-<li>
-<p>Multiple indices can be included in the query, e.g <code>searchr 4 5</code> will return places with <code>4</code> or <code>5</code> star ratings.</p>
+<p>Multiple indices can be included in the query. e.g <code>searchr 4 5</code> will return places with <code>4</code> or <code>5</code> star ratings.</p>
 </li>
 </ul>
 </div>
@@ -777,7 +747,7 @@ From <a href="#searchRatingFigure">Figure 4.7.1</a> below, using <code>searchr 4
 </div>
 <div id="searchRatingFigure" class="imageblock">
 <div class="content">
-<img src="images/UIsearchratingresults.png" alt="UIsearchratingresults" width="400">
+<img src="images/PPPsearchrating.png" alt="PPPsearchrating" width="400">
 </div>
 <div class="title">Figure 4.7.1: Search results of <code>searchr 4</code></div>
 </div>
@@ -785,16 +755,13 @@ From <a href="#searchRatingFigure">Figure 4.7.1</a> below, using <code>searchr 4
 <div class="sect2">
 <h3 id="searching-places-by-tags-code-searcht-code"><a class="link" href="#searching-places-by-tags-code-searcht-code">4.8. Searching places by tags: <code>searcht</code></a></h3>
 <div class="paragraph">
-<p><strong>Description:</strong> The <code>searcht</code> command searches for places whose tags correspond to any given keywords.<br></p>
-</div>
-<div class="paragraph">
-<p><strong>Shortcut:</strong> <code>st</code></p>
+<p><strong>Description:</strong> The <code>searcht</code> (Shortcut: <code>st</code>) command searches for places whose tags correspond to any given keywords.<br></p>
 </div>
 <div class="paragraph">
 <p><strong>Format:</strong> <code>searcht KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Preconditions:</strong> Given below is a list of preconditions that must be met for the <code>searcht</code> command to work:</p>
+<p><strong>Preconditions:</strong> Given below are preconditions that must be met for the <code>searcht</code> command to work:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -802,16 +769,10 @@ From <a href="#searchRatingFigure">Figure 4.7.1</a> below, using <code>searchr 4
 <p>The search is case insensitive. e.g <code>Temple</code> will match <code>temple</code>.</p>
 </li>
 <li>
-<p>Only the tags of the places in TravelBuddy are searched.</p>
-</li>
-<li>
 <p>Only full words will be matched e.g. <code>temp</code> will not match <code>temple</code>.</p>
 </li>
 <li>
 <p>Places tagged with at least one matching keyword will be returned (i.e. <code>OR</code> search). e.g. <code>temple school</code> will return places tagged with <code>temple</code> or <code>school</code>.</p>
-</li>
-<li>
-<p>Multiple keywords can be included in the query, e.g <code>searcht distillery temple</code> will return places tagged with <code>distillery</code> or <code>temple</code>.</p>
 </li>
 </ul>
 </div>
@@ -822,7 +783,7 @@ From <a href="#searchTagFigure">Figure 4.8.1</a> below, using <code>searcht dist
 </div>
 <div id="searchTagFigure" class="imageblock">
 <div class="content">
-<img src="images/UIsearchtagsresults.png" alt="UIsearchtagsresults" width="400">
+<img src="images/PPPsearchtags.png" alt="PPPsearchtags" width="400">
 </div>
 <div class="title">Figure 4.8.1: Search results of <code>searcht distillery</code></div>
 </div>
@@ -830,30 +791,21 @@ From <a href="#searchTagFigure">Figure 4.8.1</a> below, using <code>searcht dist
 <div class="sect2">
 <h3 id="searching-places-by-country-code-searchc-code"><a class="link" href="#searching-places-by-country-code-searchc-code">4.9. Searching places by country: <code>searchc</code></a></h3>
 <div class="paragraph">
-<p><strong>Description:</strong> The <code>searchc</code> command searches for places whose country matches the specified ISO-3166 3-letter country code.<br></p>
-</div>
-<div class="paragraph">
-<p><strong>Shortcut:</strong> <code>sc</code></p>
+<p><strong>Description:</strong> The <code>searchc</code> (Shortcut: <code>sc</code>) command searches for places whose country matches the specified ISO-3166 3-letter country code.<br></p>
 </div>
 <div class="paragraph">
 <p><strong>Format:</strong> <code>searchc KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Preconditions:</strong> Given below is a list of preconditions that must be met for the <code>searchc</code> command to work:</p>
+<p><strong>Preconditions:</strong> Given below are preconditions that must be met for the <code>searchc</code> command to work:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The country code keywords for <code>searchc</code> must be valid 3-letter ISO-3166 country codes.</p>
+<p>The country code keywords for <code>searchc</code> must be valid 3-letter ISO-3166 country codes. e.g <code>JPN</code> will return places located in Japan.</p>
 </li>
 <li>
-<p>The search country is from a list of ISO-3166 country codes. e.g <code>JPN</code> will return places located in Japan.</p>
-</li>
-<li>
-<p>Only the country of the places in TravelBuddy is searched.</p>
-</li>
-<li>
-<p>Multiple keywords can be included in the query, e.g <code>searchc JPN CHN</code> will return places located in Japan or China.</p>
+<p>Multiple keywords can be included in the query, i.e. <code>searchc JPN CHN</code> will return places located in Japan or China.</p>
 </li>
 </ul>
 </div>
@@ -864,7 +816,7 @@ From <a href="#searchCountryFigure">Figure 4.9.1</a> below, using <code>searchc 
 </div>
 <div id="searchCountryFigure" class="imageblock">
 <div class="content">
-<img src="images/UIsearchcountryresults.png" alt="UIsearchcountryresults" width="400">
+<img src="images/PPPsearchcountry.png" alt="PPPsearchcountry" width="400">
 </div>
 <div class="title">Figure 4.9.1: Search results of <code>searchc JPN</code></div>
 </div>
@@ -872,31 +824,21 @@ From <a href="#searchCountryFigure">Figure 4.9.1</a> below, using <code>searchc 
 <div class="sect2">
 <h3 id="searching-places-by-year-of-visit-code-searchyear-code"><a class="link" href="#searching-places-by-year-of-visit-code-searchyear-code">4.10. Searching places by year of visit: <code>searchyear</code></a></h3>
 <div class="paragraph">
-<p><strong>Description:</strong> The <code>searchyear</code> command searches for places whose year of visit matches the specified year of interest.</p>
+<p><strong>Description:</strong> The <code>searchyear</code> (Shortcut: <code>sy</code>) command searches for places whose year of visit matches the specified year of interest.</p>
 </div>
 <div class="paragraph">
-<p><strong>Shortcut:</strong> <code>sy</code></p>
+<p><strong>Format:</strong> <code>searchyear KEYWORD [MORE_KEYWORDS]</code> OR <code>searchyear KEYWORD-KEYWORD</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Format:</strong> <code>searchyear KEYWORD [MORE_KEYWORDS]</code> OR<br>
-<code>searchyear KEYWORD-KEYWORD</code></p>
-</div>
-<div class="paragraph">
-<p><strong>Preconditions:</strong> Given below is a list of preconditions that must be met for the <code>searchyear</code> command to work:</p>
+<p><strong>Preconditions:</strong> Given below are preconditions that must be met for the <code>searchyear</code> command to work:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The search year is bounded from 1900 to the current year. e.g <code>2016</code> will return places visited in the year 2016.</p>
-</li>
-<li>
-<p>Search requests outside the bounds will issue a warning.</p>
+<p>The search year is bounded from 1900 to the current year.</p>
 </li>
 <li>
 <p>The year keywords for <code>searchyear</code> can be entered as a range. e.g <code>2010-2017</code> will return all the places visited from <code>2010</code> to <code>2017</code>.</p>
-</li>
-<li>
-<p>Only the year of visit of the places in TravelBuddy is searched.</p>
 </li>
 </ul>
 </div>
@@ -907,7 +849,7 @@ From <a href="#searchYearFigure">Figure 4.10.1</a> below, using <code>searchyear
 </div>
 <div id="searchYearFigure" class="imageblock">
 <div class="content">
-<img src="images/UIsearchyearresults.png" alt="UIsearchyearresults" width="400">
+<img src="images/PPPsearchyear.png" alt="PPPsearchyear" width="400">
 </div>
 <div class="title">Figure 4.10.1: Search results of <code>searchyear 2016</code></div>
 </div>
