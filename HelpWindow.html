@@ -57,7 +57,7 @@
 <li><a href="#command-formats">6.2. Command Formats</a></li>
 </ul>
 </li>
-<li><a href="#start">7. List of Country Codes</a></li>
+<li><a href="#7-list-of-country-codes">7. List of Country Codes</a></li>
 </ul>
 </div>
 </div>
@@ -299,10 +299,17 @@ A quick alternative way to seek help is to hit the <kbd>F1</kbd> key.
 <p><strong>Description:</strong> The <code>add</code> command adds a place to TravelBuddy.</p>
 </div>
 <div class="paragraph">
-<p><strong>Shortcut:</strong> <code>a</code>
-The table below shows the parameters that require a specific input format to be added.</p>
+<p><strong>Shortcut:</strong> <code>a</code></p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<div class="paragraph">
+<p><strong>Format</strong>: <code>add [n/NAME] [cc/COUNTRY_CODE] [dv/DATE_VISITED] [r/RATING] [d/DESCRIPTION] [a/ADDRESS] [p/FILE_PATH]
+[t/TAG]…</code></p>
+</div>
+<div class="paragraph">
+<p>The <a href="#SpecificParameters">Table 4.3.1</a> below shows the parameters that require a specific input format to be added.</p>
+</div>
+<table id="SpecificParameters" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 4.3.1: Parameters that Require a Specific Format</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -551,16 +558,10 @@ TravelBuddy allows for double quotation marks around the filepath, so there is n
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Calling the <code>list</code> command returns a list of all the places in TravelBuddy as shown in <a href="#listFigure">Figure 4.4.1</a> below.
+Calling the <code>list</code> command returns a list of all the places in TravelBuddy as shown in <a href="#listFigure">[listFigure]</a> below.
 </td>
 </tr>
 </table>
-</div>
-<div id="listFigure" class="imageblock">
-<div class="content">
-<img src="images/listCommand.png" alt="listCommand" width="400">
-</div>
-<div class="title">Figure 4.4.1: Listing all the places in TravelBuddy</div>
 </div>
 </div>
 <div class="sect2">
@@ -603,11 +604,19 @@ Calling the <code>list</code> command returns a list of all the places in Travel
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Examples:</strong> Given below are some examples on how to utilize the <code>edit</code> command:
-* <code>edit 1 r/3 d/No description</code><br>
-Edits the rating and description of the 1st entry in the list to be <code>3</code> and <code>No description</code> respectively.
-* <code>edit 2 n/Raffles Hotel t/</code><br>
+<p><strong>Examples:</strong> Given below are some examples on how to utilize the <code>edit</code> command:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit 1 r/3 d/No description</code><br>
+Edits the rating and description of the 1st entry in the list to be <code>3</code> and <code>No description</code> respectively.</p>
+</li>
+<li>
+<p><code>edit 2 n/Raffles Hotel t/</code><br>
 Edits the name of the 2nd entry in the list to be <code>Raffles Hotel</code> and clears all existing tags.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p><a href="#editFigureBefore">Figure 4.5.1</a> below shows the list of places before the <code>edit</code> command is used.</p>
@@ -1701,10 +1710,11 @@ COM1, 13 Computing Drive, 117417 p/C:\Users\Michael\Pictures\nus-photo.jpg t/sch
 </tr>
 </tbody>
 </table>
+<hr>
 </div>
 </div>
 </div>
-<h1 id="start" class="sect0"><a class="link" href="#start">7. List of Country Codes</a></h1>
+<h1 id="7-list-of-country-codes" class="sect0"><a class="link" href="#7-list-of-country-codes">7. List of Country Codes</a></h1>
 <div id="TOP" class="paragraph">
 <p>Find by Country Name: <a href="#A">A</a> <a href="#B">B</a> <a href="#C">C</a> <a href="#D">D</a> <a href="#E">E</a> <a href="#F">F</a> <a href="#G">G</a> <a href="#H">H</a> <a href="#I">I</a> <a href="#J">J</a> <a href="#K">K</a>
 <a href="#L">L</a>
@@ -3012,4 +3022,4 @@ COM1, 13 Computing Drive, 117417 p/C:\Users\Michael\Pictures\nus-photo.jpg t/sch
 </table>
 <div class="paragraph">
 <p> <br></p>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 11:59:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 12:11:50 UTC</div></div></div></body></html>

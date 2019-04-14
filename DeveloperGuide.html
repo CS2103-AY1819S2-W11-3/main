@@ -1324,35 +1324,8 @@ In addition, it narrows down the search options by only returning keywords that 
 <h3 id="add-feature"><a class="link" href="#add-feature">4.3. Add Feature</a></h3>
 <div class="paragraph">
 <p>The <code>add</code> command is used to add a place into TravelBuddy. The user can add the following details related to the
-place:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Name</p>
-</li>
-<li>
-<p>Country Code</p>
-</li>
-<li>
-<p>Date Visited</p>
-</li>
-<li>
-<p>Rating</p>
-</li>
-<li>
-<p>Address</p>
-</li>
-<li>
-<p>Description</p>
-</li>
-<li>
-<p>Photo (Optional)</p>
-</li>
-<li>
-<p>Tag (Optional)</p>
-</li>
-</ul>
+place: name, country code, date visited, rating, address, description, photo (Optional) and
+Tag (Optional).</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1370,67 +1343,161 @@ The country code adheres to the three-letter ISO-3166 standard. The full list of
 <div class="sect3">
 <h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">4.3.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>Given below is a sequence of steps, illustrating the interaction between various classes when the add command is
+<p><a href="#addSeqDiagram">Figure 4.3.1</a> is a sequence of steps that illustrates the interaction between various classes when the <code>add</code>
+command is
 entered.</p>
 </div>
-<div class="imageblock">
+<div id="addSeqDiagram" class="imageblock">
 <div class="content">
 <img src="images/AddCommandSequenceDiagram.PNG" alt="AddCommandSequenceDiagram" width="800">
 </div>
+<div class="title">Figure 4.3.1: Execution sequence of the <code>add</code> command</div>
 </div>
 <div class="paragraph">
-<p>Figure 10: Add Command Sequence Diagram</p>
+<p><code>add n/NUS Computing cc/SGP dv/10/10/2017 r/3 d/My School a/13 Computing Drive,
+117417 t/faculty</code></p>
 </div>
 <div class="paragraph">
-<p>Step 1: The user enters the command <code>add n/NUS Computing cc/SGP dv/10/10/2017 r/3 d/My School a/13 Computing Drive,
-117417 t/faculty</code>.</p>
+<p>1) The <code>String</code> user input is passed into the <code>LogicManager::execute</code> method of the LogicManager instance as the
+only parameter.</p>
 </div>
 <div class="paragraph">
-<p>Step 2: The command is processed by the Logic component, which will then call <code>LogicManager#execute()</code>.</p>
+<p>2) The <code>LogicManager::execute</code> method calls <code>TravelBuddyParser::parseCommand</code> which receives the user input as a
+parameter.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The user input is formatted: the first <code>String</code> token is taken as the command word and the rest of the  String is
+grouped as arguments to be used later by the <code>AddCommandParser</code>.</p>
+</li>
+<li>
+<p>From the command word, the <code>TravelBuddyParser</code> instance identifies the user input as an <code>add</code> command and
+constructs an instance of <code>AddCommandParser</code>.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Step 3: <code>TravelBuddyParser#parseCommand()</code> is invoked, which is also located in the Logic component.</p>
+<p>3) TravelBuddyParser calls the <code>AddCommandParser::parse</code> method. The <code>AddCommandParser</code> takes in the rest of the
+string, which is
+<code>n/NUS Computing cc/SGP dv/10/10/2017 r/3 d/My School a/13 Computing Drive, 117417 t/faculty</code></p>
 </div>
-<div class="paragraph">
-<p>Step 4: `AddCommandParser&#8217;s constructor is invoked.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The string is tokenised to arguments based on their prefixes.</p>
+</li>
+</ul>
 </div>
-<div class="paragraph">
-<p>Step 5: The <code>AddCommandParser#parse()</code> is called and receives the command with the arguments given as a string.</p>
-</div>
-<div class="paragraph">
-<p>Step 6: The <code>AddCommandParser</code> interprets the arguments and constructs an <code>AddCommand</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 7: The <code>AddCommand</code> with a <code>Place</code> specified by the user is returned.</p>
-</div>
-<div class="paragraph">
-<p>Step 8: The <code>AddCommand#execute()</code> method is invoked.</p>
-</div>
-<div class="paragraph">
-<p>Step 9: The <code>Model#addPlace()</code> method is invoked with the argument <code>toAdd</code>. The <code>Model#commitTravelBuddy()</code> method is
- also invoked.</p>
-</div>
-<div class="paragraph">
-<p>Step 10: The <code>TravelBuddy#addPlace()</code> method is invoked by <code>Model</code> with the argument <code>toAdd</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 11: A result object is returned.
-===== Add Command
-Given below is an example usage scenario and what the user will see in the GUI.
-Step 1. The user launches the application and sees the GUI with no places.</p>
-</div>
-<div class="imageblock">
+<div class="listingblock">
 <div class="content">
-<img src="images/AddCommandStep1.png" alt="AddCommandStep1" width="800">
+<pre class="CodeRay highlight"><code data-lang="java">ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_NAME,
+     PREFIX_COUNTRY_CODE, PREFIX_DATE_VISITED, PREFIX_RATING,
+     PREFIX_DESCRIPTION, PREFIX_ADDRESS, PREFIX_PHOTO, PREFIX_TAG);</code></pre>
 </div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A check is made on the presence of the relevant prefixes <code>n/</code>, <code>cc/</code>, <code>dv/</code>, <code>r/</code>, <code>d/</code>, <code>a/</code>, <code>p/</code> and <code>t/</code>.</p>
+</li>
+<li>
+<p>When the mandatory prefixes are not present, a <code>ParseException</code> will be thrown with an error message on the
+proper
+usage of
+the <code>add</code> command.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"> <span class="keyword">if</span> (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_COUNTRY_CODE,
+     PREFIX_DATE_VISITED, PREFIX_ADDRESS, PREFIX_RATING, PREFIX_DESCRIPTION)
+     || !argMultimap.getPreamble().isEmpty()) {
+     <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">ParseException</span>(<span class="predefined-type">String</span>.format(MESSAGE_INVALID_COMMAND_FORMAT,
+         AddCommand.MESSAGE_USAGE));
+ }</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Otherwise, a <code>Place</code> object is constructed and used as a field in the creation of a <code>AddCommand</code> object.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Step 2. The user enters the full add command <code>add n/NUS Computing cc/SGP dv/10/10/2017 r/3 d/My School a/13 Computing Drive,
-117417 t/faculty</code> to add the place to TravelBuddy and presses <kbd>ENTER</kbd>. TravelBuddy will start executing the steps mentioned in Figure 10.</p>
+<p>4) The newly created <code>AddCommand</code> object is returned to back to the <code>LogicManager</code> instance through the
+<code>AddCommandParser</code> and <code>TravelBuddyParser</code> objects.</p>
 </div>
-<div class="imageblock">
+<div class="paragraph">
+<p>5) Once the control is returned to the <code>LogicManager</code> object, it calls the <code>AddCommand::execute</code> method.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The method takes in a Model object to access the application’s data context, the stored data of all places.</p>
+</li>
+<li>
+<p>The code snippet below shows the <code>AddCommand::execute</code> method.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
 <div class="content">
-<img src="images/AddCommandStep2.png" alt="AddCommandStep2" width="800">
+<pre class="CodeRay highlight"><code data-lang="java"> <span class="directive">public</span> CommandResult execute(Model model, CommandHistory history)
+     <span class="directive">throws</span> CommandException {
+     requireNonNull(model);
+     <span class="keyword">if</span> (model.hasPlace(toAdd)) {
+         <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(MESSAGE_DUPLICATE_PLACE);
+     }
+     model.addPlace(toAdd);
+     model.commitTravelBuddy();
+     <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(<span class="predefined-type">String</span>.format(MESSAGE_SUCCESS, toAdd));
+ }</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A check is made on whether the place already exists in TravelBuddy. If it already exists,
+a <code>CommandException</code> will be thrown with an error message on the duplicate entry of the place.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>6) The <code>Place</code> data is added into TravelBuddy.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Here the <code>Model::addPlace</code> method is called, and it subsequently calls the <code>TravelBuddy::addPlace</code> method.</p>
+</li>
+<li>
+<p>Following which the <code>Model::commitTravelBuddy</code> method is called.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>7) The <code>AddCommand::execute</code> execution completes by returning a new CommandResult that contains a success message to
+its calling method which is <code>LogicManager::execute</code>.</p>
+</div>
+<div class="paragraph">
+<p>8) Finally, the <code>CommandResult</code> is returned to the caller of <code>LogicManager::execute</code> and the execution sequence ends.</p>
+</div>
+<div class="sect4">
+<h5 id="add-command"><a class="link" href="#add-command">Add Command</a></h5>
+<div class="paragraph">
+<p>Given below is an example usage scenario and what the user will see in the GUI.</p>
+</div>
+<div class="paragraph">
+<p>The user launches the application and enters the full add command <code>add n/Raffles Hotel cc/SGP dv/05/05/2016 t/hotel d/This place is lovely a/Raffles Road r/5 t/staycation
+117417 t/faculty</code>. TravelBuddy will start executing the steps mentioned in
+<a href="#addSeqDiagram">Figure 4.3.1</a> and the output is shown below in <a href="#output">Figure 4.3.2</a>.</p>
+</div>
+<div id="output" class="imageblock">
+<div class="content">
+<img src="images/addCommand.png" alt="addCommand" width="400">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -1446,39 +1513,50 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 </table>
 </div>
 </div>
+</div>
 <div class="sect3">
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-data-structure-to-store-country-codes"><a class="link" href="#aspect-data-structure-to-store-country-codes">Aspect: Data structure to store Country Codes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use <code>enum</code> specified in <code>java.util.Locales</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement and contains all three-letter country codes as specified in ISO-3166.</p>
-</li>
-<li>
-<p>Cons: Slightly slow in searching for country code.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Create a data structure containing the most commonly traveled countries in the world.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Locating country code in data structure would be faster than Alternative 1.</p>
-</li>
-<li>
-<p>Cons: Tedious process of typing out country codes in the data structure.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 13.7931%;">
+<col style="width: 43.1034%;">
+<col style="width: 43.1035%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong>Alternative 1 (current choice)</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Alternative 2</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>enum</code> specified in <code>java.util.Locales</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a data structure containing only the top 30 commonly traveled countries in the world.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pros</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-use</strong>. This approach simply requires the importing of <code>java.util.Locales</code> to get the country codes.<br>
+<strong>Comprehensive</strong>. <code>java.util.Locales</code> contains all of the 250 three-letter country codes as specified in ISO-3166.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fast</strong>. This approach is computationally less intensive than Alternative 1. This is because there are only 30 country
+codes in the data structure.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cons</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Slightly slow</strong>. This approach is computationally more intensive than Alternative 1. This is because there are 250
+country codes to search from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tedious</strong>. This approach requires the coder to search for the top 30 visited countries in the world and type out all
+ the 30, three-letter country codes as specified in ISO-3166.<br>
+<strong>Not User-friendly</strong>. If the user visited a country that is not in the top 30 list of countries visited, the user
+would not be able to add it into TravelBuddy.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Decision:</strong> Alternative 1. Alternative 2 may not fulfill all of the user requirements of adding any country code, but Alternative 1 does.  Alternative 1&#8217;s speed is only slightly slower than Alternative 2.</p>
 </div>
 </div>
 </div>
@@ -2818,4 +2896,4 @@ Expected: Similar to previous.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 11:59:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 12:11:50 UTC</div></div></div></body></html>
