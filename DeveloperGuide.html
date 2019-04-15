@@ -79,7 +79,8 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Welcome to <strong>TravelBuddy&#8217;s</strong> Developer Guide, put together by Chung Ming, Prem, Niven and Shaun. In this guide, you will find all the relevant information to get you familiarize with TravelBuddy&#8217;s design and implementation.</p>
+<p>Welcome to <strong>TravelBuddy</strong>'s Developer Guide, put together by Chung Ming, Prem, Niven and Shaun. In this guide, you will
+ find all the relevant information to get you familiarize with TravelBuddy&#8217;s design and implementation.</p>
 </div>
 </div>
 </div>
@@ -307,13 +308,15 @@ including the design and structure of components and their constituent classes.<
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/CS2103-AY1819S2-W11-3/main/docs/diagrams/">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.
+The <code>.pptx</code> files used to create diagrams in this document can be found in the
+<a href="https://github.com/CS2103-AY1819S2-W11-3/main/tree/master/docs/diagrams/">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file,
+select the objects of the diagram, and choose <code>Save as picture</code>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/travel/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S2-W11-3/main/tree/master/src/main/java/seedu/travel/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -342,7 +345,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#Design-Ui"><strong><code>UI</code></strong></a>: The UI of the App.</p>
+<p><a href="#Design-Ui"><strong><code>UI</code></strong></a>: The User Interface (UI) of the App.</p>
 </li>
 <li>
 <p><a href="#Design-Logic"><strong><code>Logic</code></strong></a>: The command executor.</p>
@@ -400,10 +403,14 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 3.2.1: Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component, as seen in <a href="#UiClassDiagram">Figure 3.2.1</a>, uses JavaFx UI framework. The <strong>layout</strong> of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/travel/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component, as seen in <a href="#UiClassDiagram">Figure 3.2.1</a>, uses the JavaFx UI framework. The <strong>layout</strong> of these UI parts are
+defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the
+<a href="https://github.com/CS2103-AY1819S2-W11-3/main/tree/master/src/main/java/seedu/travel/ui/MainWindow.java"><code>MainWindow</code></a> is specified in
+<a href="https://github.com/CS2103-AY1819S2-W11-3/main/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
-<p>The 'UI' component <strong>controllers</strong> are found in the <code>src/main/java/seedu/travel/ui</code> folder. Each class corresponds to a specific <code>.fxml</code> file.</p>
+<p>The <code>UI</code> component <strong>controllers</strong> are found in the <code>src/main/java/seedu/travel/ui</code> folder. Each class corresponds to a
+ specific <code>.fxml</code> file.</p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -454,7 +461,7 @@ Labels that display Name and actual Place data (CountryCode, Rating etc) in a VB
 </div>
 </li>
 <li>
-<p>RightParentPanel: Parent panel for both <code>DisplayListPanel</code> and <code>ExtendedPlacePanel</code>,
+<p><code>RightParentPanel</code>: Parent panel for both <code>DisplayListPanel</code> and <code>ExtendedPlacePanel</code>,
 contains helper methods for switching functionality, interacts with model and logic</p>
 <div class="ulist">
 <ul>
@@ -3020,4 +3027,4 @@ Expected: Similar to previous.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 02:17:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 04:55:40 UTC</div></div></div></body></html>
