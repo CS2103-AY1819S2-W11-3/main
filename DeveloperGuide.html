@@ -299,7 +299,7 @@ including the design and structure of components and their constituent classes.<
 <div class="title">Figure 3.1.1: Architecture Diagram</div>
 </div>
 <div class="paragraph">
-<p><a href="#ArchitectureDiagram">Figure 3.1.1</a> above explains the high-level design of the App. Given below is a quick overview of each component.</p>
+<p><a href="#ArchitectureDiagram">Figure 3.1.1</a> above explains the high-level design of TravelBuddy. Given below is a quick overview of each component.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -335,12 +335,12 @@ The following class plays an important role at the architecture level:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
+<p><code>LogsCenter</code> : Used by many classes to write log messages to TravelBuddy&#8217;s log file.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The rest of the App consists of four components.</p>
+<p>The rest of TravelBuddy consists of four components.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -351,7 +351,7 @@ The following class plays an important role at the architecture level:</p>
 <p><a href="#Design-Logic"><strong><code>Logic</code></strong></a>: The command executor.</p>
 </li>
 <li>
-<p><a href="#Design-Model"><strong><code>Model</code></strong></a>: Holds the data of the App in-memory.</p>
+<p><a href="#Design-Model"><strong><code>Model</code></strong></a>: Holds the data of TravelBuddy in-memory.</p>
 </li>
 <li>
 <p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the hard disk.</p>
@@ -364,7 +364,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the Component.</p>
+<p>Defines its Application Programming Interface (<em>API</em>) in an <code>interface</code> with the same name as the component.</p>
 </li>
 <li>
 <p>Exposes its functionality using a <code>{Component Name}Manager</code> class.</p>
@@ -378,7 +378,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
 </div>
-<div class="title">Figure 3.1.2: Class Diagram of the Logic Component</div>
+<div class="title">Figure 3.1.2: Class Diagram of the Logic component</div>
 </div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
@@ -388,7 +388,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/SDforDeletePlace.png" alt="SDforDeletePlace" width="800">
 </div>
-<div class="title">Figure 3.1.3: Component interactions for <code>delete 1</code> command</div>
+<div class="title">Figure 3.1.3: component interactions for <code>delete 1</code> command</div>
 </div>
 <div class="paragraph">
 <p>The sections below give more details of each component.</p>
@@ -396,11 +396,15 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="sect2">
 <h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI Component</a></h3>
+<div class="paragraph">
+<p><strong>API</strong> :
+<a href="https://github.com/CS2103-AY1819S2-W11-3/main/tree/master/src/main/java/seedu/travel/ui/Ui.java"><code>Ui.java</code></a></p>
+</div>
 <div id="UiClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram" width="800">
 </div>
-<div class="title">Figure 3.2.1: Structure of the UI Component</div>
+<div class="title">Figure 3.2.1: Structure of the UI component</div>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component, as seen in <a href="#UiClassDiagram">Figure 3.2.1</a>, uses the JavaFx UI framework. The <strong>layout</strong> of these UI parts are
@@ -430,7 +434,7 @@ defined in matching <code>.fxml</code> files that are in the <code>src/main/reso
 All parts inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p><strong>Brief overview</strong> of each UI Component:</p>
+<p><strong>Brief overview</strong> of each UI component:</p>
 </div>
 <div class="paragraph">
 <p><code>MainWindow</code>: Consists of the main menu with <code>File</code> and <code>Help</code> dropdowns and the remaining UI parts below.</p>
@@ -450,39 +454,39 @@ All parts inherit from the abstract <code>UiPart</code> class.</p>
 <p><code>StatusBarFooter</code>: At the bottom of MainWindow, reports the status of the TravelBudy application</p>
 </li>
 <li>
-<p><code>PlaceListPanel</code>: On the left of BrowserPanel, displays Places as a VBox of PlaceListCards</p>
+<p><code>PlaceListPanel</code>: On the left of the application, displays Places as a VBox of <code>PlaceListCards</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>PlaceListCard</code>: Labels for the Display index and Place data fields (CountryCode, Rating etc.) in a VBox the left,
-Labels that display Name and actual Place data (CountryCode, Rating etc) in a VBox on the right.</p>
+<p><code>PlaceListCard</code>: Labels for the Display index and Place data fields (<code>CountryCode</code>, <code>Rating</code> etc.) in a VBox the left,
+Labels that display Name and actual Place data (<code>CountryCode</code>, <code>Rating</code> etc) in a VBox on the right</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><code>RightParentPanel</code>: Parent panel for both <code>DisplayListPanel</code> and <code>ExtendedPlacePanel</code>,
-contains helper methods for switching functionality, interacts with model and logic</p>
+<p>RightParentPanel: Parent panel for both <code>ChartListPanel</code> and <code>ExpandedPlacePanel</code>,
+contains helper methods for switching functionality, interacts with <code>Model</code> and <code>Logic</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>DisplayListPanel</code>: Parent panel for analytics of all Places, the <code>generate</code> command displays this panel</p>
+<p><code>ChartListPanel</code>: Parent panel for analytics of all Places, the <code>generate</code> command displays this panel</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>DisplayCard</code>: Displays <code>Chart</code> data in a bar graph</p>
+<p><code>ChartCard</code>: Displays <code>Chart</code> data in a bar graph</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><code>ExtendedPlacePanel</code>: Display an expanded view of all Place data. Photo attachments to be included here as well in future releases (beyond v1.4).</p>
+<p><code>ExpandedPlacePanel</code>: Displays an expanded view of all Place data, including the <code>Photo</code></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><code>BrowserPanel</code>: <strong><em>Deprecated.</em></strong> Opens on clicking the PlaceListCard, on the right of the PlaceListPanel.</p>
+<p><code>BrowserPanel</code>: <strong><em>Deprecated.</em></strong> Opens on clicking the PlaceListCard, on the right of the PlaceListPanel</p>
 </li>
 </ul>
 </div>
@@ -496,11 +500,14 @@ contains helper methods for switching functionality, interacts with model and lo
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
 </div>
-<div class="title">Figure 3.3.1: Structure of the Logic Component</div>
+<div class="title">Figure 3.3.1: Structure of the Logic component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/travel/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/CS2103-AY1819S2-W11-3/main/tree/master/src/main/java/seedu/travel/logic/Logic.java"><code>Logic.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>Below is an overview of the <code>Logic</code> interface:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -522,13 +529,13 @@ contains helper methods for switching functionality, interacts with model and lo
 </ol>
 </div>
 <div class="paragraph">
-<p>Given in <a href="#DeletePersonSdForLogic">Figure 3.3.2</a> below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
+<p>Given in <a href="#DeletePersonSdForLogic">Figure 3.3.2</a> below is the sequence diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
 </div>
 <div id="DeletePersonSdForLogic" class="imageblock">
 <div class="content">
 <img src="images/DeletePersonSdForLogic.png" alt="DeletePersonSdForLogic" width="800">
 </div>
-<div class="title">Figure 3.3.2: Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 3.3.2: Interactions inside the Logic component for the <code>delete 1</code> command</div>
 </div>
 </div>
 <div class="sect2">
@@ -537,28 +544,28 @@ contains helper methods for switching functionality, interacts with model and lo
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram" width="800">
 </div>
-<div class="title">Figure 3.4.1: Structure of the Model Component</div>
+<div class="title">Figure 3.4.1: Structure of the Model component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/travel/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-W11-3/main/tree/master/src/main/java/seedu/travel/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>Model</code>,</p>
+<p>Below is an overview of the <code>Model</code> interface:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
+<p><code>Model</code> stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the place data.</p>
+<p><code>Model</code> stores the place data.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Place&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that
+<p><code>Model</code> exposes an unmodifiable <code>ObservableList&lt;Place&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that
 the UI automatically updates when the data in the list change.</p>
 </li>
 <li>
-<p>does not depend on any of the other three components.</p>
+<p><code>Model</code> does not depend on any of the other three components.</p>
 </li>
 </ul>
 </div>
@@ -569,7 +576,7 @@ the UI automatically updates when the data in the list change.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-As a more OOP model, we can store a <code>Tag</code> list in <code>TravelBuddy</code>, which <code>Place</code> can reference. This would allow <code>TravelBuddy</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Place</code> needing their own <code>Tag</code> object. An
+As a more Object Oriented Programming (OOP) model, we can store a <code>Tag</code> list in <code>TravelBuddy</code>, which <code>Place</code> can reference. This would allow <code>TravelBuddy</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Place</code> needing their own <code>Tag</code> object. An
  example of how such a model may look like is seen in <a href="#ModelClassBetterOopDiagram">Figure 3.4.2</a>.<br>
 <br>
 </td>
@@ -589,21 +596,21 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>TravelBuddy</
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram" width="800">
 </div>
-<div class="title">Figure 3.5.1: Structure of the Storage Component</div>
+<div class="title">Figure 3.5.1: Structure of the Storage component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/travel/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-W11-3/main/tree/master/src/main/java/seedu/travel/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>Storage</code> component,</p>
+<p>Below is an overview of the <code>Storage</code> interface:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>can save <code>UserPref</code> objects in json format and read it back.</p>
+<p><code>Storage</code> can save <code>UserPref</code> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can save the TravelBuddy data in json format and read it back.</p>
+<p><code>Storage</code> can save the TravelBuddy data in json format and read it back.</p>
 </li>
 </ul>
 </div>
@@ -632,7 +639,7 @@ Undoable commands include <code>add</code>, <code>edit</code>, <code>delete</cod
 <h4 id="current-implementation"><a class="link" href="#current-implementation">4.1.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedTravelBuddy</code>.
-It extends <code>TravelBuddy</code> with an undo/redo history, stored internally as an <code>travelBuddyStateList</code> and <code>currentStatePointer</code>.
+It extends <code>TravelBuddy</code> with an undo/redo history, stored internally as a <code>travelBuddyStateList</code> and <code>currentStatePointer</code>.
 Additionally, it implements the following operations:</p>
 </div>
 <div class="ulist">
@@ -672,8 +679,8 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new place. The <code>add</code> command also calls <code>Model#commitTravelBuddy()
-`, causing another modified TravelBuddy state to be saved into the `travelBuddyStateList</code>.</p>
+<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new place. The <code>add</code> command also calls <code>Model#commitTravelBuddy()</code>,
+causing another modified TravelBuddy state to be saved into the <code>travelBuddyStateList</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -694,7 +701,7 @@ If a command fails its execution, it will not call <code>Model#commitTravelBuddy
 </div>
 <div class="paragraph">
 <p>Step 4. The user now decides that adding the place was a mistake, and decides to undo that action by executing the
-<code>undo</code> command. The <code>undo</code> command will call <code>Model#undoTravelBuddy()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous TravelBuddy state, and restores the TravelBuddy to that state.</p>
+<code>undo</code> command. The <code>undo</code> command will call <code>Model#undoTravelBuddy()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous TravelBuddy state. This restores the TravelBuddy to that state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1572,53 +1579,79 @@ would not be able to add it into TravelBuddy.</p></td>
 <div class="sect2">
 <h3 id="photos-feature"><a class="link" href="#photos-feature">4.4. Photos Feature</a></h3>
 <div class="paragraph">
-<p>The Photo feature gives users the ability to attach an existing image file to any Place object,
+<p>The Photo feature gives users the ability to attach an existing image file to any <code>Place</code> object,
 which is then displayed in the <code>ExpandedPlacePanel</code> when the <code>select</code> command is called on a particular Place.</p>
 </div>
 <div class="sect3">
 <h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>This feature is currently integrated as part of the <code>add</code> and <code>edit</code> commands. It works by accepting the user entered
-absolute file path of the image as an <code>add</code> and <code>edit</code> command parameter, specified by the prefix <code>p/</code>.</p>
+<p>This feature is currently integrated as part of the <code>add</code> and <code>edit</code> commands. It works by accepting the user-entered
+absolute file path of the image as an <code>add</code> or <code>edit</code> command parameter, specified by the prefix <code>p/</code>.</p>
 </div>
 <div class="paragraph">
-<p><a href="#chartOopDiagramFigure">Figure 4.4.1</a> below is a sequence of steps, illustrating the interaction between various classes when the add command is
+<p><a href="#AddPhotoActivityDiagram">Figure 4.4.1.1</a> below is a sequence of steps, illustrating the interaction between various classes when the add command is
 used to include a photo with a newly created place.</p>
 </div>
-<div id="AddPhotoActivityDiagram" class="imageblock">
-<div class="content">
-<img src="images/AddPhotoActivityDiagram.PNG" alt="AddPhotoActivityDiagram" width="800">
-</div>
-<div class="title">Figure 4.4.1: Add Photo Activity DiagramActivity diagram for photo feature</div>
-</div>
 <div class="paragraph">
-<p>Step 1: The user enters the command <code>add n/Himeiji Castle cc/JPN dv/15/12/2017 r/5 d/Wow.
+<p><strong>Step 1:</strong> The user enters the command <code>add n/Himeiji Castle cc/JPN dv/15/12/2017 r/5 d/Wow.
 a/Kyoto t/castle p/C:\Users\Shaun\Pictures\castle-photo.jpg</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 2 - 5: Identical to <code>add</code> command sequence, please refer to &lt;<a href="#add-feature">Section 4.3, &#8220;Add Feature&#8221;</a>&gt; for details</p>
+<p><strong>Step 2 - 5:</strong> Identical to <code>add</code> command sequence steps 2 - 5, please refer to <a href="#add-feature">Section 4.3, &#8220;Add Feature&#8221;</a> for details</p>
 </div>
 <div class="paragraph">
-<p>Step 6: The <code>AddCommandParser</code> interprets the arguments, and checks the file path input using <code>ParserUtil.parsePhoto()</code>.</p>
+<p><strong>Step 6:</strong> The <code>AddCommandParser</code> interprets the arguments, and checks the file path input using <code>ParserUtil.parsePhoto()</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 7: <code>parsePhoto()</code> then trims any leading whitespace. It also trims a single leading and trailing double quotation mark <code>"</code>.
+<p><strong>Step 7:</strong> <code>parsePhoto()</code> then trims any leading whitespaces. It also trims a single leading and trailing double quotation mark <code>"</code>.
 This is for ease of use with the Windows 10 File Explorer <strong>Copy Path</strong> Home menu function, which returns the filepath of the selected file
 wrapped with double quotation marks <code>"</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 8.1: As the <code>photo</code> parameter is optional for <code>add</code> command, if photo prefix <code>p/</code> is not used, <code>AddCommandParser</code>
+<p><strong>Step 8.1:</strong> As the <code>photo</code> parameter is optional for <code>add</code> command, if photo prefix <code>p/</code> is not used, <code>AddCommandParser</code>
 calls the 2nd overloaded <code>Place()</code> constructor to create a <code>Place</code> with a special string <code>EMPTY_PHOTO_PATH</code> in the <code>Photo</code> attribute.</p>
 </div>
 <div class="paragraph">
-<p>Step 8.2.1: If photo prefix 'p/' is used, he validity of the filepath is then checked with the <code>Photo.isValidPhotoFilepath()</code> method.
+<p><strong>Step 8.2:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If photo prefix <code>p/</code> is used, he validity of the filepath is then checked with the <code>Photo.isValidPhotoFilepath()</code> method.
 The method relies on using <code>ImageIO.read()</code> to try opening the file using the provided <code>filepath</code> string.
 If the filepath is invalid or the file cannot be opened, then <code>ImageIO.read()</code> throws a <code>IOException</code>.
-The exception is caught, control returns to parsePhoto() and a ParseException is thrown.</p>
+The exception is caught, control returns to <code>parsePhoto()</code> and a <code>ParseException is thrown</code>.</p>
+</li>
+</ul>
 </div>
-<div class="paragraph">
-<p>Step 8.2.2: Else, control returns to <code>parseUtil.parsePhoto()</code>. It uses the all-parameter <code>Place()</code> constructor to create
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="error">`</span>    <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> isValidPhotoFilepath(<span class="predefined-type">String</span> test) {
+        <span class="keyword">if</span> (!(test <span class="keyword">instanceof</span> <span class="predefined-type">String</span>)) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">NullPointerException</span>();
+        }
+        <span class="keyword">try</span> {
+            <span class="predefined-type">File</span> testPhoto = <span class="keyword">new</span> <span class="predefined-type">File</span>(test);
+            <span class="predefined-type">Image</span> image = <span class="predefined-type">ImageIO</span>.read(testPhoto);
+            <span class="predefined-type">FileInputStream</span> testStream = <span class="keyword">new</span> <span class="predefined-type">FileInputStream</span>(testPhoto);
+            <span class="keyword">if</span> (image == <span class="predefined-constant">null</span>) {
+                <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">The file </span><span class="delimiter">&quot;</span></span> + testPhoto + <span class="string"><span class="delimiter">&quot;</span><span class="content"> could not be opened, it is not an image</span><span class="delimiter">&quot;</span></span>);
+                <span class="keyword">return</span> <span class="predefined-constant">false</span>;
+            }
+        } <span class="keyword">catch</span> (<span class="exception">IOException</span> e) {
+            <span class="keyword">return</span> <span class="predefined-constant">false</span>;
+        }
+        <span class="keyword">return</span> <span class="predefined-constant">true</span>;
+    }<span class="error">`</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Else, control returns to <code>parseUtil.parsePhoto()</code>. It uses the all-parameter <code>Place()</code> constructor to create
 a <code>Place</code> object, using the <code>Photo</code> parameter and other parameters.</p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1634,8 +1667,14 @@ Supported filepaths are <code>.jpg</code> <code>.png</code> and <code>.bmp</code
 </table>
 </div>
 <div class="paragraph">
-<p>Step 9: When the <code>select</code> command is executed, the UI component <code>ExpandedPlacePanel</code> receives the <code>Place</code> object. It then uses the <code>photo.filepath</code> attribute to create a
-JavaFX <code>Image</code> object, which is then displayed in a ImageView panel at the top of <code>ExpandedPlacePanel</code> using the <code>setImage()</code> method.</p>
+<p><strong>Step 9:</strong> When the <code>select</code> command is executed, the UI component <code>ExpandedPlacePanel</code> receives the <code>Place</code> object. It then uses the <code>photo.filepath</code> attribute to create a
+JavaFX <code>Image</code> object, which is then displayed in a <code>ImageView</code> panel at the top of <code>ExpandedPlacePanel</code> using the <code>setImage()</code> method.</p>
+</div>
+<div id="AddPhotoActivityDiagram" class="imageblock">
+<div class="content">
+<img src="images/AddPhotoActivityDiagram.PNG" alt="AddPhotoActivityDiagram" width="800">
+</div>
+<div class="title">Figure 4.4.1.1: Activity diagram for photo feature</div>
 </div>
 <div class="sect4">
 <h5 id="example-using-code-add-code-to-include-a-photo"><a class="link" href="#example-using-code-add-code-to-include-a-photo">Example: Using <code>add</code> to include a photo</a></h5>
@@ -1649,7 +1688,7 @@ JavaFX <code>Image</code> object, which is then displayed in a ImageView panel a
 <div class="content">
 <img src="images/addPhotoBefore.png" alt="addPhotoBefore" width="800">
 </div>
-<div class="title">Figure 4.4.2: Before the <code>add</code> command is executed</div>
+<div class="title">Figure 4.4.1.2: Before the <code>add</code> command is executed</div>
 </div>
 <div class="paragraph">
 <p>Step 2. The user inputs <code>selects 4</code>.</p>
@@ -1658,7 +1697,7 @@ JavaFX <code>Image</code> object, which is then displayed in a ImageView panel a
 <div class="content">
 <img src="images/addPhotoAfter.png" alt="addPhotoAfter" width="800">
 </div>
-<div class="title">Figure 4.4.3: After the <code>add</code> command is executed and the newly added Place "Himeiji Castle" is selected</div>
+<div class="title">Figure 4.4.1.3: After the <code>add</code> command is executed and the newly added Place "Himeiji Castle" is selected</div>
 </div>
 </div>
 </div>
@@ -1689,13 +1728,13 @@ directory of the JAR executable, or some other pre-defined directory.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pros</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-use</strong>. This approach is more user-friendly, as users do not need to type an additional <code>generate</code> command after changes are made to the Place list.<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-use</strong>. This approach is more user friendly when used together with Windows 10 File Explorer <code>Copy Path</code> function.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Scalability</strong>. This approach is does not require images to be copied or moved from their existing directory to a new directory. Instead, by using
 <code>Alt-Tab</code>, Windows 10 File Explorer <code>Copy Path</code> function, <code>Ctrl-C</code> + <code>Ctrl-V</code>, and the <code>edit</code> command, users can quickly attach multiple photos to existing places.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cons</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-use</strong>. This approach is Less user-friendly as users will  have to manually type in the name and extension of each image file added,<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-use</strong>. This approach is less user-friendly as users will  have to manually type in the name and extension of each image file added,<br>
 or otherwise rename the file to <code>Ctrl-C</code> + <code>Ctrl-V</code> the file name, and manually type in the extension.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Scalability</strong>. For a large number of image files, this approach requires the user spent extra time moving files from their existing directory to
 the new pre-specified directory. If moving files is not an option, then addition storage space is required for all the copied files.<br></p></td>
@@ -2037,7 +2076,7 @@ the specified logging level</p>
 <p><code>SEVERE</code> : Critical problem detected which may possibly cause the termination of the application</p>
 </li>
 <li>
-<p><code>WARNING</code> : Can continue, but with caution</p>
+<p><code>WARNING</code> : Proceed with caution</p>
 </li>
 <li>
 <p><code>INFO</code> : Information showing the noteworthy actions by the App</p>
@@ -3027,4 +3066,4 @@ Expected: Similar to previous.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 04:55:40 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 06:03:06 UTC</div></div></div></body></html>

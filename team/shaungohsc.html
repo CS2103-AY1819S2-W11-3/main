@@ -177,7 +177,7 @@ It also needs to be responsible for view switching.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Help rewrite the intro of the User Guide: <a href="https://github.com/CS2103-AY1819S2-W11-3/main/pull/178/commits/44c3b11e3a882874c1ca3631162e6003746a75aa">#178</a></p>
 </li>
 </ul>
 </div>
@@ -268,11 +268,11 @@ traveling</em>?</p>
 <div class="sect3">
 <h4 id="attachPhotoFeature"><a class="link" href="#attachPhotoFeature">7.1.1. Including a photo when adding a place with <code>p/</code></a></h4>
 <div class="paragraph">
-<p><strong>Description:</strong> The <code>add</code> command can also include attach a single photo
+<p><strong>Description:</strong> The <code>add</code> command can also attach a single photo
 when adding a new place to TravelBuddy.</p>
 </div>
 <div class="paragraph">
-<p>The photo must be a image file that already exists in your computer.</p>
+<p>The photo must be an image file that already exists in your computer.</p>
 </div>
 <div class="paragraph">
 <p><strong>Format:</strong></p>
@@ -331,19 +331,19 @@ the filepath <code>C:\Users\Michael\Pictures\castle-photo.jpg</code>.</p>
 </div>
 <div id="addPhotoBefore" class="imageblock">
 <div class="content">
-<img src="../images/addPhotoBefore.png" alt="addPhotoBefore" width="400">
+<img src="../images/addPhotoBefore.png" alt="addPhotoBefore" width="600">
 </div>
-<div class="title">Figure 4.3.2.1: Before the <code>add</code> command is executed</div>
+<div class="title">Figure 4.3.2.1: Before the <code>add</code> command is executed.</div>
 </div>
 <div class="paragraph">
 <p><a href="#addPhotoAfter">Figure 4.3.2.2</a> below shows TravelBuddy after the above example command is executed, and
-the newly added Place "Himeiji Castle" is selected</p>
+the newly added "Himeiji Castle" is selected.</p>
 </div>
 <div id="addPhotoAfter" class="imageblock">
 <div class="content">
-<img src="../images/addPhotoAfter.png" alt="addPhotoAfter" width="400">
+<img src="../images/addPhotoAfter.png" alt="addPhotoAfter" width="600">
 </div>
-<div class="title">Figure 4.3.2.2: After the <code>add</code> command is executed and the newly added Place "Himeiji Castle" is selected</div>
+<div class="title">Figure 4.3.2.2: After the <code>add</code> command is executed and the newly added "Himeiji Castle" is selected.</div>
 </div>
 </div>
 </div>
@@ -449,12 +449,20 @@ TravelBuddy allows for double quotation marks around the filepath, so there is n
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">8.1. UI Component</a></h3>
+<h3 id="ui-architecture"><a class="link" href="#ui-architecture">8.1. UI Architecture</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">8.2. UI Component</a></h3>
+<div class="paragraph">
+<p><strong>API</strong> :
+<a href="https://github.com/CS2103-AY1819S2-W11-3/main/tree/master/src/main/java/seedu/travel/ui/Ui.java"><code>Ui.java</code></a></p>
+</div>
 <div id="UiClassDiagram" class="imageblock">
 <div class="content">
 <img src="../images/UiClassDiagram.png" alt="UiClassDiagram" width="800">
 </div>
-<div class="title">Figure 3.2.1: Structure of the UI Component</div>
+<div class="title">Figure 3.2.1: Structure of the UI component</div>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component, as seen in <a href="#UiClassDiagram">Figure 3.2.1</a>, uses the JavaFx UI framework. The <strong>layout</strong> of these UI parts are
@@ -484,7 +492,7 @@ defined in matching <code>.fxml</code> files that are in the <code>src/main/reso
 All parts inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p><strong>Brief overview</strong> of each UI Component:</p>
+<p><strong>Brief overview</strong> of each UI component:</p>
 </div>
 <div class="paragraph">
 <p><code>MainWindow</code>: Consists of the main menu with <code>File</code> and <code>Help</code> dropdowns and the remaining UI parts below.</p>
@@ -504,39 +512,39 @@ All parts inherit from the abstract <code>UiPart</code> class.</p>
 <p><code>StatusBarFooter</code>: At the bottom of MainWindow, reports the status of the TravelBudy application</p>
 </li>
 <li>
-<p><code>PlaceListPanel</code>: On the left of BrowserPanel, displays Places as a VBox of PlaceListCards</p>
+<p><code>PlaceListPanel</code>: On the left of the application, displays Places as a VBox of <code>PlaceListCards</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>PlaceListCard</code>: Labels for the Display index and Place data fields (CountryCode, Rating etc.) in a VBox the left,
-Labels that display Name and actual Place data (CountryCode, Rating etc) in a VBox on the right.</p>
+<p><code>PlaceListCard</code>: Labels for the Display index and Place data fields (<code>CountryCode</code>, <code>Rating</code> etc.) in a VBox the left,
+Labels that display Name and actual Place data (<code>CountryCode</code>, <code>Rating</code> etc) in a VBox on the right</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><code>RightParentPanel</code>: Parent panel for both <code>DisplayListPanel</code> and <code>ExtendedPlacePanel</code>,
-contains helper methods for switching functionality, interacts with model and logic</p>
+<p>RightParentPanel: Parent panel for both <code>ChartListPanel</code> and <code>ExpandedPlacePanel</code>,
+contains helper methods for switching functionality, interacts with <code>Model</code> and <code>Logic</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>DisplayListPanel</code>: Parent panel for analytics of all Places, the <code>generate</code> command displays this panel</p>
+<p><code>ChartListPanel</code>: Parent panel for analytics of all Places, the <code>generate</code> command displays this panel</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>DisplayCard</code>: Displays <code>Chart</code> data in a bar graph</p>
+<p><code>ChartCard</code>: Displays <code>Chart</code> data in a bar graph</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><code>ExtendedPlacePanel</code>: Display an expanded view of all Place data. Photo attachments to be included here as well in future releases (beyond v1.4).</p>
+<p><code>ExpandedPlacePanel</code>: Displays an expanded view of all Place data, including the <code>Photo</code></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><code>BrowserPanel</code>: <strong><em>Deprecated.</em></strong> Opens on clicking the PlaceListCard, on the right of the PlaceListPanel.</p>
+<p><code>BrowserPanel</code>: <strong><em>Deprecated.</em></strong> Opens on clicking the PlaceListCard, on the right of the PlaceListPanel</p>
 </li>
 </ul>
 </div>
@@ -545,55 +553,85 @@ contains helper methods for switching functionality, interacts with model and lo
 </div>
 </div>
 <div class="sect2">
-<h3 id="photos-feature"><a class="link" href="#photos-feature">8.2. Photos Feature</a></h3>
+<h3 id="photos-features"><a class="link" href="#photos-features">8.3. Photos Features</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="photos-feature"><a class="link" href="#photos-feature">8.4. Photos Feature</a></h3>
 <div class="paragraph">
-<p>The Photo feature gives users the ability to attach an existing image file to any Place object,
+<p>The Photo feature gives users the ability to attach an existing image file to any <code>Place</code> object,
 which is then displayed in the <code>ExpandedPlacePanel</code> when the <code>select</code> command is called on a particular Place.</p>
 </div>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">8.2.1. Current Implementation</a></h4>
+<h4 id="current-implementation"><a class="link" href="#current-implementation">8.4.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>This feature is currently integrated as part of the <code>add</code> and <code>edit</code> commands. It works by accepting the user entered
-absolute file path of the image as an <code>add</code> and <code>edit</code> command parameter, specified by the prefix <code>p/</code>.</p>
+<p>This feature is currently integrated as part of the <code>add</code> and <code>edit</code> commands. It works by accepting the user-entered
+absolute file path of the image as an <code>add</code> or <code>edit</code> command parameter, specified by the prefix <code>p/</code>.</p>
 </div>
 <div class="paragraph">
-<p><a href="#Figure 4.4.1">[Figure 4.4.1]</a> below is a sequence of steps, illustrating the interaction between various classes when the add command is
+<p><a href="#AddPhotoActivityDiagram">Figure 4.4.1.1</a> below is a sequence of steps, illustrating the interaction between various classes when the add command is
 used to include a photo with a newly created place.</p>
 </div>
-<div id="AddPhotoActivityDiagram" class="imageblock">
-<div class="content">
-<img src="../images/AddPhotoActivityDiagram.PNG" alt="AddPhotoActivityDiagram" width="800">
-</div>
-<div class="title">Figure 4.4.1: Add Photo Activity DiagramActivity diagram for photo feature</div>
-</div>
 <div class="paragraph">
-<p>Step 1: The user enters the command <code>add n/Himeiji Castle cc/JPN dv/15/12/2017 r/5 d/Wow.
+<p><strong>Step 1:</strong> The user enters the command <code>add n/Himeiji Castle cc/JPN dv/15/12/2017 r/5 d/Wow.
 a/Kyoto t/castle p/C:\Users\Shaun\Pictures\castle-photo.jpg</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 2 - 5: Identical to <code>add</code> command sequence, please refer to &lt;<a href="#Add Feature">[Add Feature]</a>&gt; for details</p>
+<p><strong>Step 2 - 5:</strong> Identical to <code>add</code> command sequence steps 2 - 5, please refer to <a href="#Add Feature">[Add Feature]</a> for details</p>
 </div>
 <div class="paragraph">
-<p>Step 6: The <code>AddCommandParser</code> interprets the arguments, and checks the file path input using <code>ParserUtil.parsePhoto()</code>.</p>
+<p><strong>Step 6:</strong> The <code>AddCommandParser</code> interprets the arguments, and checks the file path input using <code>ParserUtil.parsePhoto()</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 7: <code>parsePhoto()</code> then trims any leading whitespace. It also trims a single leading and trailing double quotation mark <code>"</code>.
+<p><strong>Step 7:</strong> <code>parsePhoto()</code> then trims any leading whitespaces. It also trims a single leading and trailing double quotation mark <code>"</code>.
 This is for ease of use with the Windows 10 File Explorer <strong>Copy Path</strong> Home menu function, which returns the filepath of the selected file
 wrapped with double quotation marks <code>"</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 8.1: As the <code>photo</code> parameter is optional for <code>add</code> command, if photo prefix <code>p/</code> is not used, <code>AddCommandParser</code>
+<p><strong>Step 8.1:</strong> As the <code>photo</code> parameter is optional for <code>add</code> command, if photo prefix <code>p/</code> is not used, <code>AddCommandParser</code>
 calls the 2nd overloaded <code>Place()</code> constructor to create a <code>Place</code> with a special string <code>EMPTY_PHOTO_PATH</code> in the <code>Photo</code> attribute.</p>
 </div>
 <div class="paragraph">
-<p>Step 8.2.1: If photo prefix 'p/' is used, he validity of the filepath is then checked with the <code>Photo.isValidPhotoFilepath()</code> method.
+<p><strong>Step 8.2:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If photo prefix <code>p/</code> is used, he validity of the filepath is then checked with the <code>Photo.isValidPhotoFilepath()</code> method.
 The method relies on using <code>ImageIO.read()</code> to try opening the file using the provided <code>filepath</code> string.
 If the filepath is invalid or the file cannot be opened, then <code>ImageIO.read()</code> throws a <code>IOException</code>.
-The exception is caught, control returns to parsePhoto() and a ParseException is thrown.</p>
+The exception is caught, control returns to <code>parsePhoto()</code> and a <code>ParseException is thrown</code>.</p>
+</li>
+</ul>
 </div>
-<div class="paragraph">
-<p>Step 8.2.2: Else, control returns to <code>parseUtil.parsePhoto()</code>. It uses the all-parameter <code>Place()</code> constructor to create
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="error">`</span>    <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> isValidPhotoFilepath(<span class="predefined-type">String</span> test) {
+        <span class="keyword">if</span> (!(test <span class="keyword">instanceof</span> <span class="predefined-type">String</span>)) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">NullPointerException</span>();
+        }
+        <span class="keyword">try</span> {
+            <span class="predefined-type">File</span> testPhoto = <span class="keyword">new</span> <span class="predefined-type">File</span>(test);
+            <span class="predefined-type">Image</span> image = <span class="predefined-type">ImageIO</span>.read(testPhoto);
+            <span class="predefined-type">FileInputStream</span> testStream = <span class="keyword">new</span> <span class="predefined-type">FileInputStream</span>(testPhoto);
+            <span class="keyword">if</span> (image == <span class="predefined-constant">null</span>) {
+                <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">The file </span><span class="delimiter">&quot;</span></span> + testPhoto + <span class="string"><span class="delimiter">&quot;</span><span class="content"> could not be opened, it is not an image</span><span class="delimiter">&quot;</span></span>);
+                <span class="keyword">return</span> <span class="predefined-constant">false</span>;
+            }
+        } <span class="keyword">catch</span> (<span class="exception">IOException</span> e) {
+            <span class="keyword">return</span> <span class="predefined-constant">false</span>;
+        }
+        <span class="keyword">return</span> <span class="predefined-constant">true</span>;
+    }<span class="error">`</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Else, control returns to <code>parseUtil.parsePhoto()</code>. It uses the all-parameter <code>Place()</code> constructor to create
 a <code>Place</code> object, using the <code>Photo</code> parameter and other parameters.</p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -609,8 +647,14 @@ Supported filepaths are <code>.jpg</code> <code>.png</code> and <code>.bmp</code
 </table>
 </div>
 <div class="paragraph">
-<p>Step 9: When the <code>select</code> command is executed, the UI component <code>ExpandedPlacePanel</code> receives the <code>Place</code> object. It then uses the <code>photo.filepath</code> attribute to create a
-JavaFX <code>Image</code> object, which is then displayed in a ImageView panel at the top of <code>ExpandedPlacePanel</code> using the <code>setImage()</code> method.</p>
+<p><strong>Step 9:</strong> When the <code>select</code> command is executed, the UI component <code>ExpandedPlacePanel</code> receives the <code>Place</code> object. It then uses the <code>photo.filepath</code> attribute to create a
+JavaFX <code>Image</code> object, which is then displayed in a <code>ImageView</code> panel at the top of <code>ExpandedPlacePanel</code> using the <code>setImage()</code> method.</p>
+</div>
+<div id="AddPhotoActivityDiagram" class="imageblock">
+<div class="content">
+<img src="../images/AddPhotoActivityDiagram.PNG" alt="AddPhotoActivityDiagram" width="800">
+</div>
+<div class="title">Figure 4.4.1.1: Activity diagram for photo feature</div>
 </div>
 <div class="sect4">
 <h5 id="example-using-code-add-code-to-include-a-photo"><a class="link" href="#example-using-code-add-code-to-include-a-photo">Example: Using <code>add</code> to include a photo</a></h5>
@@ -624,7 +668,7 @@ JavaFX <code>Image</code> object, which is then displayed in a ImageView panel a
 <div class="content">
 <img src="../images/addPhotoBefore.png" alt="addPhotoBefore" width="800">
 </div>
-<div class="title">Figure 4.4.2: Before the <code>add</code> command is executed</div>
+<div class="title">Figure 4.4.1.2: Before the <code>add</code> command is executed</div>
 </div>
 <div class="paragraph">
 <p>Step 2. The user inputs <code>selects 4</code>.</p>
@@ -633,12 +677,12 @@ JavaFX <code>Image</code> object, which is then displayed in a ImageView panel a
 <div class="content">
 <img src="../images/addPhotoAfter.png" alt="addPhotoAfter" width="800">
 </div>
-<div class="title">Figure 4.4.3: After the <code>add</code> command is executed and the newly added Place "Himeiji Castle" is selected</div>
+<div class="title">Figure 4.4.1.3: After the <code>add</code> command is executed and the newly added Place "Himeiji Castle" is selected</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">8.2.2. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">8.4.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="decision-what-type-of-file-path-input-should-the-code-add-code-and-code-edit-code-command-accept-for-the-photo-parameter-prefix-code-p-code"><a class="link" href="#decision-what-type-of-file-path-input-should-the-code-add-code-and-code-edit-code-command-accept-for-the-photo-parameter-prefix-code-p-code">Decision: What type of file path input should the <code>add</code> and <code>edit</code> command accept for the photo parameter (prefix <code>p/</code>)?</a></h5>
 <table class="tableblock frame-all grid-all spread">
@@ -664,13 +708,13 @@ directory of the JAR executable, or some other pre-defined directory.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pros</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-use</strong>. This approach is more user-friendly, as users do not need to type an additional <code>generate</code> command after changes are made to the Place list.<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-use</strong>. This approach is more user friendly when used together with Windows 10 File Explorer <code>Copy Path</code> function.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Scalability</strong>. This approach is does not require images to be copied or moved from their existing directory to a new directory. Instead, by using
 <code>Alt-Tab</code>, Windows 10 File Explorer <code>Copy Path</code> function, <code>Ctrl-C</code> + <code>Ctrl-V</code>, and the <code>edit</code> command, users can quickly attach multiple photos to existing places.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cons</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-use</strong>. This approach is Less user-friendly as users will  have to manually type in the name and extension of each image file added,<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-use</strong>. This approach is less user-friendly as users will  have to manually type in the name and extension of each image file added,<br>
 or otherwise rename the file to <code>Ctrl-C</code> + <code>Ctrl-V</code> the file name, and manually type in the extension.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Scalability</strong>. For a large number of image files, this approach requires the user spent extra time moving files from their existing directory to
 the new pre-specified directory. If moving files is not an option, then addition storage space is required for all the copied files.<br></p></td>
@@ -681,4 +725,4 @@ the new pre-specified directory. If moving files is not an option, then addition
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 04:55:40 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 06:03:06 UTC</div></div></div></body></html>
