@@ -319,16 +319,16 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"> <span class="directive">public</span> CommandResult execute(Model model, CommandHistory history) {
-     requireNonNull(model);
-     model.setChartDisplayed(<span class="predefined-constant">true</span>); <i class="conum" data-value="1"></i><b>(1)</b>
-     model.commitTravelBuddy(); <i class="conum" data-value="2"></i><b>(2)</b>
-     <span class="keyword">if</span> (model.getFilteredPlaceList().isEmpty()) { <i class="conum" data-value="3"></i><b>(3)</b>
-         <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(MESSAGE_EMPTY);
-     } <span class="keyword">else</span> {
-         <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(MESSAGE_SUCCESS);
-     }
- }</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> CommandResult execute(Model model, CommandHistory history) {
+    requireNonNull(model);
+    model.setChartDisplayed(<span class="predefined-constant">true</span>); <i class="conum" data-value="1"></i><b>(1)</b>
+    model.commitTravelBuddy(); <i class="conum" data-value="2"></i><b>(2)</b>
+    <span class="keyword">if</span> (model.getFilteredPlaceList().isEmpty()) { <i class="conum" data-value="3"></i><b>(3)</b>
+        <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(MESSAGE_EMPTY);
+    } <span class="keyword">else</span> {
+        <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(MESSAGE_SUCCESS);
+    }
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -354,7 +354,7 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 <p><strong>Model:</strong> The chart generation mechanism is facilitated by <code>VersionedTravelBuddy</code>, which extends from <code>TravelBuddy</code>, as seen in the Model Class Diagram in <a href="#ModelClassDiagram">[ModelClassDiagram]</a>.</p>
 </div>
 <div class="paragraph">
-<p>For this section on Charts, the focus is on the <a href="#class-diagram">class diagram</a> as seen in <a href="#chartOopDiagramFigure">Figure 4.4.1</a>. The step-by-step explanation of the class diagram can be found below:</p>
+<p>For this section on Charts, the focus is on the <a href="#class-diagram">class diagram</a> as seen in <a href="#chartOopDiagramFigure">Figure 4.5.1.1</a>. The step-by-step explanation of the class diagram can be found below:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -382,19 +382,19 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 <div class="content">
 <img src="../images/Chart_ModelClassBetterOopDiagram.png" alt="Chart ModelClassBetterOopDiagram" width="590">
 </div>
-<div class="title">Figure 4.4.1: OOP Diagram</div>
+<div class="title">Figure 4.5.1.1: OOP Diagram</div>
 </div>
 <div class="paragraph">
-<p><strong>Logic &amp; Model Interaction:</strong> Having discussed Logic and Model, we can now model the workflow of the <code>generate</code> command. This can be accomplished using an <a href="#activity-diagram">activity diagram</a>, as seen in <a href="#GenerateCommandActivityDiagram">Figure 4.4.2</a>.</p>
+<p><strong>Logic &amp; Model Interaction:</strong> Having discussed Logic and Model, we can now model the workflow of the <code>generate</code> command. This can be accomplished using an <a href="#activity-diagram">activity diagram</a>, as seen in <a href="#GenerateCommandActivityDiagram">Figure 4.5.1.2</a>.</p>
 </div>
 <div id="GenerateCommandActivityDiagram" class="imageblock">
 <div class="content">
 <img src="../images/GenerateCommandActivityDiagram.png" alt="GenerateCommandActivityDiagram" width="370">
 </div>
-<div class="title">Figure 4.4.2: Activity Diagram for the <code>generate</code> command</div>
+<div class="title">Figure 4.5.1.2: Activity Diagram for the <code>generate</code> command</div>
 </div>
 <div class="paragraph">
-<p>Additionally, we want to be able to capture the interaction between multiple objects for the <code>generate</code> command. This can be accomplished using a <a href="#sequence-diagram">sequence diagram</a>, as seen in <a href="#GenerateCommandSeqDiagramFigure">Figure 4.4.3</a> below. The step-by-step explanation of the sequence diagram is as follows:</p>
+<p>Additionally, we want to be able to capture the interaction between multiple objects for the <code>generate</code> command. This can be accomplished using a <a href="#sequence-diagram">sequence diagram</a>, as seen in <a href="#GenerateCommandSeqDiagramFigure">Figure 4.5.1.3</a> below. The step-by-step explanation of the sequence diagram is as follows:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -417,7 +417,7 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 <p>The <code>ChartBook#commitChart()</code> method is invoked by <code>TravelBuddy</code>.</p>
 </li>
 <li>
-<p>A result object is returned.</p>
+<p>The <code>CommandResult</code> object is returned.</p>
 </li>
 </ol>
 </div>
@@ -425,7 +425,7 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 <div class="content">
 <img src="../images/GenerateCommandSeqDiagram.png" alt="GenerateCommandSeqDiagram" width="700">
 </div>
-<div class="title">Figure 4.4.3: Sequence Diagram for the <code>generate</code> command</div>
+<div class="title">Figure 4.5.1.3: Sequence Diagram for the <code>generate</code> command</div>
 </div>
 <div class="paragraph">
 <p><strong>Storage:</strong> The Chart&#8217;s storage is handled by <code>JsonChartBookStorage</code>, which implements from <code>ChartBookStorage</code>. The three main data-storage methods it implements are:</p>
@@ -448,17 +448,17 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"> <span class="directive">public</span> <span class="type">void</span> saveCountryChart(ReadOnlyCountryChart countryChart, Path filePath) { <i class="conum" data-value="1"></i><b>(1)</b>
-     requireAllNonNull(countryChart, filePath); <i class="conum" data-value="2"></i><b>(2)</b>
-     Gson gson = <span class="keyword">new</span> GsonBuilder().setPrettyPrinting().create(); <i class="conum" data-value="3"></i><b>(3)</b>
-     <span class="keyword">try</span> {
-         <span class="predefined-type">FileWriter</span> fileWriter = <span class="keyword">new</span> <span class="predefined-type">FileWriter</span>(<span class="predefined-type">String</span>.valueOf(filePath)); <i class="conum" data-value="4"></i><b>(4)</b>
-         gson.toJson(countryChart, fileWriter); <i class="conum" data-value="5"></i><b>(5)</b>
-         fileWriter.flush(); <i class="conum" data-value="6"></i><b>(6)</b>
-     } <span class="keyword">catch</span> (<span class="exception">IOException</span> ioe) {
-         logger.warning(ioe.getMessage()); <i class="conum" data-value="7"></i><b>(7)</b>
-     }
- }</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> saveCountryChart(ReadOnlyCountryChart countryChart, Path filePath) { <i class="conum" data-value="1"></i><b>(1)</b>
+    requireAllNonNull(countryChart, filePath); <i class="conum" data-value="2"></i><b>(2)</b>
+    Gson gson = <span class="keyword">new</span> GsonBuilder().setPrettyPrinting().create(); <i class="conum" data-value="3"></i><b>(3)</b>
+    <span class="keyword">try</span> {
+        <span class="predefined-type">FileWriter</span> fileWriter = <span class="keyword">new</span> <span class="predefined-type">FileWriter</span>(<span class="predefined-type">String</span>.valueOf(filePath)); <i class="conum" data-value="4"></i><b>(4)</b>
+        gson.toJson(countryChart, fileWriter); <i class="conum" data-value="5"></i><b>(5)</b>
+        fileWriter.flush(); <i class="conum" data-value="6"></i><b>(6)</b>
+    } <span class="keyword">catch</span> (<span class="exception">IOException</span> ioe) {
+        logger.warning(ioe.getMessage()); <i class="conum" data-value="7"></i><b>(7)</b>
+    }
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -516,21 +516,24 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Example:</strong> Given below is an example usage scenario and what the user will see in the GUI.</p>
+<p><strong>Example:</strong> Given below is an example usage scenario of the <code>generate</code> command.</p>
 </div>
 <div class="paragraph">
 <p><strong>Step 1:</strong> By default, the charts are displayed when TravelBuddy launches. To navigate away from the charts, type in <code>select 1</code>.<br>
-<strong>Outcome:</strong> The first index in the place list will be selected and displayed on the right-hand side of the panel..</p>
+<strong>Outcome:</strong> The first index in the place list will be selected and displayed on the right-hand side of the panel.</p>
 </div>
 <div class="paragraph">
-<p><strong>Step 2:</strong> Type in <code>generate</code> to generate the charts..<br>
-<strong>Outcome:</strong> The charts will be displayed on the right-hand side of the panel..</p>
+<p><strong>Step 2:</strong> Type in <code>generate</code> to generate the charts.<br>
+<strong>Outcome:</strong> The charts will be displayed on the right-hand side of the panel.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.3. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-chart-generation-executes"><a class="link" href="#aspect-how-chart-generation-executes">Aspect: How Chart Generation Executes</a></h5>
+<div class="paragraph">
+<p>Given below is a comparison between the alternatives of the <code>generate</code> mechanism design.</p>
+</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 13.7931%;">
@@ -564,7 +567,7 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Example</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">As shown in <a href="#Generate_BeforeEditAfterEdit">Figure 4.4.4</a>, before the <code>edit 1 cc/USA</code> command was executed, the chart did not have a separate bar for USA. After the command was executed, the chart updated in real-time to include a bar for USA. All this was done without invoking the <code>generate</code> command.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As shown in <a href="#Generate_BeforeEditAfterEdit">Figure 4.5.3.1</a>, before the <code>edit 1 cc/USA</code> command was executed, the chart did not have a separate bar for USA. After the command was executed, the chart updated in real-time to include a bar for USA. All this was done without invoking the <code>generate</code> command.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N.A.</p></td>
 </tr>
 </tbody>
@@ -576,7 +579,7 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 <div class="content">
 <img src="../images/Generate_BeforeEditAfterEdit.png" alt="Generate BeforeEditAfterEdit" width="800">
 </div>
-<div class="title">Figure 4.4.4: A comparison before and after the <code>edit</code> command was executed</div>
+<div class="title">Figure 4.5.3.1: A comparison before and after the <code>edit</code> command was executed</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -589,4 +592,4 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 06:03:06 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 06:13:52 UTC</div></div></div></body></html>
