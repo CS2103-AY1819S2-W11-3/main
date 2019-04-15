@@ -33,9 +33,10 @@
 <li><a href="#undo-redo-feature">4.1. Undo/Redo Feature</a></li>
 <li><a href="#search-feature">4.2. Search Feature</a></li>
 <li><a href="#add-feature">4.3. Add Feature</a></li>
-<li><a href="#chart-feature">4.4. Chart Feature</a></li>
-<li><a href="#logging">4.5. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.6. Configuration</a></li>
+<li><a href="#photos-feature">4.4. Photos Feature</a></li>
+<li><a href="#chart-feature">4.5. Chart Feature</a></li>
+<li><a href="#logging">4.6. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.7. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a>
@@ -1562,7 +1563,143 @@ would not be able to add it into TravelBuddy.</p></td>
 </div>
 </div>
 <div class="sect2">
-<h3 id="chart-feature"><a class="link" href="#chart-feature">4.4. Chart Feature</a></h3>
+<h3 id="photos-feature"><a class="link" href="#photos-feature">4.4. Photos Feature</a></h3>
+<div class="paragraph">
+<p>The Photo feature gives users the ability to attach an existing image file to any Place object,
+which is then displayed in the <code>ExpandedPlacePanel</code> when the <code>select</code> command is called on a particular Place.</p>
+</div>
+<div class="sect3">
+<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>This feature is currently integrated as part of the <code>add</code> and <code>edit</code> commands. It works by accepting the user entered
+absolute file path of the image as an <code>add</code> and <code>edit</code> command parameter, specified by the prefix <code>p/</code>.</p>
+</div>
+<div class="paragraph">
+<p><a href="#chartOopDiagramFigure">Figure 4.4.1</a> below is a sequence of steps, illustrating the interaction between various classes when the add command is
+used to include a photo with a newly created place.</p>
+</div>
+<div id="AddPhotoActivityDiagram" class="imageblock">
+<div class="content">
+<img src="images/AddPhotoActivityDiagram.PNG" alt="AddPhotoActivityDiagram" width="800">
+</div>
+<div class="title">Figure 4.4.1: Add Photo Activity DiagramActivity diagram for photo feature</div>
+</div>
+<div class="paragraph">
+<p>Step 1: The user enters the command <code>add n/Himeiji Castle cc/JPN dv/15/12/2017 r/5 d/Wow.
+a/Kyoto t/castle p/C:\Users\Shaun\Pictures\castle-photo.jpg</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2 - 5: Identical to <code>add</code> command sequence, please refer to &lt;<a href="#add-feature">Section 4.3, &#8220;Add Feature&#8221;</a>&gt; for details</p>
+</div>
+<div class="paragraph">
+<p>Step 6: The <code>AddCommandParser</code> interprets the arguments, and checks the file path input using <code>ParserUtil.parsePhoto()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 7: <code>parsePhoto()</code> then trims any leading whitespace. It also trims a single leading and trailing double quotation mark <code>"</code>.
+This is for ease of use with the Windows 10 File Explorer <strong>Copy Path</strong> Home menu function, which returns the filepath of the selected file
+wrapped with double quotation marks <code>"</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 8.1: As the <code>photo</code> parameter is optional for <code>add</code> command, if photo prefix <code>p/</code> is not used, <code>AddCommandParser</code>
+calls the 2nd overloaded <code>Place()</code> constructor to create a <code>Place</code> with a special string <code>EMPTY_PHOTO_PATH</code> in the <code>Photo</code> attribute.</p>
+</div>
+<div class="paragraph">
+<p>Step 8.2.1: If photo prefix 'p/' is used, he validity of the filepath is then checked with the <code>Photo.isValidPhotoFilepath()</code> method.
+The method relies on using <code>ImageIO.read()</code> to try opening the file using the provided <code>filepath</code> string.
+If the filepath is invalid or the file cannot be opened, then <code>ImageIO.read()</code> throws a <code>IOException</code>.
+The exception is caught, control returns to parsePhoto() and a ParseException is thrown.</p>
+</div>
+<div class="paragraph">
+<p>Step 8.2.2: Else, control returns to <code>parseUtil.parsePhoto()</code>. It uses the all-parameter <code>Place()</code> constructor to create
+a <code>Place</code> object, using the <code>Photo</code> parameter and other parameters.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A valid filepath must be an absolute file path; it starts with the drive-letter (eg. <code>C:\\</code>), and ends with the file name and extension (eg. <code>castle-photo.jpg</code>).
+Supported filepaths are <code>.jpg</code> <code>.png</code> and <code>.bmp</code>, which are filepaths supported by <code>ImageIO.read()</code> and the Java <code>Image</code> class.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 9: When the <code>select</code> command is executed, the UI component <code>ExpandedPlacePanel</code> receives the <code>Place</code> object. It then uses the <code>photo.filepath</code> attribute to create a
+JavaFX <code>Image</code> object, which is then displayed in a ImageView panel at the top of <code>ExpandedPlacePanel</code> using the <code>setImage()</code> method.</p>
+</div>
+<div class="sect4">
+<h5 id="example-using-code-add-code-to-include-a-photo"><a class="link" href="#example-using-code-add-code-to-include-a-photo">Example: Using <code>add</code> to include a photo</a></h5>
+<div class="paragraph">
+<p>Given below is an example usage scenario and what the user will see in the GUI.</p>
+</div>
+<div class="paragraph">
+<p>Step 1.Input <code>add n/Himeiji Castle cc/JPN dv/15/12/2017 r/5 d/Wow. a/Kyoto t/castle p/C:\Users\Michael\Pictures\castle-photo.jpg</code></p>
+</div>
+<div id="addPhotoBefore" class="imageblock">
+<div class="content">
+<img src="images/addPhotoBefore.png" alt="addPhotoBefore" width="800">
+</div>
+<div class="title">Figure 4.4.2: Before the <code>add</code> command is executed</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user inputs <code>selects 4</code>.</p>
+</div>
+<div id="addPhotoAfter" class="imageblock">
+<div class="content">
+<img src="images/addPhotoAfter.png" alt="addPhotoAfter" width="800">
+</div>
+<div class="title">Figure 4.4.3: After the <code>add</code> command is executed and the newly added Place "Himeiji Castle" is selected</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="decision-what-type-of-file-path-input-should-the-code-add-code-and-code-edit-code-command-accept-for-the-photo-parameter-prefix-code-p-code"><a class="link" href="#decision-what-type-of-file-path-input-should-the-code-add-code-and-code-edit-code-command-accept-for-the-photo-parameter-prefix-code-p-code">Decision: What type of file path input should the <code>add</code> and <code>edit</code> command accept for the photo parameter (prefix <code>p/</code>)?</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 13.7931%;">
+<col style="width: 43.1034%;">
+<col style="width: 43.1035%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong>Implementation 1: Absolute Filepath<br>
+(current choice)</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Implementation 2: Filename and Extension Only</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accept the entire absolute file path of the image to be added/replaced</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accept only file name and file extension of the image to be added/replaced, but requiring the images to be located in the
+directory of the JAR executable, or some other pre-defined directory.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pros</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-use</strong>. This approach is more user-friendly, as users do not need to type an additional <code>generate</code> command after changes are made to the Place list.<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Scalability</strong>. This approach is does not require images to be copied or moved from their existing directory to a new directory. Instead, by using
+<code>Alt-Tab</code>, Windows 10 File Explorer <code>Copy Path</code> function, <code>Ctrl-C</code> + <code>Ctrl-V</code>, and the <code>edit</code> command, users can quickly attach multiple photos to existing places.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cons</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-use</strong>. This approach is Less user-friendly as users will  have to manually type in the name and extension of each image file added,<br>
+or otherwise rename the file to <code>Ctrl-C</code> + <code>Ctrl-V</code> the file name, and manually type in the extension.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Scalability</strong>. For a large number of image files, this approach requires the user spent extra time moving files from their existing directory to
+the new pre-specified directory. If moving files is not an option, then addition storage space is required for all the copied files.<br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="chart-feature"><a class="link" href="#chart-feature">4.5. Chart Feature</a></h3>
 <div class="paragraph">
 <p>The Chart feature displays to users three different charts in TravelBuddy. They are:</p>
 </div>
@@ -1595,7 +1732,7 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </table>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.1. Current Implementation</a></h4>
+<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.5.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p><strong>Logic:</strong> The <code>generate</code> mechanism is executed by <code>GenerateCommand</code>, which extends from <code>Command</code>. A code snippet is shown below:</p>
 </div>
@@ -1773,7 +1910,7 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </div>
 </div>
 <div class="sect3">
-<h4 id="generate-command"><a class="link" href="#generate-command">4.4.2. Generate Command</a></h4>
+<h4 id="generate-command"><a class="link" href="#generate-command">4.5.2. Generate Command</a></h4>
 <div class="paragraph">
 <p><strong>Preconditions:</strong> Given below is a list of preconditions that must be met for the <code>generate</code> command to work:</p>
 </div>
@@ -1810,7 +1947,7 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.3. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.3. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-chart-generation-executes"><a class="link" href="#aspect-how-chart-generation-executes">Aspect: How Chart Generation Executes</a></h5>
 <table class="tableblock frame-all grid-all spread">
@@ -1864,7 +2001,7 @@ Instead of typing <code>generate</code>, you can simply type the shortcut <code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.5. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.6. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and
 logging destinations.</p>
@@ -1873,7 +2010,7 @@ logging destinations.</p>
 <ul>
 <li>
 <p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See
-<a href="#Implementation-Configuration">Section 4.6, &#8220;Configuration&#8221;</a>)</p>
+<a href="#Implementation-Configuration">Section 4.7, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to
@@ -1906,7 +2043,7 @@ of just its size</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.6. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.7. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the
 configuration file (default: <code>config.json</code>).</p>
@@ -2883,4 +3020,4 @@ Expected: Similar to previous.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 12:34:13 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 00:25:01 UTC</div></div></div></body></html>
