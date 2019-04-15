@@ -928,7 +928,7 @@ The various search features (i.e. search name, country code, rating, tags, year)
 </div>
 </li>
 <li>
-<p>A NameContainsKeywordPredicate will be instantiated with the array of arguments as the predicate, which will be used to check if any of the places in TravelBuddy matches the user&#8217;s input.</p>
+<p>A <code>NameContainsKeywordPredicate</code> will be instantiated with the array of arguments as the predicate, which will be used to check if any of the places in TravelBuddy matches the user&#8217;s input.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">boolean</span> test(Place place) {
@@ -1096,17 +1096,17 @@ In addition, it narrows down the search options by only returning keywords that 
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pros</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-implementation</strong>: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.<br>
 <strong>Refined results</strong>: This approach provides more refined results as it narrows down the search scope to the user&#8217;s query.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Faster search</strong>: Faster searching as HashMap lookup runs in O(1) time.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Faster search</strong>: Faster searching as <code>HashMap</code> lookup runs in O(1) time.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cons</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Slower search</strong>: This approach is less efficient as the entire list needs to be searched through.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Memory-consuming</strong>. This approach requires more memory as a separate HashMap needs to be stored.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Memory-consuming</strong>. This approach requires more memory as a separate <code>HashMap</code> needs to be stored.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p><strong>Decision</strong>: Alternative 1 of using a list is preferred as it uses less memory compared to alternative 2. Moreover, future contributors to the project are likely to be student undergraduates, so a simple data structure would be more optimal for educational purposes.</p>
+<p><strong>Decision</strong>: Alternative 1 of using a list is preferred as it uses less memory compared to Alternative 2. Moreover, future contributors to the project are likely to be student undergraduates, so a simple data structure would be more optimal for educational purposes.</p>
 </div>
 </div>
 </div>
@@ -2606,4 +2606,4 @@ Expected: Similar to previous.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 06:19:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 06:29:30 UTC</div></div></div></body></html>

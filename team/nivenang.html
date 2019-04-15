@@ -168,7 +168,7 @@ The challenge lies in the parsing of the user input, which is tested against a p
 <p>Only full words will be matched. e.g. <code>Nation</code> will not match <code>National</code></p>
 </li>
 <li>
-<p>Places matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>National Museum</code> will return <code>National Museum of Singapore</code> and <code>National University Hospital</code>.</p>
+<p>Places matching at least one keyword will be returned. e.g. <code>National Museum</code> will return <code>National Museum of Singapore</code> and <code>National University Hospital</code>.</p>
 </li>
 </ul>
 </div>
@@ -237,7 +237,7 @@ From <a href="#searchRatingFigure">Figure 4.7.1</a> below, using <code>searchr 4
 <p>Only full words will be matched e.g. <code>temp</code> will not match <code>temple</code>.</p>
 </li>
 <li>
-<p>Places tagged with at least one matching keyword will be returned (i.e. <code>OR</code> search). e.g. <code>temple school</code> will return places tagged with <code>temple</code> or <code>school</code>.</p>
+<p>Places tagged with at least one matching keyword will be returned. e.g. <code>temple school</code> will return places tagged with <code>temple</code> or <code>school</code>.</p>
 </li>
 </ul>
 </div>
@@ -303,14 +303,14 @@ From <a href="#searchCountryFigure">Figure 4.9.1</a> below, using <code>searchc 
 <p>The search year is bounded from 1900 to the current year.</p>
 </li>
 <li>
-<p>The year keywords for <code>searchyear</code> can be entered as a range. e.g <code>2010-2017</code> will return all the places visited from <code>2010</code> to <code>2017</code>.</p>
+<p>The year keywords for <code>searchyear</code> can be entered as a range. e.g <code>sy 2010-2017</code> will return all the places visited from 2010 to 2017.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p><strong>Example:</strong> <code>searchyear 2016</code><br>
 Executes a search for places visited in the year <code>2016</code>.<br>
-From <a href="#searchYearFigure">Figure 4.10.1</a> below, using <code>searchyear 2016</code> will return all places in your TravelBuddy that you visited in the year <code>2016</code>.</p>
+From <a href="#searchYearFigure">Figure 4.10.1</a> below, using <code>searchyear 2016</code> will return all places in your TravelBuddy that you visited in the year 2016.</p>
 </div>
 <div id="searchYearFigure" class="imageblock">
 <div class="content">
@@ -452,7 +452,7 @@ The various search features (i.e. search name, country code, rating, tags, year)
 </div>
 </li>
 <li>
-<p>A NameContainsKeywordPredicate will be instantiated with the array of arguments as the predicate, which will be used to check if any of the places in TravelBuddy matches the user&#8217;s input.</p>
+<p>A <code>NameContainsKeywordPredicate</code> will be instantiated with the array of arguments as the predicate, which will be used to check if any of the places in TravelBuddy matches the user&#8217;s input.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">boolean</span> test(Place place) {
@@ -620,17 +620,17 @@ In addition, it narrows down the search options by only returning keywords that 
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pros</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-implementation</strong>: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.<br>
 <strong>Refined results</strong>: This approach provides more refined results as it narrows down the search scope to the user&#8217;s query.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Faster search</strong>: Faster searching as HashMap lookup runs in O(1) time.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Faster search</strong>: Faster searching as <code>HashMap</code> lookup runs in O(1) time.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cons</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Slower search</strong>: This approach is less efficient as the entire list needs to be searched through.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Memory-consuming</strong>. This approach requires more memory as a separate HashMap needs to be stored.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Memory-consuming</strong>. This approach requires more memory as a separate <code>HashMap</code> needs to be stored.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p><strong>Decision</strong>: Alternative 1 of using a list is preferred as it uses less memory compared to alternative 2. Moreover, future contributors to the project are likely to be student undergraduates, so a simple data structure would be more optimal for educational purposes.</p>
+<p><strong>Decision</strong>: Alternative 1 of using a list is preferred as it uses less memory compared to Alternative 2. Moreover, future contributors to the project are likely to be student undergraduates, so a simple data structure would be more optimal for educational purposes.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -646,4 +646,4 @@ In addition, it narrows down the search options by only returning keywords that 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 06:19:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 06:29:31 UTC</div></div></div></body></html>
