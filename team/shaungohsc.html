@@ -6,17 +6,16 @@
 <h2 id="strong-overview-strong"><a class="link" href="#strong-overview-strong">1. <strong>Overview</strong></a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This document serves to highlight my contributions to <strong>TravelBuddy</strong>, a travel journalling application.<br></p>
+<p>This document serves to highlight my contributions to <strong>TravelBuddy</strong>, a travel journaling application.<br></p>
 </div>
 <div class="paragraph">
 <p>TravelBuddy gives travelers simple tools to pen down their trip details. As every journal entry
-in <strong>TravelBuddy</strong> is a <strong>Place</strong>, travelers can also include a photo, rate the place out of 5 stars, tag the Place with custom tags,
+in <strong>TravelBuddy</strong> is a Place, travelers can also include a photo, rate the place out of 5 stars, tag the Place with custom tags,
 and pen down other personal information about the place, breathing life into an otherwise lifeless application.</p>
 </div>
 <div class="paragraph">
-<p>TravelBuddy also gives travelers the means to make sense of their data, via simple data visualisation. Together with robust and intuitive search
-functionality, TravelBuddy not only serves as a digital journal, but also gives travelers new insights about their adventures.
-A traveller can then utilise the knowledge and experience gleaned from previous trips in planning for future trips.</p>
+<p>TravelBuddy also gives travelers the means to make sense of their data, via simple data visualization. Together with intuitive search
+functionality, TravelBuddy also gives travelers new insights about their adventures.</p>
 </div>
 <div class="paragraph">
 <p><strong>TravelBuddy</strong> was built as part of the CS2103 Software Engineering module in the National University of Singapore, in which <a href="https://cs2103-ay1819s2-w11-3.github.io/main/AboutUs.html">my team and I</a> were tasked to
@@ -25,8 +24,15 @@ morph an existing <a href="https://se-education.org/addressbook-level4/">Address
 </div>
 </div>
 <div class="sect1">
-<h2 id="strong-major-enhancement-strong-photo-functionality"><a class="link" href="#strong-major-enhancement-strong-photo-functionality">2. <strong>Major Enhancement</strong>: Photo Functionality</a></h2>
+<h2 id="strong-summary-of-contributions-strong"><a class="link" href="#strong-summary-of-contributions-strong">2. <strong>Summary of Contributions</strong></a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This section gives an overview of my contributions to the development and testing
+of the software. A more detailed sample of my contributions to the User Guide and Developer Guide
+can be found below in <a href="#user-guide-contributions">Section 3, &#8220;User Guide Contributions&#8221;</a> and <a href="#developer-guide-contributions">Section 4, &#8220;Developer Guide Contributions&#8221;</a> .</p>
+</div>
+<div class="sect2">
+<h3 id="strong-major-enhancement-strong-photo-functionality"><a class="link" href="#strong-major-enhancement-strong-photo-functionality">2.1. <strong>Major Enhancement</strong>: Photo Functionality</a></h3>
 <div class="paragraph">
 <p>Photo functionality refers to the ability to include an image file with a user-defined Place. This functionality includes the ability to:</p>
 </div>
@@ -58,8 +64,7 @@ mean much on its own, but when paired with the mouth-watering photo of a juicy l
 <ul>
 <li>
 <p><code>Logic</code> - Photos are attached to Places via the <code>add</code> command and replaced via the <code>edit</code> method.<br>
-Hence, changes to <code>addParser</code> and <code>ParserUtil</code> were also needed to take into account the <code>p/</code> prefix.
-s</p>
+Hence, changes to <code>addParser</code> and <code>ParserUtil</code> were also needed to take into account the <code>p/</code> prefix.</p>
 </li>
 <li>
 <p><code>Model</code> - Extensive changes to the <code>Model</code> was needed to include the Photo <code>filepath</code> string.</p>
@@ -73,21 +78,16 @@ s</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Credits:</strong> Not Applicable.</p>
-</div>
-<div class="paragraph">
 <p><strong>Code contributed to major enhancement</strong>: [<a href="https://nus-cs2103-ay1819s2.github.io/cs2103-dashboard/#search=shaun&amp;sort=displayName&amp;since=2019-02-10&amp;timeframe=day&amp;reverse=false&amp;repoSort=true">RepoSense</a>] [<a href="https://github.com/CS2103-AY1819S2-W11-3/main/pulls?utf8=✓&amp;q=is%3Apr+author%3Ashaungohsc+label%3Atype.Enhancement+">Functional code</a>]</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="strong-minor-enhancement-strong-view-switching-between-place-view-and-chart-view"><a class="link" href="#strong-minor-enhancement-strong-view-switching-between-place-view-and-chart-view">3. <strong>Minor Enhancement</strong>: View Switching between Place view and Chart view</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="strong-minor-enhancement-strong-view-switching-between-place-view-and-chart-view"><a class="link" href="#strong-minor-enhancement-strong-view-switching-between-place-view-and-chart-view">2.2. <strong>Minor Enhancement</strong>: View Switching between Place view and Chart view</a></h3>
 <div class="paragraph">
 <p>On calling the <code>generate</code> command, the Chart view is displayed to the user. On calling the <code>select</code> command, the expanded Place view is displayed to the user.</p>
 </div>
 <div class="paragraph">
-<p><strong>Justification:</strong> Splitting the usable UI space into half, one for Chart and another for an Expanded Place details, reduces the screen real estate for both.<br></p>
+<p><strong>Justification:</strong> Splitting the usable User Interface (UI) space into half, one for Chart and another for an Expanded Place details, reduces the screen real estate for both.<br></p>
 </div>
 <div class="paragraph">
 <p>The use of <code>generate</code> and <code>select</code> commands to change views provides full real estate for both features. Chart view can subsequently accommodate more charts,
@@ -111,16 +111,14 @@ It also needs to be responsible for view switching.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Credits:</strong> Not Applicable</p>
-</div>
-<div class="paragraph">
 <p><strong>Code Contributed</strong>: [<a href="https://github.com/CS2103-AY1819S2-W11-3/main/pulls?utf8=%E2%9C%93&amp;q=is%3Apr+author%3Ashaungohsc+label%3Atype.MinorEnhancement+label%3Apriority.High">Functional code</a>]</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">2.3. Other Contributions:</a></h3>
+<div class="paragraph">
+<p>This section gives a sample overview of other miscellaneous contributions to TravelBuddy.</p>
 </div>
-<div class="sect1">
-<h2 id="other-contributions"><a class="link" href="#other-contributions">4. Other Contributions:</a></h2>
-<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -128,7 +126,7 @@ It also needs to be responsible for view switching.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.4.2</code> (1 release) on GitHub</p>
+<p>Managed release <code>v1.4</code> (1 release) on GitHub</p>
 </li>
 </ul>
 </div>
@@ -138,7 +136,7 @@ It also needs to be responsible for view switching.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Update <code>PlaceCard</code> for new data fields (Pull requests <a href="https://github.com/CS2103-AY1819S2-W11-3/main/pull/71">#71</a>, <a href="https://github.com/CS2103-AY1819S2-W11-3/main/pull/107">#107</a>)</p>
+<p>Updated <code>PlaceCard</code> for new data fields (Pull requests <a href="https://github.com/CS2103-AY1819S2-W11-3/main/pull/71">#71</a>, <a href="https://github.com/CS2103-AY1819S2-W11-3/main/pull/107">#107</a>)</p>
 </li>
 <li>
 <p>Updated the UI CSS so all UI components are inline with the color palette (Pull request <a href="https://github.com/CS2103-AY1819S2-W11-3/main/pull/186">#186</a>)</p>
@@ -164,7 +162,7 @@ It also needs to be responsible for view switching.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Help rewrite the intro of the User Guide: <a href="https://github.com/CS2103-AY1819S2-W11-3/main/pull/178/commits/44c3b11e3a882874c1ca3631162e6003746a75aa">#178</a></p>
+<p>Help rewrite the introduction of the User Guide: <a href="https://github.com/CS2103-AY1819S2-W11-3/main/pull/178/commits/44c3b11e3a882874c1ca3631162e6003746a75aa">#178</a></p>
 </li>
 </ul>
 </div>
@@ -174,16 +172,14 @@ It also needs to be responsible for view switching.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/CS2103-AY1819S2-W11-3/main/pull/190">#190</a>, <a href="https://github.com/CS2103-AY1819S2-W11-3/main/pull/187">#187</a></p>
+<p>Pull Requests (PR) reviewed (with non-trivial review comments): <a href="https://github.com/CS2103-AY1819S2-W11-3/main/pull/190">#190</a>, <a href="https://github.com/CS2103-AY1819S2-W11-3/main/pull/187">#187</a></p>
 </li>
 <li>
 <p>Reported bugs on TravelBuddy (examples:  <a href="https://github.com/CS2103-AY1819S2-W11-3/main/issues/66">#66</a>, <a href="https://github.com/CS2103-AY1819S2-W11-3/main/issues/172">172</a>)</p>
 </li>
 <li>
-<p>Reported bugs and gave suggestions for other teams (Examples:
-<a href="https://github.com/CS2103-AY1819S2-W16-1/main/issues/161">Report 1</a>,
-<a href="https://github.com/CS2103-AY1819S2-W16-1/main/issues/181">Report 2</a>,
-<a href="https://github.com/CS2103-AY1819S2-W16-1/main/issues/171">Report 3</a>,
+<p>Reported bugs and gave suggestions for other teams' project (Examples:
+<a href="https://github.com/CS2103-AY1819S2-W16-1/main/issues/161">Report 1</a>, <a href="https://github.com/CS2103-AY1819S2-W16-1/main/issues/181">Report 2</a>, <a href="https://github.com/CS2103-AY1819S2-W16-1/main/issues/171">Report 3</a>,
 <a href="https://github.com/CS2103-AY1819S2-W16-1/main/issues/144">Report 4</a></p>
 </li>
 </ul>
@@ -193,8 +189,9 @@ It also needs to be responsible for view switching.</p>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="strong-user-guide-strong-contributions"><a class="link" href="#strong-user-guide-strong-contributions">5. <strong>User Guide</strong> Contributions</a></h2>
+<h2 id="user-guide-contributions"><a class="link" href="#user-guide-contributions">3. User Guide Contributions</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -202,12 +199,12 @@ It also needs to be responsible for view switching.</p>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are my contributions to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Given below are my contributions to the User Guide. They demonstrate my ability to write documentation targeting end-users.</p></td>
 </tr>
 </tbody>
 </table>
-<div class="sect2">
-<h3 id="including-a-photo-when-adding-a-place-with-code-p-code"><a class="link" href="#including-a-photo-when-adding-a-place-with-code-p-code">5.1. Including a photo when adding a place with <code>p/</code></a></h3>
+<div class="sect3">
+<h4 id="attachPhotoFeature"><a class="link" href="#attachPhotoFeature">3.1. Including a photo when adding a place with <code>p/</code></a></h4>
 <div class="paragraph">
 <p><strong>Description:</strong> The <code>add</code> command can also attach a single photo
 when adding a new place to TravelBuddy.</p>
@@ -272,7 +269,7 @@ the filepath <code>C:\Users\Michael\Pictures\castle-photo.jpg</code>.</p>
 </div>
 <div id="addPhotoBefore" class="imageblock">
 <div class="content">
-<img src="../images/addPhotoBefore.png" alt="addPhotoBefore" width="600">
+<img src="../images/addPhotoBefore.png" alt="addPhotoBefore" width="400">
 </div>
 <div class="title">Figure 4.3.2.1: Before the <code>add</code> command is executed.</div>
 </div>
@@ -282,7 +279,7 @@ the newly added "Himeiji Castle" is selected.</p>
 </div>
 <div id="addPhotoAfter" class="imageblock">
 <div class="content">
-<img src="../images/addPhotoAfter.png" alt="addPhotoAfter" width="600">
+<img src="../images/addPhotoAfter.png" alt="addPhotoAfter" width="400">
 </div>
 <div class="title">Figure 4.3.2.2: After the <code>add</code> command is executed and the newly added "Himeiji Castle" is selected.</div>
 </div>
@@ -370,62 +367,13 @@ TravelBuddy allows for double quotation marks around the filepath, so there is n
 </div>
 </div>
 <div class="sect2">
-<h3 id="replacing-the-photo-of-a-place-with-code-edit-p-code"><a class="link" href="#replacing-the-photo-of-a-place-with-code-edit-p-code">5.2. Replacing the photo of a place with <code>edit p/</code></a></h3>
-<div class="paragraph">
-<p>The <code>edit</code> command can also be used to change the photo of a place by replacing
-the <code>FILE_PATH</code> of the current photo with the <code>FILE_PATH</code> of the new photo.</p>
-</div>
-<div class="paragraph">
-<p><a href="#replacePhotoBefore">Figure 4.5.3</a> below shows TravelBuddy before <code>edit</code> command is used to replace the current photo.</p>
-</div>
-<div id="replacePhotoBefore" class="imageblock">
-<div class="content">
-<img src="../images/editPhotoBefore.png" alt="editPhotoBefore" width="400">
-</div>
-<div class="title">Figure 4.5.3: Before the <code>edit</code> command is used to replace a photo.</div>
-</div>
-<div class="paragraph">
-<p><a href="#replacePhotoAfter">Figure 4.5.4</a> below shows TravelBuddy after a new photo has been added to the place "Nanyang Technological University".</p>
-</div>
-<div id="replacePhotoAfter" class="imageblock">
-<div class="content">
-<img src="../images/editPhotoAfter.png" alt="editPhotoAfter" width="400">
-</div>
-<div class="title">Figure 4.5.4: After the <code>edit</code> command is used to replace a photo.</div>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p><strong>Examples:</strong> Given below is an example of using <code>edit</code> to replace a photo:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>edit 3 p/C:\Users\Michael\Pictures\Wallpapers\Zion National Park 1.jpg</code><br>
-Replaces the current photo of 3rd Place entry with the photo named <code>Zion National Park 1.jpg</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The image FILE_PATH being replaced with the <code>edit</code> command must still follow the
-specifications laid out in <a href="#including-a-photo-when-adding-a-place-with-code-p-code">Section 5.1, &#8220;Including a photo when adding a place with <code>p/</code>&#8221;</a>
-</td>
-</tr>
-</table>
-</div>
+<h3 id="replacing-the-photo-of-a-place-with-code-edit-p-code"><a class="link" href="#replacing-the-photo-of-a-place-with-code-edit-p-code">3.2. Replacing the photo of a place with <code>edit p/</code></a></h3>
+
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="strong-developer-guide-strong-contributions"><a class="link" href="#strong-developer-guide-strong-contributions">6. <strong>Developer Guide</strong> Contributions</a></h2>
+<h2 id="developer-guide-contributions"><a class="link" href="#developer-guide-contributions">4. Developer Guide Contributions</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -433,19 +381,19 @@ specifications laid out in <a href="#including-a-photo-when-adding-a-place-with-
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Given below are my contributions to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Given below are my contributions to the Developer Guide. They demonstrate my ability to write technical documentation targeting software developers.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="ui-architecture"><a class="link" href="#ui-architecture">6.1. UI Architecture</a></h3>
+<h3 id="ui-component"><a class="link" href="#ui-component">4.1. UI Component</a></h3>
 <div class="paragraph">
 <p><strong>API</strong> :
 <a href="https://github.com/CS2103-AY1819S2-W11-3/main/tree/master/src/main/java/seedu/travel/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div id="UiClassDiagram" class="imageblock">
 <div class="content">
-<img src="../images/UiClassDiagram.png" alt="UiClassDiagram" width="800">
+<img src="../images/UiClassDiagram.png" alt="UiClassDiagram" width="400">
 </div>
 <div class="title">Figure 3.2.1: Structure of the UI component</div>
 </div>
@@ -535,13 +483,13 @@ contains helper methods for switching functionality, interacts with <code>Model<
 </div>
 </div>
 <div class="sect2">
-<h3 id="photos-feature"><a class="link" href="#photos-feature">6.2. Photos Feature</a></h3>
+<h3 id="photos-feature"><a class="link" href="#photos-feature">4.2. Photos Feature</a></h3>
 <div class="paragraph">
 <p>The Photo feature gives users the ability to attach an existing image file to any <code>Place</code> object,
 which is then displayed in the <code>ExpandedPlacePanel</code> when the <code>select</code> command is called on a particular Place.</p>
 </div>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">6.2.1. Current Implementation</a></h4>
+<h4 id="current-implementation"><a class="link" href="#current-implementation">4.2.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>This feature is currently integrated as part of the <code>add</code> and <code>edit</code> commands. It works by accepting the user-entered
 absolute file path of the image as an <code>add</code> or <code>edit</code> command parameter, specified by the prefix <code>p/</code>.</p>
@@ -630,7 +578,7 @@ JavaFX <code>Image</code> object, which is then displayed in a <code>ImageView</
 </div>
 <div id="AddPhotoActivityDiagram" class="imageblock">
 <div class="content">
-<img src="../images/AddPhotoActivityDiagram.PNG" alt="AddPhotoActivityDiagram" width="800">
+<img src="../images/AddPhotoActivityDiagram.PNG" alt="AddPhotoActivityDiagram" width="600">
 </div>
 <div class="title">Figure 4.4.1.1: Activity diagram for photo feature</div>
 </div>
@@ -644,7 +592,7 @@ JavaFX <code>Image</code> object, which is then displayed in a <code>ImageView</
 </div>
 <div id="addPhotoBefore" class="imageblock">
 <div class="content">
-<img src="../images/addPhotoBefore.png" alt="addPhotoBefore" width="800">
+<img src="../images/addPhotoBefore.png" alt="addPhotoBefore" width="400">
 </div>
 <div class="title">Figure 4.4.1.2: Before the <code>add</code> command is executed</div>
 </div>
@@ -653,14 +601,14 @@ JavaFX <code>Image</code> object, which is then displayed in a <code>ImageView</
 </div>
 <div id="addPhotoAfter" class="imageblock">
 <div class="content">
-<img src="../images/addPhotoAfter.png" alt="addPhotoAfter" width="800">
+<img src="../images/addPhotoAfter.png" alt="addPhotoAfter" width="400">
 </div>
 <div class="title">Figure 4.4.1.3: After the <code>add</code> command is executed and the newly added Place "Himeiji Castle" is selected</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">6.2.2. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.2.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="decision-what-type-of-file-path-input-should-the-code-add-code-and-code-edit-code-command-accept-for-the-photo-parameter-prefix-code-p-code"><a class="link" href="#decision-what-type-of-file-path-input-should-the-code-add-code-and-code-edit-code-command-accept-for-the-photo-parameter-prefix-code-p-code">Decision: What type of file path input should the <code>add</code> and <code>edit</code> command accept for the photo parameter (prefix <code>p/</code>)?</a></h5>
 <table class="tableblock frame-all grid-all spread">
@@ -703,4 +651,4 @@ the new pre-specified directory. If moving files is not an option, then addition
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 08:18:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 08:40:04 UTC</div></div></div></body></html>
