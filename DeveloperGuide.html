@@ -679,8 +679,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new place. The <code>add</code> command also calls <code>Model#commitTravelBuddy()</code>,
-causing another modified TravelBuddy state to be saved into the <code>travelBuddyStateList</code>.</p>
+<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new place. The <code>add</code> command also calls <code>Model#commitTravelBuddy()</code>, causing another modified TravelBuddy state to be saved into the <code>travelBuddyStateList</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1171,7 +1170,7 @@ The parsed arguments will be compared to every entry in TravelBuddy and matching
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The country code arguments for <code>searchc</code> must be valid 3-letter ISO-3166 country codes.
+The country code arguments for <code>searchc</code> must be valid three-letter ISO-3166 country codes.
 </td>
 </tr>
 </table>
@@ -1358,7 +1357,7 @@ The country code adheres to the three-letter ISO-3166 standard. The full list of
 <div class="sect3">
 <h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">4.3.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p><a href="#addSeqDiagram">Figure 4.3.1</a> is a sequence of steps that illustrates the interaction between various classes when the <code>add</code>
+<p><a href="#addSeqDiagram">Figure 4.3.1.1</a> is a sequence of steps that illustrates the interaction between various classes when the <code>add</code>
 command is
 entered.</p>
 </div>
@@ -1366,7 +1365,7 @@ entered.</p>
 <div class="content">
 <img src="images/AddCommandSequenceDiagram.PNG" alt="AddCommandSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 4.3.1: Execution sequence of the <code>add</code> command</div>
+<div class="title">Figure 4.3.1.1: Execution sequence of the <code>add</code> command</div>
 </div>
 <div class="paragraph">
 <p><code>add n/NUS Computing cc/SGP dv/10/10/2017 r/3 d/My School a/13 Computing Drive,
@@ -1486,10 +1485,10 @@ a <code>CommandException</code> will be thrown with an error message on the dupl
 <div class="ulist">
 <ul>
 <li>
-<p>Here the <code>Model::addPlace</code> method is called, and it subsequently calls the <code>TravelBuddy::addPlace</code> method.</p>
+<p>Here, the <code>Model::addPlace</code> method is called, and it subsequently calls the <code>TravelBuddy::addPlace</code> method.</p>
 </li>
 <li>
-<p>Following which the <code>Model::commitTravelBuddy</code> method is called.</p>
+<p>Following which, the <code>Model::commitTravelBuddy</code> method is called.</p>
 </li>
 </ul>
 </div>
@@ -1508,12 +1507,13 @@ its calling method which is <code>LogicManager::execute</code>.</p>
 <div class="paragraph">
 <p>The user launches the application and enters the full add command <code>add n/Raffles Hotel cc/SGP dv/05/05/2016 t/hotel d/This place is lovely a/Raffles Road r/5 t/staycation
 117417 t/faculty</code>. TravelBuddy will start executing the steps mentioned in
-<a href="#addSeqDiagram">Figure 4.3.1</a> and the output is shown below in <a href="#output">Figure 4.3.2</a>.</p>
+<a href="#addSeqDiagram">Figure 4.3.1.1</a> and the output is shown below in <a href="#output">Figure 4.3.1.2</a>.</p>
 </div>
 <div id="output" class="imageblock">
 <div class="content">
 <img src="images/addCommand.png" alt="addCommand" width="400">
 </div>
+<div class="title">Figure 4.3.1.2: Add command output</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1532,7 +1532,10 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 <div class="sect3">
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect-data-structure-to-store-country-codes"><a class="link" href="#aspect-data-structure-to-store-country-codes">Aspect: Data structure to store Country Codes</a></h5>
+<h5 id="aspect-data-structure-to-store-country-codes"><a class="link" href="#aspect-data-structure-to-store-country-codes">Aspect: Data structure to store country codes</a></h5>
+<div class="paragraph">
+<p>Given below is a comparison between the alternatives for the data structure that can be used for country codes.</p>
+</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 13.7931%;">
@@ -1555,7 +1558,7 @@ The command <code>add</code> is in lower-case. Mixed-case or upper-case commands
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pros</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ease-of-use</strong>. This approach simply requires the importing of <code>java.util.Locales</code> to get the country codes.<br>
-<strong>Comprehensive</strong>. <code>java.util.Locales</code> contains all of the 250 three-letter country codes as specified in ISO-3166.</p></td>
+<strong>Comprehensive</strong>. <code>java.util.Locales</code> contains all of the 250 3-letter country codes as specified in ISO-3166.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fast</strong>. This approach is computationally less intensive than Alternative 1. This is because there are only 30 country
 codes in the data structure.</p></td>
 </tr>
@@ -1564,14 +1567,15 @@ codes in the data structure.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Slightly slow</strong>. This approach is computationally more intensive than Alternative 1. This is because there are 250
 country codes to search from.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tedious</strong>. This approach requires the coder to search for the top 30 visited countries in the world and type out all
- the 30, three-letter country codes as specified in ISO-3166.<br>
+ the 30, 3-letter country codes as specified in ISO-3166.<br>
 <strong>Not User-friendly</strong>. If the user visited a country that is not in the top 30 list of countries visited, the user
 would not be able to add it into TravelBuddy.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p><strong>Decision:</strong> Alternative 1. Alternative 2 may not fulfill all of the user requirements of adding any country code, but Alternative 1 does.  Alternative 1&#8217;s speed is only slightly slower than Alternative 2.</p>
+<p><strong>Decision:</strong> Alternative 1 is used for the current implementation. Alternative 2 may not fulfill all of the user
+requirements of adding any country code.  Alternative 1&#8217;s speed is only slightly slower than Alternative 2.</p>
 </div>
 </div>
 </div>
@@ -2171,8 +2175,7 @@ results, use the settings indicated in the screenshot below.</p>
 <div class="sect2">
 <h3 id="Docs-SiteWideDocSettings"><a class="link" href="#Docs-SiteWideDocSettings">5.4. Site-wide Documentation Settings</a></h3>
 <div class="paragraph">
-<p>The <a href="https://github.com/CS2103-AY1819S2-W11-3/main/build.gradle"><code>build.gradle</code></a> file specifies some project-specific <a href="https://asciidoctor" class="bare">https://asciidoctor</a>
-.org/docs/user-manual/#attributes[asciidoc attributes] which affects how all documentation files within this project
+<p>The <a href="https://github.com/CS2103-AY1819S2-W11-3/main/tree/master/build.gradle"><code>build.gradle</code></a> file specifies some project-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how all documentation files within this project
 are rendered.</p>
 </div>
 <div class="admonitionblock tip">
@@ -2291,11 +2294,12 @@ One of: <code>UserGuide</code>, <code>DeveloperGuide</code>, <code>LearningOutco
 <div class="sect2">
 <h3 id="site-template"><a class="link" href="#site-template">5.6. Site Template</a></h3>
 <div class="paragraph">
-<p>The files in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/docs/stylesheets"><code>docs/stylesheets</code></a> are the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS stylesheets</a> of the site.
+<p>The files in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/tree/master/docs/stylesheets"><code>docs/stylesheets</code></a> are the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS stylesheets</a> of the site.
 You can modify them to change some properties of the site&#8217;s design.</p>
 </div>
 <div class="paragraph">
-<p>The files in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/docs/templates"><code>docs/templates</code></a> controls the rendering of <code>.adoc</code> files into HTML5.
+<p>The files in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/tree/master/docs/templates"><code>docs/templates</code></a> controls the rendering of <code>.adoc</code> files into
+HTML5.
 These template files are written in a mixture of <a href="https://www.ruby-lang.org">Ruby</a> and <a href="http://slim-lang.com">Slim</a>.</p>
 </div>
 <div class="admonitionblock warning">
@@ -2306,7 +2310,7 @@ These template files are written in a mixture of <a href="https://www.ruby-lang.
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Modifying the template files in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/docs/templates"><code>docs/templates</code></a> requires some knowledge and
+<p>Modifying the template files in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/tree/master/docs/templates"><code>docs/templates</code></a> requires some knowledge and
 experience with Ruby and Asciidoctor&#8217;s API.
 You should only modify them if you need greater control over the site&#8217;s layout than what stylesheets can provide.
 The SE-EDU team does not provide support for modified template files.</p>
@@ -2481,7 +2485,7 @@ e.g. <code>seedu.travel.logic.LogicManagerTest</code></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Update the version number in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/src/main/java/seedu/travel/MainApp.java"><code>MainApp.java</code></a>.</p>
+<p>Update the version number in <a href="https://github.com/CS2103-AY1819S2-W11-3/main/tree/master/src/main/java/seedu/travel/MainApp.java"><code>MainApp.java</code></a>.</p>
 </li>
 <li>
 <p>Generate a JAR file <a href="UsingGradle.html#creating-the-jar-file">using Gradle</a>.</p>
@@ -3069,4 +3073,4 @@ Expected: Similar to previous.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 06:13:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 06:19:44 UTC</div></div></div></body></html>
